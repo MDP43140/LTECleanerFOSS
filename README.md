@@ -1,18 +1,19 @@
-So, I've forked LTE Cleaner, that was originally developed by @TheRedSpy15. The reason why I'm sharing this information with you is because
-the app has been permanently suspended from the Play Store due to a disagreement with Google's policy. This project initially started as a learning opportunity
-for @TheRedSpy15 back in 2018 when he was in 10th grade. After putting ads on the Play Store variant, it becomes a source of monthly income
-to cover his student debt bill while he was in college. Unfortunately, the app was suspended due to a screenshot that apparently deceived users. As a result,
-@TheRedSpy15 has given up on the project and is unable to continue supporting the F-Droid variant without some compensation. You can read more in here: https://github.com/TheRedSpy15/LTECleanerFOSS
+<details><summary>Important notice about original version</summary>
+So I forked LTE Cleaner, that was originally developed by @TheRedSpy15 because
+the app has been permanently banned from Play Store at 4 April 2023 due to a screenshot that apparently "deceived" users.
+This project initially started as a learning opportunity for @TheRedSpy15 back in 2018 when he was in 10th grade.
+After putting ads on the Play Store variant, it becomes a source of monthly income to cover his student debt bill while he was in college.
+As a result, @TheRedSpy15 has given up on the project and is unable to continue supporting the F-Droid variant without some compensation.
+You can read more in here: https://github.com/TheRedSpy15/LTECleanerFOSS.
 Despite hitting 100k users, he is no longer able to devote time to it. Thank you for your support.
-*(btw message above was rephrased using ChatGPT)*
+</details>
 
 ## LTECleanerFOSS
-<img src="https://imgur.com/ykSLpTS.png" width="300">
+<img src="/Screenshots/1024pxHorizontal.png" width="300">
 
-![Android CI](https://github.com/TheRedSpy15/mdp43140/workflows/Android%20CI/badge.svg)
-[![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS?color=red)](https://github.com/mdp43140/LTECleanerFOSS/issues)
-[![Crowdin](https://badges.crowdin.net/lte-cleaner/localized.svg)](https://crowdin.com/project/lte-cleaner)
-[![GitHub license](https://img.shields.io/github/license/mdp43140/LTECleanerFOSS?color=lightgrey)](/blob/master/LICENSE)
+![Android CI](https://github.com/mdp43140/LTECleanerFOSS/workflows/Android%20CI/badge.svg)
+[![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
+[![License](https://img.shields.io/github/license/mdp43140/LTECleanerFOSS)](/blob/master/LICENSE)
 
 ![Alt](https://repobeats.axiom.co/api/embed/e57b4b0c0e47daffc4e7feb4cff54fa6a1bc4120.svg "Repobeats analytics image")
 
@@ -25,25 +26,16 @@ Tired of having to pay? Me too.
 There are simply way too many apps out there that claim to "speed up your device". In reality, they don't do anything.
 LTE Cleaner only aims to clean your phone by removing safe to delete files, which not only frees up a lot of space, but also improve your privacy. Since LTE Cleaner removes .log files, which well, log what you do.
 
-__LTE Cleaner is 100% free, open source, ad free, and deletes everything it claims to.__
-
-<details><summary>Notice</summary>
-May 13th, 2022: This project is temporaily on maintainence mode. @TheRedSpy15 is currently working on projects for my startup and all his coding time is going into that for now. He will accept just about any pull request. But no real updates for some time. This will not be as long of a break as last time. But probably a couple months
-April 4th, 2023: Google has permanently banned LTE Cleaner for "deceiving" users, read more here: https://github.com/TheRedSpy15/LTECleanerFOSS
-</details>
+__LTE Cleaner is 100% free, open source, no ads, and deletes everything it claims to.__
 
 ## Install
-[<img src="https://f-droid.org/badge/get-it-on.png"
-     alt="Get it on F-Droid (official version)"
-     height="90">](https://f-droid.org/packages/theredspy15.ltecleanerfoss)
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-    alt="Get it on Google Play (banned from Play Store)"
-    height="90">](https://play.google.com/store/apps/details?id=theredspy15.ltecleanerfoss)
-[Or build it yourself](#compiling-the-app)
+[Build it yourself](#compiling-the-app)
+[Original version](https://github.com/theredspy15/LTECleanerFOSS)
 
 ## Features
 - Clipboard clearing
-- Easy whitelists
+- Whitelist
+- Daily cleanup
 
 Cleans:
 - Empty folders
@@ -52,34 +44,39 @@ Cleans:
 - Caches
 - Advertisement folders
 
-Upcoming features:
-- (Fixing) Daily cleans (WorkManager?)
-- Clean SD card
-- Shortcuts
-- Community made filters
+To do list (not guaranteed because i'm busy irl):
+- Clean SD card (has to support minimal Android 10+, hopefully we can use StorageAccessFramework to make this work, but it might be a huge work that can take days, not possible with my spare time)
+- Shortcuts (should be simple to implement but i dont know if this should open the app and run cleanup, or run cleanup in background)
+- Custom (regex) blacklist (In theory should be simple, just need to add additional rule matching to cleaning system, but implementing the separate Activity might be a bit painful)
+- Regex whilelist
+- About screen (designing the UI would be really painful, and using external dependency will also significantly enlarge file size)
+- Root cleanups
+<!-- Scan then clean, instead of doing both at the same time (atleast on some devices that i tested on, it lags when there is so many files)-->
 
 ## Screenshots
-<img src="/Screenshots/Screenshot_20211110-234739_LTE Cleaner_framed.png" width="200">
-<!-- TODO: put new screenshots here (especially the one with some material design 3 changes) -->
+<img src="/Screenshots/ui_main.png" width="200">
+<img src="/Screenshots/ui_settings.png" width="200">
+<img src="/Screenshots/ui_wl.png" width="200">
 
-## Join the team
-  * Test the app with different devices
-  * Report issues and feature requests in the [issue tracker](https://github.com/mdp43140/LTECleanerFOSS/issues)
-  * Create a [Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
-  * Translate this app into more languages
+## The Team
+<a href="https://github.com/mdp43140/LTECleanerFOSS/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mdp43140/LTECleanerFOSS" />
+</a>
 
-Changes are first made on the master branch, then cherry picked on to the others
+Contribute to this project:
+- Test the app with different devices
+- Report issues and feature requests in the [issue tracker](/issues)
+- Create a [Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
+- Translate this app into more languages
 
 ## Compiling the app
 Just go to the project root directory, and run this command: ```./gradlew assembleRelease``` (if you're using Windows, change `./gradlew` to `gradlew.bat`)
 
-#### The Team
-<a href="https://github.com/TheRedSpy15/LTECleanerFOSS/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=TheRedSpy15/LTECleanerFOSS" />
-</a>
+## License
+[![GNU GPL v3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-</details>
-
-**Privacy Policy:** [Link](https://cdn.rawgit.com/TheRedSpy15/LTECleanerFOSS/d9522c76/privacy_policy.html)
-
-[![license](https://imgur.com/QQlcEVT.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+LTE Cleaner is Free Software: You can use, study, share, and improve it at
+will. Specifically you can redistribute and/or modify it under the terms of the
+[GNU General Public License](https://www.gnu.org/licenses/gpl.html) as
+published by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
