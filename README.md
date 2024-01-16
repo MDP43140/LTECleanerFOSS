@@ -9,7 +9,7 @@ Despite hitting 100k users, he is no longer able to devote time to it. Thank you
 </details>
 
 ## LTECleanerFOSS
-<img src="/Screenshots/1024pxHorizontal.png" width="300">
+<img src="Screenshots/1024pxHorizontal.png" width="300">
 
 ![Android CI](https://github.com/mdp43140/LTECleanerFOSS/workflows/Android%20CI/badge.svg)
 [![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
@@ -30,7 +30,7 @@ __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claim
 
 ## Install
 [Build it yourself](#compiling-the-app)
-[Original version](https://github.com/theredspy15/LTECleanerFOSS)
+[Original version (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
 
 ## Features
 - Clipboard clearing
@@ -54,9 +54,9 @@ To do list (not guaranteed because i'm busy irl):
 <!-- Scan then clean, instead of doing both at the same time (atleast on some devices that i tested on, it lags when there is so many files)-->
 
 ## Screenshots
-<img src="/Screenshots/ui_main.png" width="200">
-<img src="/Screenshots/ui_settings.png" width="200">
-<img src="/Screenshots/ui_wl.png" width="200">
+<img src="Screenshots/ui_main.png" width="200">
+<img src="Screenshots/ui_settings.png" width="200">
+<img src="Screenshots/ui_wl.png" width="200">
 
 ## The Team
 <a href="https://github.com/mdp43140/LTECleanerFOSS/graphs/contributors">
@@ -65,7 +65,7 @@ To do list (not guaranteed because i'm busy irl):
 
 Contribute to this project:
 - Test the app with different devices
-- Report issues and feature requests in the [issue tracker](/issues)
+- Report issues and feature requests in the [issue tracker](https://github.com/mdp43140/LTECleanerFOSS/issues)
 - Create a [Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 - Translate this app into more languages
 
