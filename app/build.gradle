@@ -8,12 +8,12 @@ plugins {
 }
 java {
 	toolchain {
-		languageVersion.set(JavaLanguageVersion.of(19))
+		languageVersion.set(JavaLanguageVersion.of(21))
 	}
 }
 android {
-	compileSdk 33
-	buildToolsVersion "33.0.2"
+	compileSdk 34
+	buildToolsVersion "34.0.0"
 	namespace "theredspy15.ltecleanerfoss"
 	defaultConfig {
 		applicationId android.namespace
@@ -40,11 +40,11 @@ android {
 		}
 	}
 	kotlinOptions {
-		jvmTarget = JavaVersion.VERSION_19.toString()
+		jvmTarget = JavaVersion.VERSION_21.toString()
 	}
 	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_19
-		targetCompatibility JavaVersion.VERSION_19
+		sourceCompatibility JavaVersion.VERSION_21
+		targetCompatibility JavaVersion.VERSION_21
 	}
 	buildFeatures {
 		viewBinding true
@@ -58,10 +58,10 @@ dependencies {
 	//implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 	//noinspection GradleCompatible
-	testImplementation 'junit:junit:4.13.2'
 	implementation "androidx.appcompat:appcompat:1.6.1"
-	implementation "com.google.android.material:material:1.9.0"
+	implementation "com.google.android.material:material:1.11.0"
 	implementation "androidx.gridlayout:gridlayout:1.1.0-beta01"
+	testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.1"
 
 	// AndroidJUnitRunner and JUnit Rules
 	androidTestImplementation 'androidx.test:runner:1.5.2'
@@ -71,7 +71,7 @@ dependencies {
 
 	//Preference
 	implementation "androidx.preference:preference-ktx:1.2.0"
-	implementation "androidx.work:work-runtime-ktx:2.8.1"
-	implementation "androidx.core:core-ktx:1.10.1"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation "androidx.work:work-runtime-ktx:2.9.0"
+	implementation "androidx.core:core-ktx:1.12.0"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
