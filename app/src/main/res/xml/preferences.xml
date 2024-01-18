@@ -11,7 +11,6 @@
 	<PreferenceCategory android:title="@string/scanner_category_title" app:iconSpaceReserved="false">
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="one_click"
 			android:persistent="true"
 			android:summary="@string/oneclick_sum"
@@ -19,7 +18,6 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="bootedcleanup"
 			android:persistent="true"
 			android:summary="@string/clean_boot_sum"
@@ -29,7 +27,6 @@
 			android:min="-1"
 			android:max="24"
 			android:defaultValue="-1"
-			android:textColor="#FFF"
 			android:key="cleanevery"
 			android:summary="@string/clean_hourly_sum"
 			android:title="@string/clean_hourly_title"
@@ -37,7 +34,6 @@
 			app:showSeekBarValue="true" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="clipboard"
 			android:persistent="true"
 			android:summary="@string/samsung_not_work"
@@ -45,7 +41,6 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="true"
-			android:textColor="#FFF"
 			android:key="auto_white"
 			android:persistent="true"
 			android:summary="@string/autowhite_sum"
@@ -55,7 +50,6 @@
 			android:min="1"
 			android:max="10"
 			android:defaultValue="1"
-			android:textColor="#FFF"
 			android:key="multirun"
 			android:summary="@string/double_check_sum"
 			android:title="@string/double_check_title"
@@ -65,7 +59,6 @@
 	<PreferenceCategory android:title="@string/filters_category_title" app:iconSpaceReserved="false">
 		<SwitchPreferenceCompat
 			android:defaultValue="true"
-			android:textColor="#FFF"
 			android:key="generic"
 			android:persistent="true"
 			android:summary="@string/generic_sum"
@@ -73,7 +66,6 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="aggressive"
 			android:persistent="true"
 			android:summary="@string/aggressive_sum"
@@ -81,14 +73,12 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="empty"
 			android:persistent="true"
 			android:title="@string/delete_empty_folders"
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:textColor="#FFF"
 			android:key="corpse"
 			android:persistent="true"
 			android:summary="@string/corpse_summary"
@@ -96,7 +86,6 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="true"
-			android:textColor="#FFF"
 			android:key="apk"
 			android:persistent="true"
 			android:summary="@string/apk_sum"
@@ -115,7 +104,6 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="true"
-			android:textColor="#FFF"
 			android:key="closebgapps"
 			android:persistent="true"
 			android:summary="@string/stopbgapps_sum"
@@ -131,21 +119,30 @@
 			android:key="dataExport"
 			android:summary="@string/data_export_sum"
 			app:iconSpaceReserved="false" />
-		<Preference
-			android:title="Crash test"
-			android:key="crash"
-			android:summary="Crash this app with ArithmeticException error"
-			app:iconSpaceReserved="false" />
 	</PreferenceCategory>
-	<PreferenceCategory android:title="@string/links_category_title" app:iconSpaceReserved="false">
+	<PreferenceCategory android:title="About" app:iconSpaceReserved="false">
 		<Preference
-			android:title="@string/privacy_policy"
-			android:key="privacyPolicy"
-			android:summary="@string/privacy_sum"
+			android:title="GitHub"
+			android:key="__link_gh"
+			android:summary="Checkout LTE Cleaner GitHub project!"
 			app:iconSpaceReserved="false">
 			<intent
 				android:action="android.intent.action.VIEW"
-				android:data="https://cdn.rawgit.com/TheRedSpy15/LTECleanerFOSS/d9522c76/privacy_policy.html" />
+				android:data="https://github.com/mdp43140/LTECleanerFOSS" />
 		</Preference>
+		<Preference
+			android:title="License"
+			android:key="__link_dl"
+			android:summary="Licensed under GPL v3 license"
+			app:iconSpaceReserved="false">
+			<intent
+				android:action="android.intent.action.VIEW"
+				android:data="https://github.com/mdp43140/LTECleanerFOSS/blob/master/LICENSE" />
+		</Preference>
+		<Preference
+			android:title="Crash test"
+			android:key="crashTest"
+			android:summary="Crash this app with ArithmeticException error"
+			app:iconSpaceReserved="false" />
 	</PreferenceCategory>
 </PreferenceScreen>
