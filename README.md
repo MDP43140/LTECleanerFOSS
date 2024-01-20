@@ -29,6 +29,7 @@ LTE Cleaner only aims to clean your phone by removing safe to delete files, whic
 __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claims to.__
 
 ## Install
+[GitHub](https://github.com/MDP43140/LTECleanerFOSS/files/13996640/app-release.zip)
 [Build it yourself](#compiling-the-app)
 [Original version (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
 
@@ -46,7 +47,6 @@ Cleans:
 
 To do list (not guaranteed because i'm busy irl):
 - Clean SD card (has to support minimal Android 10+, hopefully we can use StorageAccessFramework to make this work, but it might be a huge work that can take days, not possible with my spare time)
-- Shortcuts (should be simple to implement but i dont know if this should open the app and run cleanup, or run cleanup in background)
 - Custom (regex) blacklist (In theory should be simple, just need to add additional rule matching to cleaning system, but implementing the separate Activity might be a bit painful)
 - Regex whilelist
 - About screen (designing the UI would be really painful, and using external dependency will also significantly enlarge file size)
