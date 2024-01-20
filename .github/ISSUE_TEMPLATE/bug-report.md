@@ -1,6 +1,9 @@
 ---
 name: Bug report
 about: Create a report to help us improve
+title: ''
+labels: bug
+assignees: ''
 
 ---
 
@@ -21,10 +24,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Smartphone (please complete the following information):**
- - Device: [e.g. Pixel 5]
- - OS: [e.g. Android 12]
- - App Version: [e.g. 4.9.4]
- - Downloaded from: [e.g fdroid]
+ - Device: [e.g. Pixel 8]
+ - OS: [e.g. Android 13]
+ - App Version: [e.g. 4.9.9]
 
 **Additional context**
 Add any other context about the problem here.
