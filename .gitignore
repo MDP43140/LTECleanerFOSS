@@ -8,15 +8,13 @@ bin/
 gen/
 out/
 .gradle
-build/
 .signing
 local.properties
 proguard/
 *.log
-/*/build/
+/app/build/
 /*/local.properties
 /*/out
-/*/*/build
 /*/*/production
 captures/
 .navigation/
