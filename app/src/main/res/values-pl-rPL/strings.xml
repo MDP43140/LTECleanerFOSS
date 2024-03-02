@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE Cleaner</string>
 	<string name="delete_empty_folders">Usuń puste foldery</string>
-	<string name="aggressive_filter">Włącz agresywny filtr</string>
 	<string name="whitelist">Wykluczone</string>
 	<string name="privacy_policy">Polityka prywatności</string>
 	<string name="add_to_whitelist">Dodaj do wykluczonych</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Zwolnione: </string>
 	<string name="found">Znaleziono: </string>
 	<string name="auto_whitelist">Automatyczne wykluczenia</string>
-	<string name="reset_whitelist">Wyzerować listę wykluczeń?</string>
-	<string name="are_you_reset_whitelist">Czy na pewno chcesz wyzerować listę wykluczeń?</string>
 	<string name="reset">Wyzeruj</string>
 	<string name="delete_apk_files">Usuń pliki .apk</string>
 	<string name="status_idle">Status: bezczynny</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Status: Uruchomiony</string>
 	<string name="privacy_sum">Wyświetl politykę prywatności (odnośnik zewnętrzny)</string>
 	<string name="generic_sum">.tmp, .log, Dzienniki, dzienniki</string>
-	<string name="aggressive_sum">Zbyt wiele do wyświetlenia tutaj</string>
 	<string name="apk_sum">Pliki instalacji aplikacji dla Androida</string>
 	<string name="oneclick_sum">Po naciśnięciu przycisku czyszczenia nie jest wyświetlane okno dialogowe potwierdzenia</string>
 	<string name="autowhite_sum">Automatycznie wykryj foldery, które powinny zostać wykluczone</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Skanowanie nie powiodło się.</string>
 	<string name="are_you_sure_deletion">Czy na pewno? Nie można odtworzyć usuniętych plików</string>
 	<string name="are_you_sure_deletion_title">Potwierdź usuwanie</string>
-	<string name="aggressive_filter_what_title">Jaki jest agresywny filtr</string>
-	<string name="adds_the_following">Dodaje następujące filtry:</string>
 	<string name="samsung_not_work">Nie działa na urządzeniach firmy Samsung</string>
 	<string name="clear_clipboard">Wyczyść schowek</string>
 	<string name="double_check_sum">Skanowanie będzie ponownie uruchamiane za każdym razem, gdy znajdzie się coś z limitem dziesięciu skanów.</string>

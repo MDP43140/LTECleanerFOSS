@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">ניקוי LTE</string>
 	<string name="delete_empty_folders">מחיקת תיקיות ריקות</string>
-	<string name="aggressive_filter">הפעלת מסנן תוקפני</string>
 	<string name="whitelist">רשימה לבנה</string>
 	<string name="privacy_policy">מדיניות פרטיות</string>
 	<string name="add_to_whitelist">הוספה לרשימה הלבנה</string>
@@ -18,16 +17,12 @@
 	<string name="freed">פריד: </string>
 	<string name="found">נמצא: </string>
 	<string name="auto_whitelist">רשימה לבנה אוטומטית</string>
-	<string name="reset_whitelist">רשימה לבנה ריקה?</string>
-	<string name="are_you_reset_whitelist">אתם בטוחים שברצונכם לנקות את הרשימה הלבנה?</string>
 	<string name="reset">ניקוי</string>
 	<string name="delete_apk_files">מחיקת קובצי .apk</string>
 	<string name="status_idle">מצב: לא פעיל</string>
-	<string name="progress_0">0 %</string>
 	<string name="status_running">מצב: רץ</string>
 	<string name="privacy_sum">הצגת מדיניות הפרטיות (קישור חיצוני)</string>
 	<string name="generic_sum">.tmp, .log, יומנים, יומנים</string>
-	<string name="aggressive_sum">יש כאן יותר מדי לרשימה.</string>
 	<string name="apk_sum">קובצי התקנה עבור Android</string>
 	<string name="oneclick_sum">אין תיבת דו-שיח לאישור כאשר לוחצים על הלחצן \' ניקוי \'</string>
 	<string name="autowhite_sum">איתור תיקיות שיש להגן עליהן אוטומטית.</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">הסריקה נכשלה.</string>
 	<string name="are_you_sure_deletion">אתה בטוח? לא ניתן לשחזר קבצים שנמחקו</string>
 	<string name="are_you_sure_deletion_title">אישור מחיקה</string>
-	<string name="aggressive_filter_what_title">מה מסנן אגרסיבי עושה</string>
-	<string name="adds_the_following">מוסיף את המסננים הבאים:</string>
 	<string name="samsung_not_work">לא עובד על התקנים של דגימה</string>
 	<string name="clear_clipboard">ניקוי לוח הגזירים</string>
 	<string name="double_check_sum">יבצע הרצה מחדש של סריקה בכל פעם שמשהו נמצא עם מגבלה של 10 סריקות</string>

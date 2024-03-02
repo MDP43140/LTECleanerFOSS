@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTEクリーナー</string>
 	<string name="delete_empty_folders">空フォルダーの削除</string>
-	<string name="aggressive_filter">アグレッシブフィルターを有効にする</string>
 	<string name="whitelist">ホワイトリスト</string>
 	<string name="privacy_policy">プライバシー・ポリシー</string>
 	<string name="add_to_whitelist">ホワイトリストに追加</string>
@@ -18,16 +17,12 @@
 	<string name="freed">解放: </string>
 	<string name="found">見つかりました : </string>
 	<string name="auto_whitelist">自動ホワイトリスト</string>
-	<string name="reset_whitelist">ホワイトリストを空にしますか？</string>
-	<string name="are_you_reset_whitelist">ホワイトリストを消去してよろしいですか？</string>
 	<string name="reset">クリア</string>
 	<string name="delete_apk_files">.apk ファイルの削除</string>
 	<string name="status_idle">状況: アイドル</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">状況: 実行中</string>
 	<string name="privacy_sum">プライバシー・ポリシーの表示 (外部リンク)</string>
 	<string name="generic_sum">.tmp, .log, Logs, logs</string>
-	<string name="aggressive_sum">ここには表示できないほど多数の条件</string>
 	<string name="apk_sum">Androidのインストーラーファイル</string>
 	<string name="oneclick_sum">クリーン・ボタンが押されたときに確認ダイアログを表示しません。</string>
 	<string name="autowhite_sum">保護すべきフォルダーを自動的に検出する</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">スキャンに失敗しました。</string>
 	<string name="are_you_sure_deletion">- 確かか ? 削除されたファイルを復元する</string>
 	<string name="are_you_sure_deletion_title">削除の確認</string>
-	<string name="aggressive_filter_what_title">アグレッシブフィルターの機能</string>
-	<string name="adds_the_following">次のフィルターを追加します。</string>
 	<string name="samsung_not_work">サムソン・デバイスでは機能しません</string>
 	<string name="clear_clipboard">クリップボードをクリア</string>
 	<string name="double_check_sum">スキャンごとに 10 個のスキャンの制限が検出されるたびにスキャンを再実行します</string>

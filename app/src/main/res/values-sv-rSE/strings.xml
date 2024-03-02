@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE-rensning</string>
 	<string name="delete_empty_folders">Ta bort tomma mappar</string>
-	<string name="aggressive_filter">Aktivera aggressivt filter</string>
 	<string name="whitelist">Vitlista</string>
 	<string name="privacy_policy">Privatpolicy</string>
 	<string name="add_to_whitelist">Lägg till i vitlista</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Hittade: </string>
 	<string name="auto_whitelist">Automatisk vitlista</string>
-	<string name="reset_whitelist">Tom whitelist?</string>
-	<string name="are_you_reset_whitelist">Är du säker på att du vill rensa vitlistan?</string>
 	<string name="reset">Undan!</string>
 	<string name="delete_apk_files">Ta bort .apk-filer</string>
 	<string name="status_idle">Status: Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Status: Kör</string>
 	<string name="privacy_sum">Visa integritetspolicyn (extern länk)</string>
 	<string name="generic_sum">.tmp, .log, Loggar, loggar</string>
-	<string name="aggressive_sum">För mycket att lista här</string>
 	<string name="apk_sum">Installationsfiler för android</string>
 	<string name="oneclick_sum">Ingen bekräftelsedialogruta när ren knapp trycks ned</string>
 	<string name="autowhite_sum">Detektera mappar som ska skyddas automatiskt</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Skanningen misslyckades.</string>
 	<string name="are_you_sure_deletion">Är du säker på det? Borttagna filer kan inte återställas</string>
 	<string name="are_you_sure_deletion_title">Bekräfta borttag</string>
-	<string name="aggressive_filter_what_title">Vilket aggressivt filter gör</string>
-	<string name="adds_the_following">Lägger till följande filter:</string>
 	<string name="samsung_not_work">Fungs inte på Samsung-enheter</string>
 	<string name="clear_clipboard">Rensa klippbordet</string>
 	<string name="double_check_sum">Will Rerun scan varje gång något hittas med en gräns på tio skanningar</string>

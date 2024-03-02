@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">ตัวล้างข้อมูล LTE</string>
 	<string name="delete_empty_folders">ลบโฟลเดอร์ว่าง</string>
-	<string name="aggressive_filter">เปิดใช้งานตัวกรองที่รุนแรง</string>
 	<string name="whitelist">รายการที่อนุญาต</string>
 	<string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
 	<string name="add_to_whitelist">เพิ่มใน white list</string>
@@ -18,16 +17,12 @@
 	<string name="freed">อิสระ: </string>
 	<string name="found">พบ: </string>
 	<string name="auto_whitelist">รายการไวท์ไวท์</string>
-	<string name="reset_whitelist">White list ว่างหรือไม่?</string>
-	<string name="are_you_reset_whitelist">คุณแน่ใจว่าต้องการเคลียร์ white listหรือไม่?</string>
 	<string name="reset">เคลียร์</string>
 	<string name="delete_apk_files">ลบไฟล์. Apk</string>
 	<string name="status_idle">สถานะ: ไม่ได้ทำงาน</string>
-	<string name="progress_0">0 %</string>
 	<string name="status_running">สถานะ: กำลังรัน</string>
 	<string name="privacy_sum">ดูนโยบายความเป็นส่วนตัว (ลิงก์ภายนอก)</string>
 	<string name="generic_sum">. Tmp,. Log, บันทึกการทำงาน, บันทึกการทำงาน</string>
-	<string name="aggressive_sum">มากเกินกว่าจะแสดงที่นี่</string>
 	<string name="apk_sum">ไฟล์โปรแกรมติดตั้งสำหรับ android</string>
 	<string name="oneclick_sum">ไม่มีไดอะล็อกการยืนยันเมื่อกดปุ่ม clean</string>
 	<string name="autowhite_sum">ตรวจพบโฟลเดอร์ที่ควรถูกป้องกันแบบอัตโนมัติ</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">การสแกนล้มเหลว</string>
 	<string name="are_you_sure_deletion">คุณแน่ใจนะ ไฟล์ที่ลบไม่สามารถเรียกคืนได้</string>
 	<string name="are_you_sure_deletion_title">ยืนยันการลบ</string>
-	<string name="aggressive_filter_what_title">ตัวกรองที่รุนแรงทำอะไร</string>
-	<string name="adds_the_following">เพิ่มตัวกรองต่อไปนี้:</string>
 	<string name="samsung_not_work">ใช้ไม่ได้กับอุปกรณ์ samsung</string>
 	<string name="clear_clipboard">ลบคลิปบอร์ด</string>
 	<string name="double_check_sum">จะทำการสแกนอีกครั้งในแต่ละครั้งที่พบบางสิ่งที่มีการจำกัดสิบครั้ง</string>

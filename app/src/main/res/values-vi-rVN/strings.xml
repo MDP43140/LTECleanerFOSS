@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">Trình dọn dẹp LTE</string>
 	<string name="delete_empty_folders">Xoá các thư mục rỗng</string>
-	<string name="aggressive_filter">Kích hoạt bộ lọc mạnh</string>
 	<string name="whitelist">Trắng</string>
 	<string name="privacy_policy">Chính sách riêng</string>
 	<string name="add_to_whitelist">Thêm vào danh sách trắng</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Giải phóng: </string>
 	<string name="found">Tìm thấy: </string>
 	<string name="auto_whitelist">Auto Whitelist</string>
-	<string name="reset_whitelist">Một người theo chủ nghĩa trắng rỗng?</string>
-	<string name="are_you_reset_whitelist">Anh có chắc là muốn dọn sạch trắng không?</string>
 	<string name="reset">Xóa</string>
 	<string name="delete_apk_files">Xoá tập tin .apk</string>
 	<string name="status_idle">Trạng thái: Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Trạng thái: Chạy</string>
 	<string name="privacy_sum">Xem chính sách bảo mật (liên kết bên ngoài)</string>
 	<string name="generic_sum">.tmp, .log, Logs, nhật ký</string>
-	<string name="aggressive_sum">Quá nhiều để liệt kê ở đây</string>
 	<string name="apk_sum">Tập tin trình cài đặt cho android</string>
 	<string name="oneclick_sum">Không có hộp thoại xác nhận khi bấm nút sạch</string>
 	<string name="autowhite_sum">Phát hiện thư mục cần được bảo vệ tự động</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Quét không thành công.</string>
 	<string name="are_you_sure_deletion">Anh chắc chứ? Không thể khôi phục tập tin bị xóa</string>
 	<string name="are_you_sure_deletion_title">Xác nhận xóa</string>
-	<string name="aggressive_filter_what_title">Những gì bộ lọc tích cực</string>
-	<string name="adds_the_following">Thêm bộ lọc sau:</string>
 	<string name="samsung_not_work">Không làm việc trên các thiết bị samsung</string>
 	<string name="clear_clipboard">Xóa bảng tạm</string>
 	<string name="double_check_sum">Sẽ chạy lại quét mỗi lần thứ gì đó được tìm thấy với giới hạn 10 quét</string>

@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE Cleaner</string>
 	<string name="delete_empty_folders">Διαγραφή κενών φακέλων</string>
-	<string name="aggressive_filter">Ενεργοποίηση επιθετικού φίλτρου</string>
 	<string name="whitelist">-Whitelist</string>
 	<string name="privacy_policy">Πολιτική απορρήτου:</string>
 	<string name="add_to_whitelist">Προσθήκη στη λίστα επιτρεπών</string>
@@ -18,16 +17,12 @@
 	<string name="freed">-Ναι. </string>
 	<string name="found">Βρέθηκε: </string>
 	<string name="auto_whitelist">Αυτόματη Whitelist</string>
-	<string name="reset_whitelist">-Άδειο λευκό;</string>
-	<string name="are_you_reset_whitelist">Είστε σίγουροι ότι θέλετε να καθαρίσετε τη λευκή λίστα?</string>
 	<string name="reset">\' Εκκαθάριση</string>
 	<string name="delete_apk_files">Διαγραφή αρχείων .apk</string>
 	<string name="status_idle">Κατάσταση: Σε αδράνεια</string>
-	<string name="progress_0">0 %</string>
 	<string name="status_running">Κατάσταση: Εκτέλεση</string>
 	<string name="privacy_sum">Προβολή της πολιτικής απορρήτου (εξωτερική διασύνδεση)</string>
 	<string name="generic_sum">.tmp, .log, Logs, logs</string>
-	<string name="aggressive_sum">Πολλή λίστα εδώ.</string>
 	<string name="apk_sum">Αρχεία του προγράμματος εγκατάστασης για το Android</string>
 	<string name="oneclick_sum">Δεν υπάρχει παράθυρο επιβεβαίωσης όταν πατηθεί το κουμπί.</string>
 	<string name="autowhite_sum">Εντοπισμός φακέλων που πρέπει να προστατεύονται αυτόματα</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Η Σάρτη απέτυχε.</string>
 	<string name="are_you_sure_deletion">-Σίγουρα; Δεν είναι δυνατή η επαναφορά των αρχείων</string>
 	<string name="are_you_sure_deletion_title">Επιβεβαίωση διαγραφής</string>
-	<string name="aggressive_filter_what_title">Τι κάνει το φίλτρο;</string>
-	<string name="adds_the_following">Προσθέτει τα ακόλουθα φίλτρα:</string>
 	<string name="samsung_not_work">Δεν λειτουργεί σε συσκευές samsung</string>
 	<string name="clear_clipboard">Καθαρό πρόχειρο.</string>
 	<string name="double_check_sum">Θα εκτελείται σάρωση κάθε φορά που υπάρχει ένα όριο δέκα σαρώσεων.</string>

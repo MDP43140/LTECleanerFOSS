@@ -8,6 +8,7 @@ import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.ClipData
 import android.content.ClipboardManager
+import android.content.DialogInterface
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -27,7 +28,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
-import android.content.DialogInterface
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.FileScanner
 import theredspy15.ltecleanerfoss.CommonFunctions.convertSize

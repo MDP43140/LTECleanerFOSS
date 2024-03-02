@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE Cleaner</string>
 	<string name="delete_empty_folders">Elimina cartelle vuote</string>
-	<string name="aggressive_filter">Abilita filtro aggressivo</string>
 	<string name="whitelist">Esclusioni</string>
 	<string name="privacy_policy">Politica sulla privacy</string>
 	<string name="add_to_whitelist">Aggiungi alla lista delle esclusioni</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Liberato: </string>
 	<string name="found">Trovato: </string>
 	<string name="auto_whitelist">Lista delle esclusioni automatica</string>
-	<string name="reset_whitelist">Rimuovere tutte le esclusioni?</string>
-	<string name="are_you_reset_whitelist">Sei sicuro di voler rimuovere tutte le esclusioni?</string>
 	<string name="reset">Pulisci</string>
 	<string name="delete_apk_files">Elimina i file .apk</string>
 	<string name="status_idle">Stato: Inattivo</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Stato: In esecuzione</string>
 	<string name="privacy_sum">Visualizza la normativa sulla privacy (link esterno)</string>
 	<string name="generic_sum">.tmp, .log, Logs, log</string>
-	<string name="aggressive_sum">Troppi elementi per elencarli qui</string>
 	<string name="apk_sum">File di installazione per Android</string>
 	<string name="oneclick_sum">Non mostrare alcun messaggio di conferma quando viene premuto il pulsante Pulizia</string>
 	<string name="autowhite_sum">Rileva automaticamente le cartelle da proteggere</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Scansione non riuscita.</string>
 	<string name="are_you_sure_deletion">Sei sicuro? I file cancellati non possono essere ripristinati</string>
 	<string name="are_you_sure_deletion_title">Conferma eliminazione</string>
-	<string name="aggressive_filter_what_title">Funzioni del filtro aggressivo</string>
-	<string name="adds_the_following">Aggiunge i seguenti filtri:</string>
 	<string name="samsung_not_work">Non funziona sui dispositivi Samsung</string>
 	<string name="clear_clipboard">Pulisci gli appunti</string>
 	<string name="double_check_sum">La scansione verrà ripetuta ogni volta che qualcosa viene trovato, fino a un massimo di dieci scansioni</string>

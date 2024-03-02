@@ -7,7 +7,6 @@
 	<string name="app_name">Pembersih LTE</string>
 	<string name="delete_empty_files">Hapus file kosong</string>
 	<string name="delete_empty_folders">Hapus folder kosong</string>
-	<string name="aggressive_filter">Aktifkan filter agresif</string>
 	<string name="blacklist">Daftar hitam</string>
 	<string name="whitelist">Daftar putih</string>
 	<string name="privacy_policy">Kebijakan Privasi</string>
@@ -27,7 +26,6 @@
 	<string name="status_running">Status: Berjalan</string>
 	<string name="privacy_sum">Lihat kebijakan privasi (link eksternal)</string>
 	<string name="generic_sum">.tmp, .log, Logs, log</string>
-	<string name="aggressive_sum">Terlalu banyak daftar untuk dicantumkan di sini</string>
 	<string name="apk_sum">File installer untuk android</string>
 	<string name="oneclick_sum">Tidak ada dialog konfirmasi ketika tombol bersihkan ditekan</string>
 	<string name="autowhite_sum">Mendeteksi folder yang harus dilindungi secara otomatis</string>
@@ -50,8 +48,6 @@
 	<string name="failed_scan">Pemindaian gagal.</string>
 	<string name="are_you_sure_deletion">Apakah Anda yakin? Berkas yang dihapus tidak dapat dipulihkan</string>
 	<string name="are_you_sure_deletion_title">Konfirmasi Penghapusan</string>
-	<string name="aggressive_filter_what_title">Apa yang dilakukan filter agresif</string>
-	<string name="adds_the_following">Tambahkan filter berikut:</string>
 	<string name="samsung_not_work">Tidak bekerja pada perangkat samsung</string>
 	<string name="clear_clipboard">Bersihkan papan klip</string>
 	<string name="double_check_sum">Berapa kali memindai ulang setiap kali sesuatu ditemukan</string>

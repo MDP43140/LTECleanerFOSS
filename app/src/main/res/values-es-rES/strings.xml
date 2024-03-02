@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">Limpiador LTE</string>
 	<string name="delete_empty_folders">Eliminar carpetas vacías</string>
-	<string name="aggressive_filter">Activar filtro agresivo</string>
 	<string name="whitelist">Lista blanca</string>
 	<string name="privacy_policy">Política de privacidad</string>
 	<string name="add_to_whitelist">Añadir a la lista blanca</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Liberado: </string>
 	<string name="found">Encontrado: </string>
 	<string name="auto_whitelist">Lista blanca automática</string>
-	<string name="reset_whitelist">¿Vaciar lista blanca?</string>
-	<string name="are_you_reset_whitelist">¿Está seguro de que desea eliminar la lista blanca?</string>
 	<string name="reset">Limpiar</string>
 	<string name="delete_apk_files">Eliminar archivos .apk</string>
 	<string name="status_idle">Estado: Inactivo</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Estado: En ejecución</string>
 	<string name="privacy_sum">Consultar la política de privacidad (enlace externo)</string>
 	<string name="generic_sum">.tmp, .log, Registros, registros</string>
-	<string name="aggressive_sum">Demasiado para listar aquí</string>
 	<string name="apk_sum">Archivos de instalación para Android</string>
 	<string name="oneclick_sum">No mostrar diálogo de confirmación al pulsar el botón de limpieza</string>
 	<string name="autowhite_sum">Detectar carpetas que deben protegerse automáticamente</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Escaneo fallido.</string>
 	<string name="are_you_sure_deletion">¿Está seguro? Los archivos eliminados no se pueden restaurar</string>
 	<string name="are_you_sure_deletion_title">Confirmar eliminación</string>
-	<string name="aggressive_filter_what_title">¿Qué hace el filtro agresivo?</string>
-	<string name="adds_the_following">Añade los siguientes filtros:</string>
 	<string name="samsung_not_work">No funciona en dispositivos Samsung</string>
 	<string name="clear_clipboard">Limpiar portapapeles</string>
 	<string name="double_check_sum">Se volverá a escanear cada vez que se encuentre algo, limitado a diez escaneos</string>

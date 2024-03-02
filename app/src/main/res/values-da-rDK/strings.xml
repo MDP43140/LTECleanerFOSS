@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE Cleaner</string>
 	<string name="delete_empty_folders">Slet tomme foldere</string>
-	<string name="aggressive_filter">Aktivér aggressivt filter</string>
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Privacy Policy</string>
 	<string name="add_to_whitelist">Tilføj til hvidliste</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Fundet: </string>
 	<string name="auto_whitelist">Auto-hvidliste</string>
-	<string name="reset_whitelist">Tom hvidliste?</string>
-	<string name="are_you_reset_whitelist">Er du sikker på, at du vil rydde hvidlisten?</string>
 	<string name="reset">Ryd</string>
 	<string name="delete_apk_files">Slet .apk-filer</string>
 	<string name="status_idle">Status: Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Status: Udførelse</string>
 	<string name="privacy_sum">Vis fortrolighedspolitikken (eksternt link)</string>
 	<string name="generic_sum">.tmp, .log, Logs, logge</string>
-	<string name="aggressive_sum">Der er for meget at liste her</string>
 	<string name="apk_sum">Installer-filer til android</string>
 	<string name="oneclick_sum">Ingen bekræftelsesdialogboks, når der trykkes på knappen</string>
 	<string name="autowhite_sum">Registrér foldere, der skal beskyttes automatisk</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Scanning mislykkedes.</string>
 	<string name="are_you_sure_deletion">-Er du sikker? Slettede filer kan ikke gendannes</string>
 	<string name="are_you_sure_deletion_title">Bekræft sletning</string>
-	<string name="aggressive_filter_what_title">Hvilket aggressivt filter gør</string>
-	<string name="adds_the_following">Tilføjer følgende filtre:</string>
 	<string name="samsung_not_work">Virker ikke på samsung-udstyr</string>
 	<string name="clear_clipboard">Ryd udklipsholder</string>
 	<string name="double_check_sum">Udfør scanningen igen, hver gang noget er fundet med en grænse på ti scanninger</string>

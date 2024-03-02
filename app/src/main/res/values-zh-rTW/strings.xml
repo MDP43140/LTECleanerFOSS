@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE 清除程式</string>
 	<string name="delete_empty_folders">刪除空資料夾</string>
-	<string name="aggressive_filter">啟用侵略過濾器</string>
 	<string name="whitelist">白名單</string>
 	<string name="privacy_policy">隱私權原則</string>
 	<string name="add_to_whitelist">新增至白名單</string>
@@ -18,16 +17,12 @@
 	<string name="freed">已釋放： </string>
 	<string name="found">找到： </string>
 	<string name="auto_whitelist">自動白名單</string>
-	<string name="reset_whitelist">空白白名單？</string>
-	<string name="are_you_reset_whitelist">您確定要清除白名單嗎？</string>
 	<string name="reset">清除</string>
 	<string name="delete_apk_files">刪除 .apk 檔</string>
 	<string name="status_idle">Status： Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">狀態：執行中</string>
 	<string name="privacy_sum">檢視隱私權原則（外部鏈結）</string>
 	<string name="generic_sum">.tmp、 .log、日誌、日誌</string>
-	<string name="aggressive_sum">這裡列出太多</string>
 	<string name="apk_sum">Android 的安裝程式檔案</string>
 	<string name="oneclick_sum">按下清潔按鈕時沒有確認對話框</string>
 	<string name="autowhite_sum">偵測應該自動保護的資料夾</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">掃描失敗。</string>
 	<string name="are_you_sure_deletion">你確定嗎？ 無法還原已刪除的檔案</string>
 	<string name="are_you_sure_deletion_title">確認刪除</string>
-	<string name="aggressive_filter_what_title">有哪些侵略性的過濾器</string>
-	<string name="adds_the_following">新增下列過濾器：</string>
 	<string name="samsung_not_work">在 samsung 裝置上不起作用</string>
 	<string name="clear_clipboard">清除剪貼簿</string>
 	<string name="double_check_sum">每次找到有 10 個掃描限制的項目時，都會重新執行掃描</string>

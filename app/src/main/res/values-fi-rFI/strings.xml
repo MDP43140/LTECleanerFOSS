@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE-Cleaner</string>
 	<string name="delete_empty_folders">Poista tyhjä kansio</string>
-	<string name="aggressive_filter">Ota käyttöön aggressiivinen suodatin</string>
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Yksityisyyden suoja</string>
 	<string name="add_to_whitelist">Lisää valkoiseen luetteloon</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Löytyi: </string>
 	<string name="auto_whitelist">Auto-Whitelist</string>
-	<string name="reset_whitelist">Tyhjä valkoisistako?</string>
-	<string name="are_you_reset_whitelist">Oletko varma, että haluat tyhjentää valkoisten?</string>
 	<string name="reset">Kirkas</string>
 	<string name="delete_apk_files">Poista .apk-tiedostot</string>
 	<string name="status_idle">Tila: tila</string>
-	<string name="progress_0">0 %</string>
 	<string name="status_running">Tila: käytössä</string>
 	<string name="privacy_sum">Näytä tietosuojakäytäntö (ulkoinen linkki)</string>
 	<string name="generic_sum">.tmp, .log, Logs, lokit</string>
-	<string name="aggressive_sum">Liian paljon listattavaksi.</string>
 	<string name="apk_sum">Android-tiedostot</string>
 	<string name="oneclick_sum">Ei vahvistusta valintaikkunassa, kun puhdas painike on painettuna</string>
 	<string name="autowhite_sum">Tunnisteita, jotka on suojattava automaattisesti</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Scan epäonnistui.</string>
 	<string name="are_you_sure_deletion">Oletko varma? Tiedostoja ei voi palauttaa</string>
 	<string name="are_you_sure_deletion_title">Vahvasta poisto</string>
-	<string name="aggressive_filter_what_title">Mikä aggressiivinen suodatin</string>
-	<string name="adds_the_following">Lisää seuraavat suodattimet:</string>
 	<string name="samsung_not_work">Se ei toimi samsungin laitteissa.</string>
 	<string name="clear_clipboard">Tyhjennä kirjoituslevy</string>
 	<string name="double_check_sum">Skannaan joka kerta, kun jotain löytyy 10 skannauksesta.</string>

@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">LTE 세척기</string>
 	<string name="delete_empty_folders">빈 폴더 삭제하기</string>
-	<string name="aggressive_filter">공격적 필터 사용</string>
 	<string name="whitelist">화이트리스트</string>
 	<string name="privacy_policy">개인정보 보호정책</string>
 	<string name="add_to_whitelist">화이트리스트에 추가</string>
@@ -18,16 +17,12 @@
 	<string name="freed">프라이드: </string>
 	<string name="found">실측치: </string>
 	<string name="auto_whitelist">자동 화이트리스트</string>
-	<string name="reset_whitelist">비어 있는 화이트리스트?</string>
-	<string name="are_you_reset_whitelist">화이트리스트를 지우시겠습니까?</string>
 	<string name="reset">지우기</string>
 	<string name="delete_apk_files">.apk 파일 삭제하기</string>
 	<string name="status_idle">상태: 유휴</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">상태: 실행 중</string>
 	<string name="privacy_sum">개인정보 보호 정책 보기 (외부 링크)</string>
 	<string name="generic_sum">.tmp, .log, 로그, 로그</string>
-	<string name="aggressive_sum">여기에 나열하기에 너무 많음</string>
 	<string name="apk_sum">안드로이드용 설치 프로그램 파일</string>
 	<string name="oneclick_sum">정리 단추를 누를 때 확인 대화 상자 없음</string>
 	<string name="autowhite_sum">자동으로 보호해야 하는 폴더 발견</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">스캔이 실패했습니다.</string>
 	<string name="are_you_sure_deletion">확실해요? 삭제된 파일을 복원할 수 없음</string>
 	<string name="are_you_sure_deletion_title">삭제 확인</string>
-	<string name="aggressive_filter_what_title">어떤 공격적인 필터가</string>
-	<string name="adds_the_following">다음 필터를 추가합니다.</string>
 	<string name="samsung_not_work">삼성장치에서 작동하지 않는다</string>
 	<string name="clear_clipboard">클립보드 지우기</string>
 	<string name="double_check_sum">스캔이 10개 제한된 것으로 발견될 때마다 스캔을 다시 실행합니다.</string>

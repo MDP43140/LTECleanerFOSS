@@ -6,7 +6,6 @@
 <resources>
 	<string name="app_name">Curăţitor</string>
 	<string name="delete_empty_folders">Ştergere foldere goale</string>
-	<string name="aggressive_filter">Activare filtru agresiv</string>
 	<string name="whitelist">Listă albă</string>
 	<string name="privacy_policy">Politică de confidenţialitate</string>
 	<string name="add_to_whitelist">Adăugare la lista albă</string>
@@ -18,16 +17,12 @@
 	<string name="freed">Eliberat: </string>
 	<string name="found">Găsite: </string>
 	<string name="auto_whitelist">Whitelist auto</string>
-	<string name="reset_whitelist">Listă albă goală?</string>
-	<string name="are_you_reset_whitelist">Sunteţi sigur că doriţi să curăţaţi lista albă?</string>
 	<string name="reset">Clar</string>
 	<string name="delete_apk_files">Ştergere fişiere .apk</string>
 	<string name="status_idle">Stare: Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Stare: Rularea</string>
 	<string name="privacy_sum">Vizualizare politică de confidenţialitate (legătură externă)</string>
 	<string name="generic_sum">.tmp, .log, Logs, istorice</string>
-	<string name="aggressive_sum">Prea mult pentru a lista aici</string>
 	<string name="apk_sum">Fişiere de instalare pentru android</string>
 	<string name="oneclick_sum">Nu există dialog de confirmare când este apăsat butonul curat</string>
 	<string name="autowhite_sum">Detectarea folderelor care ar trebui protejate automat</string>
@@ -40,8 +35,6 @@
 	<string name="failed_scan">Scanare eşuată.</string>
 	<string name="are_you_sure_deletion">Sunteţi sigur? Fişierele şterse nu pot fi restaurate</string>
 	<string name="are_you_sure_deletion_title">Confirmă ștergerea</string>
-	<string name="aggressive_filter_what_title">Ce filtru agresiv face</string>
-	<string name="adds_the_following">Adaugă următoarele filtre:</string>
 	<string name="samsung_not_work">Nu funcţionează pe dispozitive samsung</string>
 	<string name="clear_clipboard">Curăţare clipboard</string>
 	<string name="double_check_sum">Va rula din nou scanarea de fiecare dată când se găseşte ceva cu o limită de zece scanări</string>
