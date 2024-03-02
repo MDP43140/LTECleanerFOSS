@@ -12,19 +12,20 @@ import android.graphics.Color
 import android.widget.TextView
 import androidx.preference.PreferenceManager
 import theredspy15.ltecleanerfoss.controllers.MainActivity
+import theredspy15.ltecleanerfoss.controllers.BlacklistActivity
 import theredspy15.ltecleanerfoss.controllers.WhitelistActivity
-import theredspy15.ltecleanerfoss.databinding.ActivityMainBinding
 import java.io.File
-import java.util.*
+import java.util.Locale
 class FileScanner(private val path: File, context: Context){
 	// TODO: Ability to clean SD Card? Already tried SAF implementation, but its really hard, and soon i realized it has storage access restrictions: https://developer.android.com/training/data-storage/shared/documents-files#document-tree-access-restrictions
 	private var prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-	private var context: Context? = null
-	private var res: Resources? = null
-	private var gui: ActivityMainBinding? = null
+	private val context = context
+	private var res: Resources = context.resources
+	private var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
 	private var filesRemoved = 0
 	private var kilobytesTotal: Long = 0
 	private var delete = false
+	private var emptyFile = true
 	private var emptyDir = false
 	private var autoWhite = true
 	private var corpse = false
@@ -43,15 +44,13 @@ class FileScanner(private val path: File, context: Context){
 		val files = parentDirectory.listFiles()
 		if (files != null) {
 			for (file in files) {
-				if (file != null) { // hopefully to fix crashes on a very limited number of devices.
-					if (!isWhiteListed(file)) { // won't touch if whitelisted
-						if (file.isDirectory) { // folder
-							if (autoWhite) { // if auto whitelist enabled
-								if (!autoWhiteList(file)) inFiles.add(file) // if file is not in autowhitelist index, add it (TODO: Allow custom whitelist regexes (custom folder/file name))
-							} else inFiles.add(file) // add folder itself
-							inFiles.addAll(getListFiles(file)) // add contents to returned list
-						} else inFiles.add(file) // add file
-					}
+				if (file != null && !isWhiteListed(file)) { // hopefully to fix crashes on a very limited number of devices && won't touch if whitelisted
+					if (file.isDirectory) { // folder
+						if (autoWhite) { // if auto whitelist enabled
+							if (!autoWhiteList(file)) inFiles.add(file) // if file is not in autowhitelist index, add it
+						} else inFiles.add(file) // add folder itself
+						inFiles.addAll(getListFiles(file)) // add contents to returned list
+					} else inFiles.add(file) // add file
 				}
 			}
 		}
@@ -59,15 +58,23 @@ class FileScanner(private val path: File, context: Context){
 	}
 
 	/**
-	 * Runs a for each loop through the white list, and compares the path of the file to each path in
+	 * Runs a for each loop through the black/white list, and compares the path of the file to each path in
 	 * the list
 	 * @param file file to check if in the whitelist
-	 * @return true if is the file is in the white list, false if not
+	 * @return true if is the file is in the black/white list, false if not
 	 */
 	private fun isWhiteListed(file: File): Boolean {
-		for (path in WhitelistActivity.getWhiteList(prefs)) when {
-			path.equals(file.absolutePath, ignoreCase = true) ||
-					path.equals(file.name, ignoreCase = true) -> return true
+		for (path in WhitelistActivity.getWhitelistOn(prefs)) when {
+			path.equals(file.absolutePath) ||
+			path.equals(file.name, ignoreCase = true) -> return true
+		}
+		return false
+	}
+	private fun isBlackListed(file: File): Boolean {
+		for (path in BlacklistActivity.getBlacklistOn(prefs)){
+			val pattern = path!!.toRegex()
+			if (file.absolutePath.matches(pattern) ||
+					file.name.matches(pattern)) return true
 		}
 		return false
 	}
@@ -100,43 +107,44 @@ class FileScanner(private val path: File, context: Context){
 	/**
 	 * Runs as for each loop through the filter, and checks if the file matches any filters
 	 * @param file file to check
-	 * @return true if the file's extension is in the filter, false otherwise
+	 * @return true if the file matches certain rules, otherwise false
 	 */
-	fun filter(file: File?): Boolean {
-		if (file != null) {
-			try {
-				if (
-						// corpse checking - TODO: needs improvement! (Unsafe use of a nullable receiver of type File?)
-						// Android/Data/[file != .nomedia]
-					corpse &&
-					file.parentFile != null &&
-					file.parentFile.parentFile != null &&
-					file.parentFile.name == "data" &&
-					file.parentFile.parentFile.name == "Android" &&
-					file.name != ".nomedia" &&
-					!installedPackages.contains(file.name) ||
-						// empty folder
-						emptyDir &&
-						isDirectoryEmpty(file)
-				) return true
+	fun filter(file: File): Boolean {
+		try {
+			if (
+				// corpse checking
+				// Android/Data/[file != .nomedia]
+				corpse &&
+				file.parentFile!!.name == "data" &&
+				file.parentFile!!.parentFile!!.name == "Android" &&
+				file.name != ".nomedia" &&
+				!installedPackages.contains(file.name) ||
+				// empty file
+				emptyFile &&
+				isFileEmpty(file) ||
+				// empty folder
+				emptyDir &&
+				isDirectoryEmpty(file) ||
+				// blacklist (targeted to get deleted)
+				isBlackListed(file)
+			) return true
 
-				// file
-				val filterIterator = filters.iterator()
-				while (filterIterator.hasNext()) {
-					val filter = filterIterator.next()
-					if (file.absolutePath.lowercase(Locale.getDefault()).matches(filter.lowercase(Locale.getDefault()).toRegex()))
-						return true
-				}
-			} catch (e: NullPointerException) {
-				return false
+			// file
+			val filterIterator = filters.iterator()
+			while (filterIterator.hasNext()) {
+				val filter = filterIterator.next()
+				if (file.absolutePath.lowercase(Locale.getDefault()).matches(filter.lowercase(Locale.getDefault()).toRegex()))
+					return true
 			}
+		} catch (e: NullPointerException) {
+			return false
 		}
 		return false // not empty folder or file in filter
 	}
 
 	private val installedPackages: List<String>
 		get() {
-			val pm = context!!.packageManager
+			val pm = context.packageManager
 			val pkgs = pm.getInstalledApplications(PackageManager.GET_META_DATA)
 			val pkgsStr: MutableList<String> = ArrayList()
 			for (pkg in pkgs) {
@@ -152,7 +160,10 @@ class FileScanner(private val path: File, context: Context){
 	 * @return true if empty, false if containing a file(s)
 	 */
 	private fun isDirectoryEmpty(directory: File): Boolean {
-		return directory.isDirectory && directory.list() != null && directory.list().isEmpty()
+		return directory.isDirectory && directory.list()!!.isEmpty()
+	}
+	private fun isFileEmpty(file: File): Boolean {
+		return !file.isDirectory && file.length() == 0L
 	}
 
 	/**
@@ -160,17 +171,12 @@ class FileScanner(private val path: File, context: Context){
 	 * 'generic', 'aggressive', and 'apk' should be assigned by calling preferences.getBoolean()
 	 */
 	@SuppressLint("ResourceType")
-	fun setUpFilters(generic: Boolean, aggressive: Boolean, apk: Boolean): FileScanner {
+	fun setUpFilters(generic: Boolean, apk: Boolean): FileScanner {
 		val folders: MutableList<String> = ArrayList()
 		val files: MutableList<String> = ArrayList()
-		setResources(context!!.resources)
 		if (generic) {
-			folders.addAll(listOf(*res!!.getStringArray(R.array.generic_filter_folders)))
-			files.addAll(listOf(*res!!.getStringArray(R.array.generic_filter_files)))
-		}
-		if (aggressive) {
-			folders.addAll(listOf(*res!!.getStringArray(R.array.aggressive_filter_folders)))
-			files.addAll(listOf(*res!!.getStringArray(R.array.aggressive_filter_files)))
+			folders.addAll(listOf(*res.getStringArray(R.array.generic_filter_folders)))
+			files.addAll(listOf(*res.getStringArray(R.array.generic_filter_files)))
 		}
 
 		// filters
@@ -181,7 +187,7 @@ class FileScanner(private val path: File, context: Context){
 		if (autoWhite){
 			// whitelist
 			whitelist.clear()
-			whitelist.addAll(listOf(*res!!.getStringArray(R.array.autowhitelist_filter)))
+			whitelist.addAll(listOf(*res.getStringArray(R.array.autowhitelist_filter)))
 		}
 
 		// apk
@@ -192,58 +198,47 @@ class FileScanner(private val path: File, context: Context){
 	fun startScan(): Long {
 		isRunning = true
 		var cycles: Byte = 0
-		var maxCycles: Byte = 1
+		var maxCycles: Byte = if (delete) prefs.getInt("multirun",1).toByte() else 1
 		var foundFiles: List<File>
-		if (delete) maxCycles = prefs.getInt("multirun",1).toByte()
 
 		// removes the need to 'clean' multiple times to get everything
 		while (cycles < maxCycles) {
 
 			// cycle indicator
-			if (gui != null)
-				(context as MainActivity?)!!.displayText(
-					"Running Cycle " + (cycles + 1) + "/" + maxCycles
-				)
+			(context as MainActivity).addText(
+				"Running Cycle " + (cycles + 1) + "/" + maxCycles
+			)
 
 			// find/scan files
 			foundFiles = listFiles // fetching this variable (List) triggers get function getListFiles(path)
 			guiScanProgressMax = guiScanProgressMax + foundFiles.size
 
 			// filter & delete
-			var tv: TextView? = null
-			for (file in foundFiles) {
-				if (filter(file)) { // filter
-					if (gui != null) tv = (context as MainActivity?)!!.displayDeletion(file)
-
+			for (file in foundFiles){
+				if (filter(file)){ // filter
+					val tv: TextView = (context as MainActivity?)!!.addText(file.absolutePath,"delete")
 					kilobytesTotal += file.length()
-					if (delete) {
+					if (delete){
 						++filesRemoved
-
 						// deletion
-						if (!file.delete() && tv != null) { // failed to remove file and the textView is visible (not null)
-							(context as MainActivity?)!!.runOnUiThread {
-								tv.setTextColor(Color.GRAY) // error effect - red looks too concerning
+						// failed to remove file and the textView is visible (not null)
+						if (!file.delete()) {
+							context.runOnUiThread {
+								// error effect - red looks too concerning
+								tv.setTextColor(Color.GRAY)
 							}
 						}
 					}
 				}
-				if (gui != null) { // progress
-					(context as MainActivity?)!!.runOnUiThread {
-						guiScanProgressProgress = guiScanProgressProgress + 1
-						gui!!.statusTextView.text = String.format(Locale.US, "%s %.0f%%",
-							context!!.getString(R.string.status_running),
-							guiScanProgressProgress * 100.0 / guiScanProgressMax
-						) // dont remove .0 part or crash
-					}
-				}
+				guiScanProgressProgress = guiScanProgressProgress + 1
+				updateProgress!!.invoke(context,guiScanProgressProgress * 100.0 / guiScanProgressMax);
 			}
-
-			if (filesRemoved == 0) break // nothing found this run, no need to run again
-			filesRemoved = 0 // reset for next cycle
+			if (filesRemoved == 0) break
+			filesRemoved = 0
 			++cycles
 		}
 		// cycle indicator
-		if (gui != null) (context as MainActivity?)!!.displayText("Finished!")
+		(context as MainActivity).addText("Finished!")
 		isRunning = false
 		return kilobytesTotal
 	}
@@ -256,13 +251,18 @@ class FileScanner(private val path: File, context: Context){
 		return ".+" + file.replace(".", "\\.") + "$"
 	}
 
-	fun setGUI(gui: ActivityMainBinding?): FileScanner {
-		this.gui = gui
+	fun setUpdateProgress(updateProgress: ((context: Context, percent: Double) -> Unit)?): FileScanner {
+		this.updateProgress = updateProgress
 		return this
 	}
 
-	fun setResources(res: Resources?): FileScanner {
+	fun setResources(res: Resources): FileScanner {
 		this.res = res
+		return this
+	}
+
+	fun setEmptyFile(emptyFile: Boolean): FileScanner {
+		this.emptyFile = emptyFile
 		return this
 	}
 
@@ -286,11 +286,6 @@ class FileScanner(private val path: File, context: Context){
 		return this
 	}
 
-	fun setContext(context: Context?): FileScanner {
-		this.context = context
-		return this
-	}
-
 	companion object {
 		// TODO remove local prefs objects, create setter for one instead
 		@JvmField
@@ -300,6 +295,7 @@ class FileScanner(private val path: File, context: Context){
 	}
 
 	init {
+		BlacklistActivity.getBlackList(prefs)
 		WhitelistActivity.getWhiteList(prefs)
 	}
 }

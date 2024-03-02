@@ -38,12 +38,19 @@
 		</activity>
 		<activity
 			android:exported="false"
+			android:name=".controllers.BlacklistActivity"
+			android:parentActivityName=".controllers.SettingsActivity" />
+		<activity
+			android:exported="false"
 			android:name=".controllers.WhitelistActivity"
 			android:parentActivityName=".controllers.SettingsActivity" />
 		<activity
 			android:exported="false"
 			android:name=".controllers.SettingsActivity"
 			android:parentActivityName=".controllers.MainActivity" />
+		<activity
+			android:exported="false"
+			android:name=".controllers.ErrorActivity" />
 		<receiver
 			android:exported="false"
 			android:name=".BootReceiver">

@@ -15,8 +15,6 @@ Despite hitting 100k users, he is no longer able to devote time to it. Thank you
 [![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
 [![License](https://img.shields.io/github/license/mdp43140/LTECleanerFOSS)](/blob/master/LICENSE)
 
-![Alt](https://repobeats.axiom.co/api/embed/e57b4b0c0e47daffc4e7feb4cff54fa6a1bc4120.svg "Repobeats analytics image")
-
 ***The last Android cleaner you will ever need!***
 
 Tired of the abundance of phone cleaners on the Play Store? Tired of
@@ -31,7 +29,8 @@ __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claim
 ## Install
 [GitHub](https://github.com/MDP43140/LTECleanerFOSS/files/13996640/app-release.zip)
 [Build it yourself](#compiling-the-app)
-[Original version (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
+[Original F-Droid (outdated)](https://f-droid.org/packages/theredspy15.ltecleanerfoss)
+[Original source code (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
 
 ## Features
 - Clipboard clearing
@@ -46,6 +45,7 @@ Cleans:
 - Advertisement folders
 
 To do list (not guaranteed because i'm busy irl):
+- Code cleanups
 - Clean SD card (has to support minimal Android 10+, hopefully we can use StorageAccessFramework to make this work, but it might be a huge work that can take days, not possible with my spare time)
 - Custom (regex) blacklist (In theory should be simple, just need to add additional rule matching to cleaning system, but implementing the separate Activity might be a bit painful)
 - Regex whilelist

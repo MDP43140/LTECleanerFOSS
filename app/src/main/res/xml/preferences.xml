@@ -9,6 +9,16 @@
 	android:key="settings"
 	app:iconSpaceReserved="false">
 	<PreferenceCategory android:title="@string/scanner_category_title" app:iconSpaceReserved="false">
+		<Preference
+			android:title="@string/blacklist"
+			android:key="blacklist"
+			android:summary="@string/blacklist_sum"
+			app:iconSpaceReserved="false" />
+		<Preference
+			android:title="@string/whitelist"
+			android:key="whitelist"
+			android:summary="@string/whitelist_sum"
+			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
 			android:key="one_click"
@@ -66,14 +76,13 @@
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:key="aggressive"
+			android:key="emptyFile"
 			android:persistent="true"
-			android:summary="@string/aggressive_sum"
-			android:title="@string/aggressive_filter"
+			android:title="@string/delete_empty_files"
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="false"
-			android:key="empty"
+			android:key="emptyFolder"
 			android:persistent="true"
 			android:title="@string/delete_empty_folders"
 			app:iconSpaceReserved="false" />
@@ -109,6 +118,13 @@
 			android:summary="@string/stopbgapps_sum"
 			android:title="@string/stopbgapps_title"
 			app:iconSpaceReserved="false" />
+		<SwitchPreferenceCompat
+			android:defaultValue="true"
+			android:key="dynamicColor"
+			android:persistent="true"
+			android:summary="@string/dynColor_sum"
+			android:title="@string/dynColor"
+			app:iconSpaceReserved="false" />
 		<Preference
 			android:title="@string/data_import_title"
 			android:key="dataImport"
@@ -120,20 +136,20 @@
 			android:summary="@string/data_export_sum"
 			app:iconSpaceReserved="false" />
 	</PreferenceCategory>
-	<PreferenceCategory android:title="About" app:iconSpaceReserved="false">
+	<PreferenceCategory android:title="@string/about" app:iconSpaceReserved="false">
 		<Preference
 			android:title="GitHub"
 			android:key="__link_gh"
-			android:summary="Checkout LTE Cleaner GitHub project!"
+			android:summary="@string/projectSum"
 			app:iconSpaceReserved="false">
 			<intent
 				android:action="android.intent.action.VIEW"
 				android:data="https://github.com/mdp43140/LTECleanerFOSS" />
 		</Preference>
 		<Preference
-			android:title="License"
+			android:title="@string/license"
 			android:key="__link_dl"
-			android:summary="Licensed under GPL v3 license"
+			android:summary="@string/license_sum"
 			app:iconSpaceReserved="false">
 			<intent
 				android:action="android.intent.action.VIEW"
@@ -141,8 +157,8 @@
 		</Preference>
 		<Preference
 			android:title="Crash test"
-			android:key="crashTest"
-			android:summary="Crash this app with ArithmeticException error"
+			android:key="__doomedBruhhh"
+			android:summary="Crash this app"
 			app:iconSpaceReserved="false" />
 	</PreferenceCategory>
 </PreferenceScreen>

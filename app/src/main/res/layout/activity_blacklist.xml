@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	~ (C) 2020-2023 Hunter J Drum
+	~ (C) 2024 MDP43140
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="12dp"
+	android:weightSum="3"
+	tools:context=".controllers.BlacklistActivity">
+
+	<ScrollView
+		android:layout_weight="3"
+		android:layout_width="match_parent"
+		android:layout_height="0dp">
+
+		<LinearLayout
+			android:id="@+id/pathsLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+		</LinearLayout>
+	</ScrollView>
+
+	<Button
+		android:id="@+id/newButton"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="12dp"
+		android:text="@string/add_to_blacklist"
+		android:layout_gravity="bottom"/>
+</LinearLayout>

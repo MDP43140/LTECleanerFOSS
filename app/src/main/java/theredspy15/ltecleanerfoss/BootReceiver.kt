@@ -13,29 +13,27 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
+import theredspy15.ltecleanerfoss.App
+import theredspy15.ltecleanerfoss.Constants
 class BootReceiver: BroadcastReceiver() {
-	override fun onReceive(ctxt: Context, i: Intent) {
-		runCleanup(ctxt)
-	}
-	fun runCleanup(context: Context){
-		val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
+	override fun onReceive(ctx: Context, i: Intent) {
 		val constraints = Constraints.Builder()
 			.setRequiresBatteryNotLow(true)
 			.setRequiresDeviceIdle(true)
 			.build()
 
 		// Schedule the work hourly
-		ScheduledWorker.enqueueWork(context)
+		ScheduledWorker.enqueueWork(ctx)
 
 		// Schedule the work at boot completed
-		if (prefs.getBoolean("bootedcleanup",false)){
+		if (App.prefs!!.getBoolean("bootedcleanup",false)){
 			val myWork = OneTimeWorkRequestBuilder<ScheduledWorker>()
-				.addTag(ScheduledWorker.Companion.WORK_TAG)
+				.addTag(Constants.BGCLEAN_WORK_TAG)
 				.setConstraints(constraints)
 				.setInitialDelay(1, TimeUnit.MINUTES)
 				.build()
-			WorkManager.getInstance(context).enqueueUniqueWork(
-				ScheduledWorker.Companion.UNIQUE_WORK_NAME,
+			WorkManager.getInstance(ctx).enqueueUniqueWork(
+				Constants.BGCLEAN_WORK_NAME,
 				ExistingWorkPolicy.REPLACE,
 				myWork
 			)

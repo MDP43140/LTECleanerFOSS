@@ -1,0 +1,93 @@
+name: Bug report
+description: Create a bug report to help us improve
+labels: [bug, needs triage]
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I am able to reproduce the bug with the latest version."
+          required: true
+        - label: "I made sure that there are *no existing issues* - [open](https://github.com/TeamNewPipe/NewPipe/issues) or [closed](https://github.com/TeamNewPipe/NewPipe/issues?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
+          required: true
+        - label: "I have taken the time to fill in all the required details. I understand that the bug report will be dismissed otherwise."
+          required: true
+
+  - type: input
+    id: app-version
+    attributes:
+      label: Affected version
+      description: "In which version did you encounter the bug?"
+      placeholder: "x.x.x - Not required if you include the log"
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce the bug
+      description: |
+        What did you do for the bug to show up?
+      placeholder: |
+        1. Go to '...'
+        2. Scroll down to '....'
+        3. Click on '....'
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: |
+        What do you expect to happen?
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: |
+        What happens with the steps given above?
+
+  - type: textarea
+    id: screen-media
+    attributes:
+      label: Screenshots/Screen recordings
+      description: |
+        A picture or video is worth a thousand words.
+
+        If applicable, add screenshots or a screen recording to help explain your problem.
+        GitHub supports uploading them directly in the text box.
+        If your file is too big for GitHub to accept, try to compress it (ZIP-file) or feel free to paste a link to an image/video hoster here instead.
+
+        :heavy_exclamation_mark: DON'T POST SCREENSHOTS OF THE ERROR PAGE.
+        Instead, follow the instructions in the "Logs" section below.
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        If your bug includes a crash log, tap on "Share formatted log" at the bottom, click "Copy to clipboard", and paste it here.
+
+  - type: input
+    id: device-os-info
+    attributes:
+    label: Affected Android/Custom ROM version
+    description: |
+      With what Operating System (+ version) did you encounter the bug?
+    placeholder: "eg. Android 13/LineageOS 20"
+
+  - type: input
+    id: device-model-info
+    attributes:
+     label: Affected device model
+     description: |
+      On what device did you encounter the bug?
+     placeholder: "eg. Google Pixel 7/Samsung Galaxy S10"
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional information
+      description: |
+        Any other information you'd like to include

@@ -8,57 +8,61 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:orientation="horizontal"
-	android:weightSum="4"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".controllers.MainActivity"
 	android:id="@+id/main_layout">
 
-	<ScrollView
-		android:animateLayoutChanges="false"
-		android:background="@drawable/rounded_view"
-		android:layout_weight="2"
-		android:id="@+id/fileScrollView"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_marginTop="16dp"
-		android:layout_marginBottom="16dp"
-		android:layout_marginStart="24dp"
-		android:layout_marginEnd="24dp">
-
-		<LinearLayout
-			android:id="@+id/fileListView"
-			android:animateLayoutChanges="true"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="3dp"
-			android:orientation="vertical" />
-	</ScrollView>
-
-	<TextView
-		android:id="@+id/statusTextView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:layout_marginTop="10dp"
-		android:layout_marginStart="30dp"
-		android:layout_marginEnd="30dp"
-		android:layout_marginBottom="10dp"
-		android:fontFamily="sans-serif-condensed-medium"
-		android:text="@string/status_idle"
-		android:textAlignment="center"
-		android:textColor="?attr/Accents"
-		android:textSize="20sp"
-		android:visibility="gone" />
-
 	<LinearLayout
 		android:orientation="vertical"
-		android:layout_width="200dp"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_marginTop="16dp"
+		android:layout_marginBottom="16dp"
+		android:layout_marginStart="16dp"
+		android:layout_marginEnd="12dp"
+		android:layout_weight="2">
+		<ScrollView
+			android:animateLayoutChanges="false"
+			android:background="@drawable/rounded_view"
+			android:id="@+id/fileScrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<HorizontalScrollView
+				android:animateLayoutChanges="false"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent">
+				<LinearLayout
+					android:animateLayoutChanges="false"
+					android:id="@+id/fileListView"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="3dp"
+					android:orientation="vertical" />
+			</HorizontalScrollView>
+		</ScrollView>
+
+		<TextView
+			android:id="@+id/statusTextView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="10dp"
+			android:layout_marginStart="30dp"
+			android:layout_marginEnd="30dp"
+			android:layout_marginBottom="10dp"
+			android:fontFamily="sans-serif-condensed-medium"
+			android:textAlignment="center"
+			android:textColor="?attr/Accents"
+			android:textSize="20sp" />
+	</LinearLayout>
+
+	<androidx.gridlayout.widget.GridLayout
+		android:layout_width="wrap_content"
 		android:layout_height="match_parent"
-		android:layout_gravity="center|bottom"
-		android:weightSum="4"
-		app:columnCount="4"
-		app:rowCount="1">
+		android:layout_gravity="center"
+		app:columnCount="1"
+		app:rowCount="4">
 
 		<Button
 			style="?android:attr/borderlessButtonStyle"
@@ -108,6 +112,6 @@
 			app:layout_columnWeight="1"
 			app:layout_rowWeight="1" />
 
-	</LinearLayout>
+	</androidx.gridlayout.widget.GridLayout>
 
 </LinearLayout>

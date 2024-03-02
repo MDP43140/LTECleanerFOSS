@@ -5,10 +5,12 @@
   -->
 <resources>
 	<string name="app_name">LTE Cleaner</string>
+	<string name="delete_empty_files">Delete empty files</string>
 	<string name="delete_empty_folders">Delete empty folders</string>
-	<string name="aggressive_filter">Enable aggressive filter</string>
+	<string name="blacklist">Blacklist</string>
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Privacy Policy</string>
+	<string name="add_to_blacklist">Add to blacklist</string>
 	<string name="add_to_whitelist">Add to whitelist</string>
 	<string name="cancel">Cancel</string>
 	<string name="clean">Clean</string>
@@ -18,16 +20,12 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Found: </string>
 	<string name="auto_whitelist">Auto Whitelist</string>
-	<string name="reset_whitelist">Empty whitelist?</string>
-	<string name="are_you_reset_whitelist">Are you sure you want to clear the whitelist?</string>
 	<string name="reset">Clear</string>
 	<string name="delete_apk_files">Delete .apk files</string>
 	<string name="status_idle">Status: Idle</string>
-	<string name="progress_0">0%</string>
 	<string name="status_running">Status: Running</string>
 	<string name="privacy_sum">View the privacy policy (external link)</string>
 	<string name="generic_sum">.tmp, .log, Logs, logs</string>
-	<string name="aggressive_sum">Too much to list here</string>
 	<string name="apk_sum">Installer files for android</string>
 	<string name="oneclick_sum">No confirmation dialog when clean button is pressed</string>
 	<string name="autowhite_sum">Detect folders that should be protected automatically</string>
@@ -52,13 +50,13 @@
 	<string name="are_you_sure_deletion">Are you sure? Files deleted cannot be restored</string>
 	<string name="are_you_sure_deletion_title">Confirm Deletion</string>
 	<string name="aggressive_filter_what_title">What aggressive filter does</string>
-	<string name="adds_the_following">Adds the following filters:</string>
 	<string name="samsung_not_work">Doesn\'t work on samsung devices</string>
 	<string name="clear_clipboard">Clear clipboard</string>
 	<string name="double_check_sum">How many times the scan reruns each time something is found</string>
 	<string name="double_check_title">Double Checker</string>
 	<string name="notification_title">LTE Clean Worker Finished</string>
 	<string name="clean_notification">Cleaned:</string>
+	<string name="empty_blacklist">Nothing in blacklist</string>
 	<string name="empty_whitelist">Nothing in whitelist</string>
 	<string name="theme_sum">Will otherwise follow system settings. Restart app to take effect</string>
 	<string name="theme_title">Select Theme</string>
@@ -66,11 +64,25 @@
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Links</string>
 	<string name="settings_page_title">Settings</string>
+	<string name="remove_from_blacklist">Remove from blacklist?</string>
 	<string name="remove_from_whitelist">Remove from whitelist?</string>
 	<string name="delete">Delete</string>
 	<string name="clipboard_clear_failed">Failed to clear clipboard</string>
 	<string name="settings_notification_name">Daily Cleaner Notification</string>
 	<string name="settings_notification_sum">Shows notification of how much cache was cleaned daily</string>
+	<string name="blacklist_sum">Configure a lists of filter that should remove a file</string>
+	<string name="whitelist_sum">Configure a lists of filter that should ignore a file</string>
+	<string name="dynColor">Use dynamic colors</string>
+	<string name="dynColor_sum">Enables dynamic colors (Experimental, requires Android 12+)</string>
+	<string name="projectSum">Checkout LTE Cleaner GitHub project!</string>
+	<string name="license">License</string>
+	<string name="license_sum">Licensed under GPL v3 license</string>
+	<string name="about">About	</string>
+	<string name="error_sum">Sorry, that shouldn\'t happen :(</string>
+	<string name="details">Details</string>
+	<string name="shareLog">Share log</string>
+	<string name="shareLogFormatted">Share formatted log</string>
+	<string name="reportOnGitHub">Report on GitHub</string>
 	<string-array name="themes">
 		<item>Follow system</item>
 		<item>Light</item>
@@ -90,33 +102,6 @@
 	</string-array>
 
 	<!-- TODO: Remove or change this placeholder text -->
-	<string-array name="aggressive_filter_folders" translatable="false">
-		<item>supersonicads</item>
-		<item>Cache</item>
-		<item>Analytics</item>
-		<item>.thumbnails?</item>
-		<item>mobvista</item>
-		<item>UnityAdsVideoCache</item>
-		<item>albumthumbs?</item>
-		<item>LOST.DIR</item>
-		<item>.Trash</item>
-		<item>desktop.ini</item>
-		<item>leakcanary</item>
-		<item>.DS_Store</item>
-		<item>.spotlight-V100</item>
-		<item>fseventsd</item>
-		<item>Bugreport</item>
-		<item>bugreports</item>
-		<item>.Trash</item>
-		<item>cache</item>
-		<item>splashad</item>
-	</string-array>
-	<string-array name="aggressive_filter_files" translatable="false">
-		<item>.exo</item>
-		<item>thumbs?.db</item>
-		<item>.thumb[0-9]</item>
-		<item>splashad</item>
-	</string-array>
 	<string-array name="autowhitelist_filter" translatable="false">
 		<item>backup</item>
 		<item>copy</item>
