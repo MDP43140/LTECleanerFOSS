@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import theredspy15.ltecleanerfoss.Constants
-import theredspy15.ltecleanerfoss.controllers.ErrorActivity
+import theredspy15.ltecleanerfoss.ui.ErrorActivity
 import java.text.DecimalFormat
 import kotlin.system.exitProcess
 object CommonFunctions {

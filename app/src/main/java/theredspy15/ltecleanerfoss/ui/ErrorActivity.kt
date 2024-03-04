@@ -2,7 +2,7 @@
  * (C) 2024 Akane Foundation (https://github.com/AkaneTan/Gramophone/blob/beta/LICENSE)
  * (C) 2024 MDP43140
  */
-package theredspy15.ltecleanerfoss.controllers
+package theredspy15.ltecleanerfoss.ui
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent

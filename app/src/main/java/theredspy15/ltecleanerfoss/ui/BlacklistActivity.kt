@@ -2,7 +2,7 @@
  * (C) 2020-2023 Hunter J Drum
  * (C) 2024 MDP43140
  */
-package theredspy15.ltecleanerfoss.controllers
+package theredspy15.ltecleanerfoss.ui
 import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.net.Uri

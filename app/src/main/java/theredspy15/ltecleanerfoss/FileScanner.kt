@@ -11,9 +11,9 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import theredspy15.ltecleanerfoss.controllers.MainActivity
-import theredspy15.ltecleanerfoss.controllers.BlacklistActivity
-import theredspy15.ltecleanerfoss.controllers.WhitelistActivity
+import theredspy15.ltecleanerfoss.ui.MainActivity
+import theredspy15.ltecleanerfoss.ui.BlacklistActivity
+import theredspy15.ltecleanerfoss.ui.WhitelistActivity
 import java.io.File
 import java.util.Locale
 class FileScanner(private val path: File, context: Context){

@@ -2,7 +2,7 @@
  * (C) 2020-2023 Hunter J Drum
  * (C) 2024 MDP43140
  */
-package theredspy15.ltecleanerfoss.controllers
+package theredspy15.ltecleanerfoss.ui
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.ActivityManager
@@ -54,6 +54,7 @@ class MainActivity: AppCompatActivity(){
 		WhitelistActivity.getWhiteList(App.prefs)
 		dialogBuilder = AlertDialog.Builder(this)
 
+	}
 	private fun settings(){
 		startActivity(Intent(this,SettingsActivity::class.java))
 	}

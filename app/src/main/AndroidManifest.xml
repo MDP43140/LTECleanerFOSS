@@ -29,7 +29,7 @@
 		tools:ignore="GoogleAppIndexingWarning">
 		<activity
 			android:exported="true"
-			android:name=".controllers.MainActivity"
+			android:name=".ui.MainActivity"
 			android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -38,22 +38,22 @@
 		</activity>
 		<activity
 			android:exported="false"
-			android:name=".controllers.BlacklistActivity"
-			android:parentActivityName=".controllers.SettingsActivity"
+			android:name=".ui.BlacklistActivity"
+			android:parentActivityName=".ui.SettingsActivity"
 			android:label="@string/blacklist" />
 		<activity
 			android:exported="false"
-			android:name=".controllers.WhitelistActivity"
-			android:parentActivityName=".controllers.SettingsActivity"
+			android:name=".ui.WhitelistActivity"
+			android:parentActivityName=".ui.SettingsActivity"
 			android:label="@string/whitelist" />
 		<activity
 			android:exported="false"
-			android:name=".controllers.SettingsActivity"
-			android:parentActivityName=".controllers.MainActivity"
+			android:name=".ui.SettingsActivity"
+			android:parentActivityName=".ui.MainActivity"
 			android:label="@string/settings" />
 		<activity
 			android:exported="false"
-			android:name=".controllers.ErrorActivity"
+			android:name=".ui.ErrorActivity"
 			android:label="@string/crashLog" />
 		<service
 			android:exported="false"

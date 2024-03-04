@@ -11,7 +11,7 @@ import android.content.SharedPreferences
 import android.graphics.drawable.Icon
 import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
-import theredspy15.ltecleanerfoss.controllers.MainActivity
+import theredspy15.ltecleanerfoss.ui.MainActivity
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.CommonFunctions
 class App: Application(){
