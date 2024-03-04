@@ -9,11 +9,9 @@ import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.content.SharedPreferences
 import android.graphics.drawable.Icon
-import android.os.Build
 import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
 import theredspy15.ltecleanerfoss.controllers.MainActivity
-import theredspy15.ltecleanerfoss.controllers.SettingsActivity
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.CommonFunctions
 class App: Application(){

@@ -16,7 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.time.format.DateTimeFormatter
 import java.time.LocalDateTime
-//import theredspy15.ltecleanerfoss.BuildConfig
+import java.util.Locale
 import theredspy15.ltecleanerfoss.databinding.ActivityErrorBinding
 import theredspy15.ltecleanerfoss.R
 class ErrorActivity: AppCompatActivity(){
@@ -26,8 +26,8 @@ class ErrorActivity: AppCompatActivity(){
 		binding = ActivityErrorBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-//	val appVersion: String = BuildConfig.VERSION_NAME
-		val appLang: String = "TODO"
+		val appVersion: String = packageManager.getPackageInfo(packageName,0).versionName
+		val appLang: String = Locale.getDefault().language
 		val osVersion: String = (System.getProperty("os.name") ?: "Android") +
 			(if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) " ${Build.VERSION.BASE_OS}" else "") +
 			" " + Build.VERSION.RELEASE +
@@ -37,28 +37,24 @@ class ErrorActivity: AppCompatActivity(){
 			.format(LocalDateTime.now())
 		binding.error.typeface = Typeface.MONOSPACE
 
-//		.append("App version: $appVersion").append('\n')
 		val text = StringBuilder()
-			.append("App language: $appLang")
-			.append("\nDevice brand: ${Build.BRAND}")
-			.append("\nDevice model: ${Build.MODEL}")
-			.append("\nOS Version  : $osVersion")
-			.append("\nGMT Time    : $formattedDateTime").append('\n').append('\n')
+			.append("App language: ${appLang}\n")
+			.append("App version : ${appVersion}\n")
+			.append("Device      : ${Build.BRAND} ${Build.MODEL}\n")
+			.append("OS Version  : ${osVersion}\n")
+			.append("GMT Time    : ${formattedDateTime}\n\n")
 			.append(exceptionMessage)
 			.toString()
-//		.append("* __App version:__ $appVersion").append('\n')
 		val formattedText = StringBuilder()
-			.append("## Exception")
-			.append("\n* __App language:__ $appLang")
-			.append("\n* __Device brand:__ ${Build.BRAND}")
-			.append("\n* __Device model:__ ${Build.MODEL}")
-			.append("\n* __OS Version  :__ $osVersion")
-			.append("\n* __GMT Time    :__ $formattedDateTime")
-			.append("\n<details><summary><b>Crash log </b></summary><p>")
-			.append("\n```\n")
-			.append(exceptionMessage)
-			.append("\n```")
-			.append("\n</details><hr>")
+			.append("## Exception\n")
+			.append("* __App language:__ ${appLang}\n")
+			.append("* __App version :__ ${appVersion}\n")
+			.append("* __Device:__ ${Build.BRAND} ${Build.MODEL}\n")
+			.append("* __OS Version  :__ ${osVersion}\n")
+			.append("* __GMT Time    :__ ${formattedDateTime}\n")
+			.append("<details><summary><b>Crash log </b></summary><p>\n")
+			.append("```\n${exceptionMessage}\n```\n")
+			.append("</details><hr>")
 			.toString()
 
 		binding.error.text = text

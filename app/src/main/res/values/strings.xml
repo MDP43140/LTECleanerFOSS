@@ -53,7 +53,7 @@
 	<string name="clear_clipboard">Clear clipboard</string>
 	<string name="double_check_sum">How many times the scan reruns each time something is found</string>
 	<string name="double_check_title">Double Checker</string>
-	<string name="notification_title">LTE Clean Worker Finished</string>
+	<string name="svc_notification_title">LTE Cleaner Worker</string>
 	<string name="clean_notification">Cleaned:</string>
 	<string name="empty_blacklist">Nothing in blacklist</string>
 	<string name="empty_whitelist">Nothing in whitelist</string>
@@ -67,8 +67,8 @@
 	<string name="remove_from_whitelist">Remove from whitelist?</string>
 	<string name="delete">Delete</string>
 	<string name="clipboard_clear_failed">Failed to clear clipboard</string>
-	<string name="settings_notification_name">Daily Cleaner Notification</string>
-	<string name="settings_notification_sum">Shows notification of how much cache was cleaned daily</string>
+	<string name="default_notification_name">Default</string>
+	<string name="default_notification_sum">Shows notification of background cleanup progress and how much cache was cleaned</string>
 	<string name="blacklist_sum">Configure a lists of filter that should remove a file</string>
 	<string name="whitelist_sum">Configure a lists of filter that should ignore a file</string>
 	<string name="dynColor">Use dynamic colors</string>
@@ -76,10 +76,12 @@
 	<string name="projectSum">Checkout LTE Cleaner GitHub project!</string>
 	<string name="license">License</string>
 	<string name="license_sum">Licensed under GPL v3 license</string>
-	<string name="about">About	</string>
+	<string name="settings">Settings</string>
+	<string name="about">About</string>
+	<string name="crashLog">Crash log</string>
 	<string name="error_sum">Sorry, that shouldn\'t happen :(</string>
 	<string name="details">Details</string>
-	<string name="shareLog">Share log</string>
+	<string name="share">Share</string>
 	<string name="shareLogFormatted">Share formatted log</string>
 	<string name="reportOnGitHub">Report on GitHub</string>
 	<string-array name="themes">

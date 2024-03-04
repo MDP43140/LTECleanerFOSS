@@ -36,7 +36,7 @@ android {
 			shrinkResources true
 		//crunchPngs true // no longer needed, since the PNGs are optimized in the first place before compiling
 			debuggable false
-			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), "proguard-rules.pro"
 		}
 	}
 	kotlinOptions {

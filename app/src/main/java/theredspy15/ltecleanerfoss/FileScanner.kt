@@ -21,14 +21,14 @@ class FileScanner(private val path: File, context: Context){
 	private var prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 	private val context = context
 	private var res: Resources = context.resources
-	private var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
 	private var filesRemoved = 0
 	private var kilobytesTotal: Long = 0
-	private var delete = false
-	private var emptyFile = true
-	private var emptyDir = false
-	private var autoWhite = true
-	private var corpse = false
+	var delete = false
+	var emptyFile = prefs.getBoolean("emptyFile", false)
+	var emptyDir = prefs.getBoolean("emptyFolder", false)
+	var autoWhite = prefs.getBoolean("auto_white", true)
+	var corpse = prefs.getBoolean("corpse", false)
+	var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
 	private val listFiles: List<File>
 		get() = getListFiles(path)
 	private var guiScanProgressMax = 0
@@ -170,8 +170,7 @@ class FileScanner(private val path: File, context: Context){
 	 * Adds paths to the white list that are not to be cleaned. As well as adds extensions to filter.
 	 * 'generic', 'aggressive', and 'apk' should be assigned by calling preferences.getBoolean()
 	 */
-	@SuppressLint("ResourceType")
-	fun setUpFilters(generic: Boolean, apk: Boolean): FileScanner {
+	fun setFilters(generic: Boolean, apk: Boolean){
 		val folders: MutableList<String> = ArrayList()
 		val files: MutableList<String> = ArrayList()
 		if (generic) {
@@ -192,10 +191,9 @@ class FileScanner(private val path: File, context: Context){
 
 		// apk
 		if (apk) filters.add(getRegexForFile(".apk"))
-		return this
 	}
 
-	fun startScan(): Long {
+	fun start(): Long {
 		isRunning = true
 		var cycles: Byte = 0
 		var maxCycles: Byte = if (delete) prefs.getInt("multirun",1).toByte() else 1
@@ -205,7 +203,7 @@ class FileScanner(private val path: File, context: Context){
 		while (cycles < maxCycles) {
 
 			// cycle indicator
-			(context as MainActivity).addText(
+			if (context is MainActivity) context.addText(
 				"Running Cycle " + (cycles + 1) + "/" + maxCycles
 			)
 
@@ -216,16 +214,17 @@ class FileScanner(private val path: File, context: Context){
 			// filter & delete
 			for (file in foundFiles){
 				if (filter(file)){ // filter
-					val tv: TextView = (context as MainActivity?)!!.addText(file.absolutePath,"delete")
+					var tv: TextView? = null
+					if (context is MainActivity) tv = context.addText(file.absolutePath,"delete")
 					kilobytesTotal += file.length()
 					if (delete){
 						++filesRemoved
 						// deletion
 						// failed to remove file and the textView is visible (not null)
-						if (!file.delete()) {
+						if (!file.delete() && context is MainActivity){
 							context.runOnUiThread {
 								// error effect - red looks too concerning
-								tv.setTextColor(Color.GRAY)
+								tv!!.setTextColor(Color.GRAY)
 							}
 						}
 					}
@@ -238,7 +237,7 @@ class FileScanner(private val path: File, context: Context){
 			++cycles
 		}
 		// cycle indicator
-		(context as MainActivity).addText("Finished!")
+		if (context is MainActivity) context.addText("Finished!")
 		isRunning = false
 		return kilobytesTotal
 	}
@@ -249,41 +248,6 @@ class FileScanner(private val path: File, context: Context){
 
 	private fun getRegexForFile(file: String): String {
 		return ".+" + file.replace(".", "\\.") + "$"
-	}
-
-	fun setUpdateProgress(updateProgress: ((context: Context, percent: Double) -> Unit)?): FileScanner {
-		this.updateProgress = updateProgress
-		return this
-	}
-
-	fun setResources(res: Resources): FileScanner {
-		this.res = res
-		return this
-	}
-
-	fun setEmptyFile(emptyFile: Boolean): FileScanner {
-		this.emptyFile = emptyFile
-		return this
-	}
-
-	fun setEmptyDir(emptyDir: Boolean): FileScanner {
-		this.emptyDir = emptyDir
-		return this
-	}
-
-	fun setDelete(delete: Boolean): FileScanner {
-		this.delete = delete
-		return this
-	}
-
-	fun setCorpse(corpse: Boolean): FileScanner {
-		this.corpse = corpse
-		return this
-	}
-
-	fun setAutoWhite(autoWhite: Boolean): FileScanner {
-		this.autoWhite = autoWhite
-		return this
 	}
 
 	companion object {

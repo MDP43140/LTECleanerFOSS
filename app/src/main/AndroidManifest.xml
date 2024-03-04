@@ -39,18 +39,26 @@
 		<activity
 			android:exported="false"
 			android:name=".controllers.BlacklistActivity"
-			android:parentActivityName=".controllers.SettingsActivity" />
+			android:parentActivityName=".controllers.SettingsActivity"
+			android:label="@string/blacklist" />
 		<activity
 			android:exported="false"
 			android:name=".controllers.WhitelistActivity"
-			android:parentActivityName=".controllers.SettingsActivity" />
+			android:parentActivityName=".controllers.SettingsActivity"
+			android:label="@string/whitelist" />
 		<activity
 			android:exported="false"
 			android:name=".controllers.SettingsActivity"
-			android:parentActivityName=".controllers.MainActivity" />
+			android:parentActivityName=".controllers.MainActivity"
+			android:label="@string/settings" />
 		<activity
 			android:exported="false"
-			android:name=".controllers.ErrorActivity" />
+			android:name=".controllers.ErrorActivity"
+			android:label="@string/crashLog" />
+		<service
+			android:exported="false"
+			android:name=".CleanupService"
+			android:label="Cleanup Service" />
 		<receiver
 			android:exported="false"
 			android:name=".BootReceiver">

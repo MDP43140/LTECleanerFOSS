@@ -52,7 +52,7 @@
 	<string name="clear_clipboard">Bersihkan papan klip</string>
 	<string name="double_check_sum">Berapa kali memindai ulang setiap kali sesuatu ditemukan</string>
 	<string name="double_check_title">Pemeriksa Ganda</string>
-	<string name="notification_title">LTE Pekerja Bersih Selesai</string>
+	<string name="svc_notification_title">Pekerja Pembersih LTE</string>
 	<string name="clean_notification">Dibersihkan:</string>
 	<string name="empty_blacklist">Daftar hitam kosong</string>
 	<string name="empty_whitelist">Daftar putih kosong</string>
@@ -66,8 +66,8 @@
 	<string name="remove_from_whitelist">Hapus dari Daftar putih?</string>
 	<string name="delete">Hapus</string>
 	<string name="clipboard_clear_failed">Gagal membersihkan papan klip</string>
-	<string name="settings_notification_name">Pemberitahuan Pembersih Harian</string>
-	<string name="settings_notification_sum">Menunjukkan pemberitahuan berapa banyak cache yang dibersihkan tiap hari</string>
+	<string name="default_notification_name">Bawaan</string>
+	<string name="default_notification_sum">Menunjukkan pemberitahuan pembersihan latar-belakang dan berapa banyak cache yang dibersihkan</string>
 	<string name="blacklist_sum">Konfigurasikan daftar filter yang seharusnya menghapus file</string>
 	<string name="whitelist_sum">Konfigurasikan daftar filter yang seharusnya mengabaikan file</string>
 	<string name="dynColor">Gunakan warna dinamis</string>
@@ -75,10 +75,12 @@
 	<string name="projectSum">Lihat projek GitHub LTE Cleaner!</string>
 	<string name="license">Lisensi</string>
 	<string name="license_sum">Dilisensikan di bawah lisensi GPL v3</string>
+	<string name="settings">Pengaturan</string>
 	<string name="about">Tentang</string>
+	<string name="crashLog">Log kerusakan</string>
 	<string name="error_sum">Maaf, hal tersebut seharusnya tidak terjadi :(</string>
 	<string name="details">Rincian</string>
-	<string name="shareLog">Bagikan log</string>
+	<string name="share">Bagikan</string>
 	<string name="shareLogFormatted">Bagikan log yang diformat</string>
 	<string name="reportOnGitHub">Laporkan di GitHub</string>
 	<string-array name="themes">

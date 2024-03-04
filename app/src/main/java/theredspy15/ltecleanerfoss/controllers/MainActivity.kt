@@ -40,17 +40,19 @@ import java.io.File
 import java.util.Locale
 class MainActivity: AppCompatActivity(){
 	private lateinit var binding: ActivityMainBinding
-	private lateinit var mDialogBuilder: AlertDialog.Builder
+	private lateinit var dialogBuilder: AlertDialog.Builder
 	override fun onCreate(savedInstanceState:Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(binding.root)
+		binding.analyzeBtn.isEnabled = !FileScanner.isRunning
+		binding.cleanBtn.isEnabled = !FileScanner.isRunning
 		binding.analyzeBtn.setOnClickListener { analyze() }
 		binding.cleanBtn.setOnClickListener { clean() }
 		binding.settingsBtn.setOnClickListener { settings() }
 		binding.whitelistBtn.setOnClickListener { whitelist() }
 		WhitelistActivity.getWhiteList(App.prefs)
-		mDialogBuilder = AlertDialog.Builder(this)
+		dialogBuilder = AlertDialog.Builder(this)
 
 	private fun settings(){
 		startActivity(Intent(this,SettingsActivity::class.java))
@@ -76,7 +78,7 @@ class MainActivity: AppCompatActivity(){
 			if (App.prefs!!.getBoolean("one_click",false)){
 				scan(true) // one-click enabled
 			} else { // one-click disabled
-				val mDialog: AlertDialog = mDialogBuilder.create()
+				val mDialog: AlertDialog = dialogBuilder.create()
 				mDialog.setTitle(getString(R.string.are_you_sure_deletion_title))
 				mDialog.setMessage(getString(R.string.are_you_sure_deletion))
 				mDialog.setCancelable(false)
@@ -119,8 +121,8 @@ class MainActivity: AppCompatActivity(){
 		Thread {
 			Looper.prepare()
 			runOnUiThread {
-				binding.cleanBtn.isEnabled = !FileScanner.isRunning
 				binding.analyzeBtn.isEnabled = !FileScanner.isRunning
+				binding.cleanBtn.isEnabled = !FileScanner.isRunning
 				binding.statusTextView.text = getString(R.string.status_running)
 				binding.fileListView.removeAllViews()
 			}
@@ -130,16 +132,12 @@ class MainActivity: AppCompatActivity(){
 
 			// scanner setup
 			val fs = FileScanner(path,this)
-				.setEmptyFile(App.prefs!!.getBoolean("emptyFile", false))
-				.setEmptyDir(App.prefs!!.getBoolean("emptyFolder", false))
-				.setAutoWhite(App.prefs!!.getBoolean("auto_white", true))
-				.setDelete(delete)
-				.setCorpse(App.prefs!!.getBoolean("corpse", false))
-				.setUpdateProgress(::updatePercentage)
-				.setUpFilters(
-					App.prefs!!.getBoolean("generic",true),
-					App.prefs!!.getBoolean("apk",false)
-				)
+			fs.setFilters(
+				App.prefs!!.getBoolean("generic",true),
+				App.prefs!!.getBoolean("apk",false)
+			)
+			fs.delete = delete
+			fs.updateProgress = ::updatePercentage
 
 			// failed scan
 			if (path.listFiles() == null){ // is this needed? yes.
@@ -147,7 +145,7 @@ class MainActivity: AppCompatActivity(){
 			}
 
 			// run the scan and put KBs found/freed text
-			val kilobytesTotal = fs.startScan()
+			val kilobytesTotal = fs.start()
 			runOnUiThread {
 				binding.statusTextView.text =
 					getString(if (delete) R.string.freed else R.string.found) +
@@ -246,16 +244,16 @@ class MainActivity: AppCompatActivity(){
 			requestCode == 1 &&
 			grantResults.isNotEmpty() &&
 			grantResults[0] != PackageManager.PERMISSION_GRANTED){
-			val mDialog: AlertDialog = mDialogBuilder.create()
-			mDialog.setTitle("Grant a permission")
-			mDialog.setMessage(getString(R.string.prompt_string))
-			mDialog.setButton(AlertDialog.BUTTON_POSITIVE,getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
+			val dialog: AlertDialog = dialogBuilder.create()
+			dialog.setTitle("Grant a permission")
+			dialog.setMessage(getString(R.string.prompt_string))
+			dialog.setButton(AlertDialog.BUTTON_POSITIVE,getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
 				val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
 				intent.data = Uri.fromParts("package",packageName,null)
 				dialogInterface.dismiss()
 				startActivity(intent)
 			}
-			mDialog.show()
+			dialog.show()
 		}
 	}
 }

@@ -83,7 +83,7 @@ class SettingsActivity: AppCompatActivity(){
 
 		override fun onCreate(savedInstanceState: Bundle?) {
 			super.onCreate(savedInstanceState)
-			setHasOptionsMenu(true)
+			setHasOptionsMenu(true) // deprecated, newer api dont need boolean, but compile error
 			findPreference<Preference>("blacklist")!!.onPreferenceClickListener =
 				Preference.OnPreferenceClickListener { _ ->
 					startActivity(Intent(requireContext(), BlacklistActivity::class.java))

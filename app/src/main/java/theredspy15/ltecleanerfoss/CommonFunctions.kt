@@ -3,6 +3,7 @@
  * (C) 2024 MDP43140
  */
 package theredspy15.ltecleanerfoss
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -20,41 +21,43 @@ import theredspy15.ltecleanerfoss.controllers.ErrorActivity
 import java.text.DecimalFormat
 import kotlin.system.exitProcess
 object CommonFunctions {
-	fun makeStatusNotification(message: String?, ctx: Context): NotificationCompat.Builder {
-
-		// Name of Notification Channel for verbose notifications of background work
-		val NOTIFICATION_TITLE: CharSequence = ctx.getString(R.string.notification_title)
-
-		// Make a channel if necessary
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-			val VERBOSE_NOTIFICATION_CHANNEL_NAME: CharSequence =
-				ctx.getString(R.string.settings_notification_name)
-			val VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION =
-				ctx.getString(R.string.settings_notification_sum)
-			// Create the NotificationChannel, but only on API 26+ because
-			// the NotificationChannel class is new and not in the support library
-			val channel =
-				NotificationChannel(Constants.NOTIFICATION_CHANNEL_SERVICE, VERBOSE_NOTIFICATION_CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT)
-			channel.description = VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
-
-			// Add the channel
-			val notificationManager =
-				ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-			notificationManager.createNotificationChannel(channel)
+	fun makeNotificationChannel(ctx: Context, name: String, description: String?, channelName: String, importance: Int){
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+			val channel = NotificationChannel(channelName, name, importance)
+			channel.description = description
+			(ctx.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
 		}
-
-		// Create the notification
-		val notification = NotificationCompat.Builder(ctx, Constants.NOTIFICATION_CHANNEL_SERVICE)
+	}
+	fun makeNotification(ctx: Context, channel: String): NotificationCompat.Builder {
+		return NotificationCompat.Builder(ctx, channel)
 			.setSmallIcon(R.drawable.ic_baseline_cleaning_services_24)
-			.setContentTitle(NOTIFICATION_TITLE)
-			.setContentText(message)
 			.setAutoCancel(true)
 			.setPriority(NotificationCompat.PRIORITY_DEFAULT)
 			.setVibrate(LongArray(0))
-		return notification
+	}
+	fun makeStatusNotification(ctx: Context, message: String?): NotificationCompat.Builder {
+		// Name of Notification Channel for verbose notifications of background work
+		val title: CharSequence = ctx.getString(R.string.svc_notification_title)
+
+		// Make a channel if necessary
+		makeNotificationChannel(
+			ctx,
+			ctx.getString(R.string.default_notification_name),
+			ctx.getString(R.string.default_notification_sum),
+			Constants.NOTIFICATION_CHANNEL_SERVICE,
+			NotificationManager.IMPORTANCE_DEFAULT
+		)
+
+		// Create the notification
+		return makeNotification(ctx, Constants.NOTIFICATION_CHANNEL_SERVICE)
+			.setContentTitle(title)
+			.setContentText(message)
+	}
+	fun sendNotification(ctx: Context, id: Int, notification: Notification){
+		NotificationManagerCompat.from(ctx).notify(id, notification)
 	}
 	fun sendNotification(ctx: Context, id: Int, notification: NotificationCompat.Builder){
-		NotificationManagerCompat.from(ctx).notify(id, notification.build())
+		sendNotification(ctx, id, notification.build())
 	}
 	fun updateTheme(prefs: SharedPreferences?){
 		try {
@@ -67,7 +70,6 @@ object CommonFunctions {
 	fun updateTheme(theme: Int){
 		AppCompatDelegate.setDefaultNightMode(theme)
 	}
-	// ANTI-UNLUCK CHUNK
 	fun handleError(ctx: Context, severity: Byte?, paramThrowable: Throwable){
 		// Severity level:
 		// 1: Can be ignored, print Log.e()
