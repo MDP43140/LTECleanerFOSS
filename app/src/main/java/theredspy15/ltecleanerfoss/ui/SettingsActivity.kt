@@ -20,7 +20,6 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
-//import org.acra.ACRA
 import org.json.JSONArray
 import org.json.JSONObject
 import theredspy15.ltecleanerfoss.App

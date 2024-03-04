@@ -11,7 +11,7 @@
 	android:orientation="vertical"
 	android:padding="12dp"
 	android:weightSum="3"
-	tools:context=".controllers.BlacklistActivity">
+	tools:context=".ui.BlacklistActivity">
 
 	<ScrollView
 		android:layout_weight="3"

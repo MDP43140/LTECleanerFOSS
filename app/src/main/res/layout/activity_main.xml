@@ -10,7 +10,7 @@
 	android:weightSum="4"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	tools:context=".controllers.MainActivity"
+	tools:context=".ui.MainActivity"
 	android:id="@+id/main_layout">
 
 	<ScrollView

@@ -9,7 +9,7 @@
 	android:id="@+id/layout"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	tools:context=".controllers.SettingsActivity">
+	tools:context=".ui.SettingsActivity">
 	<ListView
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
