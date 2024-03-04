@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Klembord wissen</string>
 	<string name="double_check_sum">Wordt elke keer dat er iets wordt gevonden met een limiet van tien scans opnieuw uitgevoerd</string>
 	<string name="double_check_title">Dubbele controle</string>
-	<string name="notification_title">LTE Clean Worker Voltooid</string>
-	<string name="clean_notification">Schoongemaakt:</string>
+	<string name="svc_notification_title">LTE Clean Worker Voltooid</string>
 	<string name="empty_whitelist">Niets in whitelist</string>
 	<string name="theme_sum">Volg anders de systeeminstellingen. App Opnieuw starten om van kracht te worden</string>
 	<string name="theme_title">Selecteer een thema</string>

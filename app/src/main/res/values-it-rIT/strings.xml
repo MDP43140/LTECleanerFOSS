@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Pulisci gli appunti</string>
 	<string name="double_check_sum">La scansione verrà ripetuta ogni volta che qualcosa viene trovato, fino a un massimo di dieci scansioni</string>
 	<string name="double_check_title">Controllo doppio</string>
-	<string name="notification_title">Processo di pulizia LTE terminato</string>
-	<string name="clean_notification">Pulito:</string>
+	<string name="svc_notification_title">Processo di pulizia LTE terminato</string>
 	<string name="empty_whitelist">Niente in whitelist</string>
 	<string name="theme_sum">Altrimenti seguiranno le impostazioni di sistema. Riavvia l\'app per prendere effetto</string>
 	<string name="theme_title">Seleziona Tema</string>

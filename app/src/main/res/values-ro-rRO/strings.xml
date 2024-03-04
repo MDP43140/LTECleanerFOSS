@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Curăţare clipboard</string>
 	<string name="double_check_sum">Va rula din nou scanarea de fiecare dată când se găseşte ceva cu o limită de zece scanări</string>
 	<string name="double_check_title">Verificator dublu</string>
-	<string name="notification_title">Lucrător curant curat terminat</string>
-	<string name="clean_notification">Curăţat:</string>
+	<string name="svc_notification_title">Lucrător curant curat terminat</string>
 	<string name="empty_whitelist">Nimic în whitelist</string>
 	<string name="theme_sum">Va urma în caz contrar setările sistemului. Reporniți aplicația pentru a intra în vigoare</string>
 	<string name="theme_title">Selectează tema</string>

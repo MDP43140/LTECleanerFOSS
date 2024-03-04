@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">清除剪貼簿</string>
 	<string name="double_check_sum">每次找到有 10 個掃描限制的項目時，都會重新執行掃描</string>
 	<string name="double_check_title">雙重檢查程式</string>
-	<string name="notification_title">LTE 清除工作者已完成</string>
-	<string name="clean_notification">已清除：</string>
+	<string name="svc_notification_title">LTE 清除工作者已完成</string>
 	<string name="empty_whitelist">白名單中沒有任何項目</string>
 	<string name="theme_sum">否則將遵循系統設定。 重新啟動應用程式以生效</string>
 	<string name="theme_title">選取佈景主題</string>

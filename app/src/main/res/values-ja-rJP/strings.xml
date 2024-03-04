@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">クリップボードをクリア</string>
 	<string name="double_check_sum">スキャンごとに 10 個のスキャンの制限が検出されるたびにスキャンを再実行します</string>
 	<string name="double_check_title">ダブル・チェッカー</string>
-	<string name="notification_title">LTE クリーン・ワーカー完了</string>
-	<string name="clean_notification">クリーンアップ:</string>
+	<string name="svc_notification_title">LTE クリーン・ワーカー完了</string>
 	<string name="empty_whitelist">ホワイトリストにない</string>
 	<string name="theme_sum">それ以外はシステム設定に従います。 アプリを再始動して有効にする</string>
 	<string name="theme_title">テーマの選択</string>

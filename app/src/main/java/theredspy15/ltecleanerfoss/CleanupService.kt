@@ -55,7 +55,7 @@ class CleanupService: Service(){
 				// kilobytes found/freed text
 				val kilobytesTotal = fs.start()
 				val title =
-					getString(R.string.clean_notification) +
+					getString(R.string.freed) +
 					" " +
 					convertSize(kilobytesTotal)
 				stopForeground(STOP_FOREGROUND_REMOVE)

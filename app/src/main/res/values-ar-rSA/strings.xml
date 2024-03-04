@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">مسح الحافظة</string>
 	<string name="double_check_sum">سيتم إعادة تشغيل المسح في كل مرة يتم العثور على شيء بحد أقصى من عشرة مسوحات</string>
 	<string name="double_check_title">الفحص المزدوج</string>
-	<string name="notification_title">إنتهى عمل تطبيق منظف LTE</string>
-	<string name="clean_notification">تم تنظيفه:</string>
+	<string name="svc_notification_title">إنتهى عمل تطبيق منظف LTE</string>
 	<string name="empty_whitelist">لا شيء في البياض</string>
 	<string name="theme_sum">سيتم اتباع محددات النظام بطريقة أخرى. قم باعادة بدء التطبيق ليصبح فعال</string>
 	<string name="theme_title">اختيار نسق رئيسي</string>

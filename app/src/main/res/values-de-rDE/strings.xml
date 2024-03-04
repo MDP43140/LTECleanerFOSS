@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Zwischenablage löschen</string>
 	<string name="double_check_sum">Wird den Scan jedes Mal erneut ausführen, wenn bei einer Begrenzung von zehn Scans etwas gefunden wird.</string>
 	<string name="double_check_title">Doppelter Checker</string>
-	<string name="notification_title">LTE Clean Worker Beendet</string>
-	<string name="clean_notification">Bereinigt:</string>
+	<string name="svc_notification_title">LTE Clean Worker Beendet</string>
 	<string name="empty_whitelist">Nichts in Whitelist</string>
 	<string name="theme_sum">Andernfalls folgen Sie den Systemeinstellungen. App erneut starten, um wirksam zu werden</string>
 	<string name="theme_title">Thema auswählen</string>

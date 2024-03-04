@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Panoyu temizle</string>
 	<string name="double_check_sum">On taramanın bir sınırı olan bir şeyin her birinde tarama işlemi yeniden çalıştırılır</string>
 	<string name="double_check_title">Çift Denetleyici</string>
-	<string name="notification_title">LTE Clean Worker Bitti</string>
-	<string name="clean_notification">Temizlendi:</string>
+	<string name="svc_notification_title">LTE Clean Worker Bitti</string>
 	<string name="empty_whitelist">Beyaz liste içinde hiçbir şey yok</string>
 	<string name="theme_sum">Tersi durumda, sistem ayarları da izlenecektir. Etkiyi yürürlüğe almak için uygulamayı yeniden başlat</string>
 	<string name="theme_title">Tema Seçin</string>

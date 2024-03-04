@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Ryd udklipsholder</string>
 	<string name="double_check_sum">Udfør scanningen igen, hver gang noget er fundet med en grænse på ti scanninger</string>
 	<string name="double_check_title">Dobbelttekker</string>
-	<string name="notification_title">LTE Clean Worker Finished</string>
-	<string name="clean_notification">Rengøring:</string>
+	<string name="svc_notification_title">LTE Clean Worker Finished</string>
 	<string name="empty_whitelist">Intet i hvidlisten</string>
 	<string name="theme_sum">Vil ellers følge systemindstillingerne. Genstart applikation, der skal træde i kraft</string>
 	<string name="theme_title">Vælg tema</string>

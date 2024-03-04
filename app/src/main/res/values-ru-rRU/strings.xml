@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Очистить буфер обмена</string>
 	<string name="double_check_sum">Будет повторно сканировать каждый раз, когда что-то найдено с огранич. десять просмотров</string>
 	<string name="double_check_title">Двойная проверка</string>
-	<string name="notification_title">Приемка очистки LTE завершена</string>
-	<string name="clean_notification">Очищено:</string>
+	<string name="svc_notification_title">Приемка очистки LTE завершена</string>
 	<string name="empty_whitelist">В белом списке нет ничего</string>
 	<string name="theme_sum">В противном случае последуют параметры системы. Перезапустить приложение, чтобы выполнить действие</string>
 	<string name="theme_title">Выбрать тему</string>

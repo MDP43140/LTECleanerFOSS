@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Rensa klippbordet</string>
 	<string name="double_check_sum">Will Rerun scan varje gång något hittas med en gräns på tio skanningar</string>
 	<string name="double_check_title">Dubbelkontroll</string>
-	<string name="notification_title">LTE rensad arbetskjul klar</string>
-	<string name="clean_notification">Rensade:</string>
+	<string name="svc_notification_title">LTE rensad arbetskjul klar</string>
 	<string name="empty_whitelist">Inget i whitelist</string>
 	<string name="theme_sum">Kommer på annat sätt att följa systeminställningarna. Starta om app för att få effekt</string>
 	<string name="theme_title">Välj tema</string>

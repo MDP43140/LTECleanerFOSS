@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Tyhjennä kirjoituslevy</string>
 	<string name="double_check_sum">Skannaan joka kerta, kun jotain löytyy 10 skannauksesta.</string>
 	<string name="double_check_title">Double Checker</string>
-	<string name="notification_title">LTE-puhdas käsittelijä on valmis</string>
-	<string name="clean_notification">Puhdistettu:</string>
+	<string name="svc_notification_title">LTE-puhdas käsittelijä on valmis</string>
 	<string name="empty_whitelist">Ei mitään valkoisesta</string>
 	<string name="theme_sum">Muussa tapauksessa seuraa järjestelmän asetuksia. Aloita sovellus uudelleen</string>
 	<string name="theme_title">Valitse teema</string>

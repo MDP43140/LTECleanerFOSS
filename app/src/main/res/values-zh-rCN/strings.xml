@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">清除剪贴板</string>
 	<string name="double_check_sum">每次发现具有 10 次扫描限制的内容时，将重新运行扫描</string>
 	<string name="double_check_title">双校验器</string>
-	<string name="notification_title">LTE 清除工作程序已完成</string>
-	<string name="clean_notification">已清除:</string>
+	<string name="svc_notification_title">LTE 清除工作程序已完成</string>
 	<string name="empty_whitelist">白名单中没有任何内容</string>
 	<string name="theme_sum">否则将遵循系统设置。 重新启动应用程序以生效</string>
 	<string name="theme_title">选择主题</string>

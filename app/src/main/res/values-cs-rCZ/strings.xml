@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Vymazat schránku</string>
 	<string name="double_check_sum">Znovu spustí skenování pokaždé, když se něco najde s omezením na deset skenování</string>
 	<string name="double_check_title">Dvojitá kontrola</string>
-	<string name="notification_title">Vyčištění LTE-dokončeno</string>
-	<string name="clean_notification">Očištěné:</string>
+	<string name="svc_notification_title">Vyčištění LTE-dokončeno</string>
 	<string name="empty_whitelist">Nic v seznamu povolených</string>
 	<string name="theme_sum">V opačném případě se řiďte systémovými nastaveními. Restartujte aplikaci, aby se projevila</string>
 	<string name="theme_title">Vybrat motiv</string>

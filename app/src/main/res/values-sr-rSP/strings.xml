@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Clear clipboard</string>
 	<string name="double_check_sum">Will rerun scan each time something is found with a limit of ten scans</string>
 	<string name="double_check_title">Double Checker</string>
-	<string name="notification_title">LTE Clean Worker Finished</string>
-	<string name="clean_notification">Cleaned:</string>
+	<string name="svc_notification_title">LTE Clean Worker Finished</string>
 	<string name="empty_whitelist">Nothing in whitelist</string>
 	<string name="theme_sum">Will otherwise follow system settings. Restart app to take effect</string>
 	<string name="theme_title">Select Theme</string>

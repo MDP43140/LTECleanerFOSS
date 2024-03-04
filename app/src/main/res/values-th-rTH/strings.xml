@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">ลบคลิปบอร์ด</string>
 	<string name="double_check_sum">จะทำการสแกนอีกครั้งในแต่ละครั้งที่พบบางสิ่งที่มีการจำกัดสิบครั้ง</string>
 	<string name="double_check_title">การตรวจสอบสองครั้ง</string>
-	<string name="notification_title">LTE Worker เสร็จสิ้นแล้ว</string>
-	<string name="clean_notification">ทำความสะอาดแล้ว:</string>
+	<string name="svc_notification_title">LTE Worker เสร็จสิ้นแล้ว</string>
 	<string name="empty_whitelist">ไม่มีสิ่งใดใน white list</string>
 	<string name="theme_sum">มิฉะนั้นจะติดตามการตั้งค่าระบบ รีสตาร์ทแอ็พเพื่อให้มีผลบังคับใช้</string>
 	<string name="theme_title">เลือกธีม</string>

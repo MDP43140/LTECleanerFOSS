@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Καθαρό πρόχειρο.</string>
 	<string name="double_check_sum">Θα εκτελείται σάρωση κάθε φορά που υπάρχει ένα όριο δέκα σαρώσεων.</string>
 	<string name="double_check_title">Διπλό Checker</string>
-	<string name="notification_title">Ολοκληρώθηκε η εκκαθάριση LTE</string>
-	<string name="clean_notification">Καθαρισμός:</string>
+	<string name="svc_notification_title">Ολοκληρώθηκε η εκκαθάριση LTE</string>
 	<string name="empty_whitelist">Τίποτα στη Whitelist</string>
 	<string name="theme_sum">Θα ακολουθήσει τις ρυθμίσεις του συστήματος. Επανεκκινήστε την εφαρμογή.</string>
 	<string name="theme_title">Επιλογή θέματος:</string>

@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Xóa bảng tạm</string>
 	<string name="double_check_sum">Sẽ chạy lại quét mỗi lần thứ gì đó được tìm thấy với giới hạn 10 quét</string>
 	<string name="double_check_title">Trình kiểm tra kép</string>
-	<string name="notification_title">Công nhân sạch LTE kết thúc</string>
-	<string name="clean_notification">Dọn dẹp:</string>
+	<string name="svc_notification_title">Công nhân sạch LTE kết thúc</string>
 	<string name="empty_whitelist">Không có gì trong trắng.</string>
 	<string name="theme_sum">Nếu không sẽ tuân theo thiết lập hệ thống Khởi động lại ứng dụng có hiệu lực</string>
 	<string name="theme_title">Chọn sắc thái</string>

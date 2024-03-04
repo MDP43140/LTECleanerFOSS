@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">ניקוי לוח הגזירים</string>
 	<string name="double_check_sum">יבצע הרצה מחדש של סריקה בכל פעם שמשהו נמצא עם מגבלה של 10 סריקות</string>
 	<string name="double_check_title">בודק כפול</string>
-	<string name="notification_title">עבודה נקייה של LTE הסתיימה</string>
-	<string name="clean_notification">ניקוי:</string>
+	<string name="svc_notification_title">עבודה נקייה של LTE הסתיימה</string>
 	<string name="empty_whitelist">אין פריטים ברשימה הלבנה</string>
 	<string name="theme_sum">במקרים אחרים, בצעו את הגדרות המערכת. הפעלה מחדש של יישום לביצוע</string>
 	<string name="theme_title">בחירת ערכה</string>

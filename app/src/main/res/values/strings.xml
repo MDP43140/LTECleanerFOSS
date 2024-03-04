@@ -54,7 +54,6 @@
 	<string name="double_check_sum">How many times the scan reruns each time something is found</string>
 	<string name="double_check_title">Double Checker</string>
 	<string name="svc_notification_title">LTE Cleaner Worker</string>
-	<string name="clean_notification">Cleaned:</string>
 	<string name="empty_blacklist">Nothing in blacklist</string>
 	<string name="empty_whitelist">Nothing in whitelist</string>
 	<string name="theme_sum">Will otherwise follow system settings. Restart app to take effect</string>

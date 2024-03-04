@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Prancheta clara</string>
 	<string name="double_check_sum">Will rerun scan cada vez que algo for encontrado com um limite de dez scans</string>
 	<string name="double_check_title">Checador duplo</string>
-	<string name="notification_title">LTE Trabalhador Limpo Concluído</string>
-	<string name="clean_notification">Limpo:</string>
+	<string name="svc_notification_title">LTE Trabalhador Limpo Concluído</string>
 	<string name="empty_whitelist">Nada em whitelist</string>
 	<string name="theme_sum">Caso contrário, seguirá configurações do sistema. Reiniciar app para fazer efeito</string>
 	<string name="theme_title">Selecionar Tema</string>

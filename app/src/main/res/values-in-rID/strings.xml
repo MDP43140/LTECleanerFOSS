@@ -53,7 +53,6 @@
 	<string name="double_check_sum">Berapa kali memindai ulang setiap kali sesuatu ditemukan</string>
 	<string name="double_check_title">Pemeriksa Ganda</string>
 	<string name="svc_notification_title">Pekerja Pembersih LTE</string>
-	<string name="clean_notification">Dibersihkan:</string>
 	<string name="empty_blacklist">Daftar hitam kosong</string>
 	<string name="empty_whitelist">Daftar putih kosong</string>
 	<string name="theme_sum">Jika tidak, ikuti pengaturan sistem. Mulai ulang aplikasi untuk menerapkan tema</string>

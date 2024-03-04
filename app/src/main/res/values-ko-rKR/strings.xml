@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">클립보드 지우기</string>
 	<string name="double_check_sum">스캔이 10개 제한된 것으로 발견될 때마다 스캔을 다시 실행합니다.</string>
 	<string name="double_check_title">더블 체크 프로그램</string>
-	<string name="notification_title">LTE 클린Worker 완료</string>
-	<string name="clean_notification">정리:</string>
+	<string name="svc_notification_title">LTE 클린Worker 완료</string>
 	<string name="empty_whitelist">화이트리스트에 없는 것</string>
 	<string name="theme_sum">그렇지 않으면 시스템 설정을 따를 것입니다. 앱을 다시 시작하여 적용</string>
 	<string name="theme_title">테마 선택</string>

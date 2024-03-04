@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Wyczyść schowek</string>
 	<string name="double_check_sum">Skanowanie będzie ponownie uruchamiane za każdym razem, gdy znajdzie się coś z limitem dziesięciu skanów.</string>
 	<string name="double_check_title">Podwójne sprawdzanie</string>
-	<string name="notification_title">Czyszczenie procesu roboczego LTE zakończone</string>
-	<string name="clean_notification">Oczyszczone:</string>
+	<string name="svc_notification_title">Czyszczenie procesu roboczego LTE zakończone</string>
 	<string name="empty_whitelist">Nic w białej liście</string>
 	<string name="theme_sum">W przeciwnym razie będą następować ustawienia systemowe. Zrestartuj aplikację, aby rozpocząć działanie</string>
 	<string name="theme_title">Wybierz kompozycję</string>

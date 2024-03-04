@@ -39,8 +39,7 @@
 	<string name="clear_clipboard">Effacer le presse-papiers</string>
 	<string name="double_check_sum">Réexécutez l\'analyse chaque fois qu\'un élément est détecté avec une limite de dix scans</string>
 	<string name="double_check_title">Vérificateur double</string>
-	<string name="notification_title">Travailleur propre LTE terminé</string>
-	<string name="clean_notification">Nettoyage:</string>
+	<string name="svc_notification_title">Travailleur propre LTE terminé</string>
 	<string name="empty_whitelist">Rien dans la liste blanche</string>
 	<string name="theme_sum">Sinon, suivez les paramètres du système. Redémarrer l\'application pour qu\'il prenne effet</string>
 	<string name="theme_title">Sélectionner le thème</string>
