@@ -30,7 +30,7 @@ class BlacklistActivity: AppCompatActivity(){
 		setContentView(R.layout.activity_blacklist)
 		binding = ActivityBlacklistBinding.inflate(layoutInflater)
 		setContentView(binding.root)
-		binding.newButton.setOnClickListener {
+		binding.addBtn.setOnClickListener {
 			val inputEditText = EditText(this)
 			val alertDialog = AlertDialog.Builder(this).create()
 			alertDialog.setTitle("Add filter")
@@ -60,7 +60,7 @@ class BlacklistActivity: AppCompatActivity(){
 		layout.setMargins(0,20,0,20)
 		if (blackList.isNullOrEmpty()) {
 			val textView = TextView(this)
-			textView.setText(R.string.empty_blacklist)
+			textView.text = getString(R.string.empty_blacklist)
 			textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
 			textView.textSize = 18f
 			runOnUiThread { binding.pathsLayout.addView(textView, layout) }

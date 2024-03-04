@@ -22,13 +22,11 @@
 			android:id="@+id/pathsLayout"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="vertical">
-
-		</LinearLayout>
+			android:orientation="vertical"/>
 	</ScrollView>
 
 	<Button
-		android:id="@+id/newButton"
+		android:id="@+id/addBtn"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:padding="12dp"

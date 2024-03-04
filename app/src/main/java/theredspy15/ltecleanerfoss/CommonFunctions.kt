@@ -89,7 +89,7 @@ object CommonFunctions {
 //			}
 //		}
 	}
-	@JvmStatic fun writeContentToUri(ctx: Context,uri: Uri, content: String){
+	fun writeContentToUri(ctx: Context,uri: Uri, content: String){
 		ctx.contentResolver.openOutputStream(uri)?.use { outputStream ->
 			outputStream.write(content.toByteArray())
 		}

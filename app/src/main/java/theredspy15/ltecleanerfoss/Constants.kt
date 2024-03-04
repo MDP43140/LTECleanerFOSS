@@ -47,18 +47,24 @@ object Constants {
 		"/storage/emulated/0/.*Cache",
 		"/storage/emulated/0/.*cache"
 	)
-	val whitelistDefault: Set<String> = setOf(
-		".*/backup",
-		".*/copy",
-		".*/copies",
-		".*/important",
-		".*/do_not_edit"
+	val whitelistDefault: Set<String> = emptySet()
+	val whitelistOnDefault: Set<String> = emptySet()
+	val filter_genericFiles: ArrayList<String> = arrayListOf(
+		".tmp",
+		".log"
 	)
-	val whitelistOnDefault: Set<String> = setOf(
-		".*/backup",
-		".*/copy",
-		".*/copies",
-		".*/important",
-		".*/do_not_edit"
+	val filter_genericFolders: ArrayList<String> = arrayListOf(
+		"Logs",
+		"logs",
+		"temp",
+		"Temporary",
+		"temporary"
+	)
+	val filter_autoWhite: ArrayList<String> = arrayListOf(
+		"backup",
+		"copy",
+		"copies",
+		"important",
+		"do_not_edit"
 	)
 }

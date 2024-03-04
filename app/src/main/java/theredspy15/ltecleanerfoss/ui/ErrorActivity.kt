@@ -48,11 +48,11 @@ class ErrorActivity: AppCompatActivity(){
 		val formattedText = StringBuilder()
 			.append("## Exception\n")
 			.append("* __App language:__ ${appLang}\n")
-			.append("* __App version :__ ${appVersion}\n")
+			.append("* __App version:__ ${appVersion}\n")
 			.append("* __Device:__ ${Build.BRAND} ${Build.MODEL}\n")
-			.append("* __OS Version  :__ ${osVersion}\n")
-			.append("* __GMT Time    :__ ${formattedDateTime}\n")
-			.append("<details><summary><b>Crash log </b></summary><p>\n")
+			.append("* __OS Version:__ ${osVersion}\n")
+			.append("* __GMT Time:__ ${formattedDateTime}\n")
+			.append("<details><summary><b>Crash log</b></summary><p>\n")
 			.append("```\n${exceptionMessage}\n```\n")
 			.append("</details><hr>")
 			.toString()
@@ -73,7 +73,7 @@ class ErrorActivity: AppCompatActivity(){
 		binding.reportIssueGithubBtn.setOnClickListener {
 			startActivity(Intent(
 				Intent.ACTION_VIEW,
-				Uri.parse("https://github.com/mdp43140/LTECleanerFOSS/issues")
+				Uri.parse("https://github.com/mdp43140/LTECleanerFOSS/issues/new")
 			))
 		}
 	}

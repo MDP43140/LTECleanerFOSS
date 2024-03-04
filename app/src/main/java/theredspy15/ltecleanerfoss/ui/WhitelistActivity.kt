@@ -29,7 +29,7 @@ class WhitelistActivity: AppCompatActivity(){
 		setContentView(R.layout.activity_whitelist)
 		binding = ActivityWhitelistBinding.inflate(layoutInflater)
 		setContentView(binding.root)
-		binding.newButton.setOnClickListener {
+		binding.addBtn.setOnClickListener {
 			// Creates a dialog asking for a file/folder name to add to the whitelist
 			mGetContent.launch(Uri.fromFile(Environment.getDataDirectory()))
 		}
@@ -46,7 +46,7 @@ class WhitelistActivity: AppCompatActivity(){
 		layout.setMargins(0,20,0,20)
 		if (whiteList.isNullOrEmpty()) {
 			val textView = TextView(this)
-			textView.setText(R.string.empty_whitelist)
+			textView.text = getString(R.string.empty_whitelist)
 			textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
 			textView.textSize = 18f
 			runOnUiThread { binding.pathsLayout.addView(textView, layout) }

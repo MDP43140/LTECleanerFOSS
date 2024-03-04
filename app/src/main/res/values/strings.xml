@@ -88,25 +88,4 @@
 		<item>Light</item>
 		<item>Dark</item>
 	</string-array>
-
-	<string-array name="generic_filter_files" translatable="false">
-		<item>.tmp</item>
-		<item>.log</item>
-	</string-array>
-	<string-array name="generic_filter_folders" translatable="false">
-		<item>Logs</item>
-		<item>logs</item>
-		<item>temp</item>
-		<item>Temporary</item>
-		<item>temporary</item>
-	</string-array>
-
-	<!-- TODO: Remove or change this placeholder text -->
-	<string-array name="autowhitelist_filter" translatable="false">
-		<item>backup</item>
-		<item>copy</item>
-		<item>copies</item>
-		<item>important</item>
-		<item>do_not_edit</item>
-	</string-array>
 </resources>

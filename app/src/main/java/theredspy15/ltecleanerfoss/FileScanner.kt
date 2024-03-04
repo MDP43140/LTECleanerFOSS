@@ -168,29 +168,22 @@ class FileScanner(private val path: File, context: Context){
 
 	/**
 	 * Adds paths to the white list that are not to be cleaned. As well as adds extensions to filter.
-	 * 'generic', 'aggressive', and 'apk' should be assigned by calling preferences.getBoolean()
+	 * 'generic', and 'apk' should be assigned by calling preferences.getBoolean()
 	 */
 	fun setFilters(generic: Boolean, apk: Boolean){
-		val folders: MutableList<String> = ArrayList()
-		val files: MutableList<String> = ArrayList()
-		if (generic) {
-			folders.addAll(listOf(*res.getStringArray(R.array.generic_filter_folders)))
-			files.addAll(listOf(*res.getStringArray(R.array.generic_filter_files)))
-		}
-
-		// filters
 		filters.clear()
-		for (folder in folders) filters.add(getRegexForFolder(folder))
-		for (file in files) filters.add(getRegexForFile(file))
-
-		if (autoWhite){
-			// whitelist
-			whitelist.clear()
-			whitelist.addAll(listOf(*res.getStringArray(R.array.autowhitelist_filter)))
+		// filters
+		if (generic){
+			for (folder in Constants.filter_genericFolders) filters.add(getRegexForFolder(folder))
+			for (file in Constants.filter_genericFiles) filters.add(getRegexForFile(file))
 		}
-
 		// apk
 		if (apk) filters.add(getRegexForFile(".apk"))
+		// whitelist
+		if (autoWhite){
+			whitelist.clear()
+			whitelist.addAll(Constants.filter_autoWhite)
+		}
 	}
 
 	fun start(): Long {

@@ -12,6 +12,7 @@ import android.os.IBinder
 import android.os.Environment
 import androidx.core.app.NotificationCompat
 import androidx.preference.PreferenceManager
+import java.util.Locale
 import theredspy15.ltecleanerfoss.Constants
 import theredspy15.ltecleanerfoss.CommonFunctions.makeStatusNotification
 import theredspy15.ltecleanerfoss.CommonFunctions.makeNotification
@@ -80,7 +81,7 @@ class CleanupService: Service(){
 	}
 	private fun updatePercentage(ctx: Context, percent: Double){
 		notification.setProgress(100,percent.toInt(),false)
-			.setContentText(ctx.getString(R.string.status_running))
+			.setContentText(String.format(Locale.US,"%s %.0f%%",ctx.getString(R.string.status_running),percent))
 		startForeground(Constants.NOTIFICATION_ID_SERVICE, notification.build())
 	}
 }
