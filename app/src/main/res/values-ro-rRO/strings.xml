@@ -26,7 +26,6 @@
 	<string name="apk_sum">Fişiere de instalare pentru android</string>
 	<string name="oneclick_sum">Nu există dialog de confirmare când este apăsat butonul curat</string>
 	<string name="autowhite_sum">Detectarea folderelor care ar trebui protejate automat</string>
-	<string name="prompt_string">Vă rugăm adăugaţi permisiuni de acces fişier</string>
 	<string name="settings_string">Setări</string>
 	<string name="corpse_summary">Fişiere rămase de la aplicaţii neinstalate</string>
 	<string name="corpse_title">Ştergere fişiere cadavru</string>

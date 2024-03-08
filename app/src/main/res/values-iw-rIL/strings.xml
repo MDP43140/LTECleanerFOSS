@@ -26,7 +26,6 @@
 	<string name="apk_sum">קובצי התקנה עבור Android</string>
 	<string name="oneclick_sum">אין תיבת דו-שיח לאישור כאשר לוחצים על הלחצן \' ניקוי \'</string>
 	<string name="autowhite_sum">איתור תיקיות שיש להגן עליהן אוטומטית.</string>
-	<string name="prompt_string">נא להוסיף הרשאות גישה לקובץ.</string>
 	<string name="settings_string">הגדרות</string>
 	<string name="corpse_summary">קבצים שנשארו מאפליקציות לא מותקנות</string>
 	<string name="corpse_title">מחיקת קובצי גופה</string>

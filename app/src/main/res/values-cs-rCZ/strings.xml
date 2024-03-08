@@ -26,7 +26,6 @@
 	<string name="apk_sum">Soubory instalačního programu pro android</string>
 	<string name="oneclick_sum">Po stisknutí tlačítka pro vyčištění se nezobrazí žádné potvrzovací dialogové okno</string>
 	<string name="autowhite_sum">Zjišťovat složky, které mají být automaticky chráněny</string>
-	<string name="prompt_string">Přidejte přístupová oprávnění k souboru</string>
 	<string name="settings_string">NastaveníComment</string>
 	<string name="corpse_summary">Soubory ponechané v odinstalovaných aplikacích</string>
 	<string name="corpse_title">Odstranit soubory mrtvol</string>

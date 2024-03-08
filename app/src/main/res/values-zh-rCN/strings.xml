@@ -26,7 +26,6 @@
 	<string name="apk_sum">Android 的安装程序文件</string>
 	<string name="oneclick_sum">按下清理按钮时没有确认对话框</string>
 	<string name="autowhite_sum">检测应该自动保护的文件夹</string>
-	<string name="prompt_string">请添加文件访问许可权</string>
 	<string name="settings_string">设置</string>
 	<string name="corpse_summary">从已卸载应用程序遗留的文件</string>
 	<string name="corpse_title">删除尸体文件</string>

@@ -26,7 +26,6 @@
 	<string name="apk_sum">android için kuruluş programı dosyaları</string>
 	<string name="oneclick_sum">Temizleme düğmesine basıldığında doğrulama iletişim kutusu yok</string>
 	<string name="autowhite_sum">Otomatik olarak korunması gereken klasörleri sapta</string>
-	<string name="prompt_string">Lütfen dosya erişimi izinlerini ekleyin</string>
 	<string name="settings_string">Ayarlar</string>
 	<string name="corpse_summary">Kaldırılan uygulamalardan kalan dosyalar</string>
 	<string name="corpse_title">Ceset dosyalarını sil</string>

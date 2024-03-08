@@ -26,7 +26,6 @@
 	<string name="apk_sum">Android 的安裝程式檔案</string>
 	<string name="oneclick_sum">按下清潔按鈕時沒有確認對話框</string>
 	<string name="autowhite_sum">偵測應該自動保護的資料夾</string>
-	<string name="prompt_string">請新增檔案存取許可權</string>
 	<string name="settings_string">設定</string>
 	<string name="corpse_summary">已解除安裝應用程式遺留的檔案數</string>
 	<string name="corpse_title">刪除屍體檔案</string>

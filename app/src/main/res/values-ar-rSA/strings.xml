@@ -26,7 +26,6 @@
 	<string name="apk_sum">ملفات المثبت للأندرويد</string>
 	<string name="oneclick_sum">لا يوجد مربع حوار للتأكيد عند الضغط على المفتاح النظيف</string>
 	<string name="autowhite_sum">اكتشاف الحافظات التي يجب حمايتها آليا</string>
-	<string name="prompt_string">الرجاء إضافة أذونات الوصول إلى الملفات</string>
 	<string name="settings_string">الإعدادات</string>
 	<string name="corpse_summary">الملفات المتبقية من التطبيقات غير المثبتة</string>
 	<string name="corpse_title">حذف الملفات الميتة</string>

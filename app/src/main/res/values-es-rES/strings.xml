@@ -26,7 +26,6 @@
 	<string name="apk_sum">Archivos de instalación para Android</string>
 	<string name="oneclick_sum">No mostrar diálogo de confirmación al pulsar el botón de limpieza</string>
 	<string name="autowhite_sum">Detectar carpetas que deben protegerse automáticamente</string>
-	<string name="prompt_string">Por favor, conceda permiso de acceso a archivos</string>
 	<string name="settings_string">Ajustes</string>
 	<string name="corpse_summary">Archivos restantes de aplicaciones desinstaladas</string>
 	<string name="corpse_title">Eliminar archivos de cadáveres</string>

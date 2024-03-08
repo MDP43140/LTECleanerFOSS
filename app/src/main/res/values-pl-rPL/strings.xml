@@ -26,7 +26,6 @@
 	<string name="apk_sum">Pliki instalacji aplikacji dla Androida</string>
 	<string name="oneclick_sum">Po naciśnięciu przycisku czyszczenia nie jest wyświetlane okno dialogowe potwierdzenia</string>
 	<string name="autowhite_sum">Automatycznie wykryj foldery, które powinny zostać wykluczone</string>
-	<string name="prompt_string">Aplikacja wymaga dostępu do plików</string>
 	<string name="settings_string">Ustawienia</string>
 	<string name="corpse_summary">Pliki pozostałe po odinstalowanych aplikacjach</string>
 	<string name="corpse_title">Usuń ostałe pliki</string>

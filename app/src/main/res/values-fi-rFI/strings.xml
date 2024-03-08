@@ -26,7 +26,6 @@
 	<string name="apk_sum">Android-tiedostot</string>
 	<string name="oneclick_sum">Ei vahvistusta valintaikkunassa, kun puhdas painike on painettuna</string>
 	<string name="autowhite_sum">Tunnisteita, jotka on suojattava automaattisesti</string>
-	<string name="prompt_string">Lisää tiedoston käyttöoikeudet</string>
 	<string name="settings_string">Asetukset</string>
 	<string name="corpse_summary">Asennemattomasta sovelluksesta jääneet tiedostot</string>
 	<string name="corpse_title">Poista ruumistiedostot</string>

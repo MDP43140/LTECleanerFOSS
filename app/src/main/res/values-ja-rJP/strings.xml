@@ -26,7 +26,6 @@
 	<string name="apk_sum">Androidのインストーラーファイル</string>
 	<string name="oneclick_sum">クリーン・ボタンが押されたときに確認ダイアログを表示しません。</string>
 	<string name="autowhite_sum">保護すべきフォルダーを自動的に検出する</string>
-	<string name="prompt_string">ファイルのアクセス許可を追加してください</string>
 	<string name="settings_string">設定</string>
 	<string name="corpse_summary">アプリケーションのアンインストール後に残されたファイル</string>
 	<string name="corpse_title">残骸ファイルの削除</string>

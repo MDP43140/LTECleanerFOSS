@@ -26,7 +26,6 @@
 	<string name="apk_sum">Αρχεία του προγράμματος εγκατάστασης για το Android</string>
 	<string name="oneclick_sum">Δεν υπάρχει παράθυρο επιβεβαίωσης όταν πατηθεί το κουμπί.</string>
 	<string name="autowhite_sum">Εντοπισμός φακέλων που πρέπει να προστατεύονται αυτόματα</string>
-	<string name="prompt_string">Προσθέστε δικαιώματα πρόσβασης στο αρχείο.</string>
 	<string name="settings_string">Ρυθμίσεις:</string>
 	<string name="corpse_summary">Αρχεία που απομένουν από απεγκατάσταση εφαρμογών.</string>
 	<string name="corpse_title">Διαγραφή αρχείων πτωμάτων</string>

@@ -26,7 +26,6 @@
 	<string name="apk_sum">Installationsfiler för android</string>
 	<string name="oneclick_sum">Ingen bekräftelsedialogruta när ren knapp trycks ned</string>
 	<string name="autowhite_sum">Detektera mappar som ska skyddas automatiskt</string>
-	<string name="prompt_string">Lägg till filåtkomstbehörigheter</string>
 	<string name="settings_string">Inställningar</string>
 	<string name="corpse_summary">Filer som lämnas över från avinstallerade appar</string>
 	<string name="corpse_title">Ta bort likfiler</string>

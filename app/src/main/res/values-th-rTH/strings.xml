@@ -26,7 +26,6 @@
 	<string name="apk_sum">ไฟล์โปรแกรมติดตั้งสำหรับ android</string>
 	<string name="oneclick_sum">ไม่มีไดอะล็อกการยืนยันเมื่อกดปุ่ม clean</string>
 	<string name="autowhite_sum">ตรวจพบโฟลเดอร์ที่ควรถูกป้องกันแบบอัตโนมัติ</string>
-	<string name="prompt_string">โปรดเพิ่มสิทธิ์การเข้าถึงไฟล์</string>
 	<string name="settings_string">การตั้งค่า</string>
 	<string name="corpse_summary">ไฟล์ที่เหลือจากแอ็พที่ถอนการติดตั้ง</string>
 	<string name="corpse_title">ลบไฟล์ศพ</string>

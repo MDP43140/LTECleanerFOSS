@@ -26,7 +26,6 @@
 	<string name="apk_sum">Fichiers du programme d\'installation pour android</string>
 	<string name="oneclick_sum">Aucune boîte de dialogue de confirmation lorsque le bouton de nettoyage est appuyé</string>
 	<string name="autowhite_sum">Détecter les dossiers qui doivent être protégés automatiquement</string>
-	<string name="prompt_string">Veuillez ajouter des droits d\'accès aux fichiers</string>
 	<string name="settings_string">Paramètres</string>
 	<string name="corpse_summary">Fichiers laissés par les applications non installées</string>
 	<string name="corpse_title">Supprimer les fichiers de dépouille</string>

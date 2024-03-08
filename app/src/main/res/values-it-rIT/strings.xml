@@ -26,7 +26,6 @@
 	<string name="apk_sum">File di installazione per Android</string>
 	<string name="oneclick_sum">Non mostrare alcun messaggio di conferma quando viene premuto il pulsante Pulizia</string>
 	<string name="autowhite_sum">Rileva automaticamente le cartelle da proteggere</string>
-	<string name="prompt_string">È necessario concedere l\'autorizzazione di accesso ai file</string>
 	<string name="settings_string">Impostazioni</string>
 	<string name="corpse_summary">File residui di app disinstallate</string>
 	<string name="corpse_title">Elimina file obsoleti</string>

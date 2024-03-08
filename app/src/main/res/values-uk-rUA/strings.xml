@@ -26,7 +26,6 @@
 	<string name="apk_sum">Installer files for android</string>
 	<string name="oneclick_sum">No confirmation dialog when clean button is pressed</string>
 	<string name="autowhite_sum">Detect folders that should be protected automatically</string>
-	<string name="prompt_string">Please add file access permissions</string>
 	<string name="settings_string">Settings</string>
 	<string name="corpse_summary">Files left over from uninstalled apps</string>
 	<string name="corpse_title">Delete corpse files</string>

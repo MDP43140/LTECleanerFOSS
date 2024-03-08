@@ -26,7 +26,6 @@
 	<string name="apk_sum">Tập tin trình cài đặt cho android</string>
 	<string name="oneclick_sum">Không có hộp thoại xác nhận khi bấm nút sạch</string>
 	<string name="autowhite_sum">Phát hiện thư mục cần được bảo vệ tự động</string>
-	<string name="prompt_string">Vui lòng thêm quyền truy cập tập tin</string>
 	<string name="settings_string">Thiết lập</string>
 	<string name="corpse_summary">Tập tin bị bỏ qua các ứng dụng không cài đặt</string>
 	<string name="corpse_title">Xoá tập tin xác chết</string>

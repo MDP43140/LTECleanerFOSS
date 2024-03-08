@@ -26,7 +26,6 @@
 	<string name="apk_sum">Файлы установщиков андроид-приложений</string>
 	<string name="oneclick_sum">Не отображать окно подтверждения при нажатии кнопки \"очистить\"</string>
 	<string name="autowhite_sum">Автоматическое обнаружение папок, которые должны быть защищены</string>
-	<string name="prompt_string">Пожалуйста, предоставьте разрешение для доступа к файлам</string>
 	<string name="settings_string">Настройки</string>
 	<string name="corpse_summary">Файлы, оставшиеся от удалённых приложений</string>
 	<string name="corpse_title">Удалить остатки</string>

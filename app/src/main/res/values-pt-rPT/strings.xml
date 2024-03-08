@@ -26,7 +26,6 @@
 	<string name="apk_sum">Arquivos do instalador para android</string>
 	<string name="oneclick_sum">Nenhum diálogo de confirmação quando botão limpo é pressionado</string>
 	<string name="autowhite_sum">Detectar pastas que devem ser protegidas automaticamente</string>
-	<string name="prompt_string">Por favor inclua permissões de acesso ao arquivo</string>
 	<string name="settings_string">Configurações</string>
 	<string name="corpse_summary">Arquivos sobem a partir de apps não instalados</string>
 	<string name="corpse_title">Excluir arquivos de cadáver</string>

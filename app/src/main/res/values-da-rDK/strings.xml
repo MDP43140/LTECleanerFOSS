@@ -26,7 +26,6 @@
 	<string name="apk_sum">Installer-filer til android</string>
 	<string name="oneclick_sum">Ingen bekræftelsesdialogboks, når der trykkes på knappen</string>
 	<string name="autowhite_sum">Registrér foldere, der skal beskyttes automatisk</string>
-	<string name="prompt_string">Tilføj adgangstilladelser til fil</string>
 	<string name="settings_string">Indstillinger</string>
 	<string name="corpse_summary">Filer, der er udelod fra installerede apps</string>
 	<string name="corpse_title">Slet lig-filer</string>

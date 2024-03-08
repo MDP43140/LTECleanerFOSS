@@ -26,7 +26,6 @@
 	<string name="apk_sum">Installer-bestanden voor android</string>
 	<string name="oneclick_sum">Er is geen bevestigingsvenster wanneer u op de knop \" clean</string>
 	<string name="autowhite_sum">Detecteren van mappen die automatisch moeten worden beschermd</string>
-	<string name="prompt_string">Voeg bestandstoegangsmachtigingen toe</string>
 	<string name="settings_string">Instellingen</string>
 	<string name="corpse_summary">Bestanden over van niet geïnstalleerde apps</string>
 	<string name="corpse_title">Dode bestanden verwijderen</string>

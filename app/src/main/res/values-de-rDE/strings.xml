@@ -26,7 +26,6 @@
 	<string name="apk_sum">Installer-Dateien für Android</string>
 	<string name="oneclick_sum">Kein Bestätigungsdialog, wenn die Schaltfläche \"clean\" gedrückt wird</string>
 	<string name="autowhite_sum">Ordner erkennen, die automatisch geschützt werden sollen</string>
-	<string name="prompt_string">Fügen Sie die Dateizugriffsberechtigungen hinzu.</string>
 	<string name="settings_string">Einstellungen</string>
 	<string name="corpse_summary">Dateien, die von deinstallierten Apps übrig bleiben</string>
 	<string name="corpse_title">Corpse-Dateien löschen</string>

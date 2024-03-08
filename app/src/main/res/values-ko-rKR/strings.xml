@@ -26,7 +26,6 @@
 	<string name="apk_sum">안드로이드용 설치 프로그램 파일</string>
 	<string name="oneclick_sum">정리 단추를 누를 때 확인 대화 상자 없음</string>
 	<string name="autowhite_sum">자동으로 보호해야 하는 폴더 발견</string>
-	<string name="prompt_string">파일 액세스 권한을 추가하십시오.</string>
 	<string name="settings_string">설정</string>
 	<string name="corpse_summary">설치 제거된 앱에서 남겨진 파일</string>
 	<string name="corpse_title">시체 파일 삭제하기</string>
