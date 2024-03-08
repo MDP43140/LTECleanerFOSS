@@ -6,6 +6,7 @@ package theredspy15.ltecleanerfoss
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -16,9 +17,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import theredspy15.ltecleanerfoss.Constants
-import theredspy15.ltecleanerfoss.ui.ErrorActivity
 import java.text.DecimalFormat
+//import theredspy15.ltecleanerfoss.Constants
+import theredspy15.ltecleanerfoss.ui.ErrorActivity
 import kotlin.system.exitProcess
 object CommonFunctions {
 	fun makeNotificationChannel(ctx: Context, name: String, description: String?, channelName: String, importance: Int){
@@ -30,7 +31,7 @@ object CommonFunctions {
 	}
 	fun makeNotification(ctx: Context, channel: String): NotificationCompat.Builder {
 		return NotificationCompat.Builder(ctx, channel)
-			.setSmallIcon(R.drawable.ic_baseline_cleaning_services_24)
+			.setSmallIcon(R.drawable.ic_baseline_cleanup_24)
 			.setAutoCancel(true)
 			.setPriority(NotificationCompat.PRIORITY_DEFAULT)
 			.setVibrate(LongArray(0))
@@ -59,6 +60,18 @@ object CommonFunctions {
 	fun sendNotification(ctx: Context, id: Int, notification: NotificationCompat.Builder){
 		sendNotification(ctx, id, notification.build())
 	}
+	fun shareFile(ctx: Context, text: String, mimeType: String){
+		val intent = Intent(Intent.ACTION_SEND)
+		intent.type = mimeType
+		intent.putExtra(Intent.EXTRA_TEXT, text)
+		ctx.startActivity(Intent.createChooser(intent,null))
+	}
+	fun shareFile(ctx: Context, uri: Uri, mimeType: String){
+		val intent = Intent(Intent.ACTION_SEND)
+		intent.type = mimeType
+		intent.putExtra(Intent.EXTRA_STREAM, uri)
+		ctx.startActivity(Intent.createChooser(intent,null))
+	}
 	fun updateTheme(prefs: SharedPreferences?){
 		try {
 			// currently put within try-catch
@@ -70,24 +83,45 @@ object CommonFunctions {
 	fun updateTheme(theme: Int){
 		AppCompatDelegate.setDefaultNightMode(theme)
 	}
-	fun handleError(ctx: Context, severity: Byte?, paramThrowable: Throwable){
+	fun handleError(ctx: Context, severity: Int, throwable: Throwable){
+		handleError(ctx,severity,Log.getStackTraceString(throwable))
+	}
+	fun handleError(ctx: Context, severity: Int, exception: Exception){
+		handleError(ctx,severity,exception.stackTraceToString())
+	}
+	fun handleError(ctx: Context, severity: Int, exceptionMessage: String){
 		// Severity level:
 		// 1: Can be ignored, print Log.e()
-		// 2: Toast + Notification with button (when pressed, opens ErrorActivity)
+		// 2: Toast + Notification that opens ErrorActivity
 		// 3: Critical error: App crashed, and ErrorActivity launched (default)
-		val exceptionMessage = Log.getStackTraceString(paramThrowable)
+		// Below level 3 (avoids crash) must wrap the code within try-catch block, or the whole app freezes
+
 		Log.e("ErrorActivity",exceptionMessage)
-//		if (severity != 1){
+		if (severity != 1){
 			val intent = Intent(ctx, ErrorActivity::class.java)
 			intent.putExtra("exception_message", exceptionMessage)
 			intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//			if (severity == 2){
-				// TODO: Toast + Notification with button
-//			} else {
+			if (severity == 2){
+				makeNotificationChannel(
+					ctx,
+					ctx.getString(R.string.errLog_notification_name),
+					ctx.getString(R.string.errLog_notification_sum),
+					Constants.NOTIFICATION_CHANNEL_ERROR_LOG,
+					NotificationManager.IMPORTANCE_DEFAULT
+				)
+
+				sendNotification(
+					ctx,
+					Constants.NOTIFICATION_ID_ERROR_LOG,
+					makeNotification(ctx,Constants.NOTIFICATION_CHANNEL_ERROR_LOG)
+						.setContentTitle(exceptionMessage)
+						.setContentIntent(PendingIntent.getActivity(ctx,0,intent,PendingIntent.FLAG_UPDATE_CURRENT))
+				)
+			} else {
 				ctx.startActivity(intent)
 				exitProcess(10)
-//			}
-//		}
+			}
+		}
 	}
 	fun writeContentToUri(ctx: Context,uri: Uri, content: String){
 		ctx.contentResolver.openOutputStream(uri)?.use { outputStream ->

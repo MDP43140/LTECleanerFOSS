@@ -13,8 +13,8 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import java.util.concurrent.TimeUnit
-import theredspy15.ltecleanerfoss.App
-import theredspy15.ltecleanerfoss.Constants
+//import theredspy15.ltecleanerfoss.App
+//import theredspy15.ltecleanerfoss.Constants
 class BootReceiver: BroadcastReceiver() {
 	override fun onReceive(ctx: Context, i: Intent) {
 		val constraints = Constraints.Builder()

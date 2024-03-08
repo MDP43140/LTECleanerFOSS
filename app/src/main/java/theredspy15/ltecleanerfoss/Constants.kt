@@ -7,7 +7,9 @@ object Constants {
 	const val BGCLEAN_WORK_NAME = "scheduled_cleanup_work"
 	const val BGCLEAN_WORK_TAG = "cleanup_work_tag"
 	const val NOTIFICATION_ID_SERVICE = 1
+	const val NOTIFICATION_ID_ERROR_LOG = 2
 	const val NOTIFICATION_CHANNEL_SERVICE = "CLEANUP_SERVICE"
+	const val NOTIFICATION_CHANNEL_ERROR_LOG = "ERROR_LOG"
 	val blacklistDefault: Set<String> = setOf(
 		".*\\.log",
 		".*\\.tmp",

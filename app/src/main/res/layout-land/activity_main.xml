@@ -7,15 +7,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:orientation="horizontal"
+	android:baselineAligned="false"
+	android:id="@+id/main_layout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".controllers.MainActivity"
-	android:id="@+id/main_layout">
+	android:orientation="horizontal"
+	tools:context=".controllers.MainActivity">
 
 	<LinearLayout
 		android:orientation="vertical"
-		android:layout_width="fill_parent"
+		android:layout_width="0dp"
 		android:layout_height="fill_parent"
 		android:layout_marginTop="16dp"
 		android:layout_marginBottom="16dp"
@@ -31,11 +32,11 @@
 			<HorizontalScrollView
 				android:animateLayoutChanges="false"
 				android:layout_width="fill_parent"
-				android:layout_height="fill_parent">
+				android:layout_height="wrap_content">
 				<LinearLayout
 					android:animateLayoutChanges="false"
 					android:id="@+id/fileListView"
-					android:layout_width="match_parent"
+					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="3dp"
 					android:orientation="vertical" />
@@ -83,7 +84,7 @@
 			android:layout_height="wrap_content"
 			android:minWidth="0dp"
 			android:text="@string/clean"
-			app:icon="@drawable/ic_baseline_cleaning_services_24"
+			app:icon="@drawable/ic_baseline_cleanup_24"
 			app:iconGravity="top"
 			app:layout_columnWeight="1"
 			app:layout_rowWeight="1" />

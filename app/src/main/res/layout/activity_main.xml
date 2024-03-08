@@ -27,11 +27,11 @@
 		<HorizontalScrollView
 			android:animateLayoutChanges="false"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent">
+			android:layout_height="wrap_content">
 			<LinearLayout
 				android:animateLayoutChanges="false"
 				android:id="@+id/fileListView"
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="3dp"
 				android:textIsSelectable="true"
@@ -79,7 +79,7 @@
 			android:layout_height="wrap_content"
 			android:paddingTop="24dp"
 			android:text="@string/clean"
-			app:icon="@drawable/ic_baseline_cleaning_services_24"
+			app:icon="@drawable/ic_baseline_cleanup_24"
 			app:iconGravity="top"
 			app:layout_columnWeight="1"
 			app:layout_rowWeight="1" />

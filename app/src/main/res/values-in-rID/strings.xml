@@ -29,7 +29,7 @@
 	<string name="apk_sum">File installer untuk android</string>
 	<string name="oneclick_sum">Tidak ada dialog konfirmasi ketika tombol bersihkan ditekan</string>
 	<string name="autowhite_sum">Mendeteksi folder yang harus dilindungi secara otomatis</string>
-	<string name="prompt_string">Harap tambahkan izin akses file</string>
+	<string name="grantStorage_sum">Pembersih LTE membutuhkan akses file untuk dapat mencari cache yang bisa dibersihkan</string>
 	<string name="settings_string">Pengaturan</string>
 	<string name="corpse_summary">File yang tersisa dari aplikasi yang belum terpasang</string>
 	<string name="corpse_title">Hapus berkas mayat</string>
@@ -67,6 +67,8 @@
 	<string name="clipboard_clear_failed">Gagal membersihkan papan klip</string>
 	<string name="default_notification_name">Bawaan</string>
 	<string name="default_notification_sum">Menunjukkan pemberitahuan pembersihan latar-belakang dan berapa banyak cache yang dibersihkan</string>
+	<string name="errLog_notification_name">Log kesalahan</string>
+	<string name="errLog_notification_sum">Menunjukkan pemberitahuan mengenai kesalahan aplikasi</string>
 	<string name="blacklist_sum">Konfigurasikan daftar filter yang seharusnya menghapus file</string>
 	<string name="whitelist_sum">Konfigurasikan daftar filter yang seharusnya mengabaikan file</string>
 	<string name="dynColor">Gunakan warna dinamis</string>

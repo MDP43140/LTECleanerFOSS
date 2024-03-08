@@ -8,24 +8,20 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.os.IBinder
 import android.os.Environment
+import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.preference.PreferenceManager
 import java.util.Locale
-import theredspy15.ltecleanerfoss.Constants
-import theredspy15.ltecleanerfoss.CommonFunctions.makeStatusNotification
-import theredspy15.ltecleanerfoss.CommonFunctions.makeNotification
-import theredspy15.ltecleanerfoss.CommonFunctions.makeNotificationChannel
-import theredspy15.ltecleanerfoss.CommonFunctions.sendNotification
-import theredspy15.ltecleanerfoss.CommonFunctions.convertSize
+//import theredspy15.ltecleanerfoss.CommonFunctions
+//import theredspy15.ltecleanerfoss.Constants
 class CleanupService: Service(){
 	private lateinit var notification: NotificationCompat.Builder
 	override fun onBind(intent: Intent?): IBinder? {
 		return null
 	}
 	override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-		makeNotificationChannel(
+		CommonFunctions.makeNotificationChannel(
 			applicationContext,
 			applicationContext.getString(R.string.default_notification_name),
 			applicationContext.getString(R.string.default_notification_sum),
@@ -34,21 +30,18 @@ class CleanupService: Service(){
 		)
 		try {
 			Thread {
-				notification = makeNotification(applicationContext, Constants.NOTIFICATION_CHANNEL_SERVICE)
+				notification = CommonFunctions.makeNotification(applicationContext, Constants.NOTIFICATION_CHANNEL_SERVICE)
 					.setContentTitle(applicationContext.getString(R.string.svc_notification_title))
 					.setOngoing(true)
 					.setOnlyAlertOnce(true)
 
 				val path = Environment.getExternalStorageDirectory()
-				val prefs = PreferenceManager.getDefaultSharedPreferences(
-					applicationContext
-				)
 
 				// scanner setup
 				val fs = FileScanner(path,applicationContext)
 				fs.setFilters(
-					prefs.getBoolean("generic",true),
-					prefs.getBoolean("apk",false)
+					App.prefs!!.getBoolean("generic",true),
+					App.prefs!!.getBoolean("apk",false)
 				)
 				fs.delete = true
 				fs.updateProgress = ::updatePercentage
@@ -58,9 +51,9 @@ class CleanupService: Service(){
 				val title =
 					getString(R.string.freed) +
 					" " +
-					convertSize(kilobytesTotal)
+					CommonFunctions.convertSize(kilobytesTotal)
 				stopForeground(STOP_FOREGROUND_REMOVE)
-				sendNotification(
+				CommonFunctions.sendNotification(
 					applicationContext,
 					Constants.NOTIFICATION_ID_SERVICE,
 					notification.setContentText(title).setProgress(0,0,false).setOnlyAlertOnce(false).setOngoing(false)
@@ -69,11 +62,7 @@ class CleanupService: Service(){
 			}.start()
 		} catch (e: Exception){
 			stopForeground(STOP_FOREGROUND_REMOVE)
-			sendNotification(
-				applicationContext,
-				Constants.NOTIFICATION_ID_SERVICE,
-				notification.setContentText(e.message)
-			)
+			CommonFunctions.handleError(applicationContext,2,e)
 			stopSelf()
 			throw e
 		}

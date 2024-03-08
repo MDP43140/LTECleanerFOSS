@@ -160,10 +160,21 @@ class FileScanner(private val path: File, context: Context){
 	 * @return true if empty, false if containing a file(s)
 	 */
 	private fun isDirectoryEmpty(directory: File): Boolean {
-		return directory.isDirectory && directory.list()!!.isEmpty()
+		// Not folder
+		if (!directory.isDirectory) return false
+		// Empty folder
+		val list = directory.list()
+		return list!!.isNullOrEmpty()
+		// Empty folder / Folders with another folder and empty file
+//	return list!!.isNullOrEmpty() || list!!.all { child ->
+//		// Another folder
+//		if (child.isDirectory) isDirectoryEmpty(child)
+//		// Empty file
+//		else isFileEmpty(child)
+//	}
 	}
 	private fun isFileEmpty(file: File): Boolean {
-		return !file.isDirectory && file.length() == 0L
+		return file.isFile && file.length() == 0L
 	}
 
 	/**
@@ -213,8 +224,9 @@ class FileScanner(private val path: File, context: Context){
 					if (delete){
 						++filesRemoved
 						// deletion
+						val isDeleted = if (file.isDirectory) file.deleteRecursively() else file.delete()
 						// failed to remove file and the textView is visible (not null)
-						if (!file.delete() && context is MainActivity){
+						if (!isDeleted && context is MainActivity){
 							context.runOnUiThread {
 								// error effect - red looks too concerning
 								tv!!.setTextColor(Color.GRAY)

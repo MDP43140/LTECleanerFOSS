@@ -29,9 +29,8 @@
 	<string name="apk_sum">Installer files for android</string>
 	<string name="oneclick_sum">No confirmation dialog when clean button is pressed</string>
 	<string name="autowhite_sum">Detect folders that should be protected automatically</string>
-	<string name="prompt_string">Please add file access permissions</string>
+	<string name="grantStorage_sum">LTE Cleaner requires file permission to be able to find caches that can be cleaned</string>
 	<string name="settings_string">Settings</string>
-	<string name="title_activity_prompt">PromptActivity</string>
 	<string name="corpse_summary">Files left over from uninstalled apps</string>
 	<string name="corpse_title">Delete corpse files</string>
 	<string name="other">Other</string>
@@ -68,6 +67,8 @@
 	<string name="clipboard_clear_failed">Failed to clear clipboard</string>
 	<string name="default_notification_name">Default</string>
 	<string name="default_notification_sum">Shows notification of background cleanup progress and how much cache was cleaned</string>
+	<string name="errLog_notification_name">Error log</string>
+	<string name="errLog_notification_sum">Shows notificaion about app error</string>
 	<string name="blacklist_sum">Configure a lists of filter that should remove a file</string>
 	<string name="whitelist_sum">Configure a lists of filter that should ignore a file</string>
 	<string name="dynColor">Use dynamic colors</string>

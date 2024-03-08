@@ -16,7 +16,7 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.blacklistDefault
@@ -32,20 +32,20 @@ class BlacklistActivity: AppCompatActivity(){
 		setContentView(binding.root)
 		binding.addBtn.setOnClickListener {
 			val inputEditText = EditText(this)
-			val alertDialog = AlertDialog.Builder(this).create()
-			alertDialog.setTitle("Add filter")
-			alertDialog.setMessage("You can use Kotlin regular expression, such as \".*\"")
-			alertDialog.setView(inputEditText)
-			alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK"){ dialog:DialogInterface, _:Int ->
-				val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
-				if (userInput != "") addBlackList(App.prefs,userInput)
-				dialog.dismiss()
-				loadViews()
-			}
-			alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
-				dialog.dismiss()
-			}
-			alertDialog.show()
+			MaterialAlertDialogBuilder(this)
+				.setTitle("Add filter")
+				.setMessage("You can use Kotlin regular expression, such as \".*\"")
+				.setView(inputEditText)
+				.setPositiveButton("OK"){ dialog:DialogInterface, _:Int ->
+					val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
+					if (userInput != "") addBlackList(App.prefs,userInput)
+					dialog.dismiss()
+					loadViews()
+				}
+				.setNegativeButton(getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
+					dialog.dismiss()
+				}
+				.show()
 		}
 		getBlackList(App.prefs)
 		getBlacklistOn(App.prefs)
@@ -60,34 +60,42 @@ class BlacklistActivity: AppCompatActivity(){
 		layout.setMargins(0,20,0,20)
 		if (blackList.isNullOrEmpty()) {
 			val textView = TextView(this)
-			textView.text = getString(R.string.empty_blacklist)
-			textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
-			textView.textSize = 18f
+			textView.apply {
+				text = getString(R.string.empty_blacklist)
+				textAlignment = View.TEXT_ALIGNMENT_CENTER
+				textSize = 18f
+			}
 			runOnUiThread { binding.pathsLayout.addView(textView, layout) }
 		} else {
 			for (path in blackList) {
 				val horizontalLayout = LinearLayout(this)
 				val checkBox = CheckBox(this)
 				val button = Button(this)
-				button.text = path
-				button.textSize = 18f
-				button.isAllCaps = false
-				button.setPadding(0,0,0,0)
-				button.background = null
-				button.layoutParams = LinearLayout.LayoutParams(
-					ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.WRAP_CONTENT
-				)
-				button.setOnClickListener { removeOrEditPattern(path) }
-				checkBox.isChecked = blackListOn.contains(path);
-				checkBox.setOnCheckedChangeListener { _, checked ->
-					setBlacklistOn(App.prefs,path,checked)
+				button.apply {
+					text = path
+					textSize = 18f
+					isAllCaps = false
+					setPadding(0,0,0,0)
+					background = null
+					layoutParams = LinearLayout.LayoutParams(
+						ViewGroup.LayoutParams.MATCH_PARENT,
+						ViewGroup.LayoutParams.WRAP_CONTENT
+					)
+					setOnClickListener { removeOrEditPattern(path) }					
 				}
-				horizontalLayout.setBackgroundResource(R.drawable.rounded_view)
-				horizontalLayout.orientation = LinearLayout.HORIZONTAL
-				horizontalLayout.setPadding(12,12,12,12)
-				horizontalLayout.addView(checkBox)
-				horizontalLayout.addView(button)
+				checkBox.apply {
+					isChecked = blackListOn.contains(path);
+					setOnCheckedChangeListener { _, checked ->
+						setBlacklistOn(App.prefs,path,checked)
+					}
+				}
+				horizontalLayout.apply {
+					setBackgroundResource(R.drawable.rounded_view)
+					orientation = LinearLayout.HORIZONTAL
+					setPadding(12,12,12,12)
+					addView(checkBox)
+					addView(button)
+				}
 				runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
 			}
 		}
@@ -95,21 +103,21 @@ class BlacklistActivity: AppCompatActivity(){
 	private fun removeOrEditPattern(path: String?) {
 		val inputEditText = EditText(this)
 		inputEditText.setText(path!!)
-		val alertDialog = AlertDialog.Builder(this).create()
-		alertDialog.setTitle("Edit or remove filter")
-		alertDialog.setMessage("You can use Kotlin regular expression, such as \".*\"")
-		alertDialog.setView(inputEditText)
-		alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "OK"){ dialog:DialogInterface, _:Int ->
-			val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
-			rmBlackList(App.prefs,path)
-			if (userInput != "") addBlackList(App.prefs,userInput)
-			dialog.dismiss()
-			loadViews()
-		}
-		alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
-			dialog.dismiss()
-		}
-		alertDialog.show()
+		MaterialAlertDialogBuilder(this)
+			.setTitle("Edit or remove filter")
+			.setMessage("You can use Kotlin regular expression, such as \".*\"")
+			.setView(inputEditText)
+			.setPositiveButton("OK"){ dialog:DialogInterface, _:Int ->
+				val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
+				rmBlackList(App.prefs,path)
+				if (userInput != "") addBlackList(App.prefs,userInput)
+				dialog.dismiss()
+				loadViews()
+			}
+			.setNegativeButton(getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
+				dialog.dismiss()
+			}
+			.show()
 	}
 
 	companion object {
@@ -128,9 +136,11 @@ class BlacklistActivity: AppCompatActivity(){
 		}
 		fun addBlackList(prefs: SharedPreferences?, path: String) {
 			if (blackList.isNullOrEmpty()) getBlackList(prefs)
-			blackList.add(path)
-			blackList.distinct()
-			blackList.sort()
+			blackList.apply {
+				add(path)
+				distinct()
+				sort()
+			}
 			blackListOn.add(path)
 			prefs!!
 				.edit()

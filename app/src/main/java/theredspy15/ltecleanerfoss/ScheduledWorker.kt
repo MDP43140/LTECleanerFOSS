@@ -12,9 +12,9 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.WorkManager
-import theredspy15.ltecleanerfoss.Constants
-import android.content.SharedPreferences
 import java.util.concurrent.TimeUnit
+//import theredspy15.ltecleanerfoss.App
+//import theredspy15.ltecleanerfoss.Constants
 class ScheduledWorker(appContext: Context, workerParams: WorkerParameters): Worker(appContext, workerParams) {
 	override fun doWork(): Result {
 		try {
@@ -29,8 +29,7 @@ class ScheduledWorker(appContext: Context, workerParams: WorkerParameters): Work
 	companion object {
 		@JvmStatic
 		fun enqueueWork(ctx: Context) {
-			val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx)
-			val dailyCleanupInterval: Long = prefs.getInt("cleanevery",0).toLong();
+			val dailyCleanupInterval: Long = App.prefs!!.getInt("cleanevery",0).toLong();
 			val constraints = Constraints.Builder()
 				.setRequiresBatteryNotLow(true)
 				.setRequiresDeviceIdle(true)

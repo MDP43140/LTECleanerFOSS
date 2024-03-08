@@ -26,8 +26,8 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.FileScanner
 import theredspy15.ltecleanerfoss.CommonFunctions.convertSize
@@ -40,20 +40,29 @@ import java.io.File
 import java.util.Locale
 class MainActivity: AppCompatActivity(){
 	private lateinit var binding: ActivityMainBinding
-	private lateinit var dialogBuilder: AlertDialog.Builder
+	private lateinit var dialogBuilder: MaterialAlertDialogBuilder
 	override fun onCreate(savedInstanceState:Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = ActivityMainBinding.inflate(layoutInflater)
+		binding.apply {
+			analyzeBtn.isEnabled = !FileScanner.isRunning
+			cleanBtn.isEnabled = !FileScanner.isRunning
+			analyzeBtn.setOnClickListener { analyze() }
+			cleanBtn.setOnClickListener { clean() }
+			settingsBtn.setOnClickListener { settings() }
+			whitelistBtn.setOnClickListener { whitelist() }
+		}
 		setContentView(binding.root)
-		binding.analyzeBtn.isEnabled = !FileScanner.isRunning
-		binding.cleanBtn.isEnabled = !FileScanner.isRunning
-		binding.analyzeBtn.setOnClickListener { analyze() }
-		binding.cleanBtn.setOnClickListener { clean() }
-		binding.settingsBtn.setOnClickListener { settings() }
-		binding.whitelistBtn.setOnClickListener { whitelist() }
 		WhitelistActivity.getWhiteList(App.prefs)
-		dialogBuilder = AlertDialog.Builder(this)
+		dialogBuilder = MaterialAlertDialogBuilder(this)
 
+		// Handle intent action (from shortcut stuff)
+		val intentAction = intent.getStringExtra("action")
+		when (intentAction){
+			"cleanup" -> scan(true)
+			"stopBgApps" -> stopBgApps()
+			else -> if (intentAction != null) Toast.makeText(this, "Invalid intent action: $intentAction", Toast.LENGTH_SHORT).show()
+		}
 	}
 	private fun settings(){
 		startActivity(Intent(this,SettingsActivity::class.java))
@@ -79,16 +88,15 @@ class MainActivity: AppCompatActivity(){
 			if (App.prefs!!.getBoolean("one_click",false)){
 				scan(true) // one-click enabled
 			} else { // one-click disabled
-				val mDialog: AlertDialog = dialogBuilder.create()
-				mDialog.setTitle(getString(R.string.are_you_sure_deletion_title))
-				mDialog.setMessage(getString(R.string.are_you_sure_deletion))
-				mDialog.setCancelable(false)
-				mDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.clean)){ dialogInterface: DialogInterface, _: Int ->
-					dialogInterface.dismiss()
-					scan(true)
-				}
-				mDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel)){ dialogInterface: DialogInterface, _: Int -> dialogInterface.dismiss() }
-				mDialog.show()
+				dialogBuilder.setTitle(getString(R.string.are_you_sure_deletion_title))
+					.setMessage(getString(R.string.are_you_sure_deletion))
+					.setCancelable(false)
+					.setPositiveButton(getString(R.string.clean)){ dialogInterface: DialogInterface, _: Int ->
+						dialogInterface.dismiss()
+						scan(true)
+					}
+					.setNegativeButton(getString(R.string.cancel)){ dialogInterface: DialogInterface, _: Int -> dialogInterface.dismiss() }
+					.show()
 			}
 		}
 	}
@@ -118,14 +126,16 @@ class MainActivity: AppCompatActivity(){
 	 * unless nothing is found to begin with
 	 */
 	@SuppressLint("SetTextI18n")
-	private fun scan(delete: Boolean){
+	private fun scan(deleteCache: Boolean){
 		Thread {
 			Looper.prepare()
 			runOnUiThread {
-				binding.analyzeBtn.isEnabled = !FileScanner.isRunning
-				binding.cleanBtn.isEnabled = !FileScanner.isRunning
-				binding.statusTextView.text = getString(R.string.status_running)
-				binding.fileListView.removeAllViews()
+				binding.apply {
+					analyzeBtn.isEnabled = !FileScanner.isRunning
+					cleanBtn.isEnabled = !FileScanner.isRunning
+					statusTextView.text = getString(R.string.status_running)
+					fileListView.removeAllViews()
+				}
 			}
 			if (App.prefs!!.getBoolean("clipboard", false)) clearClipboard()
 			if (App.prefs!!.getBoolean("closebgapps", false)) stopBgApps()
@@ -133,12 +143,14 @@ class MainActivity: AppCompatActivity(){
 
 			// scanner setup
 			val fs = FileScanner(path,this)
-			fs.setFilters(
-				App.prefs!!.getBoolean("generic",true),
-				App.prefs!!.getBoolean("apk",false)
-			)
-			fs.delete = delete
-			fs.updateProgress = ::updatePercentage
+			fs.apply {
+				setFilters(
+					App.prefs!!.getBoolean("generic",true),
+					App.prefs!!.getBoolean("apk",false)
+				)
+				delete = deleteCache
+				updateProgress = ::updatePercentage
+			}
 
 			// failed scan
 			if (path.listFiles() == null){ // is this needed? yes.
@@ -148,22 +160,45 @@ class MainActivity: AppCompatActivity(){
 			// run the scan and put KBs found/freed text
 			val kilobytesTotal = fs.start()
 			runOnUiThread {
-				binding.statusTextView.text =
-					getString(if (delete) R.string.freed else R.string.found) +
-					" " + convertSize(kilobytesTotal)
-				binding.cleanBtn.isEnabled = !FileScanner.isRunning
-				binding.analyzeBtn.isEnabled = !FileScanner.isRunning
+				binding.apply {
+					statusTextView.text =
+						getString(if (deleteCache) R.string.freed else R.string.found) +
+						" " + convertSize(kilobytesTotal)
+					cleanBtn.isEnabled = !FileScanner.isRunning
+					analyzeBtn.isEnabled = !FileScanner.isRunning
+					fileScrollView.post { fileScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
+				}
 			}
-			binding.fileScrollView.post { binding.fileScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
 			Looper.loop()
 		}.start()
 	}
 
 	private fun stopBgApps(){
-		val am = this.getSystemService("activity") as ActivityManager
-		for (pkg in getPackageManager().getInstalledApplications(8704)) {
-			am.killBackgroundProcesses(pkg.processName)
-		}
+		Thread {
+			val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+			val pkgName = getPackageName()
+			val memInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
+
+			am.getMemoryInfo(memInfo)
+			val memAvailBefore = Math.round(memInfo.availMem / 1048576f).toInt()
+			for (pkg in getPackageManager().getInstalledApplications(8704)){
+				if (pkg.processName != pkgName){
+					am.killBackgroundProcesses(pkg.processName);
+				}
+			}
+			am.getMemoryInfo(memInfo)
+			val memAvailAfter = Math.round(memInfo.availMem / 1048576f).toInt()
+
+			var memFreed = memAvailAfter - memAvailBefore
+			if (memFreed < 0){memFreed = 0}
+			addText(String.format(
+				"Available RAM: %dMB > %dMB / %dMB (%dMB freed)",
+				memAvailBefore,
+				memAvailAfter,
+				Math.round(memInfo.totalMem / 1048576f).toInt(),
+				memFreed
+			))
+		}.start()
 	}
 
 	/**
@@ -172,7 +207,7 @@ class MainActivity: AppCompatActivity(){
 	private fun updatePercentage(context: Context, percent: Double){
 		(context as MainActivity?)!!.runOnUiThread {
 			binding.statusTextView.text = String.format(
-				Locale.US, "%s %.0f%%",
+				"%s %.0f%%",
 				context.getString(R.string.status_running),
 				percent
 			) // dont remove .0 part or crash
@@ -196,13 +231,13 @@ class MainActivity: AppCompatActivity(){
 		binding.fileScrollView.post { binding.fileScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
 		return textView
 	}
-	fun addText(text: String, type: String): TextView{
+	fun addText(text: String, type: String): TextView {
 		return addText(text, when (type){
 			"delete" -> resources.getColor(R.color.colorAccent,resources.newTheme())
 			else -> Color.YELLOW
 		})
 	}
-	fun addText(text: String): TextView{
+	fun addText(text: String): TextView {
 		return addText(text,Color.YELLOW)
 	}
 
@@ -239,22 +274,20 @@ class MainActivity: AppCompatActivity(){
 		requestCode:Int,
 		permissions:Array<String>,
 		grantResults:IntArray
-	) {
+	){
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 		if (
 			requestCode == 1 &&
 			grantResults.isNotEmpty() &&
-			grantResults[0] != PackageManager.PERMISSION_GRANTED){
-			val dialog: AlertDialog = dialogBuilder.create()
-			dialog.setTitle("Grant a permission")
-			dialog.setMessage(getString(R.string.prompt_string))
-			dialog.setButton(AlertDialog.BUTTON_POSITIVE,getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
-				val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-				intent.data = Uri.fromParts("package",packageName,null)
-				dialogInterface.dismiss()
-				startActivity(intent)
-			}
-			dialog.show()
-		}
+			grantResults[0] != PackageManager.PERMISSION_GRANTED)
+			dialogBuilder.setTitle(getString(R.string.permission_needed))
+				.setMessage(getString(R.string.grantStorage_sum))
+				.setPositiveButton(getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
+					val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+					intent.data = Uri.fromParts("package",packageName,null)
+					startActivity(intent)
+					dialogInterface.dismiss()
+				}
+				.show()
 	}
 }

@@ -17,8 +17,9 @@ import androidx.appcompat.app.AppCompatActivity
 import java.time.format.DateTimeFormatter
 import java.time.LocalDateTime
 import java.util.Locale
-import theredspy15.ltecleanerfoss.databinding.ActivityErrorBinding
 import theredspy15.ltecleanerfoss.R
+import theredspy15.ltecleanerfoss.databinding.ActivityErrorBinding
+import theredspy15.ltecleanerfoss.CommonFunctions
 class ErrorActivity: AppCompatActivity(){
 	private lateinit var binding: ActivityErrorBinding
 	override fun onCreate(savedInstanceState: Bundle?){
@@ -59,16 +60,10 @@ class ErrorActivity: AppCompatActivity(){
 
 		binding.error.text = text
 		binding.shareLogBtn.setOnClickListener {
-			val intent = Intent(Intent.ACTION_SEND)
-			intent.type = "text/plain"
-			intent.putExtra(Intent.EXTRA_TEXT, text)
-			startActivity(Intent.createChooser(intent,"Share with"))
+			CommonFunctions.shareFile(this,text,"text/plain")
 		}
 		binding.shareFormattedLogBtn.setOnClickListener {
-			val intent = Intent(Intent.ACTION_SEND)
-			intent.type = "text/plain"
-			intent.putExtra(Intent.EXTRA_TEXT, formattedText)
-			startActivity(Intent.createChooser(intent,"Share with"))
+			CommonFunctions.shareFile(this,formattedText,"text/plain")
 		}
 		binding.reportIssueGithubBtn.setOnClickListener {
 			startActivity(Intent(

@@ -45,13 +45,16 @@ android {
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_21
 		targetCompatibility JavaVersion.VERSION_21
+		encoding 'utf-8'
 	}
 	buildFeatures {
+		buildConfig true
+		compose false
 		viewBinding true
 	}
 	packagingOptions {
-		resources.excludes.add("assets/dexopt/*")
-		resources.excludes.add("META-INF/*")
+		// TODO: how can we get rid of assets/dexopt, and META-INF/com/android/build/gradle/app-metadata.properties ?
+		resources.excludes += ["assets/dexopt/**","META-INF/**","DebugProbesKt.bin", "kotlin/**.kotlin_builtins", "kotlin-tooling-metadata.json"]
 	}
 	dependenciesInfo {
 		// https://gitlab.com/IzzyOnDroid/repo/-/issues/491
@@ -66,17 +69,15 @@ dependencies {
 	implementation "androidx.appcompat:appcompat:1.7.0-alpha03"
 	implementation "com.google.android.material:material:1.12.0-alpha03"
 	implementation "androidx.gridlayout:gridlayout:1.1.0-beta01"
-	testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.2"
 
 	// AndroidJUnitRunner and JUnit Rules
-	androidTestImplementation 'androidx.test:runner:1.5.2'
+	androidTestImplementation "androidx.test:runner:1.5.2"
 
 	// Assertions
-	androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+	androidTestImplementation "androidx.test.ext:junit:1.1.5"
 
 	//Preference
 	implementation "androidx.preference:preference-ktx:1.2.1"
 	implementation "androidx.work:work-runtime-ktx:2.9.0"
 	implementation "androidx.core:core-ktx:1.13.0-alpha05"
-	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }

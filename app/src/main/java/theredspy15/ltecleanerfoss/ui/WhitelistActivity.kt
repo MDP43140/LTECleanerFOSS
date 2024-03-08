@@ -16,7 +16,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts.OpenDocumentTree
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AlertDialog
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.whitelistDefault
@@ -46,49 +46,57 @@ class WhitelistActivity: AppCompatActivity(){
 		layout.setMargins(0,20,0,20)
 		if (whiteList.isNullOrEmpty()) {
 			val textView = TextView(this)
-			textView.text = getString(R.string.empty_whitelist)
-			textView.textAlignment = View.TEXT_ALIGNMENT_CENTER
-			textView.textSize = 18f
+			textView.apply {
+				text = getString(R.string.empty_whitelist)
+				textAlignment = View.TEXT_ALIGNMENT_CENTER
+				textSize = 18f
+			}
 			runOnUiThread { binding.pathsLayout.addView(textView, layout) }
 		} else {
 			for (path in whiteList) {
 				val horizontalLayout = LinearLayout(this)
 				val checkBox = CheckBox(this)
 				val button = Button(this)
-				button.text = path
-				button.textSize = 18f
-				button.isAllCaps = false
-				button.setPadding(0,0,0,0)
-				button.background = null
-				button.layoutParams = LinearLayout.LayoutParams(
-					ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.WRAP_CONTENT
-				)
-				button.setOnClickListener { removePath(path, button) }
-				checkBox.isChecked = whiteListOn.contains(path);
-				checkBox.setOnCheckedChangeListener { _, checked ->
-					setWhitelistOn(App.prefs,path,checked)
+				button.apply {
+					text = path
+					textSize = 18f
+					isAllCaps = false
+					setPadding(0,0,0,0)
+					background = null
+					layoutParams = LinearLayout.LayoutParams(
+						ViewGroup.LayoutParams.MATCH_PARENT,
+						ViewGroup.LayoutParams.WRAP_CONTENT
+					)
+					setOnClickListener { removePath(path,button) }
 				}
-				horizontalLayout.setBackgroundResource(R.drawable.rounded_view)
-				horizontalLayout.orientation = LinearLayout.HORIZONTAL
-				horizontalLayout.setPadding(12,12,12,12)
-				horizontalLayout.addView(checkBox)
-				horizontalLayout.addView(button)
+				checkBox.apply {
+					isChecked = whiteListOn.contains(path);
+					setOnCheckedChangeListener { _, checked ->
+						setWhitelistOn(App.prefs,path,checked)
+					}
+				}
+				horizontalLayout.apply {
+					setBackgroundResource(R.drawable.rounded_view)
+					orientation = LinearLayout.HORIZONTAL
+					setPadding(12,12,12,12)
+					addView(checkBox)
+					addView(button)
+				}
 				runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
 			}
 		}
 	}
 	private fun removePath(path: String?, button: Button?) {
-		val alertDialog = AlertDialog.Builder(this).create()
-		alertDialog.setTitle(getString(R.string.remove_from_whitelist))
-		alertDialog.setMessage(path!!)
-		alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, getString(R.string.delete)){ dialogInterface:DialogInterface, _:Int ->
-			rmWhiteList(App.prefs,path)
-			dialogInterface.dismiss()
-			binding.pathsLayout.removeView(button)
-		}
-		alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, getString(R.string.cancel)) { dialogInterface:DialogInterface, _:Int -> dialogInterface.dismiss() }
-		alertDialog.show()
+		MaterialAlertDialogBuilder(this)
+			.setTitle(getString(R.string.remove_from_whitelist))
+			.setMessage(path!!)
+			.setPositiveButton(getString(R.string.delete)){ dialogInterface:DialogInterface, _:Int ->
+				rmWhiteList(App.prefs,path)
+				dialogInterface.dismiss()
+				binding.pathsLayout.removeView(button)
+			}
+			.setNegativeButton(getString(R.string.cancel)) { dialogInterface:DialogInterface, _:Int -> dialogInterface.dismiss() }
+			.show()
 	}
 
 	/**
@@ -118,9 +126,11 @@ class WhitelistActivity: AppCompatActivity(){
 		}
 		fun addWhiteList(prefs: SharedPreferences?, path: String) {
 			if (whiteList.isNullOrEmpty()) getWhiteList(prefs)
-			whiteList.add(path)
-			whiteList.distinct()
-			whiteList.sort()
+			whiteList.apply {
+				add(path)
+				distinct()
+				sort()
+			}
 			whiteListOn.add(path)
 			prefs!!
 				.edit()
