@@ -3,7 +3,7 @@
  * (C) 2024 MDP43140
  */
 buildscript {
-	ext.kotlin_version = '1.9.22'
+	ext.kotlin_version = '1.9.23'
 	repositories {
 		google()
 		mavenCentral()
