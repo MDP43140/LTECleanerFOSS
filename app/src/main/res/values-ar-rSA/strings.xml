@@ -34,8 +34,8 @@
 	<string name="failed_scan">فشل في المسح.</string>
 	<string name="are_you_sure_deletion">هل أنت متأكد ؟ لا يمكن استعادة الملفات التي تم حذفها</string>
 	<string name="are_you_sure_deletion_title">تأكيد الحذف</string>
-	<string name="samsung_not_work">لا يعمل على أجهزة سامسونج</string>
-	<string name="clear_clipboard">مسح الحافظة</string>
+	<string name="clear_clipboard_sum">لا يعمل على أجهزة سامسونج</string>
+	<string name="clear_clipboard_title">مسح الحافظة</string>
 	<string name="double_check_sum">سيتم إعادة تشغيل المسح في كل مرة يتم العثور على شيء بحد أقصى من عشرة مسوحات</string>
 	<string name="double_check_title">الفحص المزدوج</string>
 	<string name="svc_notification_title">إنتهى عمل تطبيق منظف LTE</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">المحددات</string>
 	<string name="remove_from_whitelist">إزالة من البيضلي ؟</string>
 	<string name="delete">حذف</string>
-	<string name="clipboard_clear_failed">فشل في اخلاء المسودة</string>
+	<string name="clear_clipboard_failed">فشل في اخلاء المسودة</string>
 	<string-array name="themes">
 		<item>آلي</item>
 		<item>خفيف</item>

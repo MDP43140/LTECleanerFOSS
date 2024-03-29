@@ -34,8 +34,8 @@
 	<string name="failed_scan">הסריקה נכשלה.</string>
 	<string name="are_you_sure_deletion">אתה בטוח? לא ניתן לשחזר קבצים שנמחקו</string>
 	<string name="are_you_sure_deletion_title">אישור מחיקה</string>
-	<string name="samsung_not_work">לא עובד על התקנים של דגימה</string>
-	<string name="clear_clipboard">ניקוי לוח הגזירים</string>
+	<string name="clear_clipboard_sum">לא עובד על התקנים של דגימה</string>
+	<string name="clear_clipboard_title">ניקוי לוח הגזירים</string>
 	<string name="double_check_sum">יבצע הרצה מחדש של סריקה בכל פעם שמשהו נמצא עם מגבלה של 10 סריקות</string>
 	<string name="double_check_title">בודק כפול</string>
 	<string name="svc_notification_title">עבודה נקייה של LTE הסתיימה</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">הגדרות</string>
 	<string name="remove_from_whitelist">לסלק מרשימת הרשימות?</string>
 	<string name="delete">מחיקה</string>
-	<string name="clipboard_clear_failed">כשל בלנקות את לוח הגזירים</string>
+	<string name="clear_clipboard_failed">כשל בלנקות את לוח הגזירים</string>
 	<string-array name="themes">
 		<item>אוטומטי</item>
 		<item>אור</item>

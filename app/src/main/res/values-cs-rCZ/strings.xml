@@ -34,8 +34,8 @@
 	<string name="failed_scan">Skenování se nezdařilo.</string>
 	<string name="are_you_sure_deletion">Jsi si jistý? Odstraněné soubory nelze obnovit</string>
 	<string name="are_you_sure_deletion_title">Potvrdit odstranění</string>
-	<string name="samsung_not_work">Nefunguje na Samsung zařízeních.</string>
-	<string name="clear_clipboard">Vymazat schránku</string>
+	<string name="clear_clipboard_sum">Nefunguje na Samsung zařízeních.</string>
+	<string name="clear_clipboard_title">Vymazat schránku</string>
 	<string name="double_check_sum">Znovu spustí skenování pokaždé, když se něco najde s omezením na deset skenování</string>
 	<string name="double_check_title">Dvojitá kontrola</string>
 	<string name="svc_notification_title">Vyčištění LTE-dokončeno</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">NastaveníComment</string>
 	<string name="remove_from_whitelist">Odebrat ze seznamu povolených adres?</string>
 	<string name="delete">Odstranit</string>
-	<string name="clipboard_clear_failed">Nezdařilo se vymazat schránku</string>
+	<string name="clear_clipboard_failed">Nezdařilo se vymazat schránku</string>
 	<string-array name="themes">
 		<item>Automatický</item>
 		<item>Světlé</item>

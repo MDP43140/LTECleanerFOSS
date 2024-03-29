@@ -34,8 +34,8 @@
 	<string name="failed_scan">スキャンに失敗しました。</string>
 	<string name="are_you_sure_deletion">- 確かか ? 削除されたファイルを復元する</string>
 	<string name="are_you_sure_deletion_title">削除の確認</string>
-	<string name="samsung_not_work">サムソン・デバイスでは機能しません</string>
-	<string name="clear_clipboard">クリップボードをクリア</string>
+	<string name="clear_clipboard_sum">サムソン・デバイスでは機能しません</string>
+	<string name="clear_clipboard_title">クリップボードをクリア</string>
 	<string name="double_check_sum">スキャンごとに 10 個のスキャンの制限が検出されるたびにスキャンを再実行します</string>
 	<string name="double_check_title">ダブル・チェッカー</string>
 	<string name="svc_notification_title">LTE クリーン・ワーカー完了</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">設定</string>
 	<string name="remove_from_whitelist">ホワイトリストから削除しますか</string>
 	<string name="delete">削除</string>
-	<string name="clipboard_clear_failed">クリップボードをクリアできません</string>
+	<string name="clear_clipboard_failed">クリップボードをクリアできません</string>
 	<string-array name="themes">
 		<item>オート</item>
 		<item>ライト</item>

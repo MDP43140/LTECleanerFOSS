@@ -46,8 +46,8 @@
 			android:defaultValue="false"
 			android:key="clipboard"
 			android:persistent="true"
-			android:summary="@string/samsung_not_work"
-			android:title="@string/clear_clipboard"
+			android:summary="@string/clear_clipboard_sum"
+			android:title="@string/clear_clipboard_title"
 			app:iconSpaceReserved="false" />
 		<SwitchPreferenceCompat
 			android:defaultValue="true"
@@ -155,6 +155,16 @@
 				android:action="android.intent.action.VIEW"
 				android:data="https://github.com/mdp43140/LTECleanerFOSS/blob/master/LICENSE" />
 		</Preference>
+		<Preference
+			android:title="Background cleanup service test"
+			android:key="svcTest"
+			android:summary="run cleanup in background"
+			app:iconSpaceReserved="false" />
+		<Preference
+			android:title="Error test"
+			android:key="__hitASnagTheySaid"
+			android:summary="Trigger an error"
+			app:iconSpaceReserved="false" />
 		<Preference
 			android:title="Crash test"
 			android:key="__doomedBruhhh"

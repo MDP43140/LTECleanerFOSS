@@ -34,8 +34,8 @@
 	<string name="failed_scan">掃描失敗。</string>
 	<string name="are_you_sure_deletion">你確定嗎？ 無法還原已刪除的檔案</string>
 	<string name="are_you_sure_deletion_title">確認刪除</string>
-	<string name="samsung_not_work">在 samsung 裝置上不起作用</string>
-	<string name="clear_clipboard">清除剪貼簿</string>
+	<string name="clear_clipboard_sum">在 Samsung 裝置上不起作用</string>
+	<string name="clear_clipboard_title">清除剪貼簿</string>
 	<string name="double_check_sum">每次找到有 10 個掃描限制的項目時，都會重新執行掃描</string>
 	<string name="double_check_title">雙重檢查程式</string>
 	<string name="svc_notification_title">LTE 清除工作者已完成</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">設定</string>
 	<string name="remove_from_whitelist">從白名單中移除？</string>
 	<string name="delete">刪除</string>
-	<string name="clipboard_clear_failed">無法清除剪貼簿</string>
+	<string name="clear_clipboard_failed">無法清除剪貼簿</string>
 	<string-array name="themes">
 		<item>自動</item>
 		<item>光明</item>

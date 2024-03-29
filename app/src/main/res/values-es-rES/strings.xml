@@ -34,8 +34,8 @@
 	<string name="failed_scan">Escaneo fallido.</string>
 	<string name="are_you_sure_deletion">¿Está seguro? Los archivos eliminados no se pueden restaurar</string>
 	<string name="are_you_sure_deletion_title">Confirmar eliminación</string>
-	<string name="samsung_not_work">No funciona en dispositivos Samsung</string>
-	<string name="clear_clipboard">Limpiar portapapeles</string>
+	<string name="clear_clipboard_sum">No funciona en dispositivos Samsung</string>
+	<string name="clear_clipboard_title">Limpiar portapapeles</string>
 	<string name="double_check_sum">Se volverá a escanear cada vez que se encuentre algo, limitado a diez escaneos</string>
 	<string name="double_check_title">Doble verificador</string>
 	<string name="svc_notification_title">Trabajo del Limpiador LTE finalizado</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Configuración</string>
 	<string name="remove_from_whitelist">¿Eliminar de la lista blanca?</string>
 	<string name="delete">Suprimir</string>
-	<string name="clipboard_clear_failed">Error al borrar el portapapeles</string>
+	<string name="clear_clipboard_failed">Error al borrar el portapapeles</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Luz</item>

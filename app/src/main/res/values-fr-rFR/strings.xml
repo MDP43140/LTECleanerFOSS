@@ -34,8 +34,8 @@
 	<string name="failed_scan">Echec de l\'analyse.</string>
 	<string name="are_you_sure_deletion">Es-tu sûre? Les fichiers supprimés ne peuvent pas être restaurés</string>
 	<string name="are_you_sure_deletion_title">Confirmer la suppression</string>
-	<string name="samsung_not_work">Ne fonctionne pas sur les unités samsung</string>
-	<string name="clear_clipboard">Effacer le presse-papiers</string>
+	<string name="clear_clipboard_sum">Ne fonctionne pas sur les unités Samsung</string>
+	<string name="clear_clipboard_title">Effacer le presse-papiers</string>
 	<string name="double_check_sum">Réexécutez l\'analyse chaque fois qu\'un élément est détecté avec une limite de dix scans</string>
 	<string name="double_check_title">Vérificateur double</string>
 	<string name="svc_notification_title">Travailleur propre LTE terminé</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Paramètres</string>
 	<string name="remove_from_whitelist">Retirer de la liste blanche?</string>
 	<string name="delete">Supprimer</string>
-	<string name="clipboard_clear_failed">Impossible d\'effacer le presse-papiers</string>
+	<string name="clear_clipboard_failed">Impossible d\'effacer le presse-papiers</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Lumière</item>

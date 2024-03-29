@@ -34,8 +34,8 @@
 	<string name="failed_scan">Varredura falhou.</string>
 	<string name="are_you_sure_deletion">Você tem certeza? Arquivos excluídos não podem ser restaurados</string>
 	<string name="are_you_sure_deletion_title">Confirmar Exclusão</string>
-	<string name="samsung_not_work">Não funciona em dispositivos samsung</string>
-	<string name="clear_clipboard">Prancheta clara</string>
+	<string name="clear_clipboard_sum">Não funciona em dispositivos Samsung</string>
+	<string name="clear_clipboard_title">Prancheta clara</string>
 	<string name="double_check_sum">Will rerun scan cada vez que algo for encontrado com um limite de dez scans</string>
 	<string name="double_check_title">Checador duplo</string>
 	<string name="svc_notification_title">LTE Trabalhador Limpo Concluído</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Configurações</string>
 	<string name="remove_from_whitelist">Remover do whitelist?</string>
 	<string name="delete">Excluir</string>
-	<string name="clipboard_clear_failed">Falha ao limpar a prancheta</string>
+	<string name="clear_clipboard_failed">Falha ao limpar a prancheta</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Luz</item>

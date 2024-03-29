@@ -34,8 +34,8 @@
 	<string name="failed_scan">Quét không thành công.</string>
 	<string name="are_you_sure_deletion">Anh chắc chứ? Không thể khôi phục tập tin bị xóa</string>
 	<string name="are_you_sure_deletion_title">Xác nhận xóa</string>
-	<string name="samsung_not_work">Không làm việc trên các thiết bị samsung</string>
-	<string name="clear_clipboard">Xóa bảng tạm</string>
+	<string name="clear_clipboard_sum">Không làm việc trên các thiết bị Samsung</string>
+	<string name="clear_clipboard_title">Xóa bảng tạm</string>
 	<string name="double_check_sum">Sẽ chạy lại quét mỗi lần thứ gì đó được tìm thấy với giới hạn 10 quét</string>
 	<string name="double_check_title">Trình kiểm tra kép</string>
 	<string name="svc_notification_title">Công nhân sạch LTE kết thúc</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Thiết lập</string>
 	<string name="remove_from_whitelist">Rút khỏi danh sách trắng?</string>
 	<string name="delete">&amp; Xoá</string>
-	<string name="clipboard_clear_failed">Lỗi xóa bảng tạm</string>
+	<string name="clear_clipboard_failed">Lỗi xóa bảng tạm</string>
 	<string-array name="themes">
 		<item>Tự động</item>
 		<item>Ánh sáng</item>

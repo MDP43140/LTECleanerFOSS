@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scanning mislykkedes.</string>
 	<string name="are_you_sure_deletion">-Er du sikker? Slettede filer kan ikke gendannes</string>
 	<string name="are_you_sure_deletion_title">Bekræft sletning</string>
-	<string name="samsung_not_work">Virker ikke på samsung-udstyr</string>
-	<string name="clear_clipboard">Ryd udklipsholder</string>
+	<string name="clear_clipboard_sum">Virker ikke på Samsung-udstyr</string>
+	<string name="clear_clipboard_title">Ryd udklipsholder</string>
 	<string name="double_check_sum">Udfør scanningen igen, hver gang noget er fundet med en grænse på ti scanninger</string>
 	<string name="double_check_title">Dobbelttekker</string>
 	<string name="svc_notification_title">LTE Clean Worker Finished</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Indstillinger</string>
 	<string name="remove_from_whitelist">Fjern fra hvidliste?</string>
 	<string name="delete">Slet</string>
-	<string name="clipboard_clear_failed">Kan ikke rydde udklipsholderen</string>
+	<string name="clear_clipboard_failed">Kan ikke rydde udklipsholderen</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Lys</item>

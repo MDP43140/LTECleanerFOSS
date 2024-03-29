@@ -48,8 +48,9 @@
 	<string name="failed_scan">Scan failed.</string>
 	<string name="are_you_sure_deletion">Are you sure? Files deleted cannot be restored</string>
 	<string name="are_you_sure_deletion_title">Confirm Deletion</string>
-	<string name="samsung_not_work">Doesn\'t work on samsung devices</string>
-	<string name="clear_clipboard">Clear clipboard</string>
+	<string name="clear_clipboard_title">Clear system clipboard</string>
+	<string name="clear_clipboard_sum">Doesn\'t work on some ROMs</string>
+	<string name="clear_clipboard_failed">Failed to clear system clipboard</string>
 	<string name="double_check_sum">How many times the scan reruns each time something is found</string>
 	<string name="double_check_title">Double Checker</string>
 	<string name="svc_notification_title">LTE Cleaner Worker</string>
@@ -64,7 +65,6 @@
 	<string name="remove_from_blacklist">Remove from blacklist?</string>
 	<string name="remove_from_whitelist">Remove from whitelist?</string>
 	<string name="delete">Delete</string>
-	<string name="clipboard_clear_failed">Failed to clear clipboard</string>
 	<string name="default_notification_name">Default</string>
 	<string name="default_notification_sum">Shows notification of background cleanup progress and how much cache was cleaned</string>
 	<string name="errLog_notification_name">Error log</string>

@@ -34,8 +34,8 @@
 	<string name="failed_scan">Η Σάρτη απέτυχε.</string>
 	<string name="are_you_sure_deletion">-Σίγουρα; Δεν είναι δυνατή η επαναφορά των αρχείων</string>
 	<string name="are_you_sure_deletion_title">Επιβεβαίωση διαγραφής</string>
-	<string name="samsung_not_work">Δεν λειτουργεί σε συσκευές samsung</string>
-	<string name="clear_clipboard">Καθαρό πρόχειρο.</string>
+	<string name="clear_clipboard_sum">Δεν λειτουργεί σε συσκευές Samsung</string>
+	<string name="clear_clipboard_title">Καθαρό πρόχειρο.</string>
 	<string name="double_check_sum">Θα εκτελείται σάρωση κάθε φορά που υπάρχει ένα όριο δέκα σαρώσεων.</string>
 	<string name="double_check_title">Διπλό Checker</string>
 	<string name="svc_notification_title">Ολοκληρώθηκε η εκκαθάριση LTE</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Ρυθμίσεις:</string>
 	<string name="remove_from_whitelist">-Κατάργηση από τη λευκή;</string>
 	<string name="delete">Διαγραφή:</string>
-	<string name="clipboard_clear_failed">Απέτυχε η εκκαθάριση του πρόχειρο.</string>
+	<string name="clear_clipboard_failed">Απέτυχε η εκκαθάριση του πρόχειρο.</string>
 	<string-array name="themes">
 		<item>\' Αυτόματα</item>
 		<item>Φως!</item>

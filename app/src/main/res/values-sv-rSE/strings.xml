@@ -34,8 +34,8 @@
 	<string name="failed_scan">Skanningen misslyckades.</string>
 	<string name="are_you_sure_deletion">Är du säker på det? Borttagna filer kan inte återställas</string>
 	<string name="are_you_sure_deletion_title">Bekräfta borttag</string>
-	<string name="samsung_not_work">Fungs inte på Samsung-enheter</string>
-	<string name="clear_clipboard">Rensa klippbordet</string>
+	<string name="clear_clipboard_sum">Fungs inte på Samsung-enheter</string>
+	<string name="clear_clipboard_title">Rensa klippbordet</string>
 	<string name="double_check_sum">Will Rerun scan varje gång något hittas med en gräns på tio skanningar</string>
 	<string name="double_check_title">Dubbelkontroll</string>
 	<string name="svc_notification_title">LTE rensad arbetskjul klar</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Inställningar</string>
 	<string name="remove_from_whitelist">Vill du ta bort från vitlistan?</string>
 	<string name="delete">Radera</string>
-	<string name="clipboard_clear_failed">Det gick inte att rensa klippbordet</string>
+	<string name="clear_clipboard_failed">Det gick inte att rensa klippbordet</string>
 	<string-array name="themes">
 		<item>Automatiskt</item>
 		<item>Ljus</item>

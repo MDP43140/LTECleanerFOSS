@@ -113,7 +113,7 @@ class MainActivity: AppCompatActivity(){
 			runOnUiThread {
 				Toast.makeText(
 					this,
-					R.string.clipboard_clear_failed,
+					R.string.clear_clipboard_failed,
 					Toast.LENGTH_SHORT
 				).show()
 			}

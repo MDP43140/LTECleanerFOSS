@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scan is mislukt.</string>
 	<string name="are_you_sure_deletion">Weet je het zeker? Verwijderde bestanden kunnen niet worden hersteld</string>
 	<string name="are_you_sure_deletion_title">Wissen bevestigen</string>
-	<string name="samsung_not_work">Werkt niet op samsung-apparaten</string>
-	<string name="clear_clipboard">Klembord wissen</string>
+	<string name="clear_clipboard_sum">Werkt niet op Samsung-apparaten</string>
+	<string name="clear_clipboard_title">Klembord wissen</string>
 	<string name="double_check_sum">Wordt elke keer dat er iets wordt gevonden met een limiet van tien scans opnieuw uitgevoerd</string>
 	<string name="double_check_title">Dubbele controle</string>
 	<string name="svc_notification_title">LTE Clean Worker Voltooid</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Instellingen</string>
 	<string name="remove_from_whitelist">Verwijderen uit whitelist?</string>
 	<string name="delete">Wissen</string>
-	<string name="clipboard_clear_failed">Wissen van klembord is mislukt</string>
+	<string name="clear_clipboard_failed">Wissen van klembord is mislukt</string>
 	<string-array name="themes">
 		<item>Automatisch</item>
 		<item>Licht</item>

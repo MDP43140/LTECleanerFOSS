@@ -34,8 +34,8 @@
 	<string name="failed_scan">扫描失败。</string>
 	<string name="are_you_sure_deletion">你确定吗 无法复原删除的文件</string>
 	<string name="are_you_sure_deletion_title">确认删除</string>
-	<string name="samsung_not_work">在 samsung 设备上不行</string>
-	<string name="clear_clipboard">清除剪贴板</string>
+	<string name="clear_clipboard_sum">在 Samsung 设备上不行</string>
+	<string name="clear_clipboard_title">清除剪贴板</string>
 	<string name="double_check_sum">每次发现具有 10 次扫描限制的内容时，将重新运行扫描</string>
 	<string name="double_check_title">双校验器</string>
 	<string name="svc_notification_title">LTE 清除工作程序已完成</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">设置</string>
 	<string name="remove_from_whitelist">从白名单中除去 ?</string>
 	<string name="delete">删除</string>
-	<string name="clipboard_clear_failed">无法清除剪贴板</string>
+	<string name="clear_clipboard_failed">无法清除剪贴板</string>
 	<string-array name="themes">
 		<item>自动</item>
 		<item>灯光</item>

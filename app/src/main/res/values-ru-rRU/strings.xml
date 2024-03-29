@@ -34,8 +34,8 @@
 	<string name="failed_scan">Сканирование завершилось неудачно.</string>
 	<string name="are_you_sure_deletion">Вы уверены? Невозможно восстановить удаленные файлы</string>
 	<string name="are_you_sure_deletion_title">Подтвердить удаление</string>
-	<string name="samsung_not_work">Не работает на устройствах с самсунг</string>
-	<string name="clear_clipboard">Очистить буфер обмена</string>
+	<string name="clear_clipboard_sum">Не работает на устройствах с самсунг</string>
+	<string name="clear_clipboard_title">Очистить буфер обмена</string>
 	<string name="double_check_sum">Будет повторно сканировать каждый раз, когда что-то найдено с огранич. десять просмотров</string>
 	<string name="double_check_title">Двойная проверка</string>
 	<string name="svc_notification_title">Приемка очистки LTE завершена</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Параметры</string>
 	<string name="remove_from_whitelist">Удалить из белого списка?</string>
 	<string name="delete">Удалить</string>
-	<string name="clipboard_clear_failed">Не удалось очистить буфер обмена</string>
+	<string name="clear_clipboard_failed">Не удалось очистить буфер обмена</string>
 	<string-array name="themes">
 		<item>Автоматически</item>
 		<item>Свет</item>

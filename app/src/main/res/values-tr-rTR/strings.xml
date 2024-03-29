@@ -34,8 +34,8 @@
 	<string name="failed_scan">Tarama başarısız oldu.</string>
 	<string name="are_you_sure_deletion">Emin misin? Silinen dosyalar geri yüklenemez</string>
 	<string name="are_you_sure_deletion_title">Silmeyi Doğrulayın</string>
-	<string name="samsung_not_work">Samsung aygıtlarında çalışmıyor</string>
-	<string name="clear_clipboard">Panoyu temizle</string>
+	<string name="clear_clipboard_sum">Samsung aygıtlarında çalışmıyor</string>
+	<string name="clear_clipboard_title">Panoyu temizle</string>
 	<string name="double_check_sum">On taramanın bir sınırı olan bir şeyin her birinde tarama işlemi yeniden çalıştırılır</string>
 	<string name="double_check_title">Çift Denetleyici</string>
 	<string name="svc_notification_title">LTE Clean Worker Bitti</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Ayarlar</string>
 	<string name="remove_from_whitelist">Beyaz listeden kaldırılsın mı?</string>
 	<string name="delete">Sil</string>
-	<string name="clipboard_clear_failed">Pano temizlenemedi</string>
+	<string name="clear_clipboard_failed">Pano temizlenemedi</string>
 	<string-array name="themes">
 		<item>Otomatik</item>
 		<item>Açık</item>

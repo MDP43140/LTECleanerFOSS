@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scansione non riuscita.</string>
 	<string name="are_you_sure_deletion">Sei sicuro? I file cancellati non possono essere ripristinati</string>
 	<string name="are_you_sure_deletion_title">Conferma eliminazione</string>
-	<string name="samsung_not_work">Non funziona sui dispositivi Samsung</string>
-	<string name="clear_clipboard">Pulisci gli appunti</string>
+	<string name="clear_clipboard_sum">Non funziona sui dispositivi Samsung</string>
+	<string name="clear_clipboard_title">Pulisci gli appunti</string>
 	<string name="double_check_sum">La scansione verrà ripetuta ogni volta che qualcosa viene trovato, fino a un massimo di dieci scansioni</string>
 	<string name="double_check_title">Controllo doppio</string>
 	<string name="svc_notification_title">Processo di pulizia LTE terminato</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Impostazioni</string>
 	<string name="remove_from_whitelist">Rimuovere dal whitelist?</string>
 	<string name="delete">Elimina</string>
-	<string name="clipboard_clear_failed">Impossibile cancellare gli appunti</string>
+	<string name="clear_clipboard_failed">Impossibile cancellare gli appunti</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Luce</item>

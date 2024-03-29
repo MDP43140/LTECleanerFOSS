@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scanare eşuată.</string>
 	<string name="are_you_sure_deletion">Sunteţi sigur? Fişierele şterse nu pot fi restaurate</string>
 	<string name="are_you_sure_deletion_title">Confirmă ștergerea</string>
-	<string name="samsung_not_work">Nu funcţionează pe dispozitive samsung</string>
-	<string name="clear_clipboard">Curăţare clipboard</string>
+	<string name="clear_clipboard_sum">Nu funcţionează pe dispozitive Samsung</string>
+	<string name="clear_clipboard_title">Curăţare clipboard</string>
 	<string name="double_check_sum">Va rula din nou scanarea de fiecare dată când se găseşte ceva cu o limită de zece scanări</string>
 	<string name="double_check_title">Verificator dublu</string>
 	<string name="svc_notification_title">Lucrător curant curat terminat</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Setări</string>
 	<string name="remove_from_whitelist">Scoateți din whitelist?</string>
 	<string name="delete">Șterge</string>
-	<string name="clipboard_clear_failed">Nu a reușit să clar clipboard</string>
+	<string name="clear_clipboard_failed">Nu a reușit să clar clipboard</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Lumină</item>

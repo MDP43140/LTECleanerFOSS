@@ -34,8 +34,8 @@
 	<string name="failed_scan">스캔이 실패했습니다.</string>
 	<string name="are_you_sure_deletion">확실해요? 삭제된 파일을 복원할 수 없음</string>
 	<string name="are_you_sure_deletion_title">삭제 확인</string>
-	<string name="samsung_not_work">삼성장치에서 작동하지 않는다</string>
-	<string name="clear_clipboard">클립보드 지우기</string>
+	<string name="clear_clipboard_sum">삼성장치에서 작동하지 않는다</string>
+	<string name="clear_clipboard_title">클립보드 지우기</string>
 	<string name="double_check_sum">스캔이 10개 제한된 것으로 발견될 때마다 스캔을 다시 실행합니다.</string>
 	<string name="double_check_title">더블 체크 프로그램</string>
 	<string name="svc_notification_title">LTE 클린Worker 완료</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">설정</string>
 	<string name="remove_from_whitelist">화이트리스트에서 제거하시겠습니까?</string>
 	<string name="delete">삭제</string>
-	<string name="clipboard_clear_failed">클립보드를 지우지 못했습니다.</string>
+	<string name="clear_clipboard_failed">클립보드를 지우지 못했습니다.</string>
 	<string-array name="themes">
 		<item>자동</item>
 		<item>빛</item>

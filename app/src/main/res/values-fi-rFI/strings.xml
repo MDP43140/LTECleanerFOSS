@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scan epäonnistui.</string>
 	<string name="are_you_sure_deletion">Oletko varma? Tiedostoja ei voi palauttaa</string>
 	<string name="are_you_sure_deletion_title">Vahvasta poisto</string>
-	<string name="samsung_not_work">Se ei toimi samsungin laitteissa.</string>
-	<string name="clear_clipboard">Tyhjennä kirjoituslevy</string>
+	<string name="clear_clipboard_sum">Se ei toimi Samsungin laitteissa.</string>
+	<string name="clear_clipboard_title">Tyhjennä kirjoituslevy</string>
 	<string name="double_check_sum">Skannaan joka kerta, kun jotain löytyy 10 skannauksesta.</string>
 	<string name="double_check_title">Double Checker</string>
 	<string name="svc_notification_title">LTE-puhdas käsittelijä on valmis</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Asetukset</string>
 	<string name="remove_from_whitelist">Poistaa valkoisesta?</string>
 	<string name="delete">Poista</string>
-	<string name="clipboard_clear_failed">Leikepöydän poisto ei onnistunut</string>
+	<string name="clear_clipboard_failed">Leikepöydän poisto ei onnistunut</string>
 	<string-array name="themes">
 		<item>Auto</item>
 		<item>Light</item>

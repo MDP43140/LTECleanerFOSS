@@ -48,8 +48,8 @@
 	<string name="failed_scan">Pemindaian gagal.</string>
 	<string name="are_you_sure_deletion">Apakah Anda yakin? Berkas yang dihapus tidak dapat dipulihkan</string>
 	<string name="are_you_sure_deletion_title">Konfirmasi Penghapusan</string>
-	<string name="samsung_not_work">Tidak bekerja pada perangkat samsung</string>
-	<string name="clear_clipboard">Bersihkan papan klip</string>
+	<string name="clear_clipboard_sum">Tidak bekerja pada beberapa ROM</string>
+	<string name="clear_clipboard_title">Bersihkan papan klip sistem</string>
 	<string name="double_check_sum">Berapa kali memindai ulang setiap kali sesuatu ditemukan</string>
 	<string name="double_check_title">Pemeriksa Ganda</string>
 	<string name="svc_notification_title">Pekerja Pembersih LTE</string>
@@ -64,7 +64,7 @@
 	<string name="remove_from_blacklist">Hapus dari Daftar hitam?</string>
 	<string name="remove_from_whitelist">Hapus dari Daftar putih?</string>
 	<string name="delete">Hapus</string>
-	<string name="clipboard_clear_failed">Gagal membersihkan papan klip</string>
+	<string name="clear_clipboard_failed">Gagal membersihkan papan klip sistem</string>
 	<string name="default_notification_name">Bawaan</string>
 	<string name="default_notification_sum">Menunjukkan pemberitahuan pembersihan latar-belakang dan berapa banyak cache yang dibersihkan</string>
 	<string name="errLog_notification_name">Log kesalahan</string>

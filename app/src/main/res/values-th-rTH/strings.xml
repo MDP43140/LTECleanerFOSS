@@ -34,8 +34,8 @@
 	<string name="failed_scan">การสแกนล้มเหลว</string>
 	<string name="are_you_sure_deletion">คุณแน่ใจนะ ไฟล์ที่ลบไม่สามารถเรียกคืนได้</string>
 	<string name="are_you_sure_deletion_title">ยืนยันการลบ</string>
-	<string name="samsung_not_work">ใช้ไม่ได้กับอุปกรณ์ samsung</string>
-	<string name="clear_clipboard">ลบคลิปบอร์ด</string>
+	<string name="clear_clipboard_sum">ใช้ไม่ได้กับอุปกรณ์ Samsung</string>
+	<string name="clear_clipboard_title">ลบคลิปบอร์ด</string>
 	<string name="double_check_sum">จะทำการสแกนอีกครั้งในแต่ละครั้งที่พบบางสิ่งที่มีการจำกัดสิบครั้ง</string>
 	<string name="double_check_title">การตรวจสอบสองครั้ง</string>
 	<string name="svc_notification_title">LTE Worker เสร็จสิ้นแล้ว</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">การตั้งค่า</string>
 	<string name="remove_from_whitelist">ลบออกจาก white listหรือไม่?</string>
 	<string name="delete">ลบ</string>
-	<string name="clipboard_clear_failed">ล้มเหลวในการลบคลิปบอร์ด</string>
+	<string name="clear_clipboard_failed">ล้มเหลวในการลบคลิปบอร์ด</string>
 	<string-array name="themes">
 		<item>อัตโนมัติ</item>
 		<item>ไลท์</item>

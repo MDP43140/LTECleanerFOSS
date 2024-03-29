@@ -34,8 +34,8 @@
 	<string name="failed_scan">Scan fehlgeschlagen.</string>
 	<string name="are_you_sure_deletion">Sind Sie sicher? Gelöschte Dateien können nicht wiederhergestellt werden</string>
 	<string name="are_you_sure_deletion_title">Löschen bestätigen</string>
-	<string name="samsung_not_work">Funktioniert nicht auf Samsung-Geräten</string>
-	<string name="clear_clipboard">Zwischenablage löschen</string>
+	<string name="clear_clipboard_sum">Funktioniert nicht auf Samsung-Geräten</string>
+	<string name="clear_clipboard_title">Zwischenablage löschen</string>
 	<string name="double_check_sum">Wird den Scan jedes Mal erneut ausführen, wenn bei einer Begrenzung von zehn Scans etwas gefunden wird.</string>
 	<string name="double_check_title">Doppelter Checker</string>
 	<string name="svc_notification_title">LTE Clean Worker Beendet</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Einstellungen</string>
 	<string name="remove_from_whitelist">Aus Whitelist entfernen?</string>
 	<string name="delete">Löschen</string>
-	<string name="clipboard_clear_failed">Fehler beim Löschen der Zwischenablage</string>
+	<string name="clear_clipboard_failed">Fehler beim Löschen der Zwischenablage</string>
 	<string-array name="themes">
 		<item>Automatisch</item>
 		<item>Licht</item>

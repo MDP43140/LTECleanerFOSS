@@ -34,8 +34,8 @@
 	<string name="failed_scan">Skanowanie nie powiodło się.</string>
 	<string name="are_you_sure_deletion">Czy na pewno? Nie można odtworzyć usuniętych plików</string>
 	<string name="are_you_sure_deletion_title">Potwierdź usuwanie</string>
-	<string name="samsung_not_work">Nie działa na urządzeniach firmy Samsung</string>
-	<string name="clear_clipboard">Wyczyść schowek</string>
+	<string name="clear_clipboard_sum">Nie działa na urządzeniach firmy Samsung</string>
+	<string name="clear_clipboard_title">Wyczyść schowek</string>
 	<string name="double_check_sum">Skanowanie będzie ponownie uruchamiane za każdym razem, gdy znajdzie się coś z limitem dziesięciu skanów.</string>
 	<string name="double_check_title">Podwójne sprawdzanie</string>
 	<string name="svc_notification_title">Czyszczenie procesu roboczego LTE zakończone</string>
@@ -48,7 +48,7 @@
 	<string name="settings_page_title">Ustawienia</string>
 	<string name="remove_from_whitelist">Czy usunąć z białej listy?</string>
 	<string name="delete">Usuń</string>
-	<string name="clipboard_clear_failed">Nie powiodło się skasowanie schowka</string>
+	<string name="clear_clipboard_failed">Nie powiodło się skasowanie schowka</string>
 	<string-array name="themes">
 		<item>Automatycznie</item>
 		<item>Światło</item>
