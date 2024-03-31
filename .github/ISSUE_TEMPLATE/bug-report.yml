@@ -9,7 +9,7 @@ body:
       options:
         - label: "I am able to reproduce the bug with the latest version."
           required: true
-        - label: "I made sure that there are *no existing issues* - [open](./issues) or [closed](./issues?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
+        - label: "I made sure that there are *no existing issues* - [open](.) or [closed](.?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
           required: true
         - label: "I have taken the time to fill in all the required details. I understand that the bug report will be dismissed otherwise."
           required: true
@@ -34,16 +34,11 @@ body:
       required: true
 
   - type: textarea
-    id: expected-behavior
+    id: expected-and-actual-behavior
     attributes:
-      label: Expected behavior
-      description: What do you expect to happen?
-
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: Actual behavior
-      description: What happens with the steps given above?
+      label: Expected & Actual behavior
+      description: What do you expect to happen? and What actually happens with the steps given above?
+      placeholder: "I expect it to ..., but instead it ..."
 
   - type: textarea
     id: screen-media
@@ -64,6 +59,17 @@ body:
     attributes:
       label: Logs
       description: If your bug includes a crash log, tap on "Share formatted log" at the bottom, click "Copy to clipboard", and paste it here.
+      placeholder: |
+        Exception
+        App language: en
+        App version: ...
+        Device: brand MO-DEL
+        OS Version: Linux brand/model/model:33/build/build:author/key 14 - 33
+        GMT Time: 2024/../.. ..:..
+        Crash log:
+        java.lang.Exception: ...
+        	at ...(...:...)
+        	...
 
   - type: input
     id: device-os

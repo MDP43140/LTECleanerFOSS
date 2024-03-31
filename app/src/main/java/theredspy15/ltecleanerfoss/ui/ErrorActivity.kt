@@ -53,7 +53,7 @@ class ErrorActivity: AppCompatActivity(){
 			.append("* __Device:__ ${Build.BRAND} ${Build.MODEL}\n")
 			.append("* __OS Version:__ ${osVersion}\n")
 			.append("* __GMT Time:__ ${formattedDateTime}\n")
-			.append("<details><summary><b>Crash log</b></summary><p>\n")
+			.append("<details><summary><b>Crash log</b></summary><p>\n\n")
 			.append("```\n${exceptionMessage}\n```\n")
 			.append("</details><hr>")
 			.toString()

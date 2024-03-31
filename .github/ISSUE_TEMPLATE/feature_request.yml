@@ -7,26 +7,26 @@ body:
     attributes:
       label: "Checklist"
       options:
-        - label: "I made sure that there are *no existing issues* - [open](./issues) or [closed](./issues?q=is%3Aissue+is%3Aclosed)."
+        - label: "I made sure that there are *no existing issues* - [open](.) or [closed](.?q=is%3Aissue+is%3Aclosed)."
           required: true
 
   - type: textarea
     id: describe
     attributes:
-      label: "**Is your feature request related to a problem? Please describe.**"
+      label: "Is your feature request related to a problem? Please describe."
       description: A clear and concise description of what the problem is.
       placeholder: "eg. I'm always frustrated when ..."
 
   - type: textarea
     id: solution
     attributes:
-      label: "**Describe the solution you'd like**"
+      label: "Describe the solution you'd like"
       description: A clear and concise description of what you want to happen.
       placeholder: "eg. I want it to ..."
 
   - type: textarea
     id: additional_info
     attributes:
-      label: "**Additional context**"
+      label: "Additional context"
       description: Add any other context or screenshots about the feature request here.
       placeholder: "eg. I saw App B has ... feature, it has ... and ..., just look at the screenshot that i sent"

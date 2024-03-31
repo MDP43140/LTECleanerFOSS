@@ -32,9 +32,9 @@ class SettingsActivity: AppCompatActivity(){
 			for (key in jsonObject.keys()){
 				val value = jsonObject.get(key)
 				when (value){
-					is String -> prefsEditor?.putString(key, value)
-					is Int -> prefsEditor?.putInt(key, value)
 					is Boolean -> prefsEditor?.putBoolean(key, value)
+					is Int -> prefsEditor?.putInt(key, value)
+					is String -> prefsEditor?.putString(key, value)
 					is JSONArray -> {
 						val stringArray = mutableListOf<String>()
 						for (i in 0 until value.length()) stringArray.add(value.optString(i))
