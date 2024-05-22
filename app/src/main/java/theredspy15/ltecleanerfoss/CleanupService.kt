@@ -12,6 +12,7 @@ import android.os.Environment
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.preference.PreferenceManager
+import io.mdp43140.ael.ErrorLogger
 import java.util.Locale
 //import theredspy15.ltecleanerfoss.CommonFunctions
 //import theredspy15.ltecleanerfoss.Constants
@@ -62,7 +63,7 @@ class CleanupService: Service(){
 			}.start()
 		} catch (e: Exception){
 			stopForeground(STOP_FOREGROUND_REMOVE)
-			CommonFunctions.handleError(applicationContext,2,e)
+			ErrorLogger.instance?.handleError(e)
 			stopSelf()
 			throw e
 		}

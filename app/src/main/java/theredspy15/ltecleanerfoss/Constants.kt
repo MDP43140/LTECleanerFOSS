@@ -7,9 +7,7 @@ object Constants {
 	const val BGCLEAN_WORK_NAME = "scheduled_cleanup_work"
 	const val BGCLEAN_WORK_TAG = "cleanup_work_tag"
 	const val NOTIFICATION_ID_SERVICE = 1
-	const val NOTIFICATION_ID_ERROR_LOG = 2
 	const val NOTIFICATION_CHANNEL_SERVICE = "CLEANUP_SERVICE"
-	const val NOTIFICATION_CHANNEL_ERROR_LOG = "ERROR_LOG"
 	val blacklistDefault: Set<String> = setOf(
 		".*\\.log",
 		".*\\.tmp",
@@ -21,6 +19,7 @@ object Constants {
 		"/storage/emulated/0/Android/data/.*/files/.*UnityAdsVideoCache",
 		"/storage/emulated/0/Android/data/.*/files/.*mobvista",
 		"/storage/emulated/0/Android/data/.*/files/Unity/.*/Analytics",
+		"/storage/emulated/0/Android/data/.*/files/UnityServicesCachedMetrics",
 		"/storage/emulated/0/Android/data/.*/files/supersonicads",
 		"/storage/emulated/0/Android/data/.*/files/.*splashad",
 		"/storage/emulated/0/.*Analytics",
@@ -67,6 +66,7 @@ object Constants {
 		"copy",
 		"copies",
 		"important",
-		"do_not_edit"
+		"do_not_edit",
+		".stfolder"
 	)
 }

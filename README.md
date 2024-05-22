@@ -1,5 +1,5 @@
 <details><summary>Important notice about original version</summary>
-So I forked LTE Cleaner, that was originally developed by @TheRedSpy15 because
+So I forked LTE Cleaner, that was originally developed by @TheRedSpy15 on GitHub because
 the app has been permanently banned from Play Store at 4 April 2023 due to a screenshot that apparently "deceived" users.
 This project initially started as a learning opportunity for @TheRedSpy15 back in 2018 when he was in 10th grade.
 After putting ads on the Play Store variant, it becomes a source of monthly income to cover his student debt bill while he was in college.
@@ -27,7 +27,7 @@ LTE Cleaner only aims to clean your phone by removing safe to delete files, whic
 __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claims to.__
 
 ## Install
-[GitHub](https://github.com/MDP43140/LTECleanerFOSS/files/13996640/app-release.zip)
+[GitHub](https://github.com/MDP43140/LTECleanerFOSS/releases)
 [Build it yourself](#compiling-the-app)
 [Original F-Droid (outdated)](https://f-droid.org/packages/theredspy15.ltecleanerfoss)
 [Original source code (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
@@ -60,7 +60,7 @@ To do list (not guaranteed because i'm busy irl):
 
 ## The Team
 <a href="https://github.com/mdp43140/LTECleanerFOSS/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=mdp43140/LTECleanerFOSS" />
+	<img src="https://contrib.rocks/image?repo=mdp43140/LTECleanerFOSS" />
 </a>
 
 Contribute to this project:
@@ -70,7 +70,11 @@ Contribute to this project:
 - Translate this app into more languages
 
 ## Compiling the app
-Just go to the project root directory, and run this command: ```./gradlew assembleRelease``` (if you're using Windows, change `./gradlew` to `gradlew.bat`)
+First, export some variables (for Linux users. Windows user might want to adjust this a bit):```bash
+export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-21-openjdk-amd64}"
+export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-/home/mdp/.android/SDK}"
+```
+Just go to the project root directory, and run this command: ```./gradlew :app:assembleRelease``` (if you're using Windows, change `./gradlew` to `gradlew.bat`)
 
 ## License
 [![GNU GPL v3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)

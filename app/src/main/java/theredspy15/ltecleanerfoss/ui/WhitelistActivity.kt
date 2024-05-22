@@ -95,7 +95,7 @@ class WhitelistActivity: AppCompatActivity(){
 				dialogInterface.dismiss()
 				binding.pathsLayout.removeView(button)
 			}
-			.setNegativeButton(getString(R.string.cancel)) { dialogInterface:DialogInterface, _:Int -> dialogInterface.dismiss() }
+			.setNegativeButton(getString(android.R.string.cancel)) { dialogInterface:DialogInterface, _:Int -> dialogInterface.dismiss() }
 			.show()
 	}
 

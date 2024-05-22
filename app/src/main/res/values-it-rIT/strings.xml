@@ -9,7 +9,6 @@
 	<string name="whitelist">Esclusioni</string>
 	<string name="privacy_policy">Politica sulla privacy</string>
 	<string name="add_to_whitelist">Aggiungi alla lista delle esclusioni</string>
-	<string name="cancel">Annulla</string>
 	<string name="clean">Pulizia</string>
 	<string name="analyze">Analisi</string>
 	<string name="enable_generic_filter">Abilita filtro generico</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Liberato: </string>
 	<string name="found">Trovato: </string>
 	<string name="auto_whitelist">Lista delle esclusioni automatica</string>
-	<string name="reset">Pulisci</string>
 	<string name="delete_apk_files">Elimina i file .apk</string>
 	<string name="status_idle">Stato: Inattivo</string>
 	<string name="status_running">Stato: In esecuzione</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Rimuovere dal whitelist?</string>
 	<string name="delete">Elimina</string>
 	<string name="clear_clipboard_failed">Impossibile cancellare gli appunti</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Auto</item>
 		<item>Luce</item>
 		<item>Buio</item>

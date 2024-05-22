@@ -52,10 +52,6 @@
 			android:name=".ui.SettingsActivity"
 			android:parentActivityName=".ui.MainActivity"
 			android:label="@string/settings" />
-		<activity
-			android:exported="false"
-			android:name=".ui.ErrorActivity"
-			android:label="@string/crashLog" />
 		<service
 			android:exported="false"
 			android:name=".CleanupService"

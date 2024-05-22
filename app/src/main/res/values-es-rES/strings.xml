@@ -9,7 +9,6 @@
 	<string name="whitelist">Lista blanca</string>
 	<string name="privacy_policy">Política de privacidad</string>
 	<string name="add_to_whitelist">Añadir a la lista blanca</string>
-	<string name="cancel">Cancelar</string>
 	<string name="clean">Limpiar</string>
 	<string name="analyze">Analizar</string>
 	<string name="enable_generic_filter">Activar filtro genérico</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Liberado: </string>
 	<string name="found">Encontrado: </string>
 	<string name="auto_whitelist">Lista blanca automática</string>
-	<string name="reset">Limpiar</string>
 	<string name="delete_apk_files">Eliminar archivos .apk</string>
 	<string name="status_idle">Estado: Inactivo</string>
 	<string name="status_running">Estado: En ejecución</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">¿Eliminar de la lista blanca?</string>
 	<string name="delete">Suprimir</string>
 	<string name="clear_clipboard_failed">Error al borrar el portapapeles</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Auto</item>
 		<item>Luz</item>
 		<item>Oscuro</item>

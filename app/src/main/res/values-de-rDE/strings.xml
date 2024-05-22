@@ -9,7 +9,6 @@
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Datenschutzrichtlinie</string>
 	<string name="add_to_whitelist">Zur Whitelist hinzufügen</string>
-	<string name="cancel">Abbrechen</string>
 	<string name="clean">Bereinigen</string>
 	<string name="analyze">Analysieren</string>
 	<string name="enable_generic_filter">Generischen Filter aktivieren</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Freigegeben: </string>
 	<string name="found">Gefunden: </string>
 	<string name="auto_whitelist">Automatische Whitelist</string>
-	<string name="reset">Löschen</string>
 	<string name="delete_apk_files">.apk-Dateien löschen</string>
 	<string name="status_idle">Status: Idle</string>
 	<string name="status_running">Status: Aktiv</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Aus Whitelist entfernen?</string>
 	<string name="delete">Löschen</string>
 	<string name="clear_clipboard_failed">Fehler beim Löschen der Zwischenablage</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Automatisch</item>
 		<item>Licht</item>
 		<item>Dunkel</item>

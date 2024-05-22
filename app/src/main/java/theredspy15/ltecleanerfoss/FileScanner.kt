@@ -18,6 +18,7 @@ import java.io.File
 import java.util.Locale
 class FileScanner(private val path: File, context: Context){
 	// TODO: Ability to clean SD Card? Already tried SAF implementation, but its really hard, and soon i realized it has storage access restrictions: https://developer.android.com/training/data-storage/shared/documents-files#document-tree-access-restrictions
+	// TODO: do whitelist & blacklist system in the same function instead of being separate
 	private var prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
 	private val context = context
 	private var res: Resources = context.resources
@@ -29,8 +30,7 @@ class FileScanner(private val path: File, context: Context){
 	var autoWhite = prefs.getBoolean("auto_white", true)
 	var corpse = prefs.getBoolean("corpse", false)
 	var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
-	private val listFiles: List<File>
-		get() = getListFiles(path)
+	private var installedPackages = getInstalledPackages()
 	private var guiScanProgressMax = 0
 	private var guiScanProgressProgress = 0
 
@@ -39,7 +39,7 @@ class FileScanner(private val path: File, context: Context){
 	 * @param parentDirectory where to start searching from
 	 * @return List of all files on device (besides whitelisted ones)
 	 */
-	private fun getListFiles(parentDirectory: File): List<File> {
+	private fun getListFiles(parentDirectory: File): ArrayList<File> {
 		val inFiles = ArrayList<File>()
 		val files = parentDirectory.listFiles()
 		if (files != null) {
@@ -55,6 +55,15 @@ class FileScanner(private val path: File, context: Context){
 			}
 		}
 		return inFiles
+	}
+	private fun getInstalledPackages(): ArrayList<String> {
+		val pm = context.packageManager
+		val pkgs = pm.getInstalledApplications(PackageManager.GET_META_DATA)
+		val pkgsStr: ArrayList<String> = ArrayList()
+		for (pkg in pkgs) {
+			pkgsStr.add(pkg.packageName)
+		}
+		return pkgsStr
 	}
 
 	/**
@@ -85,15 +94,15 @@ class FileScanner(private val path: File, context: Context){
 	 * @param file file to check whether it should be added to the whitelist
 	 */
 	private fun autoWhiteList(file: File): Boolean {
-		whitelist.forEach { protectedFile ->
+		for (protectedFile in whitelist){
 			val whiteLists = WhitelistActivity.getWhiteList(prefs)
 			if (
-				file.name.lowercase(Locale.getDefault()).contains(protectedFile) &&
-				!whiteLists.contains(file.absolutePath.lowercase(Locale.getDefault()))
+				file.name.lowercase().contains(protectedFile) &&
+				!whiteLists.contains(file.absolutePath.lowercase())
 			) {
 				whiteLists
 					.toMutableList()
-					.add(file.absolutePath.lowercase(Locale.getDefault()))
+					.add(file.absolutePath.lowercase())
 				prefs
 					.edit()
 					.putStringSet("whitelist", HashSet(whiteLists))
@@ -133,7 +142,7 @@ class FileScanner(private val path: File, context: Context){
 			val filterIterator = filters.iterator()
 			while (filterIterator.hasNext()) {
 				val filter = filterIterator.next()
-				if (file.absolutePath.lowercase(Locale.getDefault()).matches(filter.lowercase(Locale.getDefault()).toRegex()))
+				if (file.absolutePath.lowercase().matches(filter.lowercase().toRegex()))
 					return true
 			}
 		} catch (e: NullPointerException) {
@@ -141,17 +150,6 @@ class FileScanner(private val path: File, context: Context){
 		}
 		return false // not empty folder or file in filter
 	}
-
-	private val installedPackages: List<String>
-		get() {
-			val pm = context.packageManager
-			val pkgs = pm.getInstalledApplications(PackageManager.GET_META_DATA)
-			val pkgsStr: MutableList<String> = ArrayList()
-			for (pkg in pkgs) {
-				pkgsStr.add(pkg.packageName)
-			}
-			return pkgsStr
-		}
 
 	/**
 	 * lists the contents of the file to an array, if the array length is 0, then return true, else
@@ -201,7 +199,7 @@ class FileScanner(private val path: File, context: Context){
 		isRunning = true
 		var cycles: Byte = 0
 		var maxCycles: Byte = if (delete) prefs.getInt("multirun",1).toByte() else 1
-		var foundFiles: List<File>
+		var foundFiles: ArrayList<File>
 
 		// removes the need to 'clean' multiple times to get everything
 		while (cycles < maxCycles) {
@@ -212,7 +210,7 @@ class FileScanner(private val path: File, context: Context){
 			)
 
 			// find/scan files
-			foundFiles = listFiles // fetching this variable (List) triggers get function getListFiles(path)
+			foundFiles = getListFiles(path)
 			guiScanProgressMax = guiScanProgressMax + foundFiles.size
 
 			// filter & delete
@@ -257,7 +255,6 @@ class FileScanner(private val path: File, context: Context){
 
 	companion object {
 		// TODO remove local prefs objects, create setter for one instead
-		@JvmField
 		var isRunning = false
 		private val filters = ArrayList<String>()
 		private val whitelist: MutableList<String> = ArrayList<String>()

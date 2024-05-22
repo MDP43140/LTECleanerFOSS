@@ -33,12 +33,25 @@ class SettingsActivity: AppCompatActivity(){
 				val value = jsonObject.get(key)
 				when (value){
 					is Boolean -> prefsEditor?.putBoolean(key, value)
+					is Float -> prefsEditor?.putFloat(key, value)
+					is Long -> prefsEditor?.putLong(key, value)
 					is Int -> prefsEditor?.putInt(key, value)
 					is String -> prefsEditor?.putString(key, value)
 					is JSONArray -> {
 						val stringArray = mutableListOf<String>()
 						for (i in 0 until value.length()) stringArray.add(value.optString(i))
 						prefsEditor?.putStringSet(key, stringArray.toSet())
+					}
+					is Set<*> -> {
+						// There are currently only Sets with type String possible
+						@Suppress("UNCHECKED_CAST")
+						prefsEditor?.putStringSet(key, value as Set<String>?)
+					}
+					// In JSON Lists are the same as Sets
+					is List<*> -> {
+						// There are currently only Sets with type String possible
+						@Suppress("UNCHECKED_CAST")
+						prefsEditor?.putStringSet(key, (value as List<String>?)?.let { HashSet(it) })
 					}
 					else -> {
 						// Handle unsupported data type or provide a fallback
@@ -94,7 +107,7 @@ class SettingsActivity: AppCompatActivity(){
 				}
 			findPreference<Preference>("theme")!!.onPreferenceChangeListener =
 				Preference.OnPreferenceChangeListener { _:Preference, value:Any? ->
-					val themeStr = resources.getStringArray(R.array.themes)
+					val themeStr = resources.getStringArray(R.array.themes_key)
 					AppCompatDelegate.setDefaultNightMode(when (value){
 						themeStr[1] -> AppCompatDelegate.MODE_NIGHT_NO
 						themeStr[2] -> AppCompatDelegate.MODE_NIGHT_YES

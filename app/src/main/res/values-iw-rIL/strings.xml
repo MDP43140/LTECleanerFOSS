@@ -9,7 +9,6 @@
 	<string name="whitelist">רשימה לבנה</string>
 	<string name="privacy_policy">מדיניות פרטיות</string>
 	<string name="add_to_whitelist">הוספה לרשימה הלבנה</string>
-	<string name="cancel">ביטול</string>
 	<string name="clean">ניקוי</string>
 	<string name="analyze">ניתוח</string>
 	<string name="enable_generic_filter">הפעלת מסנן גנרי</string>
@@ -17,7 +16,6 @@
 	<string name="freed">פריד: </string>
 	<string name="found">נמצא: </string>
 	<string name="auto_whitelist">רשימה לבנה אוטומטית</string>
-	<string name="reset">ניקוי</string>
 	<string name="delete_apk_files">מחיקת קובצי .apk</string>
 	<string name="status_idle">מצב: לא פעיל</string>
 	<string name="status_running">מצב: רץ</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">לסלק מרשימת הרשימות?</string>
 	<string name="delete">מחיקה</string>
 	<string name="clear_clipboard_failed">כשל בלנקות את לוח הגזירים</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>אוטומטי</item>
 		<item>אור</item>
 		<item>כהה</item>

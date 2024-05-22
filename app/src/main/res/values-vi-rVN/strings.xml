@@ -9,7 +9,6 @@
 	<string name="whitelist">Trắng</string>
 	<string name="privacy_policy">Chính sách riêng</string>
 	<string name="add_to_whitelist">Thêm vào danh sách trắng</string>
-	<string name="cancel">Hủy</string>
 	<string name="clean">Sạch</string>
 	<string name="analyze">Phân tích</string>
 	<string name="enable_generic_filter">Bật bộ lọc chung</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Giải phóng: </string>
 	<string name="found">Tìm thấy: </string>
 	<string name="auto_whitelist">Auto Whitelist</string>
-	<string name="reset">Xóa</string>
 	<string name="delete_apk_files">Xoá tập tin .apk</string>
 	<string name="status_idle">Trạng thái: Idle</string>
 	<string name="status_running">Trạng thái: Chạy</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Rút khỏi danh sách trắng?</string>
 	<string name="delete">&amp; Xoá</string>
 	<string name="clear_clipboard_failed">Lỗi xóa bảng tạm</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Tự động</item>
 		<item>Ánh sáng</item>
 		<item>Đen</item>

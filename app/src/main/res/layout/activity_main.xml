@@ -10,9 +10,7 @@
 	android:weightSum="4"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	tools:context=".ui.MainActivity"
-	android:id="@+id/main_layout">
-
+	tools:context=".ui.MainActivity">
 	<ScrollView
 		android:animateLayoutChanges="false"
 		android:background="@drawable/rounded_view"
@@ -23,11 +21,13 @@
 		android:layout_marginTop="16dp"
 		android:layout_marginBottom="16dp"
 		android:layout_marginStart="24dp"
-		android:layout_marginEnd="24dp">
+		android:layout_marginEnd="24dp"
+		android:scrollbarSize="24dp">
 		<HorizontalScrollView
 			android:animateLayoutChanges="false"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:scrollbarSize="24dp">
 			<LinearLayout
 				android:animateLayoutChanges="false"
 				android:id="@+id/fileListView"

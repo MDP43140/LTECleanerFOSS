@@ -42,7 +42,7 @@ class BlacklistActivity: AppCompatActivity(){
 					dialog.dismiss()
 					loadViews()
 				}
-				.setNegativeButton(getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
+				.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
 					dialog.dismiss()
 				}
 				.show()
@@ -81,7 +81,7 @@ class BlacklistActivity: AppCompatActivity(){
 						ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT
 					)
-					setOnClickListener { removeOrEditPattern(path) }					
+					setOnClickListener { removeOrEditPattern(path) }
 				}
 				checkBox.apply {
 					isChecked = blackListOn.contains(path);
@@ -114,7 +114,7 @@ class BlacklistActivity: AppCompatActivity(){
 				dialog.dismiss()
 				loadViews()
 			}
-			.setNegativeButton(getString(R.string.cancel)) { dialog:DialogInterface, _:Int ->
+			.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
 				dialog.dismiss()
 			}
 			.show()

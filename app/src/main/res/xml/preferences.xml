@@ -104,9 +104,9 @@
 	<PreferenceCategory android:title="@string/other" app:iconSpaceReserved="false">
 		<ListPreference
 			android:key="theme"
-			android:defaultValue="Dark"
-			android:entries="@array/themes"
-			android:entryValues="@array/themes"
+			android:defaultValue="dark"
+			android:entries="@array/themes_val"
+			android:entryValues="@array/themes_key"
 			android:summary="@string/theme_sum"
 			android:persistent="true"
 			android:title="@string/theme_title"

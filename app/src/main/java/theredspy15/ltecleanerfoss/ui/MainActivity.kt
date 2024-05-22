@@ -95,7 +95,7 @@ class MainActivity: AppCompatActivity(){
 						dialogInterface.dismiss()
 						scan(true)
 					}
-					.setNegativeButton(getString(R.string.cancel)){ dialogInterface: DialogInterface, _: Int -> dialogInterface.dismiss() }
+					.setNegativeButton(getString(android.R.string.cancel)){ dialogInterface: DialogInterface, _: Int -> dialogInterface.dismiss() }
 					.show()
 			}
 		}
@@ -103,7 +103,7 @@ class MainActivity: AppCompatActivity(){
 
 	private fun clearClipboard() {
 		try {
-			val mCbm = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+			val mCbm = getSystemService(ClipboardManager::class.java)
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
 				mCbm.clearPrimaryClip()
 			} else {
@@ -175,7 +175,7 @@ class MainActivity: AppCompatActivity(){
 
 	private fun stopBgApps(){
 		Thread {
-			val am = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+			val am = getSystemService(ActivityManager::class.java)
 			val pkgName = getPackageName()
 			val memInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
 

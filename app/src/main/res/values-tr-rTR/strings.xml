@@ -9,7 +9,6 @@
 	<string name="whitelist">Beyaz Liste</string>
 	<string name="privacy_policy">Gizlilik İlkesi</string>
 	<string name="add_to_whitelist">Beyaz listeye ekle</string>
-	<string name="cancel">İptal</string>
 	<string name="clean">Temizle</string>
 	<string name="analyze">Çözümle</string>
 	<string name="enable_generic_filter">Soysal süzgeci etkinleştir</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Serbest bırakıldı: </string>
 	<string name="found">Bulunan: </string>
 	<string name="auto_whitelist">Otomatik Beyaz Liste</string>
-	<string name="reset">Temizle</string>
 	<string name="delete_apk_files">.apk dosyalarını sil</string>
 	<string name="status_idle">Durum: Boşta</string>
 	<string name="status_running">Durum: Çalışıyor</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Beyaz listeden kaldırılsın mı?</string>
 	<string name="delete">Sil</string>
 	<string name="clear_clipboard_failed">Pano temizlenemedi</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Otomatik</item>
 		<item>Açık</item>
 		<item>Koyu</item>

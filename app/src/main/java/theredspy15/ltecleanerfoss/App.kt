@@ -4,6 +4,7 @@
  */
 package theredspy15.ltecleanerfoss
 import android.app.Application
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
@@ -14,15 +15,21 @@ import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
 //import theredspy15.ltecleanerfoss.R
 //import theredspy15.ltecleanerfoss.CommonFunctions
+import io.mdp43140.ael.ErrorLogger
 import theredspy15.ltecleanerfoss.ui.MainActivity
 class App: Application(){
 	var runCount = 0
+	override fun attachBaseContext(base: Context){
+		super.attachBaseContext(base);
+		// Catches bugs and crashes, and makes it easy to report the bug
+		if (ErrorLogger.instance == null){
+			ErrorLogger(base)
+			ErrorLogger.instance?.isNotification = true // sends a notification
+			ErrorLogger.reportUrl = "https://github.com/mdp43140/LTECleanerFOSS/issues/new"
+		}
+	}
 	override fun onCreate(){
 		super.onCreate()
-		// Catches bugs and crashes, and makes it easy to report the bug
-		Thread.setDefaultUncaughtExceptionHandler { _, throwable ->
-			CommonFunctions.handleError(this, 3, throwable)
-		}
 		prefs = PreferenceManager.getDefaultSharedPreferences(this)
 		// Stores how many times the app has been opened,
 		// Can also be used for first run related codes in the future, who knows...
@@ -59,6 +66,6 @@ class App: Application(){
 		}
 	}
 	companion object {
-		@JvmField var prefs:SharedPreferences? = null
+		var prefs:SharedPreferences? = null
 	}
 }

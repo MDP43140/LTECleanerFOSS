@@ -9,7 +9,6 @@
 	<string name="whitelist">白名单</string>
 	<string name="privacy_policy">隐私策略</string>
 	<string name="add_to_whitelist">添加到白名单</string>
-	<string name="cancel">取消</string>
 	<string name="clean">清洁</string>
 	<string name="analyze">分析</string>
 	<string name="enable_generic_filter">启用通用过滤器</string>
@@ -17,7 +16,6 @@
 	<string name="freed">已释放: </string>
 	<string name="found">找到: </string>
 	<string name="auto_whitelist">自动白名单</string>
-	<string name="reset">清除</string>
 	<string name="delete_apk_files">删除 .apk 文件</string>
 	<string name="status_idle">状态: 空闲</string>
 	<string name="status_running">状态: 正在运行</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">从白名单中除去 ?</string>
 	<string name="delete">删除</string>
 	<string name="clear_clipboard_failed">无法清除剪贴板</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>自动</item>
 		<item>灯光</item>
 		<item>黑</item>

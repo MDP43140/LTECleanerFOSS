@@ -9,7 +9,6 @@
 	<string name="whitelist">화이트리스트</string>
 	<string name="privacy_policy">개인정보 보호정책</string>
 	<string name="add_to_whitelist">화이트리스트에 추가</string>
-	<string name="cancel">취소</string>
 	<string name="clean">깨끗한</string>
 	<string name="analyze">분석하기</string>
 	<string name="enable_generic_filter">일반 필터 사용</string>
@@ -17,7 +16,6 @@
 	<string name="freed">프라이드: </string>
 	<string name="found">실측치: </string>
 	<string name="auto_whitelist">자동 화이트리스트</string>
-	<string name="reset">지우기</string>
 	<string name="delete_apk_files">.apk 파일 삭제하기</string>
 	<string name="status_idle">상태: 유휴</string>
 	<string name="status_running">상태: 실행 중</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">화이트리스트에서 제거하시겠습니까?</string>
 	<string name="delete">삭제</string>
 	<string name="clear_clipboard_failed">클립보드를 지우지 못했습니다.</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>자동</item>
 		<item>빛</item>
 		<item>암흑</item>

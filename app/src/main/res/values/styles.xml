@@ -2,7 +2,7 @@
 	~ (C) 2020-2023 Hunter J Drum
 	~ (C) 2024 MDP43140
   -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 	<style name="AppTheme" parent="Theme.Material3.DayNight">
 		<item name="colorPrimary">@color/colorAccent</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -12,6 +12,8 @@
 		<item name="colorAccent">?colorPrimary</item>
 		<item name="Accents">?colorAccent</item>
 		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+		<!-- fixes some UI issues on MIUI devices -->
+		<item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 	</style>
 	<style name="AppTheme.NoActionBar" parent="AppTheme">
 		<item name="windowActionBar">false</item>
@@ -23,4 +25,6 @@
 	<style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
 		<item name="widgetLayout">@layout/preference_material_switch</item>
 	</style>
+	<!-- Custom error logger theme -->
+	<style name="ErrLoggerTheme" parent="AppTheme"/>
 </resources>

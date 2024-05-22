@@ -9,7 +9,6 @@
 	<string name="whitelist">Белый список</string>
 	<string name="privacy_policy">Политика конфиденциальности</string>
 	<string name="add_to_whitelist">Добавить в белый список</string>
-	<string name="cancel">Отмена</string>
 	<string name="clean">Очистка</string>
 	<string name="analyze">Анализ</string>
 	<string name="enable_generic_filter">Включить универсальный фильтр</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Освобождено: </string>
 	<string name="found">Найдено: </string>
 	<string name="auto_whitelist">Автоматический белый список</string>
-	<string name="reset">Очищено</string>
 	<string name="delete_apk_files">Удалить файлы .apk</string>
 	<string name="status_idle">Состояние: ожидание</string>
 	<string name="status_running">Состояние: Выполняется</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Удалить из белого списка?</string>
 	<string name="delete">Удалить</string>
 	<string name="clear_clipboard_failed">Не удалось очистить буфер обмена</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Автоматически</item>
 		<item>Свет</item>
 		<item>Темный</item>

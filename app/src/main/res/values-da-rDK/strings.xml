@@ -9,7 +9,6 @@
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Privacy Policy</string>
 	<string name="add_to_whitelist">Tilføj til hvidliste</string>
-	<string name="cancel">Annullér</string>
 	<string name="clean">Rens</string>
 	<string name="analyze">Analysér</string>
 	<string name="enable_generic_filter">Aktivér generisk filter</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Fundet: </string>
 	<string name="auto_whitelist">Auto-hvidliste</string>
-	<string name="reset">Ryd</string>
 	<string name="delete_apk_files">Slet .apk-filer</string>
 	<string name="status_idle">Status: Idle</string>
 	<string name="status_running">Status: Udførelse</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Fjern fra hvidliste?</string>
 	<string name="delete">Slet</string>
 	<string name="clear_clipboard_failed">Kan ikke rydde udklipsholderen</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Auto</item>
 		<item>Lys</item>
 		<item>Mørk</item>

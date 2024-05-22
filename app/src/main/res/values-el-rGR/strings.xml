@@ -9,7 +9,6 @@
 	<string name="whitelist">-Whitelist</string>
 	<string name="privacy_policy">Πολιτική απορρήτου:</string>
 	<string name="add_to_whitelist">Προσθήκη στη λίστα επιτρεπών</string>
-	<string name="cancel">Ακύρωση.</string>
 	<string name="clean">Καθαρό.</string>
 	<string name="analyze">Ανάλυση:</string>
 	<string name="enable_generic_filter">Ενεργοποίηση γενικού φίλτρου</string>
@@ -17,7 +16,6 @@
 	<string name="freed">-Ναι. </string>
 	<string name="found">Βρέθηκε: </string>
 	<string name="auto_whitelist">Αυτόματη Whitelist</string>
-	<string name="reset">\' Εκκαθάριση</string>
 	<string name="delete_apk_files">Διαγραφή αρχείων .apk</string>
 	<string name="status_idle">Κατάσταση: Σε αδράνεια</string>
 	<string name="status_running">Κατάσταση: Εκτέλεση</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">-Κατάργηση από τη λευκή;</string>
 	<string name="delete">Διαγραφή:</string>
 	<string name="clear_clipboard_failed">Απέτυχε η εκκαθάριση του πρόχειρο.</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>\' Αυτόματα</item>
 		<item>Φως!</item>
 		<item>-Ναι.</item>

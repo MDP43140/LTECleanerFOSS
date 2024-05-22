@@ -9,7 +9,6 @@
 	<string name="whitelist">ホワイトリスト</string>
 	<string name="privacy_policy">プライバシー・ポリシー</string>
 	<string name="add_to_whitelist">ホワイトリストに追加</string>
-	<string name="cancel">キャンセル</string>
 	<string name="clean">クリーン</string>
 	<string name="analyze">分析</string>
 	<string name="enable_generic_filter">汎用フィルターの使用</string>
@@ -17,7 +16,6 @@
 	<string name="freed">解放: </string>
 	<string name="found">見つかりました : </string>
 	<string name="auto_whitelist">自動ホワイトリスト</string>
-	<string name="reset">クリア</string>
 	<string name="delete_apk_files">.apk ファイルの削除</string>
 	<string name="status_idle">状況: アイドル</string>
 	<string name="status_running">状況: 実行中</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">ホワイトリストから削除しますか</string>
 	<string name="delete">削除</string>
 	<string name="clear_clipboard_failed">クリップボードをクリアできません</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>オート</item>
 		<item>ライト</item>
 		<item>ダーク</item>

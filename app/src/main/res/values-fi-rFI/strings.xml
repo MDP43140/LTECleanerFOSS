@@ -9,7 +9,6 @@
 	<string name="whitelist">Whitelist</string>
 	<string name="privacy_policy">Yksityisyyden suoja</string>
 	<string name="add_to_whitelist">Lisää valkoiseen luetteloon</string>
-	<string name="cancel">Peruuta</string>
 	<string name="clean">Puhdas</string>
 	<string name="analyze">Analysoi</string>
 	<string name="enable_generic_filter">Ota yleinen suodatin käyttöön</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Freed: </string>
 	<string name="found">Löytyi: </string>
 	<string name="auto_whitelist">Auto-Whitelist</string>
-	<string name="reset">Kirkas</string>
 	<string name="delete_apk_files">Poista .apk-tiedostot</string>
 	<string name="status_idle">Tila: tila</string>
 	<string name="status_running">Tila: käytössä</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Poistaa valkoisesta?</string>
 	<string name="delete">Poista</string>
 	<string name="clear_clipboard_failed">Leikepöydän poisto ei onnistunut</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Auto</item>
 		<item>Light</item>
 		<item>Dark</item>

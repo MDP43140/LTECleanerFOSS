@@ -9,7 +9,6 @@
 	<string name="whitelist">Goedgekeurde lijst</string>
 	<string name="privacy_policy">Privacybeleid</string>
 	<string name="add_to_whitelist">Toevoegen aan goedgekeurde lijst</string>
-	<string name="cancel">Annuleren</string>
 	<string name="clean">Opschonen</string>
 	<string name="analyze">Analyseren</string>
 	<string name="enable_generic_filter">Generiek filter inschakelen</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Vrijgemaakt: </string>
 	<string name="found">Gevonden: </string>
 	<string name="auto_whitelist">Automatische Whitelist</string>
-	<string name="reset">Leegmaken</string>
 	<string name="delete_apk_files">.apk-bestanden wissen</string>
 	<string name="status_idle">Status: Idle</string>
 	<string name="status_running">Status: Actief</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Verwijderen uit whitelist?</string>
 	<string name="delete">Wissen</string>
 	<string name="clear_clipboard_failed">Wissen van klembord is mislukt</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Automatisch</item>
 		<item>Licht</item>
 		<item>Donker</item>

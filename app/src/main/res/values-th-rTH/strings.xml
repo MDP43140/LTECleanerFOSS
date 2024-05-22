@@ -9,7 +9,6 @@
 	<string name="whitelist">รายการที่อนุญาต</string>
 	<string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
 	<string name="add_to_whitelist">เพิ่มใน white list</string>
-	<string name="cancel">ยกเลิก</string>
 	<string name="clean">ล้างข้อมูล</string>
 	<string name="analyze">การวิเคราะห์</string>
 	<string name="enable_generic_filter">เปิดใช้งานตัวกรองทั่วไป</string>
@@ -17,7 +16,6 @@
 	<string name="freed">อิสระ: </string>
 	<string name="found">พบ: </string>
 	<string name="auto_whitelist">รายการไวท์ไวท์</string>
-	<string name="reset">เคลียร์</string>
 	<string name="delete_apk_files">ลบไฟล์. Apk</string>
 	<string name="status_idle">สถานะ: ไม่ได้ทำงาน</string>
 	<string name="status_running">สถานะ: กำลังรัน</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">ลบออกจาก white listหรือไม่?</string>
 	<string name="delete">ลบ</string>
 	<string name="clear_clipboard_failed">ล้มเหลวในการลบคลิปบอร์ด</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>อัตโนมัติ</item>
 		<item>ไลท์</item>
 		<item>มืด</item>

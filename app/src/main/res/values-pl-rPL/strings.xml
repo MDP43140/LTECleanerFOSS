@@ -9,7 +9,6 @@
 	<string name="whitelist">Wykluczone</string>
 	<string name="privacy_policy">Polityka prywatności</string>
 	<string name="add_to_whitelist">Dodaj do wykluczonych</string>
-	<string name="cancel">Anuluj</string>
 	<string name="clean">Wyczyść</string>
 	<string name="analyze">Analizuj</string>
 	<string name="enable_generic_filter">Włącz filtr ogólny</string>
@@ -17,7 +16,6 @@
 	<string name="freed">Zwolnione: </string>
 	<string name="found">Znaleziono: </string>
 	<string name="auto_whitelist">Automatyczne wykluczenia</string>
-	<string name="reset">Wyzeruj</string>
 	<string name="delete_apk_files">Usuń pliki .apk</string>
 	<string name="status_idle">Status: bezczynny</string>
 	<string name="status_running">Status: Uruchomiony</string>
@@ -49,7 +47,7 @@
 	<string name="remove_from_whitelist">Czy usunąć z białej listy?</string>
 	<string name="delete">Usuń</string>
 	<string name="clear_clipboard_failed">Nie powiodło się skasowanie schowka</string>
-	<string-array name="themes">
+	<string-array name="themes_val">
 		<item>Automatycznie</item>
 		<item>Światło</item>
 		<item>Ciemny</item>
