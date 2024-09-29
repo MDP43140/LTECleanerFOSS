@@ -37,3 +37,6 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 # End of gitignore.io/api/androidstudio
 
+app/src/.disabled
+app/.POC_GetSDCard.java
+LTECleanerFOSS.geany

@@ -64,6 +64,11 @@ class MainActivity: AppCompatActivity(){
 			else -> if (intentAction != null) Toast.makeText(this, "Invalid intent action: $intentAction", Toast.LENGTH_SHORT).show()
 		}
 	}
+	override fun onBackPressed(){
+		// suggested fix by LeakCanary
+		super.onBackPressed()
+		finishAfterTransition()
+	}
 	private fun settings(){
 		startActivity(Intent(this,SettingsActivity::class.java))
 	}
@@ -247,20 +252,20 @@ class MainActivity: AppCompatActivity(){
 	private fun requestWriteExternalPermission() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){ // Android 11+
 			ActivityCompat.requestPermissions(this,arrayOf(
-				Manifest.permission.WRITE_EXTERNAL_STORAGE,
 				Manifest.permission.READ_EXTERNAL_STORAGE,
+				Manifest.permission.WRITE_EXTERNAL_STORAGE,
 				Manifest.permission.MANAGE_EXTERNAL_STORAGE // Android 11+ requires manage external storage due to storageAccessFramework
 			),1)
 			if (!Environment.isExternalStorageManager()) { // all files
 				Toast.makeText(this, R.string.permission_needed, Toast.LENGTH_LONG).show()
-				val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-				intent.data = Uri.fromParts("package",packageName,null)
-				startActivity(intent)
+				startActivity(Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION).apply {
+					data = Uri.fromParts("package",packageName,null)
+				})
 			}
 		} else {
 			ActivityCompat.requestPermissions(this,arrayOf(
-				Manifest.permission.WRITE_EXTERNAL_STORAGE,
-				Manifest.permission.READ_EXTERNAL_STORAGE
+				Manifest.permission.READ_EXTERNAL_STORAGE,
+				Manifest.permission.WRITE_EXTERNAL_STORAGE
 			),1)
 		}
 	}
@@ -277,15 +282,23 @@ class MainActivity: AppCompatActivity(){
 	){
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 		if (
+			Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+			permissions.contains("android.permission.READ_EXTERNAL_STORAGE") &&
+			permissions.contains("android.permission.WRITE_EXTERNAL_STORAGE") &&
+			permissions.contains("android.permission.MANAGE_EXTERNAL_STORAGE")){
+			// Since Android 13, external storage access wasnt longer a thing anymore
+			Toast.makeText(this,"Sadly, Android 13+ no longer have access to external storage",Toast.LENGTH_SHORT).show();
+		}
+		else if (
 			requestCode == 1 &&
 			grantResults.isNotEmpty() &&
 			grantResults[0] != PackageManager.PERMISSION_GRANTED)
 			dialogBuilder.setTitle(getString(R.string.permission_needed))
-				.setMessage(getString(R.string.grantStorage_sum))
+				.setMessage(getString(R.string.grantPermissions_sum) + permissions.map { "\n- " + it.replaceFirst("android.permission.","") }.joinToString(""))
 				.setPositiveButton(getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
-					val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-					intent.data = Uri.fromParts("package",packageName,null)
-					startActivity(intent)
+					startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+						data = Uri.fromParts("package",packageName,null)
+					})
 					dialogInterface.dismiss()
 				}
 				.show()

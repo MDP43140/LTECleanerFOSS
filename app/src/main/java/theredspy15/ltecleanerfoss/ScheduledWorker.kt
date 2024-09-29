@@ -27,7 +27,6 @@ class ScheduledWorker(appContext: Context, workerParams: WorkerParameters): Work
 		}
 	}
 	companion object {
-		@JvmStatic
 		fun enqueueWork(ctx: Context) {
 			val dailyCleanupInterval: Long = App.prefs!!.getInt("cleanevery",0).toLong();
 			val constraints = Constraints.Builder()

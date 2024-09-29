@@ -13,8 +13,8 @@ kotlin {
 	jvmToolchain(21)
 }
 android {
-	compileSdk = 34
-	buildToolsVersion = "34.0.0"
+	compileSdk = 35
+	buildToolsVersion = "35.0.0"
 	namespace = "theredspy15.ltecleanerfoss" // eg AndroidManifest.xml had ".App" instead of "namespace.App"
 	defaultConfig {
 		applicationId = "io.mdp43140.ltecleaner" // package name
@@ -30,8 +30,8 @@ android {
 		// it can also reduce APK size a little bit (based on my tests)
 		minSdk = 24
 		targetSdk = compileSdk
-		versionCode = 63
-		versionName = "5.0.0"
+		versionCode = 64
+		versionName = "5.0.1"
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 		vectorDrawables {
 			useSupportLibrary = false
@@ -133,7 +133,7 @@ dependencies {
 	// Preference
 	implementation("androidx.preference:preference-ktx:1.2.1")
 	// Background service
-	implementation("androidx.work:work-runtime-ktx:2.9.0")
+	implementation("androidx.work:work-runtime-ktx:2.9.1")
 	// MD3 on different Android versions
 	implementation("com.google.android.material:material:1.12.0")
 	// Leak detection
@@ -142,6 +142,6 @@ dependencies {
 	implementation(project(":ael_kt"))
 
 	// Tests (AndroidJUnitRunner & JUnit Rules, Assertions)
-	androidTestImplementation("androidx.test:runner:1.5.2")
-	androidTestImplementation("androidx.test.ext:junit:1.1.5")
+	androidTestImplementation("androidx.test:runner:1.6.2")
+	androidTestImplementation("androidx.test.ext:junit:1.2.1")
 }

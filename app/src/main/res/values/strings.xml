@@ -27,7 +27,7 @@
 	<string name="apk_sum">Installer files for android</string>
 	<string name="oneclick_sum">No confirmation dialog when clean button is pressed</string>
 	<string name="autowhite_sum">Detect folders that should be protected automatically</string>
-	<string name="grantStorage_sum">LTE Cleaner requires file permission to be able to find caches that can be cleaned</string>
+	<string name="grantPermissions_sum">LTE Cleaner requires these permissions to be able to find caches that can be cleaned: </string>
 	<string name="settings_string">Settings</string>
 	<string name="corpse_summary">Files left over from uninstalled apps</string>
 	<string name="corpse_title">Delete corpse files</string>
@@ -68,7 +68,7 @@
 	<string name="blacklist_sum">Configure a lists of filter that should remove a file</string>
 	<string name="whitelist_sum">Configure a lists of filter that should ignore a file</string>
 	<string name="dynColor">Use dynamic colors</string>
-	<string name="dynColor_sum">Enables dynamic colors (Experimental, requires Android 12+)</string>
+	<string name="dynColor_sum">Enables dynamic colors (requires Android 12+)</string>
 	<string name="projectSum">Checkout LTE Cleaner GitHub project!</string>
 	<string name="license">License</string>
 	<string name="license_sum">Licensed under GPL v3 license</string>
@@ -84,4 +84,5 @@
 		<item>light</item>
 		<item>dark</item>
 	</string-array>
+	<bool name="leak_canary_allow_in_non_debuggable_build" translatable="false">true</bool>
 </resources>

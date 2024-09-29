@@ -4,9 +4,10 @@
 	~ (C) 2024 MDP43140
   -->
 <resources>
-	<color name="colorPrimary">#0B0B0B</color>
-	<color name="colorPrimaryDark">#363636</color>
-	<color name="colorAccent">#009A00</color>
-	<color name="legendary">#E65100</color>
-	<color name="fg">#FFFFFF</color>
+	<color name="colorPrimary">#FF0B0B0B</color>
+	<color name="colorPrimaryDark">#FF363636</color>
+	<color name="colorAccent">#FF9AFA9A</color>
+	<color name="ic_launcher_bg">#FF204A20</color>
+	<color name="legendary">#FFE65100</color>
+	<color name="fg">#FF000000</color>
 </resources>

@@ -18,11 +18,11 @@ dependencyResolutionManagement {
 	}
 }
 // TODO: replacing project with dep substitution throws "unresolved reference ErrorLogger" error
-includeBuild("../ael"){
-	dependencySubstitution {
-		substitute(module("io.mdp43140:ael-kt")).using(project(":ael_kt"))
-	}
-}
+//includeBuild("../ael"){
+//	dependencySubstitution {
+//		substitute(module("io.mdp43140:ael-kt")).using(project(":ael_kt"))
+//	}
+//}
 
 rootProject.name = "LTE Cleaner"
 include(":app",":ael_kt")

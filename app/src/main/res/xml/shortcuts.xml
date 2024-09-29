@@ -1,0 +1,30 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+	<shortcut
+		android:shortcutId="CleanupShortcut"
+		android:enabled="true"
+		android:icon="@drawable/ic_baseline_cleanup_24"
+		android:shortcutShortLabel="@string/clean">
+		<intent
+			android:action="android.intent.action.MAIN"
+			android:targetPackage="io.mdp43140.ltecleaner"
+			android:targetClass="theredspy15.ltecleanerfoss.ui.MainActivity">
+			<extra
+				android:name="action"
+				android:value="cleanup" />
+		</intent>
+	</shortcut>
+	<shortcut
+		android:shortcutId="StopBgAppsShortcut"
+		android:enabled="true"
+		android:icon="@drawable/ic_baseline_cleanup_24"
+		android:shortcutShortLabel="@string/stopbgapps_title">
+		<intent
+			android:action="android.intent.action.MAIN"
+			android:targetPackage="io.mdp43140.ltecleaner"
+			android:targetClass="theredspy15.ltecleanerfoss.ui.MainActivity">
+			<extra
+				android:name="action"
+				android:value="stopBgApps" />
+		</intent>
+	</shortcut>
+</shortcuts>

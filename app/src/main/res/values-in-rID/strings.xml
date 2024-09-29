@@ -27,7 +27,7 @@
 	<string name="apk_sum">File installer untuk android</string>
 	<string name="oneclick_sum">Tidak ada dialog konfirmasi ketika tombol bersihkan ditekan</string>
 	<string name="autowhite_sum">Mendeteksi folder yang harus dilindungi secara otomatis</string>
-	<string name="grantStorage_sum">Pembersih LTE membutuhkan akses file untuk dapat mencari cache yang bisa dibersihkan</string>
+	<string name="grantPermissions_sum">Pembersih LTE membutuhkan ijin berikut untuk dapat mencari cache yang bisa dibersihkan: </string>
 	<string name="settings_string">Pengaturan</string>
 	<string name="corpse_summary">File yang tersisa dari aplikasi yang belum terpasang</string>
 	<string name="corpse_title">Hapus berkas mayat</string>
@@ -68,7 +68,7 @@
 	<string name="blacklist_sum">Konfigurasikan daftar filter yang seharusnya menghapus file</string>
 	<string name="whitelist_sum">Konfigurasikan daftar filter yang seharusnya mengabaikan file</string>
 	<string name="dynColor">Gunakan warna dinamis</string>
-	<string name="dynColor_sum">Mengaktifkan warna dinamis (Eksperimental, memerlukan Android 12+)</string>
+	<string name="dynColor_sum">Mengaktifkan warna dinamis (memerlukan Android 12+)</string>
 	<string name="projectSum">Lihat projek GitHub LTE Cleaner!</string>
 	<string name="license">Lisensi</string>
 	<string name="license_sum">Dilisensikan di bawah lisensi GPL v3</string>

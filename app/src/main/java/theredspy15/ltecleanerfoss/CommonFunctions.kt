@@ -6,9 +6,7 @@ package theredspy15.ltecleanerfoss
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.PendingIntent
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
@@ -59,35 +57,20 @@ object CommonFunctions {
 	fun sendNotification(ctx: Context, id: Int, notification: NotificationCompat.Builder){
 		sendNotification(ctx, id, notification.build())
 	}
-	fun shareFile(ctx: Context, text: String, mimeType: String){
-		val intent = Intent(Intent.ACTION_SEND)
-		intent.type = mimeType
-		intent.putExtra(Intent.EXTRA_TEXT, text)
-		ctx.startActivity(Intent.createChooser(intent,null))
-	}
-	fun shareFile(ctx: Context, uri: Uri, mimeType: String){
-		val intent = Intent(Intent.ACTION_SEND)
-		intent.type = mimeType
-		intent.putExtra(Intent.EXTRA_STREAM, uri)
-		ctx.startActivity(Intent.createChooser(intent,null))
-	}
-	fun updateTheme(prefs: SharedPreferences?){
-		try {
-			// currently put within try-catch
-			// block cuz crash vv different value type
-			val theme = prefs!!.getInt("theme",AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-			AppCompatDelegate.setDefaultNightMode(theme)
-		} catch (e: Exception){}
-	}
-	fun updateTheme(theme: Int){
-		AppCompatDelegate.setDefaultNightMode(theme)
+	fun updateTheme(ctx: Context, prefs: SharedPreferences?){
+		val themeStr = ctx.resources.getStringArray(R.array.themes_key)
+		AppCompatDelegate.setDefaultNightMode(when (prefs!!.getString("theme",themeStr[0])){
+			themeStr[1] -> AppCompatDelegate.MODE_NIGHT_NO
+			themeStr[2] -> AppCompatDelegate.MODE_NIGHT_YES
+			else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+		})
 	}
 	fun writeContentToUri(ctx: Context,uri: Uri, content: String){
 		ctx.contentResolver.openOutputStream(uri)?.use { outputStream ->
 			outputStream.write(content.toByteArray())
 		}
 	}
-	@JvmStatic fun convertSize(length: Long): String {
+	fun convertSize(length: Long): String {
 		val format = DecimalFormat("#.##")
 		val kib:Long = 1024
 		val mib:Long = 1048576

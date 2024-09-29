@@ -5,7 +5,6 @@
 package theredspy15.ltecleanerfoss
 import android.app.Application
 import android.content.Context
-import android.content.Intent
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
 import android.content.SharedPreferences
@@ -36,34 +35,8 @@ class App: Application(){
 		runCount = prefs!!.getInt("runCount",0)
 		prefs!!.edit().putInt("runCount",runCount + 1).apply()
 		// Update theme and apply dynamic color
-		CommonFunctions.updateTheme(prefs)
+		CommonFunctions.updateTheme(this,prefs)
 		if (prefs!!.getBoolean("dynamicColor",true)) DynamicColors.applyToActivitiesIfAvailable(this)
-		// Quick shortcut
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1){
-			val shortcutMgr = (getSystemService(ShortcutManager::class.java))
-			if (shortcutMgr!!.isRequestPinShortcutSupported){
-				val icon = Icon.createWithResource(this, R.drawable.ic_baseline_cleanup_24)
-				val int1 = Intent(this, MainActivity::class.java).apply {
-					action = "cleanup"
-					putExtra("action","cleanup")
-				}
-				val int2 = Intent(this, MainActivity::class.java).apply {
-					action = "stopBgApps"
-					putExtra("action","stopBgApps")
-				}
-				val sct1 = ShortcutInfo.Builder(this, "sct1")
-					.setShortLabel("Cleanup")
-					.setIcon(icon)
-					.setIntent(int1)
-					.build()
-				val sct2 = ShortcutInfo.Builder(this, "sct2")
-					.setShortLabel("Stop background apps")
-					.setIcon(icon)
-					.setIntent(int2)
-					.build()
-				shortcutMgr.dynamicShortcuts = listOf(sct1,sct2)
-			}
-		}
 	}
 	companion object {
 		var prefs:SharedPreferences? = null

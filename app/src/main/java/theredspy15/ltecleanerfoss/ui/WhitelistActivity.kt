@@ -37,6 +37,11 @@ class WhitelistActivity: AppCompatActivity(){
 		getWhitelistOn(App.prefs)
 		loadViews()
 	}
+	override fun onBackPressed(){
+		// suggested fix by LeakCanary
+		super.onBackPressed()
+		finishAfterTransition()
+	}
 	private fun loadViews() {
 		binding.pathsLayout.removeAllViews()
 		val layout = LinearLayout.LayoutParams(

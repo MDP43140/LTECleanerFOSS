@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import io.mdp43140.ael.ErrorLogger
 import org.json.JSONArray
 import org.json.JSONObject
 import theredspy15.ltecleanerfoss.App
@@ -24,10 +25,11 @@ import theredspy15.ltecleanerfoss.R
 class SettingsActivity: AppCompatActivity(){
 	private val importFileLauncher = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
 		if (uri != null){
-			val inputStream = contentResolver.openInputStream(uri)
-			val jsonBytes = inputStream?.readBytes()
-			inputStream?.close()
-			val jsonObject = JSONObject(jsonBytes!!.toString(Charsets.UTF_8))
+			val jsonObject = JSONObject(
+				contentResolver.openInputStream(uri)
+					?.use { it.readBytes() }
+					!!.toString(Charsets.UTF_8)
+			)
 			val prefsEditor = App.prefs?.edit()
 			for (key in jsonObject.keys()){
 				val value = jsonObject.get(key)
@@ -37,22 +39,14 @@ class SettingsActivity: AppCompatActivity(){
 					is Long -> prefsEditor?.putLong(key, value)
 					is Int -> prefsEditor?.putInt(key, value)
 					is String -> prefsEditor?.putString(key, value)
-					is JSONArray -> {
-						val stringArray = mutableListOf<String>()
-						for (i in 0 until value.length()) stringArray.add(value.optString(i))
-						prefsEditor?.putStringSet(key, stringArray.toSet())
-					}
-					is Set<*> -> {
-						// There are currently only Sets with type String possible
-						@Suppress("UNCHECKED_CAST")
-						prefsEditor?.putStringSet(key, value as Set<String>?)
-					}
-					// In JSON Lists are the same as Sets
-					is List<*> -> {
-						// There are currently only Sets with type String possible
-						@Suppress("UNCHECKED_CAST")
-						prefsEditor?.putStringSet(key, (value as List<String>?)?.let { HashSet(it) })
-					}
+					is JSONArray -> prefsEditor?.putStringSet(key,
+						(0 until value.length())
+							.map { value.optString(it) }
+							.toSet()
+					)
+					is Collection<*> -> prefsEditor?.putStringSet(key,
+						value.filterIsInstance<String>().toSet()
+					)
 					else -> {
 						// Handle unsupported data type or provide a fallback
 						Toast.makeText(this, "Unsupported data type: $key: $value", Toast.LENGTH_SHORT).show()
@@ -75,6 +69,11 @@ class SettingsActivity: AppCompatActivity(){
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_settings)
 		loadFragment()
+	}
+	override fun onBackPressed(){
+		// suggested fix by LeakCanary
+		super.onBackPressed()
+		finishAfterTransition()
 	}
 	fun loadFragment(){
 		val preferenceFragment = MyPreferenceFragment()

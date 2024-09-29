@@ -1,5 +1,0 @@
-### Improvements
-- Added automatic cleaning (daily)
-
-### Fixed
-- fix for displaying whitelist screen on non-english devices

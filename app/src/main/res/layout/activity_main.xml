@@ -61,7 +61,7 @@
 		app:rowCount="2">
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/analyzeBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/cleanBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/whitelistBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/settingsBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"

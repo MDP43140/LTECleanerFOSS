@@ -181,14 +181,17 @@ class FileScanner(private val path: File, context: Context){
 	 */
 	fun setFilters(generic: Boolean, apk: Boolean){
 		filters.clear()
-		// filters
+		// Filters
 		if (generic){
 			for (folder in Constants.filter_genericFolders) filters.add(getRegexForFolder(folder))
 			for (file in Constants.filter_genericFiles) filters.add(getRegexForFile(file))
 		}
-		// apk
-		if (apk) filters.add(getRegexForFile(".apk"))
-		// whitelist
+		// Android APKs and various split APK extensions
+		if (apk){
+			for (apk in Constants.filter_apkFiles) filters.add(getRegexForFile(apk))
+		}
+
+		// Auto whitelist
 		if (autoWhite){
 			whitelist.clear()
 			whitelist.addAll(Constants.filter_autoWhite)
