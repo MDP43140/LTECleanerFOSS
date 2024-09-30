@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import io.mdp43140.ael.ErrorLogger
+import io.mdp43140.ltecleanerfoss.util.putData // SharedPreferencesExtension.kt
 import org.json.JSONArray
 import org.json.JSONObject
 import theredspy15.ltecleanerfoss.App
@@ -33,24 +34,9 @@ class SettingsActivity: AppCompatActivity(){
 			val prefsEditor = App.prefs?.edit()
 			for (key in jsonObject.keys()){
 				val value = jsonObject.get(key)
-				when (value){
-					is Boolean -> prefsEditor?.putBoolean(key, value)
-					is Float -> prefsEditor?.putFloat(key, value)
-					is Long -> prefsEditor?.putLong(key, value)
-					is Int -> prefsEditor?.putInt(key, value)
-					is String -> prefsEditor?.putString(key, value)
-					is JSONArray -> prefsEditor?.putStringSet(key,
-						(0 until value.length())
-							.map { value.optString(it) }
-							.toSet()
-					)
-					is Collection<*> -> prefsEditor?.putStringSet(key,
-						value.filterIsInstance<String>().toSet()
-					)
-					else -> {
-						// Handle unsupported data type or provide a fallback
-						Toast.makeText(this, "Unsupported data type: $key: $value", Toast.LENGTH_SHORT).show()
-					}
+				if (prefsEditor?.putData(key,value) == false){
+					// Handle unsupported data type or provide a fallback
+					Toast.makeText(this, "Unsupported data type: $key: $value", Toast.LENGTH_SHORT).show()
 				}
 			}
 			prefsEditor?.apply()
@@ -65,7 +51,7 @@ class SettingsActivity: AppCompatActivity(){
 			Toast.makeText(this, "Settings exported!", Toast.LENGTH_SHORT).show()
 		}
 	}
-	override fun onCreate(savedInstanceState:Bundle?) {
+	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_settings)
 		loadFragment()

@@ -26,7 +26,6 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.FileScanner
@@ -41,7 +40,7 @@ import java.util.Locale
 class MainActivity: AppCompatActivity(){
 	private lateinit var binding: ActivityMainBinding
 	private lateinit var dialogBuilder: MaterialAlertDialogBuilder
-	override fun onCreate(savedInstanceState:Bundle?) {
+	override fun onCreate(savedInstanceState: Bundle?){
 		super.onCreate(savedInstanceState)
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		binding.apply {
@@ -59,7 +58,7 @@ class MainActivity: AppCompatActivity(){
 		// Handle intent action (from shortcut stuff)
 		val intentAction = intent.getStringExtra("action")
 		when (intentAction){
-			"cleanup" -> scan(true)
+			"cleanup" -> clean()
 			"stopBgApps" -> stopBgApps()
 			else -> if (intentAction != null) Toast.makeText(this, "Invalid intent action: $intentAction", Toast.LENGTH_SHORT).show()
 		}
@@ -76,7 +75,7 @@ class MainActivity: AppCompatActivity(){
 		startActivity(Intent(this,WhitelistActivity::class.java))
 	}
 
-	private fun analyze(){
+	fun analyze(){
 		if (!FileScanner.isRunning){
 			requestWriteExternalPermission()
 			scan(false)
@@ -86,7 +85,7 @@ class MainActivity: AppCompatActivity(){
 	/**
 	 * Runs search and delete on background thread
 	 */
-	private fun clean() {
+	fun clean() {
 		if (!FileScanner.isRunning) {
 			requestWriteExternalPermission()
 			if (App.prefs == null) println("prefs is null!")
@@ -251,7 +250,7 @@ class MainActivity: AppCompatActivity(){
 	 */
 	private fun requestWriteExternalPermission() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){ // Android 11+
-			ActivityCompat.requestPermissions(this,arrayOf(
+			requestPermissions(arrayOf(
 				Manifest.permission.READ_EXTERNAL_STORAGE,
 				Manifest.permission.WRITE_EXTERNAL_STORAGE,
 				Manifest.permission.MANAGE_EXTERNAL_STORAGE // Android 11+ requires manage external storage due to storageAccessFramework
@@ -263,7 +262,7 @@ class MainActivity: AppCompatActivity(){
 				})
 			}
 		} else {
-			ActivityCompat.requestPermissions(this,arrayOf(
+			requestPermissions(arrayOf(
 				Manifest.permission.READ_EXTERNAL_STORAGE,
 				Manifest.permission.WRITE_EXTERNAL_STORAGE
 			),1)

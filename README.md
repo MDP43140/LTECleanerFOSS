@@ -60,11 +60,16 @@ Contribute to this project:
 - Translate this app into more languages
 
 ## Compiling the app
-First, export some variables (for Linux users. Windows user might want to adjust this a bit):```bash
+First, export some variables (for Linux users. Windows user might want to adjust this a bit):
+```bash
 export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-21-openjdk-amd64}"
-export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-/home/mdp/.android/SDK}"
-```
-Just go to the project root directory, and run this command: ```./gradlew :app:assembleRelease``` (if you're using Windows, change `./gradlew` to `gradlew.bat`)
+export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-~/.android/SDK}"```
+
+Then go to the project root directory, and run this command:
+```bash
+./gradlew :app:assembleRelease```
+
+if you're using Windows, change `./gradlew` to `gradlew.bat`
 
 ## License
 [![GNU GPL v3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)

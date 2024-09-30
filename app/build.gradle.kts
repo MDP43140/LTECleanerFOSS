@@ -10,6 +10,7 @@ plugins {
 	kotlin("android")
 }
 kotlin {
+	// Used as defaults for android.kotlinOptions.jvmTarget and android.compileOptions.*Compatibility
 	jvmToolchain(21)
 }
 android {
@@ -80,12 +81,10 @@ android {
 			}
 		}
 	}
-	kotlinOptions {
-		jvmTarget = JavaVersion.VERSION_21.toString()
-	}
-	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_21
-		targetCompatibility = JavaVersion.VERSION_21
+	androidResources {
+		// Allows changing app language through Android settings
+		// Does sacrifice couple kilobytes though, but probably worth it
+		generateLocaleConfig = true
 	}
 	buildFeatures {
 		buildConfig = false

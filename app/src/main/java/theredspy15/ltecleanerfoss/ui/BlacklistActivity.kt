@@ -150,7 +150,7 @@ class BlacklistActivity: AppCompatActivity(){
 			prefs!!
 				.edit()
 				.putStringSet("blacklist", HashSet(blackList))
-				.putStringSet("blacklistOn",HashSet(blackListOn))
+				.putStringSet("blacklistOn", HashSet(blackListOn))
 				.apply()
 		}
 		fun rmBlackList(prefs: SharedPreferences?, path: String) {

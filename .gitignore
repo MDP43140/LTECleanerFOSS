@@ -12,7 +12,7 @@ out/
 local.properties
 proguard/
 *.log
-/app/build/
+/*/build/
 /*/local.properties
 /*/out
 /*/*/production
@@ -37,6 +37,7 @@ hs_err_pid*
 !/gradle/wrapper/gradle-wrapper.jar
 # End of gitignore.io/api/androidstudio
 
+/build/
+.kotlin
 app/src/.disabled
 app/.POC_GetSDCard.java
-LTECleanerFOSS.geany
