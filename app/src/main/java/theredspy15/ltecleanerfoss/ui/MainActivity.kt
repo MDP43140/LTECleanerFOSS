@@ -21,12 +21,14 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Looper
 import android.provider.Settings
+import android.view.View
 import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.FileScanner
 import theredspy15.ltecleanerfoss.CommonFunctions.convertSize
@@ -60,7 +62,19 @@ class MainActivity: AppCompatActivity(){
 		when (intentAction){
 			"cleanup" -> clean()
 			"stopBgApps" -> stopBgApps()
-			else -> if (intentAction != null) Toast.makeText(this, "Invalid intent action: $intentAction", Toast.LENGTH_SHORT).show()
+			else -> {
+				if (intentAction != null)
+					Snackbar.make(
+						binding.root,
+						"Invalid intent action: $intentAction",
+						Snackbar.LENGTH_SHORT
+					).let {
+						it.setAction(getString(android.R.string.ok)){ _: View ->
+							it.dismiss()
+						}
+						it.show()
+					}
+			}
 		}
 	}
 	override fun onBackPressed(){
@@ -115,11 +129,16 @@ class MainActivity: AppCompatActivity(){
 			}
 		} catch (e: NullPointerException) {
 			runOnUiThread {
-				Toast.makeText(
-					this,
+				Snackbar.make(
+					binding.root,
 					R.string.clear_clipboard_failed,
-					Toast.LENGTH_SHORT
-				).show()
+					Snackbar.LENGTH_SHORT
+				).let {
+					it.setAction(getString(android.R.string.ok)){ _: View ->
+						it.dismiss()
+					}
+					it.show()
+				}
 			}
 		}
 	}
@@ -286,7 +305,16 @@ class MainActivity: AppCompatActivity(){
 			permissions.contains("android.permission.WRITE_EXTERNAL_STORAGE") &&
 			permissions.contains("android.permission.MANAGE_EXTERNAL_STORAGE")){
 			// Since Android 13, external storage access wasnt longer a thing anymore
-			Toast.makeText(this,"Sadly, Android 13+ no longer have access to external storage",Toast.LENGTH_SHORT).show();
+			Snackbar.make(
+				binding.root,
+				"Sadly, Android 13+ no longer have access to external storage",
+				Snackbar.LENGTH_SHORT
+			).let {
+				it.setAction(getString(android.R.string.ok)){ _: View ->
+					it.dismiss()
+				}
+				it.show()
+			}
 		}
 		else if (
 			requestCode == 1 &&

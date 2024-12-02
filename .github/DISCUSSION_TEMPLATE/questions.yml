@@ -1,0 +1,18 @@
+body:
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "Checks"
+      options:
+        - label: "I made sure that there are *no existing issues or discussions* - [open](https://github.com/MDP43140/LTECleanerFOSS/issues) or [closed](https://github.com/MDP43140/LTECleanerFOSS/issues?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
+          required: true
+        - label: "I have read the [FAQ](https://github.com/MDP43140/LTECleanerFOSS/wiki) and my question isn't listed."
+          required: true
+        - label: "I have taken the time to fill in all the required details. I understand that the question will be dismissed otherwise."
+          required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: What is/are your question(s)?
+    validations:
+      required: true

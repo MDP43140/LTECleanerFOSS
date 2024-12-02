@@ -34,13 +34,16 @@ Cleans:
 - Advertisement folders
 
 To do list (not guaranteed because i'm busy irl):
+- Black background on dark theme?
+- (proper) Fragments?
+- Predictive back gestures?
+- Extra optimizations?
 - Code cleanups
+- Compose?
+- baseline profile (not ready yet...)
 - Clean SD card (has to support minimal Android 10+, hopefully we can use StorageAccessFramework to make this work, but it might be a huge work that can take days, not possible with my spare time)
 - Regex whilelist
 - About screen (designing the UI would be really painful, and using external dependency will also significantly enlarge file size)
-- Root cleanups
-- Android 13+ cant grant storage permission anymore :(
-- Fragments & Back gestures :)
 <!-- Scan then clean, instead of doing both at the same time (atleast on some devices that i tested on, it lags when there is so many files)-->
 
 ## Screenshots

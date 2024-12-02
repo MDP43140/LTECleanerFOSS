@@ -3,13 +3,15 @@ description: Create a bug report to help us improve
 labels: [bug, needs triage]
 body:
   - type: checkboxes
-    id: checklist
+    id: checks
     attributes:
-      label: "Checklist"
+      label: "Checks"
       options:
-        - label: "I am able to reproduce the bug with the latest version."
+        - label: "I am able to reproduce the bug with the [latest version](https://github.com/MDP43140/LTECleanerFOSS/releases/latest)."
           required: true
-        - label: "I made sure that there are *no existing issues* - [open](.) or [closed](.?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
+        - label: "I made sure that there are *no existing issues* - [open](https://github.com/MDP43140/LTECleanerFOSS/issues) or [closed](https://github.com/MDP43140/LTECleanerFOSS/issues?q=is%3Aissue+is%3Aclosed) - which I could contribute my information to."
+          required: true
+        - label: "I have read the [Wiki](https://github.com/MDP43140/LTECleanerFOSS/wiki) and my problem isn't listed."
           required: true
         - label: "I have taken the time to fill in all the required details. I understand that the bug report will be dismissed otherwise."
           required: true
@@ -19,13 +21,18 @@ body:
     attributes:
       label: Affected version
       description: In which version did you encounter the bug?
-      placeholder: "x.x.x - Not required if you include the log"
+      placeholder: "x.x.x"
+    validations:
+      required: true
 
   - type: textarea
-    id: steps-to-reproduce
+    id: reproduce-steps
     attributes:
       label: Steps to reproduce the bug
-      description: What did you do for the bug to show up?
+      description: |
+        What did you do for the bug to show up?
+
+        If you can't cause the bug to show up again reliably (and hence don't have a proper set of steps to give us), please still try to give as many details as possible on how you think you encountered the bug.
       placeholder: |
         1. Go to '...'
         2. Scroll down to '....'
@@ -58,13 +65,13 @@ body:
     id: logs
     attributes:
       label: Logs
-      description: If your bug includes a crash log, tap on "Share formatted log" at the bottom, click "Copy to clipboard", and paste it here.
+      description: If your bug includes a crash (where you're shown the Error Report page with a bunch of info), tap on "Share formatted log" at the bottom, click "Copy to clipboard", and paste it here.
       placeholder: |
         Exception
         App language: en
         App version: ...
         Device: brand MO-DEL
-        OS Version: Linux brand/model/model:33/build/build:author/key 14 - 33
+        OS Version: Linux brand/model/model:34/build/build:author/key 14 - 34
         GMT Time: 2024/../.. ..:..
         Crash log:
         java.lang.Exception: ...
@@ -76,7 +83,7 @@ body:
     attributes:
       label: Affected Android/Custom ROM version
       description: With what Operating System (+ version) did you encounter the bug?
-      placeholder: "eg. Android 13/LineageOS 20"
+      placeholder: "eg. Android 14/LineageOS 21"
 
   - type: input
     id: device-model

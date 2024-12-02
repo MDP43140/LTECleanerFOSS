@@ -5,19 +5,14 @@
 package theredspy15.ltecleanerfoss
 import android.app.Application
 import android.content.Context
-import android.content.pm.ShortcutInfo
-import android.content.pm.ShortcutManager
 import android.content.SharedPreferences
-import android.graphics.drawable.Icon
-import android.os.Build
 import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
-//import theredspy15.ltecleanerfoss.R
 //import theredspy15.ltecleanerfoss.CommonFunctions
 import io.mdp43140.ael.ErrorLogger
 import theredspy15.ltecleanerfoss.ui.MainActivity
 class App: Application(){
-	var runCount = 0
+	private var runCount = 0
 	override fun attachBaseContext(base: Context){
 		super.attachBaseContext(base);
 		// Catches bugs and crashes, and makes it easy to report the bug
@@ -36,7 +31,10 @@ class App: Application(){
 		prefs!!.edit().putInt("runCount",runCount + 1).apply()
 		// Update theme and apply dynamic color
 		CommonFunctions.updateTheme(this,prefs)
-		if (prefs!!.getBoolean("dynamicColor",true)) DynamicColors.applyToActivitiesIfAvailable(this)
+		if (prefs!!.getBoolean("dynamicColor",true)){
+			DynamicColors.applyToActivitiesIfAvailable(this)
+			DynamicColors.wrapContextIfAvailable(this)
+		}
 	}
 	companion object {
 		var prefs:SharedPreferences? = null

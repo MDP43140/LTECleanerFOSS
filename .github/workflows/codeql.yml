@@ -2,9 +2,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   schedule:
     - cron: '19 21 * * 1'
 
@@ -12,7 +12,7 @@ jobs:
   analyze:
     name: Analyze
     runs-on: 'ubuntu-latest'
-    timeout-minutes:  360
+    timeout-minutes:  20
     permissions:
       security-events: write
 

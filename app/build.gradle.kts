@@ -34,6 +34,7 @@ android {
 		versionCode = 64
 		versionName = "5.0.1"
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+		testInstrumentationRunnerArguments["disableAnalytics"] = "true"
 		vectorDrawables {
 			useSupportLibrary = false
 		}
@@ -126,13 +127,13 @@ dependencies {
 	// AndroidX App Compatibility
 	implementation("androidx.appcompat:appcompat:1.7.0")
 	// AndroidX Kotlin
-	implementation("androidx.core:core-ktx:1.13.1")
+	implementation("androidx.core:core-ktx:1.15.0")
 	// GridLayout (used in MainActivity for 2x2 grid buttons, implementation without this is much more preferred)
 	implementation("androidx.gridlayout:gridlayout:1.1.0-beta01")
 	// Preference
 	implementation("androidx.preference:preference-ktx:1.2.1")
 	// Background service
-	implementation("androidx.work:work-runtime-ktx:2.9.1")
+	implementation("androidx.work:work-runtime-ktx:2.10.0")
 	// MD3 on different Android versions
 	implementation("com.google.android.material:material:1.12.0")
 	// Leak detection

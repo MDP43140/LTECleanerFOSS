@@ -7,7 +7,11 @@ body:
     attributes:
       label: "Checklist"
       options:
-        - label: "I made sure that there are *no existing issues* - [open](.) or [closed](.?q=is%3Aissue+is%3Aclosed)."
+        - label: "I made sure that there are *no existing issues* - [open](https://github.com/MDP43140/LTECleanerFOSS/issues) or [closed](https://github.com/MDP43140/LTECleanerFOSS/issues?q=is%3Aissue+is%3Aclosed)."
+          required: true
+        - label: "I have taken the time to fill in all the required details. I understand that the feature request will be dismissed otherwise."
+          required: true
+        - label: "This issue contains only one feature request."
           required: true
 
   - type: textarea

@@ -50,7 +50,7 @@
 		android:layout_marginBottom="10dp"
 		android:fontFamily="sans-serif-condensed-medium"
 		android:textAlignment="center"
-		android:textColor="?attr/Accents"
+		android:textColor="?attr/colorPrimary"
 		android:textSize="20sp" />
 
 	<androidx.gridlayout.widget.GridLayout
