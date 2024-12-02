@@ -1,6 +1,7 @@
 /*
- * (C) 2020-2023 Hunter J Drum
- * (C) 2024 MDP43140
+ * SPDX-FileCopyrightText: 2020-2023 Hunter J Drum
+ * SPDX-FileCopyrightText: 2024 MDP43140
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 import java.util.Properties // used by signingConfigs.release (ksProps variable)
 import com.android.build.gradle.tasks.PackageAndroidArtifact // used by empty app-metadata.properties
