@@ -11,7 +11,7 @@
 	android:orientation="vertical"
 	android:padding="12dp"
 	android:weightSum="3"
-	tools:context=".ui.WhitelistActivity">
+	tools:context=".fragment.BlacklistFragment">
 
 	<ScrollView
 		android:layout_weight="3"
@@ -31,6 +31,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:padding="12dp"
-		android:text="@string/add_to_whitelist"
+		android:text="@string/add_to_blacklist"
 		android:layout_gravity="bottom"/>
 </LinearLayout>

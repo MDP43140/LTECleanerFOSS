@@ -11,7 +11,6 @@ import androidx.preference.PreferenceManager
 import com.google.android.material.color.DynamicColors
 //import theredspy15.ltecleanerfoss.CommonFunctions
 import io.mdp43140.ael.ErrorLogger
-import theredspy15.ltecleanerfoss.ui.MainActivity
 class App: Application(){
 	private var runCount = 0
 	override fun attachBaseContext(base: Context){

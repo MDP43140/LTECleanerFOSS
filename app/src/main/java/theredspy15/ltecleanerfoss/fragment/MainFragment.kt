@@ -3,7 +3,7 @@
  * SPDX-FileCopyrightText: 2024 MDP43140
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package theredspy15.ltecleanerfoss.ui
+package theredspy15.ltecleanerfoss.fragment
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.ActivityManager
@@ -21,73 +21,45 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.os.Looper
-import android.provider.Settings
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.provider.Settings
 import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import theredspy15.ltecleanerfoss.App
-import theredspy15.ltecleanerfoss.FileScanner
 import theredspy15.ltecleanerfoss.CommonFunctions.convertSize
 import theredspy15.ltecleanerfoss.CommonFunctions.makeStatusNotification
 import theredspy15.ltecleanerfoss.CommonFunctions.sendNotification
 import theredspy15.ltecleanerfoss.Constants
-import theredspy15.ltecleanerfoss.databinding.ActivityMainBinding
+import theredspy15.ltecleanerfoss.FileScanner
+import theredspy15.ltecleanerfoss.MainActivity
+import theredspy15.ltecleanerfoss.databinding.FragmentMainBinding
 import theredspy15.ltecleanerfoss.R
 import java.io.File
 import java.util.Locale
-class MainActivity: AppCompatActivity(){
-	private lateinit var binding: ActivityMainBinding
-	private lateinit var dialogBuilder: MaterialAlertDialogBuilder
-	override fun onCreate(savedInstanceState: Bundle?){
-		super.onCreate(savedInstanceState)
-		binding = ActivityMainBinding.inflate(layoutInflater)
+
+class MainFragment: BaseFragment(){
+	private lateinit var binding: FragmentMainBinding
+	override fun onCreateView(
+		inflater: LayoutInflater,
+		container: ViewGroup?,
+		savedInstanceState: Bundle?
+	): View? {
+		binding = FragmentMainBinding.inflate(inflater, container, false)
 		binding.apply {
 			analyzeBtn.isEnabled = !FileScanner.isRunning
 			cleanBtn.isEnabled = !FileScanner.isRunning
 			analyzeBtn.setOnClickListener { analyze() }
 			cleanBtn.setOnClickListener { clean() }
-			settingsBtn.setOnClickListener { settings() }
-			whitelistBtn.setOnClickListener { whitelist() }
+			settingsBtn.setOnClickListener { (requireActivity() as MainActivity).startFragment(SettingsFragment()) }
+			whitelistBtn.setOnClickListener { (requireActivity() as MainActivity).startFragment(WhitelistFragment()) }
 		}
-		setContentView(binding.root)
-		WhitelistActivity.getWhiteList(App.prefs)
-		dialogBuilder = MaterialAlertDialogBuilder(this)
-
-		// Handle intent action (from shortcut stuff)
-		val intentAction = intent.getStringExtra("action")
-		when (intentAction){
-			"cleanup" -> clean()
-			"stopBgApps" -> stopBgApps()
-			else -> {
-				if (intentAction != null)
-					Snackbar.make(
-						binding.root,
-						"Invalid intent action: $intentAction",
-						Snackbar.LENGTH_SHORT
-					).let {
-						it.setAction(getString(android.R.string.ok)){ _: View ->
-							it.dismiss()
-						}
-						it.show()
-					}
-			}
-		}
-	}
-	override fun onBackPressed(){
-		// suggested fix by LeakCanary
-		super.onBackPressed()
-		finishAfterTransition()
-	}
-	private fun settings(){
-		startActivity(Intent(this,SettingsActivity::class.java))
-	}
-	private fun whitelist(){
-		startActivity(Intent(this,WhitelistActivity::class.java))
+		return binding.root
 	}
 
 	fun analyze(){
@@ -107,7 +79,7 @@ class MainActivity: AppCompatActivity(){
 			if (App.prefs!!.getBoolean("one_click",false)){
 				scan(true) // one-click enabled
 			} else { // one-click disabled
-				dialogBuilder.setTitle(getString(R.string.are_you_sure_deletion_title))
+				(requireActivity() as MainActivity).dialogBuilder.setTitle(getString(R.string.are_you_sure_deletion_title))
 					.setMessage(getString(R.string.are_you_sure_deletion))
 					.setCancelable(false)
 					.setPositiveButton(getString(R.string.clean)){ dialogInterface: DialogInterface, _: Int ->
@@ -122,24 +94,19 @@ class MainActivity: AppCompatActivity(){
 
 	private fun clearClipboard() {
 		try {
-			val mCbm = getSystemService(ClipboardManager::class.java)
+			val mCbm = requireContext().getSystemService(ClipboardManager::class.java)
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
 				mCbm.clearPrimaryClip()
 			} else {
 				mCbm.setPrimaryClip(ClipData.newPlainText("", ""))
 			}
 		} catch (e: NullPointerException) {
-			runOnUiThread {
-				Snackbar.make(
-					binding.root,
+			requireActivity().runOnUiThread {
+				Toast.makeText(
+					requireActivity(),
 					R.string.clear_clipboard_failed,
-					Snackbar.LENGTH_SHORT
-				).let {
-					it.setAction(getString(android.R.string.ok)){ _: View ->
-						it.dismiss()
-					}
-					it.show()
-				}
+					Toast.LENGTH_SHORT
+				).show()
 			}
 		}
 	}
@@ -153,7 +120,7 @@ class MainActivity: AppCompatActivity(){
 	private fun scan(deleteCache: Boolean){
 		Thread {
 			Looper.prepare()
-			runOnUiThread {
+			requireActivity().runOnUiThread {
 				binding.apply {
 					analyzeBtn.isEnabled = !FileScanner.isRunning
 					cleanBtn.isEnabled = !FileScanner.isRunning
@@ -166,7 +133,7 @@ class MainActivity: AppCompatActivity(){
 			val path = Environment.getExternalStorageDirectory()
 
 			// scanner setup
-			val fs = FileScanner(path,this)
+			val fs = FileScanner(path,requireActivity())
 			fs.apply {
 				setFilters(
 					App.prefs!!.getBoolean("generic",true),
@@ -174,6 +141,7 @@ class MainActivity: AppCompatActivity(){
 				)
 				delete = deleteCache
 				updateProgress = ::updatePercentage
+				addText = ::addText
 			}
 
 			// failed scan
@@ -183,7 +151,7 @@ class MainActivity: AppCompatActivity(){
 
 			// run the scan and put KBs found/freed text
 			val kilobytesTotal = fs.start()
-			runOnUiThread {
+			requireActivity().runOnUiThread {
 				binding.apply {
 					statusTextView.text =
 						getString(if (deleteCache) R.string.freed else R.string.found) +
@@ -197,15 +165,15 @@ class MainActivity: AppCompatActivity(){
 		}.start()
 	}
 
-	private fun stopBgApps(){
+	fun stopBgApps(){
 		Thread {
-			val am = getSystemService(ActivityManager::class.java)
-			val pkgName = getPackageName()
+			val am = requireContext().getSystemService(ActivityManager::class.java)
+			val pkgName = requireContext().getPackageName()
 			val memInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
 
 			am.getMemoryInfo(memInfo)
 			val memAvailBefore = Math.round(memInfo.availMem / 1048576f).toInt()
-			for (pkg in getPackageManager().getInstalledApplications(8704)){
+			for (pkg in requireContext().getPackageManager().getInstalledApplications(8704)){
 				if (pkg.processName != pkgName){
 					am.killBackgroundProcesses(pkg.processName);
 				}
@@ -245,12 +213,12 @@ class MainActivity: AppCompatActivity(){
 	 * @return - created textView
 	 */
 	fun addText(text: String, color: Int): TextView {
-		val textView = TextView(this@MainActivity)
+		val textView = TextView(requireActivity())
 		textView.setTextColor(color)
 		textView.text = text
 		textView.setPadding(3,3,3,3)
 		// adding to scroll view
-		runOnUiThread { binding.fileListView.addView(textView) }
+		requireActivity().runOnUiThread { binding.fileListView.addView(textView) }
 		// scroll to bottom
 		binding.fileScrollView.post { binding.fileScrollView.fullScroll(ScrollView.FOCUS_DOWN) }
 		return textView
@@ -264,71 +232,36 @@ class MainActivity: AppCompatActivity(){
 	fun addText(text: String): TextView {
 		return addText(text,Color.YELLOW)
 	}
+	fun addText(ctx: Context, text: String, type: Int): TextView {
+		// used for FileScanner
+		return addText(text, when (type){
+			1 -> resources.getColor(R.color.colorAccent,resources.newTheme()) // deleting file/folder
+			2 -> Color.GRAY // delete error, red looks too concerning
+			else -> Color.YELLOW // everything else colored yellow
+		})
+	}
 
 	/**
 	 * Request write permission
 	 */
 	private fun requestWriteExternalPermission() {
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){ // Android 11+
-			requestPermissions(arrayOf(
+			requireActivity().requestPermissions(arrayOf(
 				Manifest.permission.READ_EXTERNAL_STORAGE,
 				Manifest.permission.WRITE_EXTERNAL_STORAGE,
 				Manifest.permission.MANAGE_EXTERNAL_STORAGE // Android 11+ requires manage external storage due to storageAccessFramework
 			),1)
 			if (!Environment.isExternalStorageManager()) { // all files
-				Toast.makeText(this, R.string.permission_needed, Toast.LENGTH_LONG).show()
+				Toast.makeText(requireActivity(), R.string.permission_needed, Toast.LENGTH_LONG).show()
 				startActivity(Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION).apply {
-					data = Uri.fromParts("package",packageName,null)
+					data = Uri.fromParts("package",requireContext().packageName,null)
 				})
 			}
 		} else {
-			requestPermissions(arrayOf(
+			requireActivity().requestPermissions(arrayOf(
 				Manifest.permission.READ_EXTERNAL_STORAGE,
 				Manifest.permission.WRITE_EXTERNAL_STORAGE
 			),1)
 		}
-	}
-
-	/**
-	 * Handles whether the user grants permission.
-	 * Shows an alert dialog asking
-	 * user to give storage permission.
-	 */
-	override fun onRequestPermissionsResult(
-		requestCode:Int,
-		permissions:Array<String>,
-		grantResults:IntArray
-	){
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-		if (
-			Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
-			permissions.contains("android.permission.READ_EXTERNAL_STORAGE") &&
-			permissions.contains("android.permission.WRITE_EXTERNAL_STORAGE") &&
-			permissions.contains("android.permission.MANAGE_EXTERNAL_STORAGE")){
-			// Since Android 13, external storage access wasnt longer a thing anymore
-			Snackbar.make(
-				binding.root,
-				"Sadly, Android 13+ no longer have access to external storage",
-				Snackbar.LENGTH_SHORT
-			).let {
-				it.setAction(getString(android.R.string.ok)){ _: View ->
-					it.dismiss()
-				}
-				it.show()
-			}
-		}
-		else if (
-			requestCode == 1 &&
-			grantResults.isNotEmpty() &&
-			grantResults[0] != PackageManager.PERMISSION_GRANTED)
-			dialogBuilder.setTitle(getString(R.string.permission_needed))
-				.setMessage(getString(R.string.grantPermissions_sum) + permissions.map { "\n- " + it.replaceFirst("android.permission.","") }.joinToString(""))
-				.setPositiveButton(getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
-					startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
-						data = Uri.fromParts("package",packageName,null)
-					})
-					dialogInterface.dismiss()
-				}
-				.show()
 	}
 }

@@ -3,12 +3,13 @@
  * SPDX-FileCopyrightText: 2024 MDP43140
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package theredspy15.ltecleanerfoss.ui
+package theredspy15.ltecleanerfoss.fragment
 import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -22,18 +23,18 @@ import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.blacklistDefault
 import theredspy15.ltecleanerfoss.Constants.blacklistOnDefault
-import theredspy15.ltecleanerfoss.databinding.ActivityBlacklistBinding
-class BlacklistActivity: AppCompatActivity(){
-	lateinit var binding: ActivityBlacklistBinding
-
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_blacklist)
-		binding = ActivityBlacklistBinding.inflate(layoutInflater)
-		setContentView(binding.root)
+import theredspy15.ltecleanerfoss.databinding.FragmentBlacklistBinding
+class BlacklistFragment: BaseFragment(){
+	private lateinit var binding: FragmentBlacklistBinding
+	override fun onCreateView(
+		inflater: LayoutInflater,
+		container: ViewGroup?,
+		savedInstanceState: Bundle?
+	): View? {
+		binding = FragmentBlacklistBinding.inflate(inflater, container, false)
 		binding.addBtn.setOnClickListener {
-			val inputEditText = EditText(this)
-			MaterialAlertDialogBuilder(this)
+			val inputEditText = EditText(requireContext())
+			MaterialAlertDialogBuilder(requireContext())
 				.setTitle("Add filter")
 				.setMessage("You can use Kotlin regular expression, such as \".*\"")
 				.setView(inputEditText)
@@ -51,11 +52,7 @@ class BlacklistActivity: AppCompatActivity(){
 		getBlackList(App.prefs)
 		getBlacklistOn(App.prefs)
 		loadViews()
-	}
-	override fun onBackPressed(){
-		// suggested fix by LeakCanary
-		super.onBackPressed()
-		finishAfterTransition()
+		return binding.root
 	}
 	private fun loadViews() {
 		binding.pathsLayout.removeAllViews()
@@ -65,18 +62,18 @@ class BlacklistActivity: AppCompatActivity(){
 		)
 		layout.setMargins(0,20,0,20)
 		if (blackList.isNullOrEmpty()) {
-			val textView = TextView(this)
+			val textView = TextView(requireContext())
 			textView.apply {
 				text = getString(R.string.empty_blacklist)
 				textAlignment = View.TEXT_ALIGNMENT_CENTER
 				textSize = 18f
 			}
-			runOnUiThread { binding.pathsLayout.addView(textView, layout) }
+			requireActivity().runOnUiThread { binding.pathsLayout.addView(textView, layout) }
 		} else {
 			for (path in blackList) {
-				val horizontalLayout = LinearLayout(this)
-				val checkBox = CheckBox(this)
-				val button = Button(this)
+				val horizontalLayout = LinearLayout(requireContext())
+				val checkBox = CheckBox(requireContext())
+				val button = Button(requireContext())
 				button.apply {
 					text = path
 					textSize = 18f
@@ -102,14 +99,14 @@ class BlacklistActivity: AppCompatActivity(){
 					addView(checkBox)
 					addView(button)
 				}
-				runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
+				requireActivity().runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
 			}
 		}
 	}
 	private fun removeOrEditPattern(path: String?) {
-		val inputEditText = EditText(this)
+		val inputEditText = EditText(requireContext())
 		inputEditText.setText(path!!)
-		MaterialAlertDialogBuilder(this)
+		MaterialAlertDialogBuilder(requireContext())
 			.setTitle("Edit or remove filter")
 			.setMessage("You can use Kotlin regular expression, such as \".*\"")
 			.setView(inputEditText)

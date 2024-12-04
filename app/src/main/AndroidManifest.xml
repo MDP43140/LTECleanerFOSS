@@ -32,7 +32,7 @@
 		android:theme="@style/AppTheme">
 		<activity
 			android:exported="true"
-			android:name=".ui.MainActivity"
+			android:name=".MainActivity"
 			android:theme="@style/AppTheme.NoActionBar">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
@@ -42,21 +42,6 @@
 				android:name="android.app.shortcuts"
 				android:resource="@xml/shortcuts"/>
 		</activity>
-		<activity
-			android:exported="false"
-			android:name=".ui.BlacklistActivity"
-			android:parentActivityName=".ui.SettingsActivity"
-			android:label="@string/blacklist" />
-		<activity
-			android:exported="false"
-			android:name=".ui.WhitelistActivity"
-			android:parentActivityName=".ui.SettingsActivity"
-			android:label="@string/whitelist" />
-		<activity
-			android:exported="false"
-			android:name=".ui.SettingsActivity"
-			android:parentActivityName=".ui.MainActivity"
-			android:label="@string/settings" />
 		<service
 			android:foregroundServiceType="dataSync"
 			android:exported="false"

@@ -3,12 +3,13 @@
  * SPDX-FileCopyrightText: 2024 MDP43140
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-package theredspy15.ltecleanerfoss.ui
+package theredspy15.ltecleanerfoss.fragment
 import android.content.DialogInterface
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -22,14 +23,15 @@ import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.whitelistDefault
 import theredspy15.ltecleanerfoss.Constants.whitelistOnDefault
-import theredspy15.ltecleanerfoss.databinding.ActivityWhitelistBinding
-class WhitelistActivity: AppCompatActivity(){
-	lateinit var binding: ActivityWhitelistBinding
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-		setContentView(R.layout.activity_whitelist)
-		binding = ActivityWhitelistBinding.inflate(layoutInflater)
-		setContentView(binding.root)
+import theredspy15.ltecleanerfoss.databinding.FragmentWhitelistBinding
+class WhitelistFragment: BaseFragment(){
+	private lateinit var binding: FragmentWhitelistBinding
+	override fun onCreateView(
+		inflater: LayoutInflater,
+		container: ViewGroup?,
+		savedInstanceState: Bundle?
+	): View? {
+		binding = FragmentWhitelistBinding.inflate(inflater, container, false)
 		binding.addBtn.setOnClickListener {
 			// Creates a dialog asking for a file/folder name to add to the whitelist
 			mGetContent.launch(Uri.fromFile(Environment.getDataDirectory()))
@@ -37,11 +39,7 @@ class WhitelistActivity: AppCompatActivity(){
 		getWhiteList(App.prefs)
 		getWhitelistOn(App.prefs)
 		loadViews()
-	}
-	override fun onBackPressed(){
-		// suggested fix by LeakCanary
-		super.onBackPressed()
-		finishAfterTransition()
+		return binding.root
 	}
 	private fun loadViews() {
 		binding.pathsLayout.removeAllViews()
@@ -51,18 +49,18 @@ class WhitelistActivity: AppCompatActivity(){
 		)
 		layout.setMargins(0,20,0,20)
 		if (whiteList.isNullOrEmpty()) {
-			val textView = TextView(this)
+			val textView = TextView(requireContext())
 			textView.apply {
 				text = getString(R.string.empty_whitelist)
 				textAlignment = View.TEXT_ALIGNMENT_CENTER
 				textSize = 18f
 			}
-			runOnUiThread { binding.pathsLayout.addView(textView, layout) }
+			requireActivity().runOnUiThread { binding.pathsLayout.addView(textView, layout) }
 		} else {
 			for (path in whiteList) {
-				val horizontalLayout = LinearLayout(this)
-				val checkBox = CheckBox(this)
-				val button = Button(this)
+				val horizontalLayout = LinearLayout(requireContext())
+				val checkBox = CheckBox(requireContext())
+				val button = Button(requireContext())
 				button.apply {
 					text = path
 					textSize = 18f
@@ -88,12 +86,12 @@ class WhitelistActivity: AppCompatActivity(){
 					addView(checkBox)
 					addView(button)
 				}
-				runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
+				requireActivity().runOnUiThread { binding.pathsLayout.addView(horizontalLayout, layout) }
 			}
 		}
 	}
 	private fun removePath(path: String?, button: Button?) {
-		MaterialAlertDialogBuilder(this)
+		MaterialAlertDialogBuilder(requireContext())
 			.setTitle(getString(R.string.remove_from_whitelist))
 			.setMessage(path!!)
 			.setPositiveButton(getString(R.string.delete)){ dialogInterface:DialogInterface, _:Int ->
@@ -115,7 +113,6 @@ class WhitelistActivity: AppCompatActivity(){
 			loadViews()
 		}
 	}
-
 	companion object {
 		private var whiteList: ArrayList<String> = ArrayList()
 		private var whiteListOn: ArrayList<String> = ArrayList()

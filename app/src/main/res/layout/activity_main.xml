@@ -4,111 +4,15 @@
 	~ SPDX-FileCopyrightText: 2024 MDP43140
 	~ SPDX-License-Identifier: GPL-3.0-or-later
 	-->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:orientation="vertical"
-	android:weightSum="4"
+	android:id="@+id/layout"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	tools:context=".ui.MainActivity">
-	<ScrollView
-		android:animateLayoutChanges="false"
-		android:background="@drawable/rounded_view"
-		android:id="@+id/fileScrollView"
-		android:layout_weight="4"
+	tools:context=".MainActivity">
+	<FrameLayout
+		android:id="@+id/fragment_container"
 		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_marginTop="16dp"
-		android:layout_marginBottom="16dp"
-		android:layout_marginStart="24dp"
-		android:layout_marginEnd="24dp"
-		android:scrollbarSize="24dp">
-		<HorizontalScrollView
-			android:animateLayoutChanges="false"
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:scrollbarSize="24dp">
-			<LinearLayout
-				android:animateLayoutChanges="false"
-				android:id="@+id/fileListView"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_marginStart="3dp"
-				android:textIsSelectable="true"
-				android:orientation="vertical" />
-		</HorizontalScrollView>
-	</ScrollView>
-
-	<TextView
-		android:id="@+id/statusTextView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:layout_marginTop="10dp"
-		android:layout_marginStart="30dp"
-		android:layout_marginEnd="30dp"
-		android:layout_marginBottom="10dp"
-		android:fontFamily="sans-serif-condensed-medium"
-		android:textAlignment="center"
-		android:textColor="?attr/colorPrimary"
-		android:textSize="20sp" />
-
-	<androidx.gridlayout.widget.GridLayout
-		android:layout_width="match_parent"
-		android:layout_height="250dp"
-		android:layout_gravity="bottom"
-		app:columnCount="2"
-		app:rowCount="2">
-
-		<Button
-			style="@style/Widget.Material3.Button.IconButton"
-			android:id="@+id/analyzeBtn"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:paddingTop="24dp"
-			android:text="@string/analyze"
-			app:icon="@drawable/ic_baseline_search_24"
-			app:iconGravity="top"
-			app:layout_columnWeight="1"
-			app:layout_rowWeight="1" />
-
-		<Button
-			style="@style/Widget.Material3.Button.IconButton"
-			android:id="@+id/cleanBtn"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:paddingTop="24dp"
-			android:text="@string/clean"
-			app:icon="@drawable/ic_baseline_cleanup_24"
-			app:iconGravity="top"
-			app:layout_columnWeight="1"
-			app:layout_rowWeight="1" />
-
-		<Button
-			style="@style/Widget.Material3.Button.IconButton"
-			android:id="@+id/whitelistBtn"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:paddingTop="24dp"
-			android:text="@string/whitelist"
-			app:icon="@drawable/ic_baseline_list_24"
-			app:iconGravity="top"
-			app:layout_columnWeight="1"
-			app:layout_rowWeight="1" />
-
-		<Button
-			style="@style/Widget.Material3.Button.IconButton"
-			android:id="@+id/settingsBtn"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:paddingTop="24dp"
-			android:text="@string/settings_string"
-			app:icon="@drawable/ic_baseline_settings_24"
-			app:iconGravity="top"
-			app:layout_columnWeight="1"
-			app:layout_rowWeight="1" />
-
-	</androidx.gridlayout.widget.GridLayout>
-
-</LinearLayout>
+		android:layout_height="fill_parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

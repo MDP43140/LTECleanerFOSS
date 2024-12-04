@@ -3,74 +3,71 @@
 	~ SPDX-FileCopyrightText: 2020-2023 Hunter J Drum
 	~ SPDX-FileCopyrightText: 2024 MDP43140
 	~ SPDX-License-Identifier: GPL-3.0-or-later
-	-->
+  -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:orientation="horizontal"
-	android:baselineAligned="false"
+	android:orientation="vertical"
+	android:weightSum="4"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	tools:context=".ui.MainActivity">
-	<LinearLayout
-		android:orientation="vertical"
-		android:layout_width="0dp"
+	tools:context=".fragment.MainFragment">
+	<ScrollView
+		android:animateLayoutChanges="false"
+		android:background="@drawable/rounded_view"
+		android:id="@+id/fileScrollView"
+		android:layout_weight="4"
+		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_marginTop="16dp"
 		android:layout_marginBottom="16dp"
-		android:layout_marginStart="16dp"
-		android:layout_marginEnd="12dp"
-		android:layout_weight="2">
-		<ScrollView
+		android:layout_marginStart="24dp"
+		android:layout_marginEnd="24dp"
+		android:scrollbarSize="24dp">
+		<HorizontalScrollView
 			android:animateLayoutChanges="false"
-			android:background="@drawable/rounded_view"
-			android:id="@+id/fileScrollView"
 			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:scrollbarSize="24dp">
-			<HorizontalScrollView
-				android:animateLayoutChanges="false"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:scrollbarSize="24dp">
-				<LinearLayout
-					android:animateLayoutChanges="false"
-					android:id="@+id/fileListView"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginStart="3dp"
-					android:orientation="vertical" />
-			</HorizontalScrollView>
-		</ScrollView>
-
-		<TextView
-			android:id="@+id/statusTextView"
-			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="10dp"
-			android:layout_marginStart="30dp"
-			android:layout_marginEnd="30dp"
-			android:layout_marginBottom="10dp"
-			android:fontFamily="sans-serif-condensed-medium"
-			android:textAlignment="center"
-			android:textColor="?attr/colorPrimary"
-			android:textSize="20sp" />
-	</LinearLayout>
+			android:scrollbarSize="24dp">
+			<!-- TODO: Use ListView? -->
+			<LinearLayout
+				android:animateLayoutChanges="false"
+				android:id="@+id/fileListView"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="3dp"
+				android:textIsSelectable="true"
+				android:orientation="vertical" />
+		</HorizontalScrollView>
+	</ScrollView>
+
+	<TextView
+		android:id="@+id/statusTextView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginTop="10dp"
+		android:layout_marginStart="30dp"
+		android:layout_marginEnd="30dp"
+		android:layout_marginBottom="10dp"
+		android:fontFamily="sans-serif-condensed-medium"
+		android:textAlignment="center"
+		android:textColor="?attr/colorPrimary"
+		android:textSize="20sp" />
 
 	<androidx.gridlayout.widget.GridLayout
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:layout_gravity="center"
-		app:columnCount="1"
-		app:rowCount="4">
+		android:layout_width="match_parent"
+		android:layout_height="250dp"
+		android:layout_gravity="bottom"
+		app:columnCount="2"
+		app:rowCount="2">
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/analyzeBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:minWidth="0dp"
+			android:paddingTop="24dp"
 			android:text="@string/analyze"
 			app:icon="@drawable/ic_baseline_search_24"
 			app:iconGravity="top"
@@ -78,11 +75,11 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/cleanBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:minWidth="0dp"
+			android:paddingTop="24dp"
 			android:text="@string/clean"
 			app:icon="@drawable/ic_baseline_cleanup_24"
 			app:iconGravity="top"
@@ -90,11 +87,11 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/whitelistBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:minWidth="0dp"
+			android:paddingTop="24dp"
 			android:text="@string/whitelist"
 			app:icon="@drawable/ic_baseline_list_24"
 			app:iconGravity="top"
@@ -102,11 +99,11 @@
 			app:layout_rowWeight="1" />
 
 		<Button
-			style="?android:attr/borderlessButtonStyle"
+			style="@style/Widget.Material3.Button.IconButton"
 			android:id="@+id/settingsBtn"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:minWidth="0dp"
+			android:paddingTop="24dp"
 			android:text="@string/settings_string"
 			app:icon="@drawable/ic_baseline_settings_24"
 			app:iconGravity="top"

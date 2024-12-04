@@ -12,9 +12,9 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.widget.TextView
 import androidx.preference.PreferenceManager
-import theredspy15.ltecleanerfoss.ui.MainActivity
-import theredspy15.ltecleanerfoss.ui.BlacklistActivity
-import theredspy15.ltecleanerfoss.ui.WhitelistActivity
+import theredspy15.ltecleanerfoss.fragment.MainFragment
+import theredspy15.ltecleanerfoss.fragment.BlacklistFragment
+import theredspy15.ltecleanerfoss.fragment.WhitelistFragment
 import java.io.File
 import java.util.Locale
 class FileScanner(private val path: File, context: Context){
@@ -31,6 +31,7 @@ class FileScanner(private val path: File, context: Context){
 	var autoWhite = prefs.getBoolean("auto_white", true)
 	var corpse = prefs.getBoolean("corpse", false)
 	var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
+	var addText: ((context: Context, path: String, type: Int) -> TextView)? = null
 	private var installedPackages = getInstalledPackages()
 	private var guiScanProgressMax = 0
 	private var guiScanProgressProgress = 0
@@ -74,14 +75,14 @@ class FileScanner(private val path: File, context: Context){
 	 * @return true if is the file is in the black/white list, false if not
 	 */
 	private fun isWhiteListed(file: File): Boolean {
-		for (path in WhitelistActivity.getWhitelistOn(prefs)) when {
+		for (path in WhitelistFragment.getWhitelistOn(prefs)) when {
 			path.equals(file.absolutePath) ||
 			path.equals(file.name, ignoreCase = true) -> return true
 		}
 		return false
 	}
 	private fun isBlackListed(file: File): Boolean {
-		for (path in BlacklistActivity.getBlacklistOn(prefs)){
+		for (path in BlacklistFragment.getBlacklistOn(prefs)){
 			val pattern = path!!.toRegex()
 			if (file.absolutePath.matches(pattern) ||
 					file.name.matches(pattern)) return true
@@ -96,7 +97,7 @@ class FileScanner(private val path: File, context: Context){
 	 */
 	private fun autoWhiteList(file: File): Boolean {
 		for (protectedFile in whitelist){
-			val whiteLists = WhitelistActivity.getWhiteList(prefs)
+			val whiteLists = WhitelistFragment.getWhiteList(prefs)
 			if (
 				file.name.lowercase().contains(protectedFile) &&
 				!whiteLists.contains(file.absolutePath.lowercase())
@@ -209,9 +210,7 @@ class FileScanner(private val path: File, context: Context){
 		while (cycles < maxCycles) {
 
 			// cycle indicator
-			if (context is MainActivity) context.addText(
-				"Running Cycle " + (cycles + 1) + "/" + maxCycles
-			)
+			addText?.invoke(context,"Running Cycle " + cycles + "/" + maxCycles,0);
 
 			// find/scan files
 			foundFiles = getListFiles(path)
@@ -221,18 +220,16 @@ class FileScanner(private val path: File, context: Context){
 			for (file in foundFiles){
 				if (filter(file)){ // filter
 					var tv: TextView? = null
-					if (context is MainActivity) tv = context.addText(file.absolutePath,"delete")
+					tv = addText?.invoke(context,file.absolutePath,1)
 					kilobytesTotal += file.length()
 					if (delete){
 						++filesRemoved
 						// deletion
 						val isDeleted = if (file.isDirectory) file.deleteRecursively() else file.delete()
 						// failed to remove file and the textView is visible (not null)
-						if (!isDeleted && context is MainActivity){
-							context.runOnUiThread {
-								// error effect - red looks too concerning
-								tv!!.setTextColor(Color.GRAY)
-							}
+						if (!isDeleted){
+							// error effect - red looks too concerning
+							tv!!.setTextColor(Color.GRAY)
 						}
 					}
 				}
@@ -244,7 +241,7 @@ class FileScanner(private val path: File, context: Context){
 			++cycles
 		}
 		// cycle indicator
-		if (context is MainActivity) context.addText("Finished!")
+		addText?.invoke(context,"Finished!",1);
 		isRunning = false
 		return kilobytesTotal
 	}
@@ -265,7 +262,7 @@ class FileScanner(private val path: File, context: Context){
 	}
 
 	init {
-		BlacklistActivity.getBlackList(prefs)
-		WhitelistActivity.getWhiteList(prefs)
+		BlacklistFragment.getBlackList(prefs)
+		WhitelistFragment.getWhiteList(prefs)
 	}
 }
