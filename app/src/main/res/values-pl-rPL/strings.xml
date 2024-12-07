@@ -25,7 +25,7 @@
 	<string name="apk_sum">Pliki instalacji aplikacji dla Androida</string>
 	<string name="oneclick_sum">Po naciśnięciu przycisku czyszczenia nie jest wyświetlane okno dialogowe potwierdzenia</string>
 	<string name="autowhite_sum">Automatycznie wykryj foldery, które powinny zostać wykluczone</string>
-	<string name="settings_string">Ustawienia</string>
+	<string name="settings">Ustawienia</string>
 	<string name="corpse_summary">Pliki pozostałe po odinstalowanych aplikacjach</string>
 	<string name="corpse_title">Usuń ostałe pliki</string>
 	<string name="other">Inne</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtry</string>
 	<string name="scanner_category_title">Skaner</string>
 	<string name="links_category_title">Odsyłacze</string>
-	<string name="settings_page_title">Ustawienia</string>
 	<string name="remove_from_whitelist">Czy usunąć z białej listy?</string>
 	<string name="delete">Usuń</string>
 	<string name="clear_clipboard_failed">Nie powiodło się skasowanie schowka</string>

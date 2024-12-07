@@ -29,7 +29,7 @@
 	<string name="oneclick_sum">Tidak ada dialog konfirmasi ketika tombol bersihkan ditekan</string>
 	<string name="autowhite_sum">Mendeteksi folder yang harus dilindungi secara otomatis</string>
 	<string name="grantPermissions_sum">Pembersih LTE membutuhkan ijin berikut untuk dapat mencari cache yang bisa dibersihkan: </string>
-	<string name="settings_string">Pengaturan</string>
+	<string name="settings">Pengaturan</string>
 	<string name="corpse_summary">File yang tersisa dari aplikasi yang belum terpasang</string>
 	<string name="corpse_title">Hapus berkas mayat</string>
 	<string name="other">Lainnya</string>
@@ -37,8 +37,8 @@
 	<string name="clean_boot_sum">Otomatis berjalan setelah perangkat menyelesaikan boot, tanpa harus membuka aplikasi.</string>
 	<string name="clean_hourly_title">Bersihkan tiap jam</string>
 	<string name="clean_hourly_sum">Berapa jam pembersih dijadwalkan.</string>
-	<string name="data_import_title">Impor Data</string>
-	<string name="data_export_title">Ekspor Data</string>
+	<string name="data_import">Impor Data</string>
+	<string name="data_export">Ekspor Data</string>
 	<string name="data_import_sum">Kembalikan setelan dari file cadangan</string>
 	<string name="data_export_sum">Cadangkan setelan ke file XML/JSON</string>
 	<string name="stopbgapps_title">Tutup aplikasi latar-belakang</string>
@@ -55,12 +55,11 @@
 	<string name="svc_notification_title">Pekerja Pembersih LTE</string>
 	<string name="empty_blacklist">Daftar hitam kosong</string>
 	<string name="empty_whitelist">Daftar putih kosong</string>
-	<string name="theme_sum">Jika tidak, ikuti pengaturan sistem. Mulai ulang aplikasi untuk menerapkan tema</string>
-	<string name="theme_title">Pilih Tema</string>
+	<string name="theme_sum">Pilih tema. Mulai ulang aplikasi untuk menerapkan sepenuhnya</string>
+	<string name="theme_title">Tema</string>
 	<string name="filters_category_title">Penyaring</string>
 	<string name="scanner_category_title">Pemindai</string>
 	<string name="links_category_title">Taut</string>
-	<string name="settings_page_title">Pengaturan</string>
 	<string name="remove_from_blacklist">Hapus dari Daftar hitam?</string>
 	<string name="remove_from_whitelist">Hapus dari Daftar putih?</string>
 	<string name="delete">Hapus</string>
@@ -70,10 +69,10 @@
 	<string name="whitelist_sum">Konfigurasikan daftar filter yang seharusnya mengabaikan file</string>
 	<string name="dynColor">Gunakan warna dinamis</string>
 	<string name="dynColor_sum">Mengaktifkan warna dinamis (memerlukan Android 12+)</string>
-	<string name="projectSum">Lihat projek GitHub LTE Cleaner!</string>
+	<string name="sourceCode">Sumber kode</string>
+	<string name="sourceCode_sum">Lihat projek GitHub LTE Cleaner!</string>
 	<string name="license">Lisensi</string>
 	<string name="license_sum">Dilisensikan di bawah lisensi GPL v3</string>
-	<string name="settings">Pengaturan</string>
 	<string name="about">Tentang</string>
 	<string-array name="themes_val">
 		<item>Ikuti sistem</item>

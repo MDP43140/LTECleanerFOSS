@@ -25,7 +25,7 @@
 	<string name="apk_sum">Androidのインストーラーファイル</string>
 	<string name="oneclick_sum">クリーン・ボタンが押されたときに確認ダイアログを表示しません。</string>
 	<string name="autowhite_sum">保護すべきフォルダーを自動的に検出する</string>
-	<string name="settings_string">設定</string>
+	<string name="settings">設定</string>
 	<string name="corpse_summary">アプリケーションのアンインストール後に残されたファイル</string>
 	<string name="corpse_title">残骸ファイルの削除</string>
 	<string name="other">その他</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">フィルター</string>
 	<string name="scanner_category_title">スキャナ</string>
 	<string name="links_category_title">リンク</string>
-	<string name="settings_page_title">設定</string>
 	<string name="remove_from_whitelist">ホワイトリストから削除しますか</string>
 	<string name="delete">削除</string>
 	<string name="clear_clipboard_failed">クリップボードをクリアできません</string>

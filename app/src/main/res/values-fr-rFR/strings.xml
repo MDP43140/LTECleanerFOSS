@@ -25,7 +25,7 @@
 	<string name="apk_sum">Fichiers du programme d\'installation pour android</string>
 	<string name="oneclick_sum">Aucune boîte de dialogue de confirmation lorsque le bouton de nettoyage est appuyé</string>
 	<string name="autowhite_sum">Détecter les dossiers qui doivent être protégés automatiquement</string>
-	<string name="settings_string">Paramètres</string>
+	<string name="settings">Paramètres</string>
 	<string name="corpse_summary">Fichiers laissés par les applications non installées</string>
 	<string name="corpse_title">Supprimer les fichiers de dépouille</string>
 	<string name="other">Autres</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtres</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Liens</string>
-	<string name="settings_page_title">Paramètres</string>
 	<string name="remove_from_whitelist">Retirer de la liste blanche?</string>
 	<string name="delete">Supprimer</string>
 	<string name="clear_clipboard_failed">Impossible d\'effacer le presse-papiers</string>

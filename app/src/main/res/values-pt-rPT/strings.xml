@@ -25,7 +25,7 @@
 	<string name="apk_sum">Arquivos do instalador para android</string>
 	<string name="oneclick_sum">Nenhum diálogo de confirmação quando botão limpo é pressionado</string>
 	<string name="autowhite_sum">Detectar pastas que devem ser protegidas automaticamente</string>
-	<string name="settings_string">Configurações</string>
+	<string name="settings">Configurações</string>
 	<string name="corpse_summary">Arquivos sobem a partir de apps não instalados</string>
 	<string name="corpse_title">Excluir arquivos de cadáver</string>
 	<string name="other">Outro</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtros</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Links</string>
-	<string name="settings_page_title">Configurações</string>
 	<string name="remove_from_whitelist">Remover do whitelist?</string>
 	<string name="delete">Excluir</string>
 	<string name="clear_clipboard_failed">Falha ao limpar a prancheta</string>

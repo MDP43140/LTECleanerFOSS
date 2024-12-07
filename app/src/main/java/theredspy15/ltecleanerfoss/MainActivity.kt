@@ -103,7 +103,7 @@ class MainActivity: AppCompatActivity(){
 			grantResults[0] != PackageManager.PERMISSION_GRANTED)
 			dialogBuilder.setTitle(getString(R.string.permission_needed))
 				.setMessage(getString(R.string.grantPermissions_sum) + permissions.map { "\n- " + it.replaceFirst("android.permission.","") }.joinToString(""))
-				.setPositiveButton(getString(R.string.settings_string)){ dialogInterface: DialogInterface, _: Int ->
+				.setPositiveButton(getString(R.string.settings)){ dialogInterface: DialogInterface, _: Int ->
 					startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
 						data = Uri.fromParts("package",packageName,null)
 					})

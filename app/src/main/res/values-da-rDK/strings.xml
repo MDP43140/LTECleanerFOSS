@@ -25,7 +25,7 @@
 	<string name="apk_sum">Installer-filer til android</string>
 	<string name="oneclick_sum">Ingen bekræftelsesdialogboks, når der trykkes på knappen</string>
 	<string name="autowhite_sum">Registrér foldere, der skal beskyttes automatisk</string>
-	<string name="settings_string">Indstillinger</string>
+	<string name="settings">Indstillinger</string>
 	<string name="corpse_summary">Filer, der er udelod fra installerede apps</string>
 	<string name="corpse_title">Slet lig-filer</string>
 	<string name="other">Andet</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtre</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Link</string>
-	<string name="settings_page_title">Indstillinger</string>
 	<string name="remove_from_whitelist">Fjern fra hvidliste?</string>
 	<string name="delete">Slet</string>
 	<string name="clear_clipboard_failed">Kan ikke rydde udklipsholderen</string>

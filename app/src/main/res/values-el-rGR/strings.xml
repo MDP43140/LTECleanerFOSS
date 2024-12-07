@@ -25,7 +25,7 @@
 	<string name="apk_sum">Αρχεία του προγράμματος εγκατάστασης για το Android</string>
 	<string name="oneclick_sum">Δεν υπάρχει παράθυρο επιβεβαίωσης όταν πατηθεί το κουμπί.</string>
 	<string name="autowhite_sum">Εντοπισμός φακέλων που πρέπει να προστατεύονται αυτόματα</string>
-	<string name="settings_string">Ρυθμίσεις:</string>
+	<string name="settings">Ρυθμίσεις:</string>
 	<string name="corpse_summary">Αρχεία που απομένουν από απεγκατάσταση εφαρμογών.</string>
 	<string name="corpse_title">Διαγραφή αρχείων πτωμάτων</string>
 	<string name="other">\' Αλλα</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Φίλτρα φίλτρων</string>
 	<string name="scanner_category_title">Σαρωτής:</string>
 	<string name="links_category_title">-Συνδέσεις</string>
-	<string name="settings_page_title">Ρυθμίσεις:</string>
 	<string name="remove_from_whitelist">-Κατάργηση από τη λευκή;</string>
 	<string name="delete">Διαγραφή:</string>
 	<string name="clear_clipboard_failed">Απέτυχε η εκκαθάριση του πρόχειρο.</string>

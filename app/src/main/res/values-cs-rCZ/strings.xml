@@ -25,7 +25,7 @@
 	<string name="apk_sum">Soubory instalačního programu pro android</string>
 	<string name="oneclick_sum">Po stisknutí tlačítka pro vyčištění se nezobrazí žádné potvrzovací dialogové okno</string>
 	<string name="autowhite_sum">Zjišťovat složky, které mají být automaticky chráněny</string>
-	<string name="settings_string">NastaveníComment</string>
+	<string name="settings">NastaveníComment</string>
 	<string name="corpse_summary">Soubory ponechané v odinstalovaných aplikacích</string>
 	<string name="corpse_title">Odstranit soubory mrtvol</string>
 	<string name="other">Další</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtry</string>
 	<string name="scanner_category_title">Skener</string>
 	<string name="links_category_title">Odkazy</string>
-	<string name="settings_page_title">NastaveníComment</string>
 	<string name="remove_from_whitelist">Odebrat ze seznamu povolených adres?</string>
 	<string name="delete">Odstranit</string>
 	<string name="clear_clipboard_failed">Nezdařilo se vymazat schránku</string>

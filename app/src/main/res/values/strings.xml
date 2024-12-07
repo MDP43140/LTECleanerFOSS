@@ -29,7 +29,7 @@
 	<string name="oneclick_sum">No confirmation dialog when clean button is pressed</string>
 	<string name="autowhite_sum">Detect folders that should be protected automatically</string>
 	<string name="grantPermissions_sum">LTE Cleaner requires these permissions to be able to find caches that can be cleaned: </string>
-	<string name="settings_string">Settings</string>
+	<string name="settings">Settings</string>
 	<string name="corpse_summary">Files left over from uninstalled apps</string>
 	<string name="corpse_title">Delete corpse files</string>
 	<string name="other">Other</string>
@@ -37,8 +37,8 @@
 	<string name="clean_boot_sum">Automatically runs when device completed boot, without having to open the app.</string>
 	<string name="clean_hourly_title">Hourly Clean</string>
 	<string name="clean_hourly_sum">How many hour cleanup should be scheduled.</string>
-	<string name="data_import_title">Import Data</string>
-	<string name="data_export_title">Export Data</string>
+	<string name="data_import">Import Data</string>
+	<string name="data_export">Export Data</string>
 	<string name="data_import_sum">Restore settings from backup file</string>
 	<string name="data_export_sum">Backup settings to XML/JSON file</string>
 	<string name="stopbgapps_title">Stop background apps</string>
@@ -55,12 +55,11 @@
 	<string name="svc_notification_title">LTE Cleaner Worker</string>
 	<string name="empty_blacklist">Nothing in blacklist</string>
 	<string name="empty_whitelist">Nothing in whitelist</string>
-	<string name="theme_sum">Will otherwise follow system settings. Restart app to take effect</string>
-	<string name="theme_title">Select Theme</string>
+	<string name="theme_sum">Select theme. Restart app to fully take effect</string>
+	<string name="theme_title">Theme</string>
 	<string name="filters_category_title">Filters</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Links</string>
-	<string name="settings_page_title">Settings</string>
 	<string name="remove_from_blacklist">Remove from blacklist?</string>
 	<string name="remove_from_whitelist">Remove from whitelist?</string>
 	<string name="delete">Delete</string>
@@ -70,10 +69,10 @@
 	<string name="whitelist_sum">Configure a lists of filter that should ignore a file</string>
 	<string name="dynColor">Use dynamic colors</string>
 	<string name="dynColor_sum">Enables dynamic colors (requires Android 12+)</string>
-	<string name="projectSum">Checkout LTE Cleaner GitHub project!</string>
+	<string name="sourceCode">Source code</string>
+	<string name="sourceCode_sum">Checkout LTE Cleaner GitHub project!</string>
 	<string name="license">License</string>
 	<string name="license_sum">Licensed under GPL v3 license</string>
-	<string name="settings">Settings</string>
 	<string name="about">About</string>
 	<string-array name="themes_val">
 		<item>Follow system</item>

@@ -25,7 +25,7 @@
 	<string name="apk_sum">Android 的安装程序文件</string>
 	<string name="oneclick_sum">按下清理按钮时没有确认对话框</string>
 	<string name="autowhite_sum">检测应该自动保护的文件夹</string>
-	<string name="settings_string">设置</string>
+	<string name="settings">设置</string>
 	<string name="corpse_summary">从已卸载应用程序遗留的文件</string>
 	<string name="corpse_title">删除尸体文件</string>
 	<string name="other">其他</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">过滤器</string>
 	<string name="scanner_category_title">扫描仪</string>
 	<string name="links_category_title">链接</string>
-	<string name="settings_page_title">设置</string>
 	<string name="remove_from_whitelist">从白名单中除去 ?</string>
 	<string name="delete">删除</string>
 	<string name="clear_clipboard_failed">无法清除剪贴板</string>

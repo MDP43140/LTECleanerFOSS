@@ -25,7 +25,7 @@
 	<string name="apk_sum">קובצי התקנה עבור Android</string>
 	<string name="oneclick_sum">אין תיבת דו-שיח לאישור כאשר לוחצים על הלחצן \' ניקוי \'</string>
 	<string name="autowhite_sum">איתור תיקיות שיש להגן עליהן אוטומטית.</string>
-	<string name="settings_string">הגדרות</string>
+	<string name="settings">הגדרות</string>
 	<string name="corpse_summary">קבצים שנשארו מאפליקציות לא מותקנות</string>
 	<string name="corpse_title">מחיקת קובצי גופה</string>
 	<string name="other">אחר</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">מסננים</string>
 	<string name="scanner_category_title">סורק</string>
 	<string name="links_category_title">קישורים</string>
-	<string name="settings_page_title">הגדרות</string>
 	<string name="remove_from_whitelist">לסלק מרשימת הרשימות?</string>
 	<string name="delete">מחיקה</string>
 	<string name="clear_clipboard_failed">כשל בלנקות את לוח הגזירים</string>
