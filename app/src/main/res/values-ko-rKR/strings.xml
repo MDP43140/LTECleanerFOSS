@@ -25,7 +25,7 @@
 	<string name="apk_sum">안드로이드용 설치 프로그램 파일</string>
 	<string name="oneclick_sum">정리 단추를 누를 때 확인 대화 상자 없음</string>
 	<string name="autowhite_sum">자동으로 보호해야 하는 폴더 발견</string>
-	<string name="settings_string">설정</string>
+	<string name="settings">설정</string>
 	<string name="corpse_summary">설치 제거된 앱에서 남겨진 파일</string>
 	<string name="corpse_title">시체 파일 삭제하기</string>
 	<string name="other">기타</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">필터</string>
 	<string name="scanner_category_title">스캐너</string>
 	<string name="links_category_title">링크</string>
-	<string name="settings_page_title">설정</string>
 	<string name="remove_from_whitelist">화이트리스트에서 제거하시겠습니까?</string>
 	<string name="delete">삭제</string>
 	<string name="clear_clipboard_failed">클립보드를 지우지 못했습니다.</string>

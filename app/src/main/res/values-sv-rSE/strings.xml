@@ -25,7 +25,7 @@
 	<string name="apk_sum">Installationsfiler för android</string>
 	<string name="oneclick_sum">Ingen bekräftelsedialogruta när ren knapp trycks ned</string>
 	<string name="autowhite_sum">Detektera mappar som ska skyddas automatiskt</string>
-	<string name="settings_string">Inställningar</string>
+	<string name="settings">Inställningar</string>
 	<string name="corpse_summary">Filer som lämnas över från avinstallerade appar</string>
 	<string name="corpse_title">Ta bort likfiler</string>
 	<string name="other">Andra slag</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filter</string>
 	<string name="scanner_category_title">Skanner</string>
 	<string name="links_category_title">Länkar</string>
-	<string name="settings_page_title">Inställningar</string>
 	<string name="remove_from_whitelist">Vill du ta bort från vitlistan?</string>
 	<string name="delete">Radera</string>
 	<string name="clear_clipboard_failed">Det gick inte att rensa klippbordet</string>

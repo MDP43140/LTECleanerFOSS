@@ -25,7 +25,7 @@
 	<string name="apk_sum">Installer-Dateien für Android</string>
 	<string name="oneclick_sum">Kein Bestätigungsdialog, wenn die Schaltfläche \"clean\" gedrückt wird</string>
 	<string name="autowhite_sum">Ordner erkennen, die automatisch geschützt werden sollen</string>
-	<string name="settings_string">Einstellungen</string>
+	<string name="settings">Einstellungen</string>
 	<string name="corpse_summary">Dateien, die von deinstallierten Apps übrig bleiben</string>
 	<string name="corpse_title">Corpse-Dateien löschen</string>
 	<string name="other">Sonstige</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filter</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Links</string>
-	<string name="settings_page_title">Einstellungen</string>
 	<string name="remove_from_whitelist">Aus Whitelist entfernen?</string>
 	<string name="delete">Löschen</string>
 	<string name="clear_clipboard_failed">Fehler beim Löschen der Zwischenablage</string>

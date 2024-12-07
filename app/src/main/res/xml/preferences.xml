@@ -6,8 +6,6 @@
 	-->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:title="@string/settings_page_title"
-	android:key="settings"
 	app:iconSpaceReserved="false">
 	<PreferenceCategory android:title="@string/scanner_category_title" app:iconSpaceReserved="false">
 		<Preference
@@ -127,21 +125,21 @@
 			android:title="@string/dynColor"
 			app:iconSpaceReserved="false" />
 		<Preference
-			android:title="@string/data_import_title"
+			android:title="@string/data_import"
 			android:key="dataImport"
 			android:summary="@string/data_import_sum"
 			app:iconSpaceReserved="false" />
 		<Preference
-			android:title="@string/data_export_title"
+			android:title="@string/data_export"
 			android:key="dataExport"
 			android:summary="@string/data_export_sum"
 			app:iconSpaceReserved="false" />
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/about" app:iconSpaceReserved="false">
 		<Preference
-			android:title="GitHub"
+			android:title="@string/sourceCode"
 			android:key="__link_gh"
-			android:summary="@string/projectSum"
+			android:summary="@string/sourceCode_sum"
 			app:iconSpaceReserved="false">
 			<intent
 				android:action="android.intent.action.VIEW"

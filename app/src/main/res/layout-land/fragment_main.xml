@@ -107,7 +107,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:minWidth="0dp"
-			android:text="@string/settings_string"
+			android:text="@string/settings"
 			app:icon="@drawable/ic_baseline_settings_24"
 			app:iconGravity="top"
 			app:layout_columnWeight="1"

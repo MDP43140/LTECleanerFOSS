@@ -25,7 +25,7 @@
 	<string name="apk_sum">Tập tin trình cài đặt cho android</string>
 	<string name="oneclick_sum">Không có hộp thoại xác nhận khi bấm nút sạch</string>
 	<string name="autowhite_sum">Phát hiện thư mục cần được bảo vệ tự động</string>
-	<string name="settings_string">Thiết lập</string>
+	<string name="settings">Thiết lập</string>
 	<string name="corpse_summary">Tập tin bị bỏ qua các ứng dụng không cài đặt</string>
 	<string name="corpse_title">Xoá tập tin xác chết</string>
 	<string name="other">Khác</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Bộ lọc</string>
 	<string name="scanner_category_title">Máy quét</string>
 	<string name="links_category_title">Liên kết</string>
-	<string name="settings_page_title">Thiết lập</string>
 	<string name="remove_from_whitelist">Rút khỏi danh sách trắng?</string>
 	<string name="delete">&amp; Xoá</string>
 	<string name="clear_clipboard_failed">Lỗi xóa bảng tạm</string>

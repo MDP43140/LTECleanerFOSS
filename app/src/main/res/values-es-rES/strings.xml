@@ -25,7 +25,7 @@
 	<string name="apk_sum">Archivos de instalación para Android</string>
 	<string name="oneclick_sum">No mostrar diálogo de confirmación al pulsar el botón de limpieza</string>
 	<string name="autowhite_sum">Detectar carpetas que deben protegerse automáticamente</string>
-	<string name="settings_string">Ajustes</string>
+	<string name="settings">Ajustes</string>
 	<string name="corpse_summary">Archivos restantes de aplicaciones desinstaladas</string>
 	<string name="corpse_title">Eliminar archivos de cadáveres</string>
 	<string name="other">Otros</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtros</string>
 	<string name="scanner_category_title">Escáner</string>
 	<string name="links_category_title">Enlaces</string>
-	<string name="settings_page_title">Configuración</string>
 	<string name="remove_from_whitelist">¿Eliminar de la lista blanca?</string>
 	<string name="delete">Suprimir</string>
 	<string name="clear_clipboard_failed">Error al borrar el portapapeles</string>

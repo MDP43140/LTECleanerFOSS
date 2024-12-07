@@ -25,7 +25,7 @@
 	<string name="apk_sum">Fişiere de instalare pentru android</string>
 	<string name="oneclick_sum">Nu există dialog de confirmare când este apăsat butonul curat</string>
 	<string name="autowhite_sum">Detectarea folderelor care ar trebui protejate automat</string>
-	<string name="settings_string">Setări</string>
+	<string name="settings">Setări</string>
 	<string name="corpse_summary">Fişiere rămase de la aplicaţii neinstalate</string>
 	<string name="corpse_title">Ştergere fişiere cadavru</string>
 	<string name="other">Alte</string>
@@ -44,7 +44,6 @@
 	<string name="filters_category_title">Filtre</string>
 	<string name="scanner_category_title">Scanner</string>
 	<string name="links_category_title">Legături</string>
-	<string name="settings_page_title">Setări</string>
 	<string name="remove_from_whitelist">Scoateți din whitelist?</string>
 	<string name="delete">Șterge</string>
 	<string name="clear_clipboard_failed">Nu a reușit să clar clipboard</string>
