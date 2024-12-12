@@ -1,7 +1,7 @@
 ## LTECleanerFOSS
 A maintained-ish improved fork of @TheRedSpy15's LTE Cleaner
 
-![Android CI](https://github.com/mdp43140/LTECleanerFOSS/workflows/Android%20CI/badge.svg)
+[![Android CI](https://github.com/mdp43140/LTECleanerFOSS/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/MDP43140/LTECleanerFOSS/actions/workflows/android.yml)
 [![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
 [![License](https://img.shields.io/github/license/mdp43140/LTECleanerFOSS)](/blob/master/LICENSE)
 
@@ -14,14 +14,14 @@ LTE Cleaner only aims to clean your phone by removing safe to delete files, whic
 
 __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claims to.__
 
-## Install
+### Install
 [GitHub release](https://github.com/MDP43140/LTECleanerFOSS/releases)
 [Build it yourself](#compiling-the-app)
 [Original F-Droid (outdated)](https://f-droid.org/packages/theredspy15.ltecleanerfoss)
 [Original source code (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
 [Original GitHub release (outdated)](https://github.com/theredspy15/LTECleanerFOSS)
 
-## Features
+### Features
 - Clipboard clearing
 - Whitelist
 - Daily cleanup
@@ -39,19 +39,19 @@ To do list (not guaranteed because i'm busy irl):
 - Predictive back gestures?
 - Extra optimizations?
 - Code cleanups
-- Compose?
+- Compose? (really low priority, because this will literally take decades to implement, lots of code changes, and importantly will took longer to compile and requires more resource and increases APK size to 50MB!! (see Open Video Editor project, before and after the Compose update))
 - baseline profile (not ready yet...)
 - Clean SD card (has to support minimal Android 10+, hopefully we can use StorageAccessFramework to make this work, but it might be a huge work that can take days, not possible with my spare time)
 - Regex whilelist
 - About screen (designing the UI would be really painful, and using external dependency will also significantly enlarge file size)
 <!-- Scan then clean, instead of doing both at the same time (atleast on some devices that i tested on, it lags when there is so many files)-->
 
-## Screenshots
+### Screenshots
 <img src="Screenshots/ui_main.png" width="200">
 <img src="Screenshots/ui_settings.png" width="200">
 <img src="Screenshots/ui_wl.png" width="200">
 
-## The Team
+### The Team
 <a href="https://github.com/mdp43140/LTECleanerFOSS/graphs/contributors">
 	<img src="https://contrib.rocks/image?repo=mdp43140/LTECleanerFOSS" />
 </a>
@@ -62,7 +62,7 @@ Contribute to this project:
 - Create a [Pull Request](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 - Translate this app into more languages
 
-## Compiling the app
+### Compiling the app
 First, export some variables (for Linux users. Windows user might want to adjust this a bit):
 ```bash
 export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-21-openjdk-amd64}"
@@ -74,7 +74,7 @@ Then go to the project root directory, and run this command:
 
 if you're using Windows, change `./gradlew` to `gradlew.bat`
 
-## License
+### License
 [![GNU GPL v3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 LTE Cleaner is Free Software: You can use, study, share, and improve it at

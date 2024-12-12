@@ -17,19 +17,9 @@ kotlin {
 android {
 	compileSdk = 35
 	buildToolsVersion = "35.0.0"
-	namespace = "theredspy15.ltecleanerfoss" // eg AndroidManifest.xml had ".App" instead of "namespace.App"
+	namespace = "theredspy15.ltecleanerfoss"
 	defaultConfig {
-		applicationId = "io.mdp43140.ltecleaner" // package name
-		// Actually it can "support" API 21...
-		// if I tried hard enough to make it work,
-		// but it requires more effort, makes maintenance harder,
-		// and cant be installed on Android 14+, as they now require apps
-		// to use minimum SDK of 24.
-		// according to StatCounter & AppBrain,
-		// almost no one uses below 7.0 (24) anyway.
-		// Also, changing SDK can affect things,
-		// not just compatibility (ehm... "Failed to parse APK")
-		// it can also reduce APK size a little bit (based on my tests)
+		applicationId = "io.mdp43140.ltecleaner"
 		minSdk = 24
 		targetSdk = compileSdk
 		versionCode = 64
@@ -55,14 +45,14 @@ android {
 		}
 	}
 	lint {
-		checkReleaseBuilds = false // we did thousands of these on debug builds already...
 		abortOnError = false
+		checkReleaseBuilds = false // we did thousands of these on debug builds already...
 		lintConfig = file("lint.xml")
 	}
 	buildTypes {
 		debug {
-			isDebuggable = true
 			applicationIdSuffix = ".debug"
+			isDebuggable = true
 		}
 		release {
 			isMinifyEnabled = true
@@ -140,8 +130,7 @@ dependencies {
 	// Leak detection
 	debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
 	// Error logger
-	implementation(project(":ael_kt"))
-
+	implementation("com.github.mdp43140.ael:ael_kt:1.0.1-hf")
 	// Tests (AndroidJUnitRunner & JUnit Rules, Assertions)
 	androidTestImplementation("androidx.test:runner:1.6.2")
 	androidTestImplementation("androidx.test.ext:junit:1.2.1")

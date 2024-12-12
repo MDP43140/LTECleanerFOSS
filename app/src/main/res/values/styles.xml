@@ -26,5 +26,5 @@
 		<item name="widgetLayout">@layout/preference_material_switch</item>
 	</style>
 	<!-- Custom error logger theme -->
-	<style name="ErrLoggerTheme" parent="AppTheme"/>
+	<style name="AEL_Theme" parent="AppTheme"/>
 </resources>

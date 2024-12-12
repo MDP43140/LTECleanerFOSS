@@ -40,4 +40,3 @@ hs_err_pid*
 /build/
 .kotlin
 app/src/.disabled
-app/.POC_GetSDCard.java
