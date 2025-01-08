@@ -75,17 +75,18 @@ class FileScanner(private val path: File, context: Context){
 	 * @return true if is the file is in the black/white list, false if not
 	 */
 	private fun isWhiteListed(file: File): Boolean {
-		for (path in WhitelistFragment.getWhitelistOn(prefs)) when {
-			path.equals(file.absolutePath) ||
-			path.equals(file.name, ignoreCase = true) -> return true
+		val absolutePath = file.absolutePath
+		val name = file.name
+		for (path in whitelist){
+			if (path.equals(absolutePath) ||
+					path.equals(name, ignoreCase = true)) return true
 		}
 		return false
 	}
 	private fun isBlackListed(file: File): Boolean {
-		for (path in BlacklistFragment.getBlacklistOn(prefs)){
-			val pattern = path!!.toRegex()
-			if (file.absolutePath.matches(pattern) ||
-					file.name.matches(pattern)) return true
+		val absolutePath = file.absolutePath
+		for (pattern in blacklist){
+			if (absolutePath.matches(pattern)) return true
 		}
 		return false
 	}
@@ -96,8 +97,8 @@ class FileScanner(private val path: File, context: Context){
 	 * @param file file to check whether it should be added to the whitelist
 	 */
 	private fun autoWhiteList(file: File): Boolean {
-		for (protectedFile in whitelist){
-			val whiteLists = WhitelistFragment.getWhiteList(prefs)
+		for (protectedFile in autoWhitelist){
+			val whiteLists = whitelist
 			if (
 				file.name.lowercase().contains(protectedFile) &&
 				!whiteLists.contains(file.absolutePath.lowercase())
@@ -121,36 +122,30 @@ class FileScanner(private val path: File, context: Context){
 	 * @return true if the file matches certain rules, otherwise false
 	 */
 	fun filter(file: File): Boolean {
-		try {
-			if (
-				// corpse checking
-				// Android/Data/[file != .nomedia]
-				corpse &&
-				file.parentFile!!.name == "data" &&
-				file.parentFile!!.parentFile!!.name == "Android" &&
-				file.name != ".nomedia" &&
-				!installedPackages.contains(file.name) ||
-				// empty file
-				emptyFile &&
-				isFileEmpty(file) ||
-				// empty folder
-				emptyDir &&
-				isDirectoryEmpty(file) ||
-				// blacklist (targeted to get deleted)
-				isBlackListed(file)
-			) return true
+		if (
+			// corpse checking
+			// Android/Data/[file != .nomedia]
+			corpse &&
+			file.parentFile?.name == "data" &&
+			file.parentFile?.parentFile?.name == "Android" &&
+			file.name != ".nomedia" &&
+			!installedPackages.contains(file.name) ||
+			// empty file
+			emptyFile &&
+			isFileEmpty(file) ||
+			// empty folder
+			emptyDir &&
+			isDirectoryEmpty(file) ||
+			// blacklist (targeted to get deleted)
+			isBlackListed(file)
+		) return true
 
-			// file
-			val filterIterator = filters.iterator()
-			while (filterIterator.hasNext()) {
-				val filter = filterIterator.next()
-				if (file.absolutePath.lowercase().matches(filter.lowercase().toRegex()))
-					return true
-			}
-		} catch (e: NullPointerException) {
-			return false
+		// file
+		val absolutePath = file.absolutePath.lowercase()
+		for (filter in filters){
+			if (absolutePath.matches(filter.lowercase().toRegex())) return true
 		}
-		return false // not empty folder or file in filter
+		return false
 	}
 
 	/**
@@ -193,10 +188,13 @@ class FileScanner(private val path: File, context: Context){
 			for (apk in Constants.filter_apkFiles) filters.add(getRegexForFile(apk))
 		}
 
+		// cached whitelist/blacklist values
+		whitelist = WhitelistFragment.getWhitelistOn(prefs).mapNotNull { it }
+		blacklist = BlacklistFragment.getBlacklistOn(prefs).mapNotNull { it?.toRegex() }
 		// Auto whitelist
 		if (autoWhite){
-			whitelist.clear()
-			whitelist.addAll(Constants.filter_autoWhite)
+			autoWhitelist.clear()
+			autoWhitelist.addAll(Constants.filter_autoWhite)
 		}
 	}
 
@@ -258,7 +256,9 @@ class FileScanner(private val path: File, context: Context){
 		// TODO remove local prefs objects, create setter for one instead
 		var isRunning = false
 		private val filters = ArrayList<String>()
-		private val whitelist: MutableList<String> = ArrayList<String>()
+		private var blacklist: List<Regex> = emptyList()
+		private var whitelist: List<String> = emptyList()
+		private val autoWhitelist: MutableList<String> = ArrayList<String>()
 	}
 
 	init {

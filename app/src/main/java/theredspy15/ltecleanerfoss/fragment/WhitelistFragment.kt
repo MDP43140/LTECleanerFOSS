@@ -19,10 +19,12 @@ import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts.OpenDocumentTree
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.whitelistDefault
 import theredspy15.ltecleanerfoss.Constants.whitelistOnDefault
+import theredspy15.ltecleanerfoss.MainActivity
 import theredspy15.ltecleanerfoss.databinding.FragmentWhitelistBinding
 class WhitelistFragment: BaseFragment(){
 	private lateinit var binding: FragmentWhitelistBinding
@@ -90,16 +92,18 @@ class WhitelistFragment: BaseFragment(){
 			}
 		}
 	}
-	private fun removePath(path: String?, button: Button?) {
+	private fun removePath(path: String, button: Button) {
 		MaterialAlertDialogBuilder(requireContext())
 			.setTitle(getString(R.string.remove_from_whitelist))
-			.setMessage(path!!)
-			.setPositiveButton(getString(R.string.delete)){ dialogInterface:DialogInterface, _:Int ->
+			.setMessage(path)
+			.setPositiveButton(getString(R.string.delete)){ dialog:DialogInterface, _:Int ->
 				rmWhiteList(App.prefs,path)
-				dialogInterface.dismiss()
+				dialog.dismiss()
 				binding.pathsLayout.removeView(button)
 			}
-			.setNegativeButton(getString(android.R.string.cancel)) { dialogInterface:DialogInterface, _:Int -> dialogInterface.dismiss() }
+			.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
+				dialog.dismiss()
+			}
 			.show()
 	}
 

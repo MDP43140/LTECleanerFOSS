@@ -19,10 +19,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import theredspy15.ltecleanerfoss.R
 import theredspy15.ltecleanerfoss.App
 import theredspy15.ltecleanerfoss.Constants.blacklistDefault
 import theredspy15.ltecleanerfoss.Constants.blacklistOnDefault
+import theredspy15.ltecleanerfoss.MainActivity
 import theredspy15.ltecleanerfoss.databinding.FragmentBlacklistBinding
 class BlacklistFragment: BaseFragment(){
 	private lateinit var binding: FragmentBlacklistBinding
@@ -33,21 +35,7 @@ class BlacklistFragment: BaseFragment(){
 	): View? {
 		binding = FragmentBlacklistBinding.inflate(inflater, container, false)
 		binding.addBtn.setOnClickListener {
-			val inputEditText = EditText(requireContext())
-			MaterialAlertDialogBuilder(requireContext())
-				.setTitle("Add filter")
-				.setMessage("You can use Kotlin regular expression, such as \".*\"")
-				.setView(inputEditText)
-				.setPositiveButton("OK"){ dialog:DialogInterface, _:Int ->
-					val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
-					if (userInput != "") addBlackList(App.prefs,userInput)
-					dialog.dismiss()
-					loadViews()
-				}
-				.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
-					dialog.dismiss()
-				}
-				.show()
+			editPath(null)
 		}
 		getBlackList(App.prefs)
 		getBlacklistOn(App.prefs)
@@ -84,7 +72,7 @@ class BlacklistFragment: BaseFragment(){
 						ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.WRAP_CONTENT
 					)
-					setOnClickListener { removeOrEditPattern(path) }
+					setOnClickListener { editPath(path) }
 				}
 				checkBox.apply {
 					isChecked = blackListOn.contains(path);
@@ -103,18 +91,33 @@ class BlacklistFragment: BaseFragment(){
 			}
 		}
 	}
-	private fun removeOrEditPattern(path: String?) {
+	private fun editPath(path: String?) {
 		val inputEditText = EditText(requireContext())
-		inputEditText.setText(path!!)
+		inputEditText.hint = "eg. /storage/emulated/0/.*cache"
+		if (path != null) inputEditText.setText(path)
 		MaterialAlertDialogBuilder(requireContext())
-			.setTitle("Edit or remove filter")
-			.setMessage("You can use Kotlin regular expression, such as \".*\"")
+			.setTitle("Add/Edit/Remove filter")
+			.setMessage("You can use Kotlin regular expression")
 			.setView(inputEditText)
-			.setPositiveButton("OK"){ dialog:DialogInterface, _:Int ->
-				val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0")
-				rmBlackList(App.prefs,path)
-				if (userInput != "") addBlackList(App.prefs,userInput)
+			.setPositiveButton(android.R.string.ok){ dialog:DialogInterface, _:Int ->
+				val userInput = inputEditText.text.toString().replace("^/sdcard/", "/storage/emulated/0/")
 				dialog.dismiss()
+				if (path != null) rmBlackList(App.prefs,path)
+				// check if the added pattern
+				if ("/storage/emulated/0/Android/data".matches(userInput.toRegex()) &&
+						"/storage/emulated/0/DCIM/Camera".matches(userInput.toRegex())){
+					Snackbar.make(
+						(requireActivity() as MainActivity).binding.root,
+						"Dangerous filter detected",
+						Snackbar.LENGTH_SHORT
+					).setAction("Add anyway"){ _: View ->
+						addBlackList(App.prefs,userInput)
+						loadViews()
+					}.show()
+				}
+				else if (userInput != ""){
+					addBlackList(App.prefs,userInput)
+				}
 				loadViews()
 			}
 			.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
@@ -128,9 +131,9 @@ class BlacklistFragment: BaseFragment(){
 		private var blackListOn: ArrayList<String> = ArrayList()
 		fun getBlackList(prefs: SharedPreferences?): List<String?> {
 			if (blackList.isNullOrEmpty() && prefs != null) {
-				// Type mismatch: inferred type is
-				// (Mutable)Set<String!>? but
-				// (MutableCollection<out String!>..Collection<String!>) was expected
+				// Java type mismatch: inferred type is
+				// kotlin.collections.(Mutable)Set<kotlin.String!>?, but
+				// kotlin.collections.(Mutable)Collection<out kotlin.String!> was expected
 				blackList = ArrayList(prefs.getStringSet("blacklist",blacklistDefault))
 				blackList.remove("[")
 				blackList.remove("]")
