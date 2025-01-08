@@ -11,6 +11,8 @@
 		<item name="colorSecondary">@color/legendary</item>
 		<item name="colorOnSecondary">@color/fg</item>
 		<item name="colorAccent">?colorPrimary</item>
+		<item name="android:statusBarColor">?colorSurface</item>
+		<item name="android:navigationBarColor">?colorSurface</item>
 		<item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
 		<!-- fixes some UI issues on MIUI devices -->
 		<item name="android:forceDarkAllowed" tools:targetApi="q">false</item>

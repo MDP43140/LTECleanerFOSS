@@ -15,7 +15,7 @@ dependencyResolutionManagement {
 }
 //includeBuild("../ael"){
 //	dependencySubstitution {
-//		substitute(module("com.github.mdp43140.ael:ael-kt")).using(project(":ael_kt"))
+//		substitute(module("com.github.mdp43140.ael:ael_kt")).using(project(":ael_kt"))
 //	}
 //}
 
