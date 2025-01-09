@@ -31,10 +31,11 @@ class FileScanner(private val path: File, context: Context){
 	var autoWhite = prefs.getBoolean("auto_white", true)
 	var corpse = prefs.getBoolean("corpse", false)
 	var updateProgress: ((context: Context, percent: Double) -> Unit)? = null
-	var addText: ((context: Context, path: String, type: Int) -> TextView)? = null
+	var addText: ((context: Context, path: String, type: Int) -> TextView?)? = null
 	private var installedPackages = getInstalledPackages()
 	private var guiScanProgressMax = 0
 	private var guiScanProgressProgress = 0
+	private var foundFiles: ArrayList<File>? = null
 
 	/**
 	 * Used to generate a list of all files on device
@@ -157,11 +158,11 @@ class FileScanner(private val path: File, context: Context){
 	private fun isDirectoryEmpty(directory: File): Boolean {
 		// Not folder
 		if (!directory.isDirectory) return false
-		// Empty folder
+		// Empty folder // Folders with another folder and empty file
 		val list = directory.list()
-		return list!!.isNullOrEmpty()
-		// Empty folder / Folders with another folder and empty file
-//	return list!!.isNullOrEmpty() || list!!.all { child ->
+		// access denied folder (eg. Android/data)
+		if (list == null) return false
+		return list!!.isNullOrEmpty() // || list!!.all { child ->
 //		// Another folder
 //		if (child.isDirectory) isDirectoryEmpty(child)
 //		// Empty file
@@ -202,7 +203,6 @@ class FileScanner(private val path: File, context: Context){
 		isRunning = true
 		var cycles: Byte = 0
 		var maxCycles: Byte = if (delete) prefs.getInt("multirun",1).toByte() else 1
-		var foundFiles: ArrayList<File>
 
 		// removes the need to 'clean' multiple times to get everything
 		while (cycles < maxCycles) {
@@ -211,14 +211,13 @@ class FileScanner(private val path: File, context: Context){
 			addText?.invoke(context,"Running Cycle " + cycles + "/" + maxCycles,0);
 
 			// find/scan files
-			foundFiles = getListFiles(path)
-			guiScanProgressMax = guiScanProgressMax + foundFiles.size
+			if (foundFiles == null) foundFiles = getListFiles(path)
+			guiScanProgressMax = guiScanProgressMax + foundFiles!!.size
 
 			// filter & delete
-			for (file in foundFiles){
+			for (file in foundFiles!!){
 				if (filter(file)){ // filter
-					var tv: TextView? = null
-					tv = addText?.invoke(context,file.absolutePath,1)
+					var tv: TextView? = addText?.invoke(context,file.absolutePath,1)
 					kilobytesTotal += file.length()
 					if (delete){
 						++filesRemoved
@@ -234,6 +233,7 @@ class FileScanner(private val path: File, context: Context){
 				guiScanProgressProgress = guiScanProgressProgress + 1
 				updateProgress!!.invoke(context,guiScanProgressProgress * 100.0 / guiScanProgressMax);
 			}
+			foundFiles = null
 			if (filesRemoved == 0) break
 			filesRemoved = 0
 			++cycles

@@ -73,6 +73,7 @@
 	<string name="sourceCode_sum">Checkout LTE Cleaner GitHub project!</string>
 	<string name="license">License</string>
 	<string name="license_sum">Licensed under GPL v3 license</string>
+	<string name="setDefaults">Set defaults</string>
 	<string name="about">About</string>
 	<string-array name="themes_val">
 		<item>Follow system</item>

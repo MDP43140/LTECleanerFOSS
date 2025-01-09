@@ -37,6 +37,24 @@ class BlacklistFragment: BaseFragment(){
 		binding.addBtn.setOnClickListener {
 			editPath(null)
 		}
+		binding.resetBtn.setOnClickListener {
+			getBlackList(App.prefs)
+			getBlacklistOn(App.prefs)
+			for (i in blacklistDefault){
+				if (!blackList.contains(i))
+					blackList.add(i)
+			}
+			for (i in blacklistOnDefault){
+				if (!blackListOn.contains(i))
+					blackListOn.add(i)
+			}
+			App.prefs!!
+				.edit()
+				.putStringSet("blacklist", HashSet(blackList))
+				.putStringSet("blacklistOn", HashSet(blackListOn))
+				.apply()
+			loadViews()
+		}
 		getBlackList(App.prefs)
 		getBlacklistOn(App.prefs)
 		loadViews()
@@ -166,11 +184,7 @@ class BlacklistFragment: BaseFragment(){
 		}
 		fun getBlacklistOn(prefs: SharedPreferences?): List<String?> {
 			if (blackListOn.isNullOrEmpty() && prefs != null) {
-				val blackListOnSet = prefs.getStringSet("blacklistOn",blacklistOnDefault)
-				blackListOn = ArrayList(blackListOnSet)
-				for (path in blackListOnSet.orEmpty()) {
-					blackListOn.add(path)
-				}
+				blackListOn = ArrayList(prefs.getStringSet("blacklistOn",blacklistOnDefault))
 			}
 			return blackListOn
 		}

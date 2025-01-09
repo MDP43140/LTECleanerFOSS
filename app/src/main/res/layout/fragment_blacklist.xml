@@ -26,11 +26,25 @@
 			android:orientation="vertical"/>
 	</ScrollView>
 
-	<Button
-		android:id="@+id/addBtn"
+	<LinearLayout
+		android:layout_gravity="bottom"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:padding="12dp"
-		android:text="@string/add_to_blacklist"
-		android:layout_gravity="bottom"/>
+		android:orientation="horizontal"
+		android:weightSum="3">
+		<Button
+			android:id="@+id/addBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="12dp"
+			android:text="@string/add_to_blacklist"/>
+		<Button
+			android:id="@+id/resetBtn"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:padding="12dp"
+			android:text="@string/setDefaults"/>
+	</LinearLayout>
 </LinearLayout>

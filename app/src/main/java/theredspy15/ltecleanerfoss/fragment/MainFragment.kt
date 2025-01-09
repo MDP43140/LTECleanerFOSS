@@ -59,6 +59,11 @@ class MainFragment: BaseFragment(){
 			settingsBtn.setOnClickListener { (requireActivity() as MainActivity).startFragment(SettingsFragment()) }
 			whitelistBtn.setOnClickListener { (requireActivity() as MainActivity).startFragment(WhitelistFragment()) }
 		}
+		addText(String.format(
+			"%s v%s",
+			getString(R.string.app_name),
+			requireContext().packageManager.getPackageInfo(requireContext().packageName,0).versionName
+		))
 		return binding.root
 	}
 

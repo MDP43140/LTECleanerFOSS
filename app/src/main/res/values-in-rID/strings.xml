@@ -73,6 +73,7 @@
 	<string name="sourceCode_sum">Lihat projek GitHub LTE Cleaner!</string>
 	<string name="license">Lisensi</string>
 	<string name="license_sum">Dilisensikan di bawah lisensi GPL v3</string>
+	<string name="setDefaults">Atur bawaan</string>
 	<string name="about">Tentang</string>
 	<string-array name="themes_val">
 		<item>Ikuti sistem</item>

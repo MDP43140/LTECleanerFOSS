@@ -38,6 +38,24 @@ class WhitelistFragment: BaseFragment(){
 			// Creates a dialog asking for a file/folder name to add to the whitelist
 			mGetContent.launch(Uri.fromFile(Environment.getDataDirectory()))
 		}
+		binding.resetBtn.setOnClickListener {
+			getWhiteList(App.prefs)
+			getWhitelistOn(App.prefs)
+			for (i in whitelistDefault){
+				if (!whiteList.contains(i))
+					whiteList.add(i)
+			}
+			for (i in whitelistOnDefault){
+				if (!whiteListOn.contains(i))
+					whiteListOn.add(i)
+			}
+			App.prefs!!
+				.edit()
+				.putStringSet("whitelist", HashSet(whiteList))
+				.putStringSet("whitelistOn", HashSet(whiteListOn))
+				.apply()
+			loadViews()
+		}
 		getWhiteList(App.prefs)
 		getWhitelistOn(App.prefs)
 		loadViews()
@@ -122,9 +140,9 @@ class WhitelistFragment: BaseFragment(){
 		private var whiteListOn: ArrayList<String> = ArrayList()
 		fun getWhiteList(prefs: SharedPreferences?): List<String?> {
 			if (whiteList.isNullOrEmpty() && prefs != null) {
-				// Type mismatch:inferred type is
-				// (Mutable)Set<String!>? but
-				// (MutableCollection<out String!>..Collection<String!>) was expected
+				// Java type mismatch: inferred type is
+				// kotlin.collections.(Mutable)Set<kotlin.String!>?, but
+				// kotlin.collections.(Mutable)Collection<out kotlin.String!> was expected
 				whiteList = ArrayList(prefs.getStringSet("whitelist",whitelistDefault))
 				whiteList.remove("[")
 				whiteList.remove("]")
@@ -157,11 +175,7 @@ class WhitelistFragment: BaseFragment(){
 		}
 		fun getWhitelistOn(prefs: SharedPreferences?): List<String?> {
 			if (whiteListOn.isNullOrEmpty() && prefs != null) {
-				val whiteListOnSet = prefs.getStringSet("whitelistOn",whitelistOnDefault)
-				whiteListOn = ArrayList(whiteListOnSet)
-				for (path in whiteListOnSet.orEmpty()) {
-					whiteListOn.add(path)
-				}
+				whiteListOn = ArrayList(prefs.getStringSet("whitelistOn",whitelistOnDefault))
 			}
 			return whiteListOn
 		}
