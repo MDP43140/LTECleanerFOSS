@@ -66,12 +66,6 @@ android {
 			proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
 			signingConfig = signingConfigs.getByName("main")
 			vcsInfo.include = false
-			postprocessing {
-				isRemoveUnusedCode = true
-				isRemoveUnusedResources = true
-				isObfuscate = false
-				isOptimizeCode = true
-			}
 		}
 	}
 	androidResources {
