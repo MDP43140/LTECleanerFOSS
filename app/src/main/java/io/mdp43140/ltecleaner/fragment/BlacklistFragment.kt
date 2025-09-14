@@ -6,11 +6,13 @@
 package io.mdp43140.ltecleaner.fragment
 import android.content.DialogInterface
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -35,6 +37,22 @@ class BlacklistFragment: BaseFragment(){
 		savedInstanceState: Bundle?
 	): View? {
 		binding = FragmentBlacklistBinding.inflate(inflater, container, false)
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+			// Handle Edge-to-edge
+			binding.root.setOnApplyWindowInsetsListener { v, windowInsets ->
+				val insets = windowInsets.getInsets(
+					WindowInsets.Type.systemBars() or
+					WindowInsets.Type.displayCutout()
+				)
+				v.setPadding(
+					insets.left,
+					insets.top,
+					insets.right,
+					insets.bottom
+				)
+				WindowInsets.CONSUMED
+			}
+		}
 		binding.addBtn.setOnClickListener {
 			editPath(null)
 		}

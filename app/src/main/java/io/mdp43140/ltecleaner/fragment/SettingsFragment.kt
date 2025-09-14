@@ -7,10 +7,12 @@ package io.mdp43140.ltecleaner.fragment
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.result.ActivityResultLauncher
@@ -78,6 +80,28 @@ class SettingsFragment: PreferenceFragmentCompat(){
 		}
 	}
 
+	override fun onViewCreated(
+		v: View,
+		savedInstanceState: Bundle?
+	){
+		super.onViewCreated(v,savedInstanceState)
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+			// Handle Edge-to-edge
+			v.setOnApplyWindowInsetsListener { v, windowInsets ->
+				val insets = windowInsets.getInsets(
+					WindowInsets.Type.systemBars() or
+					WindowInsets.Type.displayCutout()
+				)
+				v.setPadding(
+					insets.left,
+					insets.top,
+					insets.right,
+					insets.bottom
+				)
+				WindowInsets.CONSUMED
+			}
+		}
+	}
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setHasOptionsMenu(true) // deprecated, newer api dont need boolean, but compile error

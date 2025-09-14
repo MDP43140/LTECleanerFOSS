@@ -23,6 +23,7 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import android.provider.Settings
 import android.widget.ImageView
 import android.widget.ScrollView
@@ -50,6 +51,22 @@ class MainFragment: BaseFragment(){
 		savedInstanceState: Bundle?
 	): View? {
 		binding = FragmentMainBinding.inflate(inflater, container, false)
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+			// Handle Edge-to-edge
+			binding.root.setOnApplyWindowInsetsListener { v, windowInsets ->
+				val insets = windowInsets.getInsets(
+					WindowInsets.Type.systemBars() or
+					WindowInsets.Type.displayCutout()
+				)
+				v.setPadding(
+					insets.left,
+					insets.top,
+					insets.right,
+					insets.bottom
+				)
+				WindowInsets.CONSUMED
+			}
+		}
 		binding.apply {
 			analyzeBtn.isEnabled = !FileScanner.isRunning
 			cleanBtn.isEnabled = !FileScanner.isRunning
