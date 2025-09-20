@@ -23,8 +23,8 @@ android {
 		applicationId = android.namespace
 		minSdk = 24
 		targetSdk = compileSdk
-		versionCode = 64
-		versionName = "5.0.1"
+		versionCode = 65
+		versionName = "5.1.0"
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 		testInstrumentationRunnerArguments["disableAnalytics"] = "true"
 		vectorDrawables {
