@@ -24,7 +24,6 @@ import io.mdp43140.ltecleaner.fragment.MainFragment
 import io.mdp43140.ltecleaner.fragment.BlacklistFragment
 import io.mdp43140.ltecleaner.fragment.WhitelistFragment
 import io.mdp43140.ltecleaner.fragment.SettingsFragment
-
 class MainActivity: AppCompatActivity(){
 	val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 	lateinit var dialogBuilder: MaterialAlertDialogBuilder

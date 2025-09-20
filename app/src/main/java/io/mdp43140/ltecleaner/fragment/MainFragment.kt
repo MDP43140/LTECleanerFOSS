@@ -42,7 +42,6 @@ import io.mdp43140.ltecleaner.databinding.FragmentMainBinding
 import io.mdp43140.ltecleaner.R
 import java.io.File
 import java.util.Locale
-
 class MainFragment: BaseFragment(){
 	private lateinit var binding: FragmentMainBinding
 	override fun onCreateView(
