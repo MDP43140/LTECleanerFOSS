@@ -1,5 +1,6 @@
-## LTECleanerFOSS
-A maintained-ish improved fork of @TheRedSpy15's LTE Cleaner
+<center><h2>LTE Cleaner FOSS</h2>
+<img src="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"></center>
+A maintained-ish improved fork of the @TheRedSpy15's LTE Cleaner project
 
 [![Android CI](https://github.com/mdp43140/LTECleanerFOSS/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/MDP43140/LTECleanerFOSS/actions/workflows/android.yml)
 [![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
