@@ -91,14 +91,14 @@ class WhitelistFragment: BaseFragment(){
 	}
 	private fun removePath(path: String) {
 		MaterialAlertDialogBuilder(requireContext())
-			.setTitle(getString(R.string.remove_from_whitelist))
+			.setTitle(R.string.remove_from_whitelist)
 			.setMessage(path)
-			.setPositiveButton(getString(R.string.delete)){ dialog:DialogInterface, _:Int ->
+			.setPositiveButton(R.string.delete){ dialog:DialogInterface, _:Int ->
 				rmWhiteList(App.prefs,path)
 				dialog.dismiss()
 				loadViews()
 			}
-			.setNegativeButton(getString(android.R.string.cancel)) { dialog:DialogInterface, _:Int ->
+			.setNegativeButton(android.R.string.cancel) { dialog:DialogInterface, _:Int ->
 				dialog.dismiss()
 			}
 			.show()

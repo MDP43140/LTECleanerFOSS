@@ -99,7 +99,7 @@ class MainFragment: BaseFragment(){
 			if (App.prefs!!.oneClick){
 				scan(true) // one-click enabled
 			} else { // one-click disabled
-				(requireActivity() as MainActivity).dialogBuilder.setTitle(getString(R.string.are_you_sure_deletion_title))
+				(requireActivity() as MainActivity).dialogBuilder.setTitle(R.string.are_you_sure_deletion_title)
 					.setMessage(getString(R.string.are_you_sure_deletion))
 					.setCancelable(false)
 					.setPositiveButton(getString(R.string.clean)){ dialogInterface: DialogInterface, _: Int ->

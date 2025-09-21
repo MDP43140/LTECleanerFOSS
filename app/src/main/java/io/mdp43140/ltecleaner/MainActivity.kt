@@ -94,7 +94,7 @@ class MainActivity: AppCompatActivity(){
 				"Sadly, Android 13+ no longer have access to external storage",
 				Snackbar.LENGTH_SHORT
 			).let {
-				it.setAction(getString(android.R.string.ok)){ _: View ->
+				it.setAction(android.R.string.ok){ _: View ->
 					it.dismiss()
 				}
 				it.show()
@@ -104,9 +104,9 @@ class MainActivity: AppCompatActivity(){
 			requestCode == 1 &&
 			grantResults.isNotEmpty() &&
 			grantResults[0] != PackageManager.PERMISSION_GRANTED)
-			dialogBuilder.setTitle(getString(R.string.permission_needed))
+			dialogBuilder.setTitle(R.string.permission_needed)
 				.setMessage(getString(R.string.grantPermissions_sum) + permissions.map { "\n- " + it.replaceFirst("android.permission.","") }.joinToString(""))
-				.setPositiveButton(getString(R.string.settings)){ dialogInterface: DialogInterface, _: Int ->
+				.setPositiveButton(R.string.settings){ dialogInterface: DialogInterface, _: Int ->
 					startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
 						data = Uri.fromParts("package",packageName,null)
 					})
