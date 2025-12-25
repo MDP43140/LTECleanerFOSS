@@ -157,7 +157,7 @@ class FileScanner(private val path: File, context: Context){
 		val list = directory.list()
 		// access denied folder (eg. Android/data)
 		if (list == null) return false
-		return list!!.isNullOrEmpty() // || list!!.all { child ->
+		return list.isNullOrEmpty() // || list!!.all { child ->
 //		// Another folder
 //		if (child.isDirectory) isDirectoryEmpty(child)
 //		// Empty file
@@ -186,7 +186,7 @@ class FileScanner(private val path: File, context: Context){
 
 		// cached whitelist/blacklist values
 		whitelist = WhitelistFragment.whiteListOn.mapNotNull { it }
-		blacklist = BlacklistFragment.blackListOn.mapNotNull { it?.toRegex() }
+		blacklist = BlacklistFragment.blackListOn.mapNotNull { it.toRegex() }
 		// Auto whitelist
 		if (autoWhite){
 			autoWhitelist.clear()

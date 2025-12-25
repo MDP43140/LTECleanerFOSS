@@ -128,7 +128,7 @@ class BlacklistFragment: BaseFragment(){
 		var blackListOn: ArrayList<String> = ArrayList()
 		fun getBlackList(prefs: PreferenceRepository?): List<String?> { // TODO: Should it be `List<String>?` ?
 			if (blackList.isNullOrEmpty() && prefs != null) {
-				blackList = ArrayList(prefs.blacklist ?: Constants.blacklistDefault)
+				blackList = ArrayList(prefs.blacklist)
 				blackList.remove("[")
 				blackList.remove("]")
 			}
@@ -160,7 +160,7 @@ class BlacklistFragment: BaseFragment(){
 		}
 		fun getBlacklistOn(prefs: PreferenceRepository?): List<String> {
 			if (blackListOn.isNullOrEmpty() && prefs != null) {
-				blackListOn = ArrayList(prefs.blacklistOn ?: Constants.blacklistOnDefault)
+				blackListOn = ArrayList(prefs.blacklistOn)
 			}
 			return blackListOn
 		}

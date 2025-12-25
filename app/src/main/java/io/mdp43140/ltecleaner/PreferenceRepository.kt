@@ -50,10 +50,10 @@ class PreferenceRepository(ctx: Context){
 		private var whitelistOn_defVal = Constants.whitelistOnDefault
 	}
 	var autoWhite: Boolean
-		get() = prefs.getBoolean(autoWhite_key,autoWhite_defVal) ?: autoWhite_defVal
+		get() = prefs.getBoolean(autoWhite_key,autoWhite_defVal)
 		set(v) = prefs.edit().putBoolean(autoWhite_key,v).apply()
 	var bootCleanup: Boolean
-		get() = prefs.getBoolean(bootCleanup_key,bootCleanup_defVal) ?: bootCleanup_defVal
+		get() = prefs.getBoolean(bootCleanup_key,bootCleanup_defVal)
 		set(v) = prefs.edit().putBoolean(bootCleanup_key,v).apply()
 	var blacklist: Set<String>
 		get() = prefs.getStringSet(blacklist_key,blacklist_defVal) ?: blacklist_defVal
@@ -62,43 +62,43 @@ class PreferenceRepository(ctx: Context){
 		get() = prefs.getStringSet(blacklistOn_key,blacklistOn_defVal) ?: blacklistOn_defVal
 		set(v) = prefs.edit().putStringSet(blacklistOn_key,v).apply()
 	var cleanApk: Boolean
-		get() = prefs.getBoolean(cleanApk_key,cleanApk_defVal) ?: cleanApk_defVal
+		get() = prefs.getBoolean(cleanApk_key,cleanApk_defVal)
 		set(v) = prefs.edit().putBoolean(cleanApk_key,v).apply()
 	var cleanClipboard: Boolean
-		get() = prefs.getBoolean(cleanClipboard_key,cleanClipboard_defVal) ?: cleanClipboard_defVal
+		get() = prefs.getBoolean(cleanClipboard_key,cleanClipboard_defVal)
 		set(v) = prefs.edit().putBoolean(cleanClipboard_key,v).apply()
 	var cleanCorpse: Boolean
-		get() = prefs.getBoolean(cleanCorpse_key,cleanCorpse_defVal) ?: cleanCorpse_defVal
+		get() = prefs.getBoolean(cleanCorpse_key,cleanCorpse_defVal)
 		set(v) = prefs.edit().putBoolean(cleanCorpse_key,v).apply()
 	var cleanEmptyFile: Boolean
-		get() = prefs.getBoolean(cleanEmptyFile_key,cleanEmptyFile_defVal) ?: cleanEmptyFile_defVal
+		get() = prefs.getBoolean(cleanEmptyFile_key,cleanEmptyFile_defVal)
 		set(v) = prefs.edit().putBoolean(cleanEmptyFile_key,v).apply()
 	var cleanEmptyFolder: Boolean
-		get() = prefs.getBoolean(cleanEmptyFolder_key,cleanEmptyFolder_defVal) ?: cleanEmptyFolder_defVal
+		get() = prefs.getBoolean(cleanEmptyFolder_key,cleanEmptyFolder_defVal)
 		set(v) = prefs.edit().putBoolean(cleanEmptyFolder_key,v).apply()
 	var cleanEvery: Int
-		get() = prefs.getInt(cleanEvery_key,cleanEvery_defVal) ?: cleanEvery_defVal
+		get() = prefs.getInt(cleanEvery_key,cleanEvery_defVal)
 		set(v) = prefs.edit().putInt(cleanEvery_key,v).apply()
 	var cleanGeneric: Boolean
-		get() = prefs.getBoolean(cleanGeneric_key,cleanGeneric_defVal) ?: cleanGeneric_defVal
+		get() = prefs.getBoolean(cleanGeneric_key,cleanGeneric_defVal)
 		set(v) = prefs.edit().putBoolean(cleanGeneric_key,v).apply()
 	var closeBgApps: Boolean
-		get() = prefs.getBoolean(closeBgApps_key,closeBgApps_defVal) ?: closeBgApps_defVal
+		get() = prefs.getBoolean(closeBgApps_key,closeBgApps_defVal)
 		set(v) = prefs.edit().putBoolean(closeBgApps_key,v).apply()
 	var dynamicColor: Boolean
-		get() = prefs.getBoolean(dynamicColor_key,dynamicColor_defVal) ?: dynamicColor_defVal
+		get() = prefs.getBoolean(dynamicColor_key,dynamicColor_defVal)
 		set(v) = prefs.edit().putBoolean(dynamicColor_key,v).apply()
 	var multiRun: Int
-		get() = prefs.getInt(multiRun_key,multiRun_defVal) ?: multiRun_defVal
+		get() = prefs.getInt(multiRun_key,multiRun_defVal)
 		set(v) = prefs.edit().putInt(multiRun_key,v).apply()
 	var oneClick: Boolean
-		get() = prefs.getBoolean(oneClick_key,oneClick_defVal) ?: oneClick_defVal
+		get() = prefs.getBoolean(oneClick_key,oneClick_defVal)
 		set(v) = prefs.edit().putBoolean(oneClick_key,v).apply()
 	var pitchBlack: Boolean
-		get() = prefs.getBoolean(pitchBlack_key,pitchBlack_defVal) ?: pitchBlack_defVal
+		get() = prefs.getBoolean(pitchBlack_key,pitchBlack_defVal)
 		set(v) = prefs.edit().putBoolean(pitchBlack_key,v).apply()
 	var runCount: Int
-		get() = prefs.getInt(runCount_key,runCount_defVal) ?: runCount_defVal
+		get() = prefs.getInt(runCount_key,runCount_defVal)
 		set(v) = prefs.edit().putInt(runCount_key,v).apply()
 	var theme: String
 		get() = prefs.getString(theme_key,theme_defVal) ?: theme_defVal

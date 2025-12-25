@@ -24,13 +24,13 @@ class ListItemAdapter(
 		setHasStableIds(true)
 	}
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-		return ListViewHolder(ListItemBinding.inflate(ctx!!.layoutInflater).apply {
+		return ListViewHolder(ListItemBinding.inflate(ctx.layoutInflater).apply {
 			// hacky workaround because somehow the layout parameter seems somehow reverted to nothing
 			root.setLayoutParams(fullWidthLP)
 		})
 	}
 	override fun onBindViewHolder(holder: ViewHolder, pos: Int) {
-		(holder as ListViewHolder)!!.bind(list[pos],isWhitelist)
+		(holder as ListViewHolder).bind(list[pos],isWhitelist)
 	}
 	override fun getItemCount(): Int = list.size
 	override fun getItemId(pos: Int): Long {

@@ -119,7 +119,7 @@ class WhitelistFragment: BaseFragment(){
 		var whiteListOn: ArrayList<String> = ArrayList()
 		fun getWhiteList(prefs: PreferenceRepository?): List<String> {
 			if (whiteList.isNullOrEmpty() && prefs != null) {
-				whiteList = ArrayList(prefs.whitelist ?: Constants.whitelistDefault)
+				whiteList = ArrayList(prefs.whitelist)
 				whiteList.remove("[")
 				whiteList.remove("]")
 			}
@@ -151,7 +151,7 @@ class WhitelistFragment: BaseFragment(){
 		}
 		fun getWhitelistOn(prefs: PreferenceRepository?): List<String> {
 			if (whiteListOn.isNullOrEmpty() && prefs != null) {
-				whiteListOn = ArrayList(prefs.whitelistOn ?: Constants.whitelistOnDefault)
+				whiteListOn = ArrayList(prefs.whitelistOn)
 			}
 			return whiteListOn
 		}

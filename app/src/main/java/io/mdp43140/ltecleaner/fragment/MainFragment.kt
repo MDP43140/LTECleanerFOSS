@@ -192,14 +192,14 @@ class MainFragment: BaseFragment(){
 			val memInfo: ActivityManager.MemoryInfo = ActivityManager.MemoryInfo()
 
 			am.getMemoryInfo(memInfo)
-			val memAvailBefore = Math.round(memInfo.availMem / 1048576f).toInt()
+			val memAvailBefore = Math.round(memInfo.availMem / 1048576f)
 			for (pkg in requireContext().getPackageManager().getInstalledApplications(8704)){
 				if (pkg.processName != pkgName){
 					am.killBackgroundProcesses(pkg.processName)
 				}
 			}
 			am.getMemoryInfo(memInfo)
-			val memAvailAfter = Math.round(memInfo.availMem / 1048576f).toInt()
+			val memAvailAfter = Math.round(memInfo.availMem / 1048576f)
 
 			var memFreed = memAvailAfter - memAvailBefore
 			if (memFreed < 0){memFreed = 0}
@@ -207,7 +207,7 @@ class MainFragment: BaseFragment(){
 				"Available RAM: %dMB > %dMB / %dMB (%dMB freed)",
 				memAvailBefore,
 				memAvailAfter,
-				Math.round(memInfo.totalMem / 1048576f).toInt(),
+				Math.round(memInfo.totalMem / 1048576f),
 				memFreed
 			))
 		}.start()
