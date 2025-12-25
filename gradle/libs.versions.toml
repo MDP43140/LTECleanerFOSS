@@ -1,6 +1,6 @@
 [versions]
 ael = "1.0.1-hf"
-agp = "8.13.0"
+agp = "8.13.2"
 androidxAppcompat = "1.7.1"
 androidxCore = "1.17.0"
 androidxGridLayout = "1.1.0"
@@ -10,8 +10,8 @@ androidxTestEspresso = "3.7.0"
 androidxTestJunit = "1.3.0"
 androidxTestRunner = "1.7.0"
 androidxTestUiautomator = "2.3.0"
-androidxWork = "2.10.4"
-kotlin = "2.2.20"
+androidxWork = "2.11.0"
+kotlin = "2.3.0"
 leakcanary = "2.14"
 material = "1.13.0"
 

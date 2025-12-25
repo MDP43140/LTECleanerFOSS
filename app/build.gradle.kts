@@ -13,11 +13,11 @@ plugins {
 }
 kotlin {
 	// Used as defaults for android.kotlinOptions.jvmTarget and android.compileOptions.*Compatibility
-	jvmToolchain(21)
+	jvmToolchain(25)
 }
 android {
-	compileSdk = 35
-	buildToolsVersion = "35.0.0"
+	compileSdk = 36
+	buildToolsVersion = "36.0.0"
 	namespace = "io.mdp43140.ltecleaner"
 	defaultConfig {
 		applicationId = android.namespace
