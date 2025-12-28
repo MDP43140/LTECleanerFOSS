@@ -1,10 +1,12 @@
-<center><h2>LTE Cleaner FOSS</h2>
-<img src="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"></center>
-A maintained-ish improved fork of the @TheRedSpy15's LTE Cleaner project
+<p align="center"><img src="app/src/main/res/mipmap-xxhdpi/ic_launcher.png"></p>
+<h2 align="center">LTE Cleaner FOSS</h2>
+<p align="center">A maintained-ish improved fork of the @TheRedSpy15's LTE Cleaner project</p>
 
-[![Android CI](https://github.com/mdp43140/LTECleanerFOSS/actions/workflows/android.yml/badge.svg?branch=main)](https://github.com/MDP43140/LTECleanerFOSS/actions/workflows/android.yml)
-[![GitHub issues](https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS)](/issues)
-[![License](https://img.shields.io/github/license/mdp43140/LTECleanerFOSS)](/blob/master/LICENSE)
+<p align="center">
+<a href="https://github.com/MDP43140/LTECleanerFOSS/actions/workflows/android.yml" alt="Android CI"><img src="https://github.com/mdp43140/LTECleanerFOSS/actions/workflows/android.yml/badge.svg?branch=main" ></a>
+<a href="/issues" alt="GitHub issues"><img src="https://img.shields.io/github/issues/mdp43140/LTECleanerFOSS" ></a>
+<a href="/blob/master/LICENSE" alt="License"><img src="https://img.shields.io/github/license/mdp43140/LTECleanerFOSS" ></a>
+</p>
 
 Tired of the abundance of phone cleaners on the Play Store? Tired of
 them being extremely shady? Tired of them doing nothing? Tired of ads?
@@ -27,7 +29,7 @@ __LTE Cleaner is 100% free, open source, no ads, and deletes everything it claim
 - Whitelist
 - Daily cleanup
 
-Cleans:
+### Cleans:
 - Empty folders
 - Logs
 - Temporary files
